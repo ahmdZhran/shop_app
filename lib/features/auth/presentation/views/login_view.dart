@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/head_of_login.dart';
+
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
 
@@ -10,7 +12,7 @@ class LoginView extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(height: 130),
-          HeadOfSignInView(),
+          HeadOfLoginView(),
           SizedBox(height: 150),
           SignInBodyWidget()
         ],
