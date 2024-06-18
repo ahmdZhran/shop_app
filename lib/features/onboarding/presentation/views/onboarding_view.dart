@@ -1,7 +1,5 @@
-
 import 'package:flutter/material.dart';
 import 'package:shop_app/core/helper/extensions.dart';
-import 'package:shop_app/core/router/app_router.dart';
 import 'package:shop_app/core/router/routes.dart';
 
 import '../widgets/already_have_an_account.dart';
@@ -45,15 +43,15 @@ class _OnboardingViewState extends State<OnboardingView> {
                   _controller.nextPage(
                       duration: const Duration(milliseconds: 200),
                       curve: Curves.bounceIn);
-                 
-                  customNavigation(context, '/SignUp');
+
+                  context.pushNamed(Routes.signup);
                 },
               ),
               const SizedBox(height: 30),
               AlreadyHaveAccountWidget(
                 onTap: () {
                   // onBoardingVisited();
-                  context.pushNamed(Routes.onboarding);
+                  context.pushNamed(Routes.login);
                 },
               )
             ],
