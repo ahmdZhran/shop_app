@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/utils/app_strings.dart';
+import '../../../../core/utils/text_styles.dart';
 
 class AlreadyHaveAccountWidget extends StatelessWidget {
   const AlreadyHaveAccountWidget({
