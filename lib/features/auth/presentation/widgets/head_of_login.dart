@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class HeadOfLoginView extends StatelessWidget {
-  const HeadOfLoginView({
+class HeadOfSignInView extends StatelessWidget {
+  const HeadOfSignInView({
     super.key,
   });
 

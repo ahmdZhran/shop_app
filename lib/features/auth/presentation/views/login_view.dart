@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
 import '../widgets/head_of_login.dart';
+import '../widgets/login_body_widget.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -12,9 +12,9 @@ class LoginView extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(height: 130),
-          HeadOfLoginView(),
+          HeadOfSignInView(),
           SizedBox(height: 150),
-          SignInBodyWidget()
+          LonginBodyWidget()
         ],
       ),
     ));

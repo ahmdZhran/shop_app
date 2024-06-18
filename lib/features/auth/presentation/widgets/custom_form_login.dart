@@ -5,8 +5,8 @@ import '../../../../core/utils/text_styles.dart';
 import '../../../../core/widgets/custom_buttons.dart';
 import '../../../../core/widgets/custom_text_form_fields.dart';
 
-class CustomFormSignInWidget extends StatelessWidget {
-  const CustomFormSignInWidget({super.key});
+class EmailAndPasswordFeilds extends StatelessWidget {
+  const EmailAndPasswordFeilds({super.key});
 
   @override
   Widget build(BuildContext context) {
