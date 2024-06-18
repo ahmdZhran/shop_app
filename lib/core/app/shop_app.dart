@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/core/router/routes.dart';
 
-import '../../features/onboarding/presentation/views/onboarding_view.dart';
+import '../router/app_router.dart';
 
 class ShopApp extends StatelessWidget {
-  const ShopApp({super.key});
-
+  const ShopApp({super.key, required this.appRouter});
+  final AppRouter appRouter;
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Shop app',
-      home: OnboardingView(),
+      onGenerateRoute: appRouter.onGenerateRoute,
+      initialRoute: Routes.onboarding,
     );
   }
 }
