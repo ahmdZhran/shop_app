@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../utils/color_manager.dart';
 
 class CustomButton extends StatelessWidget {
@@ -18,7 +17,7 @@ class CustomButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: SizedBox(
-        width: 370,
+        width: 350,
         height: 56,
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
