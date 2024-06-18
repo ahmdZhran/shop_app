@@ -36,6 +36,8 @@ dependencies:
   cupertino_icons: ^1.0.6
   # for splash screen
   flutter_native_splash: ^2.4.0
+  # Customizable animated page indicator with a set of built-in effects.
+  smooth_page_indicator: ^1.1.0
   # An SVG rendering and widget library for Flutter, which allows painting
   flutter_svg: ^2.0.10+1
   # for adapting screen and font size.
