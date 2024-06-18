@@ -2,10 +2,10 @@ abstract class AppStrigns {
   static const String appName = 'E-commerce',
       // Strings for onboarding
       next = 'Next',
-      alreadyHaveAccount = 'Already have account?',
+      alreadyHaveAccount = 'Already have account? ',
       login = 'Log In',
       getStarted = 'Get Started',
-      
+
       // Strings for signin and regestration views
       wecomeBack = 'Welcome Back!',
       enterYourDetailsBelow = 'Enter your details below',

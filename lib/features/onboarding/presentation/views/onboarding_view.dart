@@ -42,15 +42,14 @@ class _OnboardingViewState extends State<OnboardingView> {
                   _controller.nextPage(
                       duration: const Duration(milliseconds: 200),
                       curve: Curves.bounceIn);
-                
-                  context.pushNamed(Routes.login);
+
+                  context.pushNamed(Routes.signup);
                 },
               ),
               const SizedBox(height: 30),
               AlreadyHaveAccountWidget(
                 onTap: () {
-                 
-                  context.pushNamed(Routes.signup);
+                  context.pushNamed(Routes.login);
                 },
               )
             ],

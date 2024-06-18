@@ -9,6 +9,7 @@ import '../../features/onboarding/presentation/views/onboarding_view.dart';
 class AppRouter {
   Route onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
+     
       case Routes.onboarding:
         return MaterialPageRoute(builder: (_) => const OnboardingView());
       case Routes.login:
