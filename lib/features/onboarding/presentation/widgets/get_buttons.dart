@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 import '../../../../core/utils/app_strings.dart';
@@ -27,7 +25,8 @@ class GetButtons extends StatelessWidget {
             onPressed: onPressed,
             text: Text(
               AppStrigns.getStarted,
-              style: CustomTextStyle.semiBold16,
+              style: CustomTextStyle.semiBold16
+                  .copyWith(fontWeight: FontWeight.bold),
             ),
           ),
         ],
@@ -41,7 +40,8 @@ class GetButtons extends StatelessWidget {
         },
         text: Text(
           AppStrigns.next,
-          style: CustomTextStyle.semiBold16,
+          style:
+              CustomTextStyle.semiBold16.copyWith(fontWeight: FontWeight.bold),
         ),
       );
     }

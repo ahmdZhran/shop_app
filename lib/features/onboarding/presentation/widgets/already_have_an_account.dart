@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../../../../core/utils/app_strings.dart';
@@ -17,14 +16,16 @@ class AlreadyHaveAccountWidget extends StatelessWidget {
       children: [
         Text(
           AppStrigns.alreadyHaveAccount,
-          style: CustomTextStyle.regular14,
+          style:
+              CustomTextStyle.regular14.copyWith(fontWeight: FontWeight.bold),
         ),
         const SizedBox(width: 3),
         GestureDetector(
           onTap: onTap,
           child: Text(
             AppStrigns.login,
-            style: CustomTextStyle.medium14,
+            style:
+                CustomTextStyle.medium14.copyWith(fontWeight: FontWeight.bold),
           ),
         ),
       ],
