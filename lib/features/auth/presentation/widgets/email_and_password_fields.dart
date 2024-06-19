@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop_app/core/helper/extensions.dart';
+import 'package:shop_app/features/auth/logic/cubit/login_cubit.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/utils/text_styles.dart';
 import '../../../../core/widgets/custom_buttons.dart';
@@ -14,15 +16,16 @@ class EmailAndPasswordFields extends StatefulWidget {
 
 class _EmailAndPasswordFieldsState extends State<EmailAndPasswordFields> {
   @override
-  void dispose() {
-    _emailController.dispose();
-    _passwordController.dispose();
-    super.dispose();
+  late TextEditingController passwordController;
+
+  bool isPasswordShown = true;
+
+  @override
+  void initState() {
+    passwordController = context.read<LoginCubit>().passwordController;
+    super.initState();
   }
 
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
-  bool isPasswordShown = true;
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -38,7 +41,7 @@ class _EmailAndPasswordFieldsState extends State<EmailAndPasswordFields> {
           ),
           20.0.getVerticalSpacer(),
           CustomTextFormField(
-            controller: _passwordController,
+            // controller: _passwordController,
             obscureText: isPasswordShown,
             onChanged: (password) {
               // Handle password change

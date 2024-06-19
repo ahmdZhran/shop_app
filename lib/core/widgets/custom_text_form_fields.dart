@@ -38,20 +38,30 @@ class CustomTextFormField extends StatelessWidget {
         onChanged: onChanged,
         style: TextStyle(color: ColorManager.kWhiteColor),
         decoration: InputDecoration(
-          suffixIcon: suffixIcon != null
-              ? SizedBox(
-                  height: 48.h,
-                  width: 48.h,
-                  child: suffixIcon,
-                )
-              : null,
-          filled: true,
-          fillColor: const Color(0xff101215),
-          enabledBorder: outlineInputBorder(),
-          focusedBorder: outlineInputBorder(),
-          labelText: lableText,
-          labelStyle: CustomTextStyle.regular14,
-        ),
+            suffixIcon: suffixIcon != null
+                ? SizedBox(
+                    height: 48.h,
+                    width: 48.h,
+                    child: suffixIcon,
+                  )
+                : null,
+            filled: true,
+            fillColor: const Color(0xff101215),
+            enabledBorder: outlineInputBorder(),
+            focusedBorder: outlineInputBorder(),
+            labelText: lableText,
+            labelStyle: CustomTextStyle.regular14,
+            errorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(25),
+              borderSide: const BorderSide(
+                color: Colors.red,
+              ),
+            ),
+            focusedErrorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(
+                  25,
+                ),
+                borderSide: const BorderSide(color: Colors.red))),
       ),
     );
   }
