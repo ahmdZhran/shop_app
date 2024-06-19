@@ -73,17 +73,17 @@ class SignUpFormFiedls extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            IsHasAnAccount(
-              textOne: AppStrings.alreadyHaveAccount,
-              textTwo: AppStrings.singIn,
-              onTap: () {
-                Navigator.push(context, MaterialPageRoute(
-                  builder: (context) {
-                    return const LoginView();
-                  },
-                ));
-              },
-            )
+            const IsHasAnAccount(
+                // textOne: AppStrings.alreadyHaveAccount,
+                // textTwo: AppStrings.singIn,
+                // onTap: () {
+                //   Navigator.push(context, MaterialPageRoute(
+                //     builder: (context) {
+                //       return const LoginView();
+                //     },
+                //   ));
+                // },
+                )
           ],
         ),
       ),

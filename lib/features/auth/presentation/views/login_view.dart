@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/core/helper/extensions.dart';
 import '../widgets/head_of_login.dart';
 import '../widgets/sign_in_body_widget.dart';
 
@@ -7,14 +8,14 @@ class LoginView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
         body: SingleChildScrollView(
       child: Column(
         children: [
-          SizedBox(height: 130),
-          HeadOfLoginView(),
-          SizedBox(height: 150),
-          LoginBodyWidget()
+          100.0.getVerticalSpacer(),
+          const HeadOfLoginView(),
+          110.0.getVerticalSpacer(),
+          const LonginBodyWidget()
         ],
       ),
     ));

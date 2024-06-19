@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shop_app/core/helper/extensions.dart';
 import 'package:shop_app/core/utils/app_strings.dart';
 import 'package:shop_app/core/utils/text_styles.dart';
-import 'custom_form_signin.dart';
 
-class LoginTextFormFields extends StatelessWidget {
-  const LoginTextFormFields({super.key});
+import 'custom_form_login.dart';
+
+class TextFormFieldBody extends StatelessWidget {
+  const TextFormFieldBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,20 +15,19 @@ class LoginTextFormFields extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Column(
         children: [
-          const SizedBox(height: 20),
+          20.0.getVerticalSpacer(),
           Text(
             AppStrings.wecomeBack,
             style: CustomTextStyle.soraBoldstyleBold.copyWith(fontSize: 30),
           ),
-          const SizedBox(height: 10),
+          10.0.getVerticalSpacer(),
           Text(
             AppStrings.enterYourDetailsBelow,
-            style: CustomTextStyle.regular14.copyWith(
-              fontSize: 16,
-            ),
+            style: CustomTextStyle.regular14
+                .copyWith(fontSize: 14.sp, fontWeight: FontWeight.bold),
           ),
-          const SizedBox(height: 10),
-          const EmailAndPassword()
+          10.0.getVerticalSpacer(),
+          const EmailAndPasswordFields()
         ],
       ),
     );

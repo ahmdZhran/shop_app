@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shop_app/core/helper/extensions.dart';
 import 'package:shop_app/core/utils/app_strings.dart';
 import 'package:shop_app/core/widgets/custom_text_form_fields.dart';
 import 'package:shop_app/features/auth/data/models/login_request_body.dart';
@@ -8,15 +10,15 @@ import 'package:shop_app/features/auth/logic/cubit/login_cubit.dart';
 import '../../../../core/utils/text_styles.dart';
 import '../../../../core/widgets/custom_buttons.dart';
 
-class EmailAndPassword extends StatefulWidget {
-  const EmailAndPassword({super.key});
+class EmailAndPasswordFields extends StatefulWidget {
+  const EmailAndPasswordFields({super.key});
 
   @override
-  State<EmailAndPassword> createState() => _EmailAndPasswordState();
+  State<EmailAndPasswordFields> createState() => _EmailAndPasswordFieldsState();
 }
 
-class _EmailAndPasswordState extends State<EmailAndPassword> {
-  bool isObsecure = true;
+class _EmailAndPasswordFieldsState extends State<EmailAndPasswordFields> {
+  bool isPasswordShown = true;
   late TextEditingController passworController;
 
   @override
@@ -35,31 +37,32 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
             controller: context.read<LoginCubit>().emailController,
             lableText: AppStrings.emailAdress,
           ),
-          const SizedBox(height: 40),
+          20.0.getVerticalSpacer(),
           CustomTextFormField(
             controller: context.read<LoginCubit>().passwordController,
-            obscureText: true,
-            suffixIcon: SizedBox(
-              height: 10, // Set height consistent with text form field
-              child: IconButton(
-                onPressed: () {
-                  // Handle password visibility toggle
-                },
-                icon: const Icon(
-                  Icons.visibility_outlined,
-                ),
+            obscureText: isPasswordShown,
+            suffixIcon: IconButton(
+              onPressed: () {
+                setState(() {
+                  isPasswordShown = !isPasswordShown;
+                });
+              },
+              icon: Icon(
+                isPasswordShown
+                    ? Icons.visibility_off_outlined
+                    : Icons.visibility_outlined,
               ),
             ),
             lableText: AppStrings.password,
           ),
-          const SizedBox(height: 40),
+          40.0.getVerticalSpacer(),
           CustomButton(
             onPressed: () {
               valdiateThenDoLogin(context);
             },
             text: Text(
               AppStrings.login,
-              style: CustomTextStyle.semiBold16.copyWith(fontSize: 18),
+              style: CustomTextStyle.semiBold16.copyWith(fontSize: 15.sp),
             ),
           ),
         ],
