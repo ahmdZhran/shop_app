@@ -22,7 +22,7 @@ class ShopApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Shop app',
         onGenerateRoute: appRouter.onGenerateRoute,
-        initialRoute: Routes.onboarding,
+        initialRoute: Routes.login,
       ),
     );
   }

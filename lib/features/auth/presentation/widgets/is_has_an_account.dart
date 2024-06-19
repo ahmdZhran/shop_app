@@ -14,7 +14,7 @@ class IsHasAnAccount extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          AppStrigns.dontHaveAnAccount,
+          AppStrings.dontHaveAnAccount,
           style: CustomTextStyle.medium14.copyWith(
               fontWeight: FontWeight.bold,
               color: ColorManager.kGreyColor,
@@ -22,7 +22,7 @@ class IsHasAnAccount extends StatelessWidget {
         ),
         5.0.getHorizontalSpacer(),
         Text(
-          AppStrigns.signUp,
+          AppStrings.signUp,
           style: CustomTextStyle.medium14
               .copyWith(fontWeight: FontWeight.bold, fontSize: 14.sp),
         ),

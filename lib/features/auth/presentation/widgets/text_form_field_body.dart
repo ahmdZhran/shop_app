@@ -17,17 +17,17 @@ class TextFormFieldBody extends StatelessWidget {
         children: [
           20.0.getVerticalSpacer(),
           Text(
-            AppStrigns.wecomeBack,
+            AppStrings.wecomeBack,
             style: CustomTextStyle.soraBoldstyleBold.copyWith(fontSize: 30),
           ),
           10.0.getVerticalSpacer(),
           Text(
-            AppStrigns.enterYourDetailsBelow,
+            AppStrings.enterYourDetailsBelow,
             style: CustomTextStyle.regular14
                 .copyWith(fontSize: 14.sp, fontWeight: FontWeight.bold),
           ),
           10.0.getVerticalSpacer(),
-          const EmailAndPasswordFeilds()
+          const EmailAndPasswordFields()
         ],
       ),
     );

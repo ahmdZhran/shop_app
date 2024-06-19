@@ -1,4 +1,4 @@
-abstract class AppStrigns {
+abstract class AppStrings {
   static const String appName = 'E-commerce',
       // Strings for onboarding
       next = 'Next',
