@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 extension Navigation on BuildContext {
   Future<dynamic> pushNamed(String routeName, {Object? arguments}) {
@@ -15,4 +16,10 @@ extension Navigation on BuildContext {
     return Navigator.of(this)
         .pushNamedAndRemoveUntil(routeName, predicate, arguments: arguments);
   }
+}
+
+// extension for spacing
+extension SpacesHelper on double {
+  Widget getHorizontalSpacer() => SizedBox(width: w);
+  Widget getVerticalSpacer() => SizedBox(height: h);
 }
