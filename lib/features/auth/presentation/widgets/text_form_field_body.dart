@@ -20,11 +20,11 @@ class TextFormFieldBody extends StatelessWidget {
             AppStrings.wecomeBack,
             style: CustomTextStyle.soraBoldstyleBold.copyWith(fontSize: 30),
           ),
-          10.0.getVerticalSpacer(),
+          5.0.getVerticalSpacer(),
           Text(
             AppStrings.enterYourDetailsBelow,
             style: CustomTextStyle.regular14
-                .copyWith(fontSize: 14.sp, fontWeight: FontWeight.bold),
+                .copyWith(fontSize: 10.sp, fontWeight: FontWeight.bold),
           ),
           10.0.getVerticalSpacer(),
           const EmailAndPasswordFields()

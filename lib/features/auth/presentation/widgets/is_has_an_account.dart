@@ -18,13 +18,13 @@ class IsHasAnAccount extends StatelessWidget {
           style: CustomTextStyle.medium14.copyWith(
               fontWeight: FontWeight.bold,
               color: ColorManager.kGreyColor,
-              fontSize: 14.sp),
+              fontSize: 12.sp),
         ),
         5.0.getHorizontalSpacer(),
         Text(
           AppStrings.signUp,
           style: CustomTextStyle.medium14
-              .copyWith(fontWeight: FontWeight.bold, fontSize: 14.sp),
+              .copyWith(fontWeight: FontWeight.bold, fontSize: 12.sp),
         ),
       ],
     );

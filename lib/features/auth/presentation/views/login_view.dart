@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/core/helper/extensions.dart';
 import '../widgets/head_of_login.dart';
-import '../widgets/sign_in_body_widget.dart';
+import '../widgets/login_body_widget.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});

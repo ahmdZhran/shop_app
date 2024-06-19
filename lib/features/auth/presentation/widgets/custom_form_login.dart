@@ -33,6 +33,7 @@ class _EmailAndPasswordFieldsState extends State<EmailAndPasswordFields> {
       key: context.read<LoginCubit>().formKey,
       child: Column(
         children: [
+          20.0.getVerticalSpacer(),
           CustomTextFormField(
             controller: context.read<LoginCubit>().emailController,
             lableText: AppStrings.emailAdress,
