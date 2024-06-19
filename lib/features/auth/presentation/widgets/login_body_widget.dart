@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/core/helper/extensions.dart';
 import 'package:shop_app/features/auth/presentation/widgets/is_has_an_account.dart';
 
 import 'text_form_field_body.dart';
@@ -18,11 +19,11 @@ class LonginBodyWidget extends StatelessWidget {
           topRight: Radius.circular(40),
         ),
       ),
-      child: const Column(
+      child: Column(
         children: [
-          TextFormFieldBody(),
-          SizedBox(height: 30),
-          IsHasAnAccount(),
+          const TextFormFieldBody(),
+          30.0.getVerticalSpacer(),
+          const IsHasAnAccount(),
         ],
       ),
     );

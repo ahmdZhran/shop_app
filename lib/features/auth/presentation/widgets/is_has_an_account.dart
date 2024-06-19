@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shop_app/core/helper/extensions.dart';
 import 'package:shop_app/core/utils/app_strings.dart';
 import 'package:shop_app/core/utils/text_styles.dart';
 import '../../../../core/utils/color_manager.dart';
@@ -16,13 +18,13 @@ class IsHasAnAccount extends StatelessWidget {
           style: CustomTextStyle.medium14.copyWith(
               fontWeight: FontWeight.bold,
               color: ColorManager.kGreyColor,
-              fontSize: 17),
+              fontSize: 14.sp),
         ),
-        const SizedBox(width: 10),
+        5.0.getHorizontalSpacer(),
         Text(
           AppStrigns.signUp,
           style: CustomTextStyle.medium14
-              .copyWith(fontWeight: FontWeight.bold, fontSize: 17),
+              .copyWith(fontWeight: FontWeight.bold, fontSize: 14.sp),
         ),
       ],
     );

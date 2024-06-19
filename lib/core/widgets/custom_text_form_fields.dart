@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../utils/color_manager.dart';
 import '../utils/text_styles.dart';
 
@@ -37,8 +38,8 @@ class CustomTextFomField extends StatelessWidget {
         decoration: InputDecoration(
           suffixIcon: suffix != null
               ? SizedBox(
-                  height: 48, // Set a fixed height for the suffix widget
-                  width: 48, // Set a fixed width for the suffix widget
+                  height: 48.h,
+                  width: 48.h,
                   child: suffix,
                 )
               : null,

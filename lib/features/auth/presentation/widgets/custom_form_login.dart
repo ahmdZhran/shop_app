@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shop_app/core/helper/extensions.dart';
 
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/utils/text_styles.dart';
@@ -20,14 +22,14 @@ class EmailAndPasswordFeilds extends StatelessWidget {
             },
             lableText: AppStrigns.emailAdress,
           ),
-          const SizedBox(height: 40),
+          20.0.getVerticalSpacer(),
           CustomTextFomField(
             onChanged: (password) {
               // Handle password change
             },
             obscureText: true,
             suffix: SizedBox(
-              height: 10, // Set height consistent with text form field
+              height: 10.h, // Set height consistent with text form field
               child: IconButton(
                 onPressed: () {
                   // Handle password visibility toggle
@@ -39,7 +41,7 @@ class EmailAndPasswordFeilds extends StatelessWidget {
             ),
             lableText: AppStrigns.password,
           ),
-          const SizedBox(height: 40),
+          40.0.getVerticalSpacer(),
           CustomButton(
             onPressed: () {
               // Handle sign in button press

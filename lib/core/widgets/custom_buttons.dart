@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../utils/color_manager.dart';
 
 class CustomButton extends StatelessWidget {
@@ -17,8 +18,8 @@ class CustomButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: SizedBox(
-        width: 350,
-        height: 56,
+        width: 305.w,
+        height: 45.h,
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
             backgroundColor: color ?? ColorManager.kPrimaryColor,
