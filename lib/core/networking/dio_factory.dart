@@ -2,6 +2,8 @@ import 'package:dio/dio.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:shop_app/core/helper/shared_prefrence.dart';
 
+import '../helper/shared_prefrence_keys.dart';
+
 class DioFactory {
   /// private constructor as I don't want to allow creating an instance of this class
   DioFactory._();
