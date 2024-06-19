@@ -1,28 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../utils/color_manager.dart';
 import '../utils/text_styles.dart';
 
-class CustomTextFomField extends StatelessWidget {
-  const CustomTextFomField({
+class CustomTextFormField extends StatelessWidget {
+  const CustomTextFormField({
     super.key,
     required this.lableText,
     this.onChanged,
     this.keyboardType,
-    this.suffix,
+    this.suffixIcon,
     this.obscureText = false,
+    this.controller,
   });
 
   final String lableText;
   final void Function(String)? onChanged;
   final TextInputType? keyboardType;
-  final Widget? suffix;
+  final Widget? suffixIcon;
   final bool obscureText;
-
+  final TextEditingController? controller;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: TextFormField(
+        controller: controller,
         obscureText: obscureText,
         keyboardType: keyboardType,
         validator: (value) {
@@ -35,11 +38,11 @@ class CustomTextFomField extends StatelessWidget {
         onChanged: onChanged,
         style: TextStyle(color: ColorManager.kWhiteColor),
         decoration: InputDecoration(
-          suffixIcon: suffix != null
+          suffixIcon: suffixIcon != null
               ? SizedBox(
-                  height: 48, // Set a fixed height for the suffix widget
-                  width: 48, // Set a fixed width for the suffix widget
-                  child: suffix,
+                  height: 48.h,
+                  width: 48.h,
+                  child: suffixIcon,
                 )
               : null,
           filled: true,

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shop_app/core/helper/extensions.dart';
 import 'package:shop_app/core/utils/app_strings.dart';
 import 'package:shop_app/core/utils/text_styles.dart';
 
@@ -13,19 +15,19 @@ class TextFormFieldBody extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Column(
         children: [
-          const SizedBox(height: 20),
+          20.0.getVerticalSpacer(),
           Text(
-            AppStrigns.wecomeBack,
+            AppStrings.wecomeBack,
             style: CustomTextStyle.soraBoldstyleBold.copyWith(fontSize: 30),
           ),
-          const SizedBox(height: 10),
+          10.0.getVerticalSpacer(),
           Text(
-            AppStrigns.enterYourDetailsBelow,
+            AppStrings.enterYourDetailsBelow,
             style: CustomTextStyle.regular14
-                .copyWith(fontSize: 16, fontWeight: FontWeight.bold),
+                .copyWith(fontSize: 14.sp, fontWeight: FontWeight.bold),
           ),
-          const SizedBox(height: 10),
-          const EmailAndPasswordFeilds()
+          10.0.getVerticalSpacer(),
+          const EmailAndPasswordFields()
         ],
       ),
     );

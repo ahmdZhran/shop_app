@@ -24,7 +24,7 @@ class GetButtons extends StatelessWidget {
           CustomButton(
             onPressed: onPressed,
             text: Text(
-              AppStrigns.getStarted,
+              AppStrings.getStarted,
               style: CustomTextStyle.semiBold16
                   .copyWith(fontWeight: FontWeight.bold),
             ),
@@ -39,7 +39,7 @@ class GetButtons extends StatelessWidget {
               curve: Curves.bounceIn);
         },
         text: Text(
-          AppStrigns.next,
+          AppStrings.next,
           style:
               CustomTextStyle.semiBold16.copyWith(fontWeight: FontWeight.bold),
         ),

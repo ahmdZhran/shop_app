@@ -15,7 +15,7 @@ class AlreadyHaveAccountWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          AppStrigns.alreadyHaveAccount,
+          AppStrings.alreadyHaveAccount,
           style:
               CustomTextStyle.regular14.copyWith(fontWeight: FontWeight.bold),
         ),
@@ -23,7 +23,7 @@ class AlreadyHaveAccountWidget extends StatelessWidget {
         GestureDetector(
           onTap: onTap,
           child: Text(
-            AppStrigns.login,
+            AppStrings.login,
             style:
                 CustomTextStyle.medium14.copyWith(fontWeight: FontWeight.bold),
           ),

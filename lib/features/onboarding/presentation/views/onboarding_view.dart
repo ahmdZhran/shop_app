@@ -22,9 +22,7 @@ class _OnboardingViewState extends State<OnboardingView> {
         children: [
           Column(
             children: [
-              const SizedBox(
-                height: 90,
-              ),
+              90.0.getVerticalSpacer(),
               OnBoardingControllerWidget(
                 onPageChanged: (index) {
                   setState(() {});
@@ -32,9 +30,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                 },
                 controller: _controller,
               ),
-              const SizedBox(
-                height: 20,
-              ),
+              20.0.getVerticalSpacer(),
               GetButtons(
                 controller: _controller,
                 currentIndex: currenIndex,
@@ -46,7 +42,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                   context.pushNamed(Routes.signup);
                 },
               ),
-              const SizedBox(height: 30),
+              30.0.getVerticalSpacer(),
               AlreadyHaveAccountWidget(
                 onTap: () {
                   context.pushNamed(Routes.login);

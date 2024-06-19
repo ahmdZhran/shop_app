@@ -1,51 +1,69 @@
 import 'package:flutter/material.dart';
-
+import 'package:shop_app/core/helper/extensions.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/utils/text_styles.dart';
 import '../../../../core/widgets/custom_buttons.dart';
 import '../../../../core/widgets/custom_text_form_fields.dart';
 
-class EmailAndPasswordFeilds extends StatelessWidget {
-  const EmailAndPasswordFeilds({super.key});
+class EmailAndPasswordFields extends StatefulWidget {
+  const EmailAndPasswordFields({super.key});
 
+  @override
+  State<EmailAndPasswordFields> createState() => _EmailAndPasswordFieldsState();
+}
+
+class _EmailAndPasswordFieldsState extends State<EmailAndPasswordFields> {
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  bool isPasswordShown = true;
   @override
   Widget build(BuildContext context) {
     return Form(
       key: GlobalKey<FormState>(),
       child: Column(
         children: [
-          CustomTextFomField(
+          CustomTextFormField(
+            controller: _emailController,
             onChanged: (email) {
               // Handle email change
             },
-            lableText: AppStrigns.emailAdress,
+            lableText: AppStrings.emailAdress,
           ),
-          const SizedBox(height: 40),
-          CustomTextFomField(
+          20.0.getVerticalSpacer(),
+          CustomTextFormField(
+            controller: _passwordController,
+            obscureText: isPasswordShown,
             onChanged: (password) {
               // Handle password change
             },
-            obscureText: true,
-            suffix: SizedBox(
-              height: 10, // Set height consistent with text form field
-              child: IconButton(
-                onPressed: () {
-                  // Handle password visibility toggle
-                },
-                icon: const Icon(
-                  Icons.visibility_outlined,
-                ),
+            suffixIcon: IconButton(
+              onPressed: () {
+                setState(() {
+                  isPasswordShown = !isPasswordShown;
+                });
+              },
+              icon: Icon(
+                isPasswordShown
+                    ? Icons.visibility_off_outlined
+                    : Icons.visibility_outlined,
               ),
             ),
-            lableText: AppStrigns.password,
+            lableText: AppStrings.password,
           ),
-          const SizedBox(height: 40),
+          40.0.getVerticalSpacer(),
           CustomButton(
             onPressed: () {
               // Handle sign in button press
             },
             text: Text(
-              AppStrigns.login,
+              AppStrings.login,
               style: CustomTextStyle.semiBold16.copyWith(fontSize: 18),
             ),
           ),
