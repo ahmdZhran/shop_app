@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop_app/core/helper/extensions.dart';
+import 'package:shop_app/features/auth/data/models/login_request_body.dart';
 import 'package:shop_app/features/auth/logic/cubit/login_cubit.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/utils/text_styles.dart';
@@ -15,7 +16,6 @@ class EmailAndPasswordFields extends StatefulWidget {
 }
 
 class _EmailAndPasswordFieldsState extends State<EmailAndPasswordFields> {
-  @override
   late TextEditingController passwordController;
 
   bool isPasswordShown = true;
@@ -29,11 +29,11 @@ class _EmailAndPasswordFieldsState extends State<EmailAndPasswordFields> {
   @override
   Widget build(BuildContext context) {
     return Form(
-      key: GlobalKey<FormState>(),
+      key: context.read<LoginCubit>().formKey,
       child: Column(
         children: [
           CustomTextFormField(
-            controller: _emailController,
+            controller: passwordController,
             onChanged: (email) {
               // Handle email change
             },
@@ -63,7 +63,7 @@ class _EmailAndPasswordFieldsState extends State<EmailAndPasswordFields> {
           40.0.getVerticalSpacer(),
           CustomButton(
             onPressed: () {
-              // Handle sign in button press
+              validateThenDoLogin();
             },
             text: Text(
               AppStrings.login,
@@ -73,5 +73,13 @@ class _EmailAndPasswordFieldsState extends State<EmailAndPasswordFields> {
         ],
       ),
     );
+  }
+
+  void validateThenDoLogin() {
+    if (context.read<LoginCubit>().formKey.currentState!.validate()) {
+      context.read<LoginCubit>().emitLoginStates(LoginRequestBody(
+          email: context.read<LoginCubit>().emailController.text,
+          password: context.read<LoginCubit>().passwordController.text));
+    }
   }
 }
