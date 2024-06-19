@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shop_app/core/helper/extensions.dart';
 import 'package:shop_app/features/auth/presentation/widgets/is_has_an_account.dart';
 
+import 'login_bloc_listner.dart';
 import 'text_form_field_body.dart';
 
 class LonginBodyWidget extends StatelessWidget {
@@ -24,6 +25,7 @@ class LonginBodyWidget extends StatelessWidget {
           const TextFormFieldBody(),
           30.0.getVerticalSpacer(),
           const IsHasAnAccount(),
+          const LoginBlocListner()
         ],
       ),
     );
