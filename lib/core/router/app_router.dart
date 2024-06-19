@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shop_app/core/di/dependency_injection.dart';
-import 'package:shop_app/core/router/routes.dart';
-import 'package:shop_app/features/auth/logic/cubit/login_cubit.dart';
-import 'package:shop_app/features/home/presentation/views/home_view.dart';
+import '../di/dependency_injection.dart';
+import 'routes.dart';
+import '../../features/auth/logic/cubit/login_cubit.dart';
+import '../../features/home/presentation/views/home_view.dart';
 import '../../features/auth/presentation/views/login_view.dart';
 import '../../features/onboarding/presentation/views/onboarding_view.dart';
 

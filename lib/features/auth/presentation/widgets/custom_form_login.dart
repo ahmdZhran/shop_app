@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shop_app/core/helper/extensions.dart';
-import 'package:shop_app/core/utils/app_strings.dart';
-import 'package:shop_app/core/widgets/custom_text_form_fields.dart';
-import 'package:shop_app/features/auth/data/models/login_request_body.dart';
-import 'package:shop_app/features/auth/logic/cubit/login_cubit.dart';
+import '../../../../core/helper/extensions.dart';
+import '../../../../core/utils/app_strings.dart';
+import '../../../../core/widgets/custom_text_form_fields.dart';
+import '../../data/models/login_request_body.dart';
+import '../../logic/cubit/login_cubit.dart';
 
 import '../../../../core/utils/text_styles.dart';
 import '../../../../core/widgets/custom_buttons.dart';

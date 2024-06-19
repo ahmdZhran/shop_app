@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/core/helper/extensions.dart';
+import '../../../../core/helper/extensions.dart';
 import '../../../../core/router/routes.dart';
 import '../widgets/already_have_an_account.dart';
 import '../widgets/get_buttons.dart';

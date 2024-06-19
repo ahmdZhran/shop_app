@@ -1,6 +1,6 @@
-import 'package:shop_app/core/networking/api_result.dart';
-import 'package:shop_app/core/networking/api_services.dart';
-import 'package:shop_app/features/auth/data/models/login_response.dart';
+import '../../../../core/networking/api_result.dart';
+import '../../../../core/networking/api_services.dart';
+import '../models/login_response.dart';
 
 import '../models/login_request_body.dart';
 

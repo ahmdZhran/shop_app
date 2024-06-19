@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/core/utils/color_manager.dart';
+import '../../../../core/utils/color_manager.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../data/model/onboarding_data.dart';

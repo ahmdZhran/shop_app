@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
-import 'package:shop_app/features/auth/data/models/login_request_body.dart';
-import 'package:shop_app/features/auth/data/repo/login_repo.dart';
-import 'package:shop_app/features/auth/logic/cubit/login_state.dart';
+import '../../data/models/login_request_body.dart';
+import '../../data/repo/login_repo.dart';
+import 'login_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LoginCubit extends Cubit<LoginState> {

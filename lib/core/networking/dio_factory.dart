@@ -1,8 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
-import 'package:shop_app/core/helper/shared_prefrence.dart';
-import 'package:shop_app/core/helper/shared_prefrence_keys.dart';
-
+import '../helper/shared_prefrence.dart';
+import '../helper/shared_prefrence_keys.dart';
 import 'api_interceptor.dart';
 
 class DioFactory {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shop_app/core/router/routes.dart';
-import 'package:shop_app/core/utils/color_manager.dart';
+import '../router/routes.dart';
+import '../utils/color_manager.dart';
 
 import '../router/app_router.dart';
 

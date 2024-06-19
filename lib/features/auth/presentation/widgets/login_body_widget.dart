@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/core/helper/extensions.dart';
-import 'package:shop_app/features/auth/presentation/widgets/is_has_an_account.dart';
+import '../../../../core/helper/extensions.dart';
+import 'is_has_an_account.dart';
 
 import 'text_form_field_body.dart';
 

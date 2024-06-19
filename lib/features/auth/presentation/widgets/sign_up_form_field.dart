@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/core/utils/app_strings.dart';
-import 'package:shop_app/core/widgets/custom_text_form_fields.dart';
-import 'package:shop_app/features/auth/presentation/views/login_view.dart';
-import 'package:shop_app/features/auth/presentation/widgets/is_has_an_account.dart';
+import '../../../../core/utils/app_strings.dart';
+import '../../../../core/widgets/custom_text_form_fields.dart';
+import 'is_has_an_account.dart';
 
 import '../../../../core/utils/text_styles.dart';
 import '../../../../core/widgets/custom_buttons.dart';

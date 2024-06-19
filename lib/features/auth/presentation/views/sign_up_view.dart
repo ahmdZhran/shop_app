@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/core/utils/app_strings.dart';
-import 'package:shop_app/features/auth/presentation/widgets/sign_up_body_widget.dart';
+import '../../../../core/utils/app_strings.dart';
+import '../widgets/sign_up_body_widget.dart';
 
 import '../widgets/head_of_sign_up.dart';
 

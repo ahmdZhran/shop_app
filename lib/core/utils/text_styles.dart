@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/core/utils/color_manager.dart';
+import 'color_manager.dart';
 
 abstract class CustomTextStyle {
   static final soraBoldstyleBold = TextStyle(
