@@ -7,6 +7,7 @@ import 'package:shop_app/core/utils/app_strings.dart';
 import 'package:shop_app/core/widgets/custom_text_form_fields.dart';
 import 'package:shop_app/features/auth/data/models/login_request_body.dart';
 import 'package:shop_app/features/auth/logic/cubit/login_cubit.dart';
+import '../../../../core/router/routes.dart';
 import '../../../../core/utils/text_styles.dart';
 import '../../../../core/widgets/custom_buttons.dart';
 import '../../logic/cubit/login_state.dart';
@@ -43,12 +44,12 @@ class _EmailAndPasswordFieldsState extends State<EmailAndPasswordFields> {
               ),
             );
           },
-          // success: (loginResponse) {
-          //   context.pop();
-          //   context.pushNamed(Routes.home);
-          // },
+          success: (loginResponse) {
+            context.pop();
+            context.pushNamed(Routes.home);
+          },
           error: (error) {
-            print("Login failed: $error");
+            print("Login failed: $error ..................................");
             context.pop();
             ScaffoldMessenger.maybeOf(context)!.showSnackBar(SnackBar(
               content: Text(error),
