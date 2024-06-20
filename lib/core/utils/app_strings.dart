@@ -3,7 +3,7 @@ abstract class AppStrings {
       // Strings for onboarding
       next = 'Next',
       alreadyHaveAccount = 'Already have account? ',
-      login = 'Log In',
+      login = 'LogIn',
       getStarted = 'Get Started',
 
       // Strings for signin and regestration views
