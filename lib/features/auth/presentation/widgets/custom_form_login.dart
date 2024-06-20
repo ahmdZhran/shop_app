@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shop_app/core/utils/color_manager.dart';
 import '../../../../core/helper/extensions.dart';
-import '../../../../core/utils/app_strings.dart';
-import '../../../../core/widgets/custom_text_form_fields.dart';
-import '../../data/models/login_request_body.dart';
-import '../../logic/cubit/login_cubit.dart';
-
+import 'package:shop_app/core/utils/app_strings.dart';
+import 'package:shop_app/core/widgets/custom_text_form_fields.dart';
+import 'package:shop_app/features/auth/data/models/login_request_body.dart';
+import 'package:shop_app/features/auth/logic/cubit/login_cubit.dart';
 import '../../../../core/utils/text_styles.dart';
 import '../../../../core/widgets/custom_buttons.dart';
+import '../../logic/cubit/login_state.dart';
 
 class EmailAndPasswordFields extends StatefulWidget {
   const EmailAndPasswordFields({super.key});
@@ -29,44 +30,72 @@ class _EmailAndPasswordFieldsState extends State<EmailAndPasswordFields> {
 
   @override
   Widget build(BuildContext context) {
-    return Form(
-      key: context.read<LoginCubit>().formKey,
-      child: Column(
-        children: [
-          20.0.getVerticalSpacer(),
-          CustomTextFormField(
-            controller: context.read<LoginCubit>().emailController,
-            lableText: AppStrings.emailAdress,
-          ),
-          20.0.getVerticalSpacer(),
-          CustomTextFormField(
-            controller: context.read<LoginCubit>().passwordController,
-            obscureText: isPasswordShown,
-            suffixIcon: IconButton(
+    return BlocListener<LoginCubit, LoginState>(
+      listener: (context, state) {
+        state.whenOrNull(
+          loading: () {
+            showDialog(
+              context: context,
+              builder: (context) => Center(
+                child: CircularProgressIndicator(
+                  color: ColorManager.kPrimaryColor,
+                ),
+              ),
+            );
+          },
+          // success: (loginResponse) {
+          //   context.pop();
+          //   context.pushNamed(Routes.home);
+          // },
+          error: (error) {
+            print("Login failed: $error");
+            context.pop();
+            ScaffoldMessenger.maybeOf(context)!.showSnackBar(SnackBar(
+              content: Text(error),
+              backgroundColor: Colors.red,
+            ));
+          },
+        );
+      },
+      child: Form(
+        key: context.read<LoginCubit>().formKey,
+        child: Column(
+          children: [
+            20.0.getVerticalSpacer(),
+            CustomTextFormField(
+              controller: context.read<LoginCubit>().emailController,
+              lableText: AppStrings.emailAdress,
+            ),
+            20.0.getVerticalSpacer(),
+            CustomTextFormField(
+              controller: context.read<LoginCubit>().passwordController,
+              obscureText: isPasswordShown,
+              suffixIcon: IconButton(
+                onPressed: () {
+                  setState(() {
+                    isPasswordShown = !isPasswordShown;
+                  });
+                },
+                icon: Icon(
+                  isPasswordShown
+                      ? Icons.visibility_off_outlined
+                      : Icons.visibility_outlined,
+                ),
+              ),
+              lableText: AppStrings.password,
+            ),
+            40.0.getVerticalSpacer(),
+            CustomButton(
               onPressed: () {
-                setState(() {
-                  isPasswordShown = !isPasswordShown;
-                });
+                valdiateThenDoLogin(context);
               },
-              icon: Icon(
-                isPasswordShown
-                    ? Icons.visibility_off_outlined
-                    : Icons.visibility_outlined,
+              text: Text(
+                AppStrings.login,
+                style: CustomTextStyle.semiBold16.copyWith(fontSize: 15.sp),
               ),
             ),
-            lableText: AppStrings.password,
-          ),
-          40.0.getVerticalSpacer(),
-          CustomButton(
-            onPressed: () {
-              valdiateThenDoLogin(context);
-            },
-            text: Text(
-              AppStrings.login,
-              style: CustomTextStyle.semiBold16.copyWith(fontSize: 15.sp),
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
