@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/core/utils/color_manager.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/widgets/custom_text_form_fields.dart';
 import '../../../login/presentation/widgets/is_has_an_account.dart';
 
 import '../../../../core/utils/text_styles.dart';
 import '../../../../core/widgets/custom_buttons.dart';
+import 'pick_image_widget.dart';
 
 class SignUpFormFiedls extends StatelessWidget {
   const SignUpFormFiedls({super.key});
@@ -19,14 +19,7 @@ class SignUpFormFiedls extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 16),
-            CircleAvatar(
-                radius: 50,
-                backgroundColor: ColorManager.kPrimaryColor,
-                child: Image.asset(
-                  'assets/images/profile.png',
-                  width: 100,
-                  height: 100,
-                )),
+            const PickImageWidget(),
             const SizedBox(height: 16),
             CustomTextFormField(
               onChanged: (name) {
@@ -93,3 +86,4 @@ class SignUpFormFiedls extends StatelessWidget {
     );
   }
 }
+
