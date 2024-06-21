@@ -5,7 +5,6 @@ import 'package:shop_app/core/utils/color_manager.dart';
 import '../../../../core/helper/extensions.dart';
 import 'package:shop_app/core/utils/app_strings.dart';
 import 'package:shop_app/core/widgets/custom_text_form_fields.dart';
-import 'package:shop_app/features/login/data/models/login_request_body.dart';
 import 'package:shop_app/features/login/logic/cubit/login_cubit.dart';
 import '../../../../core/router/routes.dart';
 import '../../../../core/utils/text_styles.dart';
@@ -103,11 +102,7 @@ class _EmailAndPasswordFieldsState extends State<EmailAndPasswordFields> {
 
   void valdiateThenDoLogin(BuildContext context) {
     if (context.read<LoginCubit>().formKey.currentState!.validate()) {
-      context.read<LoginCubit>().emitLoginStates(
-            LoginRequestBody(
-                email: context.read<LoginCubit>().emailController.text,
-                password: context.read<LoginCubit>().passwordController.text),
-          );
+      context.read<LoginCubit>().emitLoginStates();
     }
   }
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../../core/helper/extensions.dart';
 import '../../../../core/router/routes.dart';
-import '../widgets/already_have_an_account.dart';
+import '../../../../core/widgets/already_have_an_account.dart';
 import '../widgets/get_buttons.dart';
 import '../widgets/onboard_controller.dart';
 
@@ -43,11 +43,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                 },
               ),
               30.0.getVerticalSpacer(),
-              AlreadyHaveAccountWidget(
-                onTap: () {
-                  context.pushNamed(Routes.login);
-                },
-              )
+              const AlreadyHaveAccountWidget()
             ],
           ),
         ],

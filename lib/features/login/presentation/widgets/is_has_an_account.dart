@@ -6,8 +6,8 @@ import '../../../../core/utils/app_strings.dart';
 import '../../../../core/utils/text_styles.dart';
 import '../../../../core/utils/color_manager.dart';
 
-class IsHasAnAccount extends StatelessWidget {
-  const IsHasAnAccount({super.key});
+class DontHaveAccountWidget extends StatelessWidget {
+  const DontHaveAccountWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
