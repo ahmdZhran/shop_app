@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/helper/extensions.dart';
+import '../../../../core/router/routes.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/utils/text_styles.dart';
 import '../../../../core/utils/color_manager.dart';
@@ -21,10 +22,15 @@ class IsHasAnAccount extends StatelessWidget {
               fontSize: 12.sp),
         ),
         5.0.getHorizontalSpacer(),
-        Text(
-          AppStrings.signUp,
-          style: CustomTextStyle.medium14
-              .copyWith(fontWeight: FontWeight.bold, fontSize: 12.sp),
+        GestureDetector(
+          onTap: () {
+            context.pushNamed(Routes.signup);
+          },
+          child: Text(
+            AppStrings.signUp,
+            style: CustomTextStyle.medium14
+                .copyWith(fontWeight: FontWeight.bold, fontSize: 12.sp),
+          ),
         ),
       ],
     );
