@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shop_app/features/sign_up/logic/cubit/signup_cubit.dart';
 import '../../features/sign_up/presentation/views/sign_up_view.dart';
 import '../di/dependency_injection.dart';
 import 'routes.dart';
@@ -20,7 +21,11 @@ class AppRouter {
                   child: const LoginView(),
                 ));
       case Routes.signup:
-        return MaterialPageRoute(builder: (_) => const SignUpView());
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                  create: (context) => SignupCubit(),
+                  child: const SignUpView(),
+                ));
       case Routes.home:
         return MaterialPageRoute(builder: (_) => const HomeView());
 

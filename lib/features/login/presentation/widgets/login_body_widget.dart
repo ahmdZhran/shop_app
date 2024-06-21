@@ -22,7 +22,7 @@ class LonginBodyWidget extends StatelessWidget {
         children: [
           const TextFormFieldBody(),
           30.0.getVerticalSpacer(),
-          const IsHasAnAccount(),
+          const DontHaveAccountWidget(),
         ],
       ),
     );

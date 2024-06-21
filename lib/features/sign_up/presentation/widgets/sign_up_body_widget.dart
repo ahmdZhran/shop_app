@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'sign_up_form_field.dart';
+import 'sign_up_form_fields.dart';
 
 class SignUpBodyWidget extends StatelessWidget {
   const SignUpBodyWidget({super.key});
