@@ -25,6 +25,7 @@ class CustomTextFormField extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: TextFormField(
+        
         controller: controller,
         obscureText: obscureText,
         keyboardType: keyboardType,
@@ -38,6 +39,7 @@ class CustomTextFormField extends StatelessWidget {
         onChanged: onChanged,
         style: TextStyle(color: ColorManager.kWhiteColor),
         decoration: InputDecoration(
+          
             suffixIcon: suffixIcon != null
                 ? SizedBox(
                     height: 48.h,

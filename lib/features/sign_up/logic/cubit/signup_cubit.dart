@@ -10,7 +10,7 @@ class SignupCubit extends Cubit<SignupState> {
   TextEditingController emailController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-
+  final formKey = GlobalKey<FormState>();
   XFile? pickPrifleImage;
 
   uploadProfilePick(XFile image) {
