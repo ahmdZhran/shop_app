@@ -19,7 +19,7 @@ class SignUpFormFiedls extends StatefulWidget {
 class _SignUpFormFiedlsState extends State<SignUpFormFiedls> {
   bool isPasswordShown = true;
   late TextEditingController passworController;
-
+  
   @override
   void initState() {
     passworController = context.read<SignupCubit>().passwordController;
