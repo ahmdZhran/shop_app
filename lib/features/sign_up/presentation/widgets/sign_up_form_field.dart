@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/widgets/custom_text_form_fields.dart';
-import 'is_has_an_account.dart';
+import '../../../login/presentation/widgets/is_has_an_account.dart';
 
 import '../../../../core/utils/text_styles.dart';
 import '../../../../core/widgets/custom_buttons.dart';
@@ -19,7 +19,7 @@ class SignUpFormFiedls extends StatelessWidget {
           children: [
             const SizedBox(height: 16),
             const CircleAvatar(
-              radius: 30,
+              radius: 40,
               backgroundColor: Colors.grey,
               child: Icon(Icons.person),
             ),
