@@ -5,7 +5,6 @@ import 'package:shop_app/core/utils/color_manager.dart';
 import '../../../../core/helper/extensions.dart';
 import 'package:shop_app/core/utils/app_strings.dart';
 import 'package:shop_app/core/widgets/custom_text_form_fields.dart';
-import 'package:shop_app/features/login/data/models/login_request_body.dart';
 import 'package:shop_app/features/login/logic/cubit/login_cubit.dart';
 import '../../../../core/router/routes.dart';
 import '../../../../core/utils/text_styles.dart';
