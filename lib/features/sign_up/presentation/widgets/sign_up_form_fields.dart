@@ -9,9 +9,14 @@ import '../../../../core/widgets/custom_buttons.dart';
 import '../../logic/cubit/signup_state.dart';
 import 'pick_image_widget.dart';
 
-class SignUpFormFiedls extends StatelessWidget {
+class SignUpFormFiedls extends StatefulWidget {
   const SignUpFormFiedls({super.key});
 
+  @override
+  State<SignUpFormFiedls> createState() => _SignUpFormFiedlsState();
+}
+
+class _SignUpFormFiedlsState extends State<SignUpFormFiedls> {
   @override
   Widget build(BuildContext context) {
     return BlocListener<SignupCubit, SignupState>(
