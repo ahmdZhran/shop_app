@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shop_app/core/widgets/already_have_an_account.dart';
 import 'package:shop_app/features/sign_up/logic/cubit/signup_cubit.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/widgets/custom_text_form_fields.dart';
-import '../../../login/presentation/widgets/is_has_an_account.dart';
-
 import '../../../../core/utils/text_styles.dart';
 import '../../../../core/widgets/custom_buttons.dart';
 import '../../logic/cubit/signup_state.dart';
@@ -66,17 +65,7 @@ class SignUpFormFiedls extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-              const IsHasAnAccount(
-                  // textOne: AppStrings.alreadyHaveAccount,
-                  // textTwo: AppStrings.singIn,
-                  // onTap: () {
-                  //   Navigator.push(context, MaterialPageRoute(
-                  //     builder: (context) {
-                  //       return const LoginView();
-                  //     },
-                  //   ));
-                  // },
-                  )
+              const AlreadyHaveAccountWidget()
             ],
           ),
         ),

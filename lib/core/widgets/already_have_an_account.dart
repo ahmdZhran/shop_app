@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/core/helper/extensions.dart';
+import 'package:shop_app/core/router/routes.dart';
 
-import '../../../../core/utils/app_strings.dart';
-import '../../../../core/utils/text_styles.dart';
+import '../utils/app_strings.dart';
+import '../utils/text_styles.dart';
 
 class AlreadyHaveAccountWidget extends StatelessWidget {
   const AlreadyHaveAccountWidget({
     super.key,
-    required this.onTap,
   });
-  final void Function() onTap;
+  
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -21,7 +22,9 @@ class AlreadyHaveAccountWidget extends StatelessWidget {
         ),
         const SizedBox(width: 3),
         GestureDetector(
-          onTap: onTap,
+          onTap: () {
+            context.pushNamed(Routes.login);
+          },
           child: Text(
             AppStrings.login,
             style:
