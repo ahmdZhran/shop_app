@@ -15,5 +15,6 @@ class SignupCubit extends Cubit<SignupState> {
 
   uploadProfilePick(XFile image) {
     pickPrifleImage = image;
+    emit(SignupState.uploadProfilePicture(image));
   }
 }
