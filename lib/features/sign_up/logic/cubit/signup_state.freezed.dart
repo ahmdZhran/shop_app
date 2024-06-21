@@ -592,10 +592,10 @@ class __$$UploadProfilePictureImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? image = freezed,
+    Object? image = null,
   }) {
     return _then(_$UploadProfilePictureImpl(
-      freezed == image
+      null == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as XFile,
@@ -621,12 +621,11 @@ class _$UploadProfilePictureImpl implements UploadProfilePicture {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UploadProfilePictureImpl &&
-            const DeepCollectionEquality().equals(other.image, image));
+            (identical(other.image, image) || other.image == image));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(image));
+  int get hashCode => Object.hash(runtimeType, image);
 
   @JsonKey(ignore: true)
   @override
