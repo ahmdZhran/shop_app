@@ -17,6 +17,15 @@ class SignUpFormFiedls extends StatefulWidget {
 }
 
 class _SignUpFormFiedlsState extends State<SignUpFormFiedls> {
+  bool isPasswordShown = true;
+  late TextEditingController passworController;
+
+  @override
+  void initState() {
+    passworController = context.read<SignupCubit>().passwordController;
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocListener<SignupCubit, SignupState>(
@@ -50,12 +59,18 @@ class _SignUpFormFiedlsState extends State<SignUpFormFiedls> {
               const SizedBox(height: 16),
               CustomTextFormField(
                 controller: context.read<SignupCubit>().passwordController,
-                obscureText: true,
+                obscureText: isPasswordShown,
                 suffixIcon: IconButton(
-                  icon: const Icon(Icons.visibility_outlined),
                   onPressed: () {
-                    // Handle password visibility toggle
+                    setState(() {
+                      isPasswordShown = !isPasswordShown;
+                    });
                   },
+                  icon: Icon(
+                    isPasswordShown
+                        ? Icons.visibility_off_outlined
+                        : Icons.visibility_outlined,
+                  ),
                 ),
                 lableText: AppStrings.password,
               ),
