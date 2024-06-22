@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:shop_app/features/sign_up/data/repo/sign_up_rep.dart';
+import 'package:shop_app/features/sign_up/data/repo/sign_up_repo.dart';
 import 'package:shop_app/features/sign_up/logic/cubit/signup_state.dart';
 
 import '../../data/models/sign_up_request_body.dart';
@@ -11,27 +11,32 @@ class SignupCubit extends Cubit<SignupState> {
 
   final SignUpRepo _signupRepo;
 
-  TextEditingController fullnameController = TextEditingController();
+  TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   final formKey = GlobalKey<FormState>();
 
-  XFile? pickPrifleImage;
+  XFile? pickProfileImage;
 
-  uploadProfilePick(XFile image) {
-    pickPrifleImage = image;
+  setProfileImage(XFile image) {
+    pickProfileImage = image;
     emit(SignupState.uploadProfilePicture(image));
   }
 
-  emitSignupStates() async {
+  Future<void> emitSignupStates() async {
+    if (pickProfileImage == null) {
+      emit(const SignupState.error(error: 'Profile image is required'));
+      return;
+    }
+
     emit(const SignupState.signuploading());
     final response = await _signupRepo.signup(SignUpRequestBody(
-      name: fullnameController.text,
+      name: nameController.text,
       email: emailController.text,
       phone: phoneController.text,
       password: passwordController.text,
-      image: await uploadProfilePick(pickPrifleImage!),
+      image: pickProfileImage!.toString(),
     ));
 
     response.when(success: (signUpResponse) {

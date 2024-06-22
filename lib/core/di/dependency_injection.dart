@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
-import 'package:shop_app/features/sign_up/data/repo/sign_up_rep.dart';
+import 'package:shop_app/features/sign_up/data/repo/sign_up_repo.dart';
 import 'package:shop_app/features/sign_up/logic/cubit/signup_cubit.dart';
 import '../networking/api_services.dart';
 import '../networking/dio_factory.dart';
