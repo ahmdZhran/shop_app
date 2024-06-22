@@ -31,7 +31,13 @@ class SignupCubit extends Cubit<SignupState> {
       email: emailController.text,
       phone: phoneController.text,
       password: passwordController.text,
-      // image: pickPrifleImage?.path
+      image: await uploadProfilePick(pickPrifleImage!),
     ));
+
+    response.when(success: (signUpResponse) {
+      emit(SignupState.signupSuccess(signUpResponse));
+    }, failure: (error) {
+      emit(SignupState.error(error: error.apiErrorModel.message ?? ''));
+    });
   }
 }
