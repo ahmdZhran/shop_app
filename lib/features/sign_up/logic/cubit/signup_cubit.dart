@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:shop_app/features/sign_up/data/repo/sign_up_rep.dart';
+import 'package:shop_app/features/sign_up/data/repo/sign_up_repo.dart';
 import 'package:shop_app/features/sign_up/logic/cubit/signup_state.dart';
 
 import '../../data/models/sign_up_request_body.dart';
