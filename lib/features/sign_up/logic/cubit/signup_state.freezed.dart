@@ -15,75 +15,76 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$SignupState {
+mixin _$SignupState<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function() success,
-    required TResult Function() failure,
+    required TResult Function() signuploading,
+    required TResult Function(T data) signupSuccess,
+    required TResult Function(String error) error,
     required TResult Function(XFile image) uploadProfilePicture,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function()? success,
-    TResult? Function()? failure,
+    TResult? Function()? signuploading,
+    TResult? Function(T data)? signupSuccess,
+    TResult? Function(String error)? error,
     TResult? Function(XFile image)? uploadProfilePicture,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function()? failure,
+    TResult Function()? signuploading,
+    TResult Function(T data)? signupSuccess,
+    TResult Function(String error)? error,
     TResult Function(XFile image)? uploadProfilePicture,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(Loading value) loading,
-    required TResult Function(Success value) success,
-    required TResult Function(Failure value) failure,
-    required TResult Function(UploadProfilePicture value) uploadProfilePicture,
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(Loading<T> value) signuploading,
+    required TResult Function(Success<T> value) signupSuccess,
+    required TResult Function(Error<T> value) error,
+    required TResult Function(UploadProfilePicture<T> value)
+        uploadProfilePicture,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(Loading value)? loading,
-    TResult? Function(Success value)? success,
-    TResult? Function(Failure value)? failure,
-    TResult? Function(UploadProfilePicture value)? uploadProfilePicture,
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(Loading<T> value)? signuploading,
+    TResult? Function(Success<T> value)? signupSuccess,
+    TResult? Function(Error<T> value)? error,
+    TResult? Function(UploadProfilePicture<T> value)? uploadProfilePicture,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(Loading value)? loading,
-    TResult Function(Success value)? success,
-    TResult Function(Failure value)? failure,
-    TResult Function(UploadProfilePicture value)? uploadProfilePicture,
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(Loading<T> value)? signuploading,
+    TResult Function(Success<T> value)? signupSuccess,
+    TResult Function(Error<T> value)? error,
+    TResult Function(UploadProfilePicture<T> value)? uploadProfilePicture,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SignupStateCopyWith<$Res> {
+abstract class $SignupStateCopyWith<T, $Res> {
   factory $SignupStateCopyWith(
-          SignupState value, $Res Function(SignupState) then) =
-      _$SignupStateCopyWithImpl<$Res, SignupState>;
+          SignupState<T> value, $Res Function(SignupState<T>) then) =
+      _$SignupStateCopyWithImpl<T, $Res, SignupState<T>>;
 }
 
 /// @nodoc
-class _$SignupStateCopyWithImpl<$Res, $Val extends SignupState>
-    implements $SignupStateCopyWith<$Res> {
+class _$SignupStateCopyWithImpl<T, $Res, $Val extends SignupState<T>>
+    implements $SignupStateCopyWith<T, $Res> {
   _$SignupStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -93,35 +94,35 @@ class _$SignupStateCopyWithImpl<$Res, $Val extends SignupState>
 }
 
 /// @nodoc
-abstract class _$$InitialImplCopyWith<$Res> {
+abstract class _$$InitialImplCopyWith<T, $Res> {
   factory _$$InitialImplCopyWith(
-          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
-      __$$InitialImplCopyWithImpl<$Res>;
+          _$InitialImpl<T> value, $Res Function(_$InitialImpl<T>) then) =
+      __$$InitialImplCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class __$$InitialImplCopyWithImpl<$Res>
-    extends _$SignupStateCopyWithImpl<$Res, _$InitialImpl>
-    implements _$$InitialImplCopyWith<$Res> {
+class __$$InitialImplCopyWithImpl<T, $Res>
+    extends _$SignupStateCopyWithImpl<T, $Res, _$InitialImpl<T>>
+    implements _$$InitialImplCopyWith<T, $Res> {
   __$$InitialImplCopyWithImpl(
-      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
+      _$InitialImpl<T> _value, $Res Function(_$InitialImpl<T>) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$InitialImpl implements _Initial {
+class _$InitialImpl<T> implements _Initial<T> {
   const _$InitialImpl();
 
   @override
   String toString() {
-    return 'SignupState.initial()';
+    return 'SignupState<$T>.initial()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitialImpl);
+        (other.runtimeType == runtimeType && other is _$InitialImpl<T>);
   }
 
   @override
@@ -131,9 +132,9 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function() success,
-    required TResult Function() failure,
+    required TResult Function() signuploading,
+    required TResult Function(T data) signupSuccess,
+    required TResult Function(String error) error,
     required TResult Function(XFile image) uploadProfilePicture,
   }) {
     return initial();
@@ -143,9 +144,9 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function()? success,
-    TResult? Function()? failure,
+    TResult? Function()? signuploading,
+    TResult? Function(T data)? signupSuccess,
+    TResult? Function(String error)? error,
     TResult? Function(XFile image)? uploadProfilePicture,
   }) {
     return initial?.call();
@@ -155,9 +156,9 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function()? failure,
+    TResult Function()? signuploading,
+    TResult Function(T data)? signupSuccess,
+    TResult Function(String error)? error,
     TResult Function(XFile image)? uploadProfilePicture,
     required TResult orElse(),
   }) {
@@ -170,11 +171,12 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(Loading value) loading,
-    required TResult Function(Success value) success,
-    required TResult Function(Failure value) failure,
-    required TResult Function(UploadProfilePicture value) uploadProfilePicture,
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(Loading<T> value) signuploading,
+    required TResult Function(Success<T> value) signupSuccess,
+    required TResult Function(Error<T> value) error,
+    required TResult Function(UploadProfilePicture<T> value)
+        uploadProfilePicture,
   }) {
     return initial(this);
   }
@@ -182,11 +184,11 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(Loading value)? loading,
-    TResult? Function(Success value)? success,
-    TResult? Function(Failure value)? failure,
-    TResult? Function(UploadProfilePicture value)? uploadProfilePicture,
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(Loading<T> value)? signuploading,
+    TResult? Function(Success<T> value)? signupSuccess,
+    TResult? Function(Error<T> value)? error,
+    TResult? Function(UploadProfilePicture<T> value)? uploadProfilePicture,
   }) {
     return initial?.call(this);
   }
@@ -194,11 +196,11 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(Loading value)? loading,
-    TResult Function(Success value)? success,
-    TResult Function(Failure value)? failure,
-    TResult Function(UploadProfilePicture value)? uploadProfilePicture,
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(Loading<T> value)? signuploading,
+    TResult Function(Success<T> value)? signupSuccess,
+    TResult Function(Error<T> value)? error,
+    TResult Function(UploadProfilePicture<T> value)? uploadProfilePicture,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -208,40 +210,40 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements SignupState {
-  const factory _Initial() = _$InitialImpl;
+abstract class _Initial<T> implements SignupState<T> {
+  const factory _Initial() = _$InitialImpl<T>;
 }
 
 /// @nodoc
-abstract class _$$LoadingImplCopyWith<$Res> {
+abstract class _$$LoadingImplCopyWith<T, $Res> {
   factory _$$LoadingImplCopyWith(
-          _$LoadingImpl value, $Res Function(_$LoadingImpl) then) =
-      __$$LoadingImplCopyWithImpl<$Res>;
+          _$LoadingImpl<T> value, $Res Function(_$LoadingImpl<T>) then) =
+      __$$LoadingImplCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$SignupStateCopyWithImpl<$Res, _$LoadingImpl>
-    implements _$$LoadingImplCopyWith<$Res> {
+class __$$LoadingImplCopyWithImpl<T, $Res>
+    extends _$SignupStateCopyWithImpl<T, $Res, _$LoadingImpl<T>>
+    implements _$$LoadingImplCopyWith<T, $Res> {
   __$$LoadingImplCopyWithImpl(
-      _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
+      _$LoadingImpl<T> _value, $Res Function(_$LoadingImpl<T>) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$LoadingImpl implements Loading {
+class _$LoadingImpl<T> implements Loading<T> {
   const _$LoadingImpl();
 
   @override
   String toString() {
-    return 'SignupState.loading()';
+    return 'SignupState<$T>.signuploading()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoadingImpl);
+        (other.runtimeType == runtimeType && other is _$LoadingImpl<T>);
   }
 
   @override
@@ -251,38 +253,38 @@ class _$LoadingImpl implements Loading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function() success,
-    required TResult Function() failure,
+    required TResult Function() signuploading,
+    required TResult Function(T data) signupSuccess,
+    required TResult Function(String error) error,
     required TResult Function(XFile image) uploadProfilePicture,
   }) {
-    return loading();
+    return signuploading();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function()? success,
-    TResult? Function()? failure,
+    TResult? Function()? signuploading,
+    TResult? Function(T data)? signupSuccess,
+    TResult? Function(String error)? error,
     TResult? Function(XFile image)? uploadProfilePicture,
   }) {
-    return loading?.call();
+    return signuploading?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function()? failure,
+    TResult Function()? signuploading,
+    TResult Function(T data)? signupSuccess,
+    TResult Function(String error)? error,
     TResult Function(XFile image)? uploadProfilePicture,
     required TResult orElse(),
   }) {
-    if (loading != null) {
-      return loading();
+    if (signuploading != null) {
+      return signuploading();
     }
     return orElse();
   }
@@ -290,119 +292,147 @@ class _$LoadingImpl implements Loading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(Loading value) loading,
-    required TResult Function(Success value) success,
-    required TResult Function(Failure value) failure,
-    required TResult Function(UploadProfilePicture value) uploadProfilePicture,
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(Loading<T> value) signuploading,
+    required TResult Function(Success<T> value) signupSuccess,
+    required TResult Function(Error<T> value) error,
+    required TResult Function(UploadProfilePicture<T> value)
+        uploadProfilePicture,
   }) {
-    return loading(this);
+    return signuploading(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(Loading value)? loading,
-    TResult? Function(Success value)? success,
-    TResult? Function(Failure value)? failure,
-    TResult? Function(UploadProfilePicture value)? uploadProfilePicture,
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(Loading<T> value)? signuploading,
+    TResult? Function(Success<T> value)? signupSuccess,
+    TResult? Function(Error<T> value)? error,
+    TResult? Function(UploadProfilePicture<T> value)? uploadProfilePicture,
   }) {
-    return loading?.call(this);
+    return signuploading?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(Loading value)? loading,
-    TResult Function(Success value)? success,
-    TResult Function(Failure value)? failure,
-    TResult Function(UploadProfilePicture value)? uploadProfilePicture,
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(Loading<T> value)? signuploading,
+    TResult Function(Success<T> value)? signupSuccess,
+    TResult Function(Error<T> value)? error,
+    TResult Function(UploadProfilePicture<T> value)? uploadProfilePicture,
     required TResult orElse(),
   }) {
-    if (loading != null) {
-      return loading(this);
+    if (signuploading != null) {
+      return signuploading(this);
     }
     return orElse();
   }
 }
 
-abstract class Loading implements SignupState {
-  const factory Loading() = _$LoadingImpl;
+abstract class Loading<T> implements SignupState<T> {
+  const factory Loading() = _$LoadingImpl<T>;
 }
 
 /// @nodoc
-abstract class _$$SuccessImplCopyWith<$Res> {
+abstract class _$$SuccessImplCopyWith<T, $Res> {
   factory _$$SuccessImplCopyWith(
-          _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
-      __$$SuccessImplCopyWithImpl<$Res>;
+          _$SuccessImpl<T> value, $Res Function(_$SuccessImpl<T>) then) =
+      __$$SuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({T data});
 }
 
 /// @nodoc
-class __$$SuccessImplCopyWithImpl<$Res>
-    extends _$SignupStateCopyWithImpl<$Res, _$SuccessImpl>
-    implements _$$SuccessImplCopyWith<$Res> {
+class __$$SuccessImplCopyWithImpl<T, $Res>
+    extends _$SignupStateCopyWithImpl<T, $Res, _$SuccessImpl<T>>
+    implements _$$SuccessImplCopyWith<T, $Res> {
   __$$SuccessImplCopyWithImpl(
-      _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
+      _$SuccessImpl<T> _value, $Res Function(_$SuccessImpl<T>) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = freezed,
+  }) {
+    return _then(_$SuccessImpl<T>(
+      freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$SuccessImpl implements Success {
-  const _$SuccessImpl();
+class _$SuccessImpl<T> implements Success<T> {
+  const _$SuccessImpl(this.data);
+
+  @override
+  final T data;
 
   @override
   String toString() {
-    return 'SignupState.success()';
+    return 'SignupState<$T>.signupSuccess(data: $data)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SuccessImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$SuccessImpl<T> &&
+            const DeepCollectionEquality().equals(other.data, data));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SuccessImplCopyWith<T, _$SuccessImpl<T>> get copyWith =>
+      __$$SuccessImplCopyWithImpl<T, _$SuccessImpl<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function() success,
-    required TResult Function() failure,
+    required TResult Function() signuploading,
+    required TResult Function(T data) signupSuccess,
+    required TResult Function(String error) error,
     required TResult Function(XFile image) uploadProfilePicture,
   }) {
-    return success();
+    return signupSuccess(data);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function()? success,
-    TResult? Function()? failure,
+    TResult? Function()? signuploading,
+    TResult? Function(T data)? signupSuccess,
+    TResult? Function(String error)? error,
     TResult? Function(XFile image)? uploadProfilePicture,
   }) {
-    return success?.call();
+    return signupSuccess?.call(data);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function()? failure,
+    TResult Function()? signuploading,
+    TResult Function(T data)? signupSuccess,
+    TResult Function(String error)? error,
     TResult Function(XFile image)? uploadProfilePicture,
     required TResult orElse(),
   }) {
-    if (success != null) {
-      return success();
+    if (signupSuccess != null) {
+      return signupSuccess(data);
     }
     return orElse();
   }
@@ -410,119 +440,151 @@ class _$SuccessImpl implements Success {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(Loading value) loading,
-    required TResult Function(Success value) success,
-    required TResult Function(Failure value) failure,
-    required TResult Function(UploadProfilePicture value) uploadProfilePicture,
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(Loading<T> value) signuploading,
+    required TResult Function(Success<T> value) signupSuccess,
+    required TResult Function(Error<T> value) error,
+    required TResult Function(UploadProfilePicture<T> value)
+        uploadProfilePicture,
   }) {
-    return success(this);
+    return signupSuccess(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(Loading value)? loading,
-    TResult? Function(Success value)? success,
-    TResult? Function(Failure value)? failure,
-    TResult? Function(UploadProfilePicture value)? uploadProfilePicture,
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(Loading<T> value)? signuploading,
+    TResult? Function(Success<T> value)? signupSuccess,
+    TResult? Function(Error<T> value)? error,
+    TResult? Function(UploadProfilePicture<T> value)? uploadProfilePicture,
   }) {
-    return success?.call(this);
+    return signupSuccess?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(Loading value)? loading,
-    TResult Function(Success value)? success,
-    TResult Function(Failure value)? failure,
-    TResult Function(UploadProfilePicture value)? uploadProfilePicture,
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(Loading<T> value)? signuploading,
+    TResult Function(Success<T> value)? signupSuccess,
+    TResult Function(Error<T> value)? error,
+    TResult Function(UploadProfilePicture<T> value)? uploadProfilePicture,
     required TResult orElse(),
   }) {
-    if (success != null) {
-      return success(this);
+    if (signupSuccess != null) {
+      return signupSuccess(this);
     }
     return orElse();
   }
 }
 
-abstract class Success implements SignupState {
-  const factory Success() = _$SuccessImpl;
+abstract class Success<T> implements SignupState<T> {
+  const factory Success(final T data) = _$SuccessImpl<T>;
+
+  T get data;
+  @JsonKey(ignore: true)
+  _$$SuccessImplCopyWith<T, _$SuccessImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FailureImplCopyWith<$Res> {
-  factory _$$FailureImplCopyWith(
-          _$FailureImpl value, $Res Function(_$FailureImpl) then) =
-      __$$FailureImplCopyWithImpl<$Res>;
+abstract class _$$ErrorImplCopyWith<T, $Res> {
+  factory _$$ErrorImplCopyWith(
+          _$ErrorImpl<T> value, $Res Function(_$ErrorImpl<T>) then) =
+      __$$ErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
 }
 
 /// @nodoc
-class __$$FailureImplCopyWithImpl<$Res>
-    extends _$SignupStateCopyWithImpl<$Res, _$FailureImpl>
-    implements _$$FailureImplCopyWith<$Res> {
-  __$$FailureImplCopyWithImpl(
-      _$FailureImpl _value, $Res Function(_$FailureImpl) _then)
+class __$$ErrorImplCopyWithImpl<T, $Res>
+    extends _$SignupStateCopyWithImpl<T, $Res, _$ErrorImpl<T>>
+    implements _$$ErrorImplCopyWith<T, $Res> {
+  __$$ErrorImplCopyWithImpl(
+      _$ErrorImpl<T> _value, $Res Function(_$ErrorImpl<T>) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$ErrorImpl<T>(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$FailureImpl implements Failure {
-  const _$FailureImpl();
+class _$ErrorImpl<T> implements Error<T> {
+  const _$ErrorImpl({required this.error});
+
+  @override
+  final String error;
 
   @override
   String toString() {
-    return 'SignupState.failure()';
+    return 'SignupState<$T>.error(error: $error)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$FailureImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$ErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ErrorImplCopyWith<T, _$ErrorImpl<T>> get copyWith =>
+      __$$ErrorImplCopyWithImpl<T, _$ErrorImpl<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function() success,
-    required TResult Function() failure,
+    required TResult Function() signuploading,
+    required TResult Function(T data) signupSuccess,
+    required TResult Function(String error) error,
     required TResult Function(XFile image) uploadProfilePicture,
   }) {
-    return failure();
+    return error(this.error);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function()? success,
-    TResult? Function()? failure,
+    TResult? Function()? signuploading,
+    TResult? Function(T data)? signupSuccess,
+    TResult? Function(String error)? error,
     TResult? Function(XFile image)? uploadProfilePicture,
   }) {
-    return failure?.call();
+    return error?.call(this.error);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function()? failure,
+    TResult Function()? signuploading,
+    TResult Function(T data)? signupSuccess,
+    TResult Function(String error)? error,
     TResult Function(XFile image)? uploadProfilePicture,
     required TResult orElse(),
   }) {
-    if (failure != null) {
-      return failure();
+    if (error != null) {
+      return error(this.error);
     }
     return orElse();
   }
@@ -530,63 +592,70 @@ class _$FailureImpl implements Failure {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(Loading value) loading,
-    required TResult Function(Success value) success,
-    required TResult Function(Failure value) failure,
-    required TResult Function(UploadProfilePicture value) uploadProfilePicture,
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(Loading<T> value) signuploading,
+    required TResult Function(Success<T> value) signupSuccess,
+    required TResult Function(Error<T> value) error,
+    required TResult Function(UploadProfilePicture<T> value)
+        uploadProfilePicture,
   }) {
-    return failure(this);
+    return error(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(Loading value)? loading,
-    TResult? Function(Success value)? success,
-    TResult? Function(Failure value)? failure,
-    TResult? Function(UploadProfilePicture value)? uploadProfilePicture,
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(Loading<T> value)? signuploading,
+    TResult? Function(Success<T> value)? signupSuccess,
+    TResult? Function(Error<T> value)? error,
+    TResult? Function(UploadProfilePicture<T> value)? uploadProfilePicture,
   }) {
-    return failure?.call(this);
+    return error?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(Loading value)? loading,
-    TResult Function(Success value)? success,
-    TResult Function(Failure value)? failure,
-    TResult Function(UploadProfilePicture value)? uploadProfilePicture,
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(Loading<T> value)? signuploading,
+    TResult Function(Success<T> value)? signupSuccess,
+    TResult Function(Error<T> value)? error,
+    TResult Function(UploadProfilePicture<T> value)? uploadProfilePicture,
     required TResult orElse(),
   }) {
-    if (failure != null) {
-      return failure(this);
+    if (error != null) {
+      return error(this);
     }
     return orElse();
   }
 }
 
-abstract class Failure implements SignupState {
-  const factory Failure() = _$FailureImpl;
+abstract class Error<T> implements SignupState<T> {
+  const factory Error({required final String error}) = _$ErrorImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$ErrorImplCopyWith<T, _$ErrorImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$UploadProfilePictureImplCopyWith<$Res> {
-  factory _$$UploadProfilePictureImplCopyWith(_$UploadProfilePictureImpl value,
-          $Res Function(_$UploadProfilePictureImpl) then) =
-      __$$UploadProfilePictureImplCopyWithImpl<$Res>;
+abstract class _$$UploadProfilePictureImplCopyWith<T, $Res> {
+  factory _$$UploadProfilePictureImplCopyWith(
+          _$UploadProfilePictureImpl<T> value,
+          $Res Function(_$UploadProfilePictureImpl<T>) then) =
+      __$$UploadProfilePictureImplCopyWithImpl<T, $Res>;
   @useResult
   $Res call({XFile image});
 }
 
 /// @nodoc
-class __$$UploadProfilePictureImplCopyWithImpl<$Res>
-    extends _$SignupStateCopyWithImpl<$Res, _$UploadProfilePictureImpl>
-    implements _$$UploadProfilePictureImplCopyWith<$Res> {
-  __$$UploadProfilePictureImplCopyWithImpl(_$UploadProfilePictureImpl _value,
-      $Res Function(_$UploadProfilePictureImpl) _then)
+class __$$UploadProfilePictureImplCopyWithImpl<T, $Res>
+    extends _$SignupStateCopyWithImpl<T, $Res, _$UploadProfilePictureImpl<T>>
+    implements _$$UploadProfilePictureImplCopyWith<T, $Res> {
+  __$$UploadProfilePictureImplCopyWithImpl(_$UploadProfilePictureImpl<T> _value,
+      $Res Function(_$UploadProfilePictureImpl<T>) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -594,7 +663,7 @@ class __$$UploadProfilePictureImplCopyWithImpl<$Res>
   $Res call({
     Object? image = null,
   }) {
-    return _then(_$UploadProfilePictureImpl(
+    return _then(_$UploadProfilePictureImpl<T>(
       null == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
@@ -605,7 +674,7 @@ class __$$UploadProfilePictureImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UploadProfilePictureImpl implements UploadProfilePicture {
+class _$UploadProfilePictureImpl<T> implements UploadProfilePicture<T> {
   const _$UploadProfilePictureImpl(this.image);
 
   @override
@@ -613,14 +682,14 @@ class _$UploadProfilePictureImpl implements UploadProfilePicture {
 
   @override
   String toString() {
-    return 'SignupState.uploadProfilePicture(image: $image)';
+    return 'SignupState<$T>.uploadProfilePicture(image: $image)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UploadProfilePictureImpl &&
+            other is _$UploadProfilePictureImpl<T> &&
             (identical(other.image, image) || other.image == image));
   }
 
@@ -630,18 +699,17 @@ class _$UploadProfilePictureImpl implements UploadProfilePicture {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UploadProfilePictureImplCopyWith<_$UploadProfilePictureImpl>
-      get copyWith =>
-          __$$UploadProfilePictureImplCopyWithImpl<_$UploadProfilePictureImpl>(
-              this, _$identity);
+  _$$UploadProfilePictureImplCopyWith<T, _$UploadProfilePictureImpl<T>>
+      get copyWith => __$$UploadProfilePictureImplCopyWithImpl<T,
+          _$UploadProfilePictureImpl<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function() success,
-    required TResult Function() failure,
+    required TResult Function() signuploading,
+    required TResult Function(T data) signupSuccess,
+    required TResult Function(String error) error,
     required TResult Function(XFile image) uploadProfilePicture,
   }) {
     return uploadProfilePicture(image);
@@ -651,9 +719,9 @@ class _$UploadProfilePictureImpl implements UploadProfilePicture {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function()? success,
-    TResult? Function()? failure,
+    TResult? Function()? signuploading,
+    TResult? Function(T data)? signupSuccess,
+    TResult? Function(String error)? error,
     TResult? Function(XFile image)? uploadProfilePicture,
   }) {
     return uploadProfilePicture?.call(image);
@@ -663,9 +731,9 @@ class _$UploadProfilePictureImpl implements UploadProfilePicture {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function()? failure,
+    TResult Function()? signuploading,
+    TResult Function(T data)? signupSuccess,
+    TResult Function(String error)? error,
     TResult Function(XFile image)? uploadProfilePicture,
     required TResult orElse(),
   }) {
@@ -678,11 +746,12 @@ class _$UploadProfilePictureImpl implements UploadProfilePicture {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(Loading value) loading,
-    required TResult Function(Success value) success,
-    required TResult Function(Failure value) failure,
-    required TResult Function(UploadProfilePicture value) uploadProfilePicture,
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(Loading<T> value) signuploading,
+    required TResult Function(Success<T> value) signupSuccess,
+    required TResult Function(Error<T> value) error,
+    required TResult Function(UploadProfilePicture<T> value)
+        uploadProfilePicture,
   }) {
     return uploadProfilePicture(this);
   }
@@ -690,11 +759,11 @@ class _$UploadProfilePictureImpl implements UploadProfilePicture {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(Loading value)? loading,
-    TResult? Function(Success value)? success,
-    TResult? Function(Failure value)? failure,
-    TResult? Function(UploadProfilePicture value)? uploadProfilePicture,
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(Loading<T> value)? signuploading,
+    TResult? Function(Success<T> value)? signupSuccess,
+    TResult? Function(Error<T> value)? error,
+    TResult? Function(UploadProfilePicture<T> value)? uploadProfilePicture,
   }) {
     return uploadProfilePicture?.call(this);
   }
@@ -702,11 +771,11 @@ class _$UploadProfilePictureImpl implements UploadProfilePicture {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(Loading value)? loading,
-    TResult Function(Success value)? success,
-    TResult Function(Failure value)? failure,
-    TResult Function(UploadProfilePicture value)? uploadProfilePicture,
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(Loading<T> value)? signuploading,
+    TResult Function(Success<T> value)? signupSuccess,
+    TResult Function(Error<T> value)? error,
+    TResult Function(UploadProfilePicture<T> value)? uploadProfilePicture,
     required TResult orElse(),
   }) {
     if (uploadProfilePicture != null) {
@@ -716,12 +785,12 @@ class _$UploadProfilePictureImpl implements UploadProfilePicture {
   }
 }
 
-abstract class UploadProfilePicture implements SignupState {
+abstract class UploadProfilePicture<T> implements SignupState<T> {
   const factory UploadProfilePicture(final XFile image) =
-      _$UploadProfilePictureImpl;
+      _$UploadProfilePictureImpl<T>;
 
   XFile get image;
   @JsonKey(ignore: true)
-  _$$UploadProfilePictureImplCopyWith<_$UploadProfilePictureImpl>
+  _$$UploadProfilePictureImplCopyWith<T, _$UploadProfilePictureImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }
