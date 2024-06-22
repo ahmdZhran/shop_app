@@ -19,7 +19,7 @@ class SignUpFormFiedls extends StatefulWidget {
 class _SignUpFormFiedlsState extends State<SignUpFormFiedls> {
   bool isPasswordShown = true;
   late TextEditingController passworController;
-  
+
   @override
   void initState() {
     passworController = context.read<SignupCubit>().passwordController;
@@ -77,7 +77,7 @@ class _SignUpFormFiedlsState extends State<SignUpFormFiedls> {
               const SizedBox(height: 20),
               CustomButton(
                 onPressed: () {
-                  // Handle sign up button press
+                  validateAndSignup();
                 },
                 text: Text(
                   AppStrings.signUp,
@@ -91,5 +91,10 @@ class _SignUpFormFiedlsState extends State<SignUpFormFiedls> {
         ),
       ),
     );
+  }
+  void validateAndSignup(){
+    if(context.read<SignupCubit>().formKey.currentState!.validate()){
+      context.read<SignupCubit>().emitSignupStates();
+    }
   }
 }
