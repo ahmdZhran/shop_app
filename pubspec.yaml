@@ -40,6 +40,8 @@ dependencies:
   smooth_page_indicator: ^1.1.0
   # An SVG rendering and widget library for Flutter, which allows painting
   flutter_svg: ^2.0.10+1
+  # for Bottom navigatoin bar
+  persistent_bottom_nav_bar: ^5.0.2
   # Reading and writing simple key-value pairs.
   shared_preferences: ^2.2.3
   # for adapting screen and font size.
