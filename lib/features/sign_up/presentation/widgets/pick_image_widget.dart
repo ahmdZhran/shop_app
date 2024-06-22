@@ -20,7 +20,7 @@ class PickImageWidget extends StatelessWidget {
         return SizedBox(
           width: 100,
           height: 100,
-          child: context.read<SignupCubit>().pickPrifleImage == null
+          child: context.read<SignupCubit>().pickProfileImage == null
               ? CircleAvatar(
                   backgroundColor: ColorManager.kPrimaryColor,
                   backgroundImage:
@@ -47,7 +47,7 @@ class PickImageWidget extends StatelessWidget {
                                     .pickImage(source: ImageSource.gallery)
                                     .then((image) => context
                                         .read<SignupCubit>()
-                                        .uploadProfilePick(image!));
+                                        .setProfileImage(image!));
                               },
                               child: Icon(
                                 Icons.camera_alt_sharp,
@@ -63,7 +63,7 @@ class PickImageWidget extends StatelessWidget {
                 )
               : CircleAvatar(
                   backgroundImage: FileImage(
-                    File(context.read<SignupCubit>().pickPrifleImage!.path),
+                    File(context.read<SignupCubit>().pickProfileImage!.path),
                   ),
                 ),
         );

@@ -67,7 +67,7 @@ class _SignUpFormFiedlsState extends State<SignUpFormFiedls> {
               const PickImageWidget(),
               const SizedBox(height: 16),
               CustomTextFormField(
-                controller: context.read<SignupCubit>().fullnameController,
+                controller: context.read<SignupCubit>().nameController,
                 lableText: AppStrings.fullName,
                 keyboardType: TextInputType.name,
               ),
