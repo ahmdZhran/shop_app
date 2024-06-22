@@ -4,14 +4,14 @@ import 'package:image_picker/image_picker.dart';
 part 'signup_state.freezed.dart';
 
 @freezed
-class SignupState with _$SignupState {
+class SignupState<T> with _$SignupState<T> {
   const factory SignupState.initial() = _Initial;
 
-  const factory SignupState.loading() = Loading;
+  const factory SignupState.signuploading() = Loading;
 
-  const factory SignupState.success() = Success;
+  const factory SignupState.signupSuccess(T data) = Success<T>;
 
-  const factory SignupState.failure() = Failure;
+  const factory SignupState.error({required String error}) = Error;
 
   const factory SignupState.uploadProfilePicture(XFile image) =
       UploadProfilePicture;
