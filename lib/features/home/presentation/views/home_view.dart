@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shop_app/core/helper/extensions.dart';
 import '../widgets/cart_head_icon.dart';
 import '../widgets/custom_search_bar.dart';
@@ -14,9 +13,6 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Get the screen size
-    final screenSize = MediaQuery.of(context).size;
-
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(

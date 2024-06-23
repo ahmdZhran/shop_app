@@ -10,7 +10,7 @@ class CustomStaggeredGridView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 250.h,
+      height: 400.h,
       child: MasonryGridView.count(
         crossAxisCount: 2,
         mainAxisSpacing: 4,
