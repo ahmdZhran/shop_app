@@ -13,7 +13,7 @@ class HomeCubit extends Cubit<HomeState> {
     response.when(success: (bannerResponse) {
       emit(HomeState.bannerSuccess(bannerResponse));
     }, failure: (error) {
-      emit(HomeState.bannerError(error: error.apiErrorModel.message ?? " "));
+      emit(HomeState.bannerError(error: error.apiErrorModel.message ?? ""));
     });
   }
 }
