@@ -29,7 +29,7 @@ class HomeView extends StatelessWidget {
                 SizedBox(height: screenSize.height * 0.03),
                 const Row(
                   children: [
-                    ElectronicDealsText(),
+                    CategoryTextWidget(),
                     Spacer(),
                     SeeAllTextWidget(),
                   ],
