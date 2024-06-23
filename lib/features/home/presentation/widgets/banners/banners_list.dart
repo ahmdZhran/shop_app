@@ -22,6 +22,7 @@ class _BannersListState extends State<BannersList> {
           height: 100.h,
           child: PageView.builder(
             controller: _controller,
+            itemCount: 3,
             itemBuilder: (context, index) {
               return const BannersSlider();
             },
