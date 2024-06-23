@@ -1,9 +1,19 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:shop_app/features/home/data/models/banner_response.dart';
-
-part 'home_state.dart';
+import 'package:shop_app/features/home/data/repo/home_repo.dart';
+import 'home_state.dart';
 
 class HomeCubit extends Cubit<HomeState> {
-  HomeCubit() : super(const HomeState.initial());
+  HomeCubit(this._homeRepo) : super(const HomeState.initial());
+
+  final HomeRepo _homeRepo;
+
+  void fetchBannerDate() async {
+    emit(const HomeState.bannerLoading());
+    final response = await _homeRepo.getBannerDate();
+    response.when(success: (bannerResponse) {
+      emit(HomeState.bannerSuccess(bannerResponse));
+    }, failure: (error) {
+      emit(HomeState.bannerError(error: error.apiErrorModel.message ?? " "));
+    });
+  }
 }
