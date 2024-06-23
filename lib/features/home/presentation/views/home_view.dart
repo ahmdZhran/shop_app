@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import '../widgets/cart_head_icon.dart';
-import '../widgets/custom_category_circle.dart';
 import '../widgets/custom_search_bar.dart';
 import '../widgets/electronic_details.dart';
 import '../widgets/flash_sales_container.dart';
+import '../widgets/list_of_category.dart';
 import '../widgets/see_all_text.dart';
 
 class HomeView extends StatelessWidget {
@@ -42,22 +42,6 @@ class HomeView extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
-
-class ListOfCategory extends StatelessWidget {
-  const ListOfCategory({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 60,
-      child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          itemBuilder: (context, index) {
-            return const CustomCategoryCircle();
-          }),
     );
   }
 }
