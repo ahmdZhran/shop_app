@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/core/helper/extensions.dart';
+import 'package:shop_app/features/home/presentation/widgets/banners/banners_list.dart';
 import '../widgets/cart_head_icon.dart';
 import '../widgets/custom_search_bar.dart';
 import '../widgets/custom_staggered_gride_view.dart';
 import '../widgets/electronic_details.dart';
-import '../widgets/flash_sales_container.dart';
 import '../widgets/list_of_category.dart';
 import '../widgets/see_all_text.dart';
 
@@ -25,7 +25,7 @@ class HomeView extends StatelessWidget {
                 10.0.getVerticalSpacer(),
                 const CustomSearchBar(),
                 15.0.getVerticalSpacer(),
-                const FlashSalesContainer(),
+                const BannersList(),
                 3.0.getVerticalSpacer(),
                 const Row(
                   children: [
