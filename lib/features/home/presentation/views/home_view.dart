@@ -1,13 +1,12 @@
-import 'package:e_commerce/features/home/presentation/widgets/custom_search.dart';
-import 'package:e_commerce/features/home/presentation/widgets/electronic_text.dart';
-import 'package:e_commerce/features/home/presentation/widgets/flash_sales_container.dart';
-import 'package:e_commerce/features/home/presentation/widgets/icon_head.dart';
-import 'package:e_commerce/features/home/presentation/widgets/list_of_product_item.dart';
-import 'package:e_commerce/features/home/presentation/widgets/see_all_text.dart';
 import 'package:flutter/material.dart';
+import '../widgets/cart_head_icon.dart';
+import '../widgets/custom_search_bar.dart';
+import '../widgets/electronic_details.dart';
+import '../widgets/flash_sales_container.dart';
+import '../widgets/see_all_text.dart';
 
 class HomeView extends StatelessWidget {
-  const HomeView({Key? key}) : super(key: key);
+  const HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,11 +27,11 @@ class HomeView extends StatelessWidget {
                 SizedBox(height: screenSize.height * 0.05),
                 const FlashSalesContainer(),
                 SizedBox(height: screenSize.height * 0.03),
-                Row(
+                const Row(
                   children: [
-                    const ElectronicDealsText(),
+                    ElectronicDealsText(),
                     Spacer(),
-                    const SeeAllTextWidget(),
+                    SeeAllTextWidget(),
                   ],
                 ),
                 SizedBox(height: screenSize.height * 0.02),
