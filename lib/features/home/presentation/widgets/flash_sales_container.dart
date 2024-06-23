@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../../../../core/utils/color_manager.dart';
@@ -11,7 +10,7 @@ class FlashSalesContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(
-        horizontal: 15,
+        horizontal: 5,
       ),
       child: Container(
         width: double.infinity,
@@ -20,7 +19,7 @@ class FlashSalesContainer extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
           color: ColorManager.kPrimaryColor,
         ),
-        child: const TitlesFlachSalesWidget(),
+        child: const TextsOfFlashSalesWidget(),
       ),
     );
   }
