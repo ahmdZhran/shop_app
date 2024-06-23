@@ -12,7 +12,7 @@ class BannersList extends StatefulWidget {
 }
 
 class _BannersListState extends State<BannersList> {
-  final PageController _controller = PageController(initialPage: 0);
+  final PageController _controller = PageController();
 
   @override
   Widget build(BuildContext context) {
