@@ -11,16 +11,13 @@ class CartHeadIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Align(
       alignment: Alignment.topRight,
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: IconButton(
-          icon: SvgPicture.asset(
-            AppAssets.cart,
-            colorFilter:
-                ColorFilter.mode(ColorManager.kPrimaryColor, BlendMode.srcIn),
-          ),
-          onPressed: () {},
+      child: IconButton(
+        icon: SvgPicture.asset(
+          AppAssets.cart,
+          colorFilter:
+              ColorFilter.mode(ColorManager.kPrimaryColor, BlendMode.srcIn),
         ),
+        onPressed: () {},
       ),
     );
   }
