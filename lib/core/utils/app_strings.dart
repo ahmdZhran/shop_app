@@ -23,5 +23,6 @@ abstract class AppStrings {
       timeLeft = "Time Lift : 23h :19m:27s",
       electronicDeals = "Electronic Deals",
       yourProducts = "Your Products",
+      category = "Category",
       seeAll = "See All";
 }
