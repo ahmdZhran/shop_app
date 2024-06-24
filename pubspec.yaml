@@ -51,6 +51,8 @@ dependencies:
   flutter_svg: ^2.0.10+1
   # A package provides an easy way to add shimmer effect in Flutter project
   shimmer: ^3.0.0
+  # Flutter library to load and cache network images.
+  cached_network_image: ^3.3.1
   # for Bottom navigatoin bar
   persistent_bottom_nav_bar: ^5.0.2
   # for auto sliding carousel

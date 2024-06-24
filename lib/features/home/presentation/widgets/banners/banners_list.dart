@@ -1,42 +1,49 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shop_app/core/di/dependency_injection.dart';
-import 'package:shop_app/core/helper/extensions.dart';
 import 'package:shop_app/features/home/logic/cubit/home_cubit.dart';
-import 'package:shop_app/features/home/presentation/widgets/banners/banners_slider.dart';
-import 'package:shop_app/features/onboarding/presentation/widgets/custom_smooth_page_indicator.dart';
+import '../../../../../core/helper/extensions.dart';
+import '../../../logic/cubit/home_state.dart';
+import 'banners_slider.dart';
 
-class BannersList extends StatefulWidget {
+class BannersList extends StatelessWidget {
   const BannersList({super.key});
 
   @override
-  State<BannersList> createState() => _BannersListState();
-}
-
-class _BannersListState extends State<BannersList> {
-  final PageController _controller = PageController();
-
-  @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(
-          height: 100.h,
-          child: PageView.builder(
-            controller: _controller,
-            itemCount: 3,
-            itemBuilder: (context, index) {
-              return BlocProvider(
-                create: (context) => HomeCubit(getIt())..fetchBannerDate(),
-                child: const BannersSlider(),
-              );
-            },
-          ),
-        ),
-        10.0.getVerticalSpacer(),
-        CustomSmoothPageIndicator(controller: _controller)
-      ],
+    return BlocBuilder<HomeCubit, HomeState>(
+      builder: (context, state) {
+        return state.maybeWhen(
+          bannerLoading: () => const Center(child: CircularProgressIndicator()),
+          bannerSuccess: (bannerResponse) {
+            return Column(
+              children: [
+                SizedBox(
+                  width: double.infinity,
+                  child: CarouselSlider.builder(
+                    itemCount: bannerResponse.bannerData!.length,
+                    itemBuilder: (context, index, realIndex) {
+                      return BannersSlider(
+                        imageUrl:
+                            bannerResponse.bannerData![index].image.toString(),
+                      );
+                    },
+                    options: CarouselOptions(
+                      height: 130.h,
+                      reverse: true,
+                      viewportFraction: 1,
+                      autoPlay: true,
+                    ),
+                  ),
+                ),
+                10.0.getVerticalSpacer(),
+              ],
+            );
+          },
+          orElse: () => const SizedBox.shrink(),
+        );
+      },
     );
   }
 }
