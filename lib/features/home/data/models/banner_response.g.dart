@@ -24,7 +24,7 @@ Map<String, dynamic> _$BannerResponseToJson(BannerResponse instance) =>
 
 BannerData _$BannerDataFromJson(Map<String, dynamic> json) => BannerData(
       id: (json['id'] as num?)?.toInt(),
-      message: json['message'] as String?,
+      image: json['image'] as String?,
       category: json['category'],
       product: json['product'],
     );
@@ -32,7 +32,7 @@ BannerData _$BannerDataFromJson(Map<String, dynamic> json) => BannerData(
 Map<String, dynamic> _$BannerDataToJson(BannerData instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'message': instance.message,
+      'image': instance.image,
       'category': instance.category,
       'product': instance.product,
     };

@@ -17,11 +17,11 @@ class BannerResponse {
 @JsonSerializable()
 class BannerData {
   int? id;
-  String? message;
+  String? image;
   dynamic category;
   dynamic product;
 
-  BannerData({this.id, this.message, this.category, this.product});
+  BannerData({this.id, this.image, this.category, this.product});
   factory BannerData.fromJson(Map<String, dynamic> json) =>
       _$BannerDataFromJson(json);
 }

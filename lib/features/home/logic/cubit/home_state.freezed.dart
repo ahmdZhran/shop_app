@@ -333,10 +333,10 @@ class __$$BannerSuccessImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? bannerResponse = freezed,
+    Object? bannerResponse = null,
   }) {
     return _then(_$BannerSuccessImpl(
-      freezed == bannerResponse
+      null == bannerResponse
           ? _value.bannerResponse
           : bannerResponse // ignore: cast_nullable_to_non_nullable
               as BannerResponse,
@@ -362,13 +362,12 @@ class _$BannerSuccessImpl implements BannerSuccess {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BannerSuccessImpl &&
-            const DeepCollectionEquality()
-                .equals(other.bannerResponse, bannerResponse));
+            (identical(other.bannerResponse, bannerResponse) ||
+                other.bannerResponse == bannerResponse));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(bannerResponse));
+  int get hashCode => Object.hash(runtimeType, bannerResponse);
 
   @JsonKey(ignore: true)
   @override
