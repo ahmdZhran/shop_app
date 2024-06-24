@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:shimmer/shimmer.dart';
+import 'package:shop_app/features/home/presentation/widgets/banners/shimmer_banner_slider.dart';
 
 class BannersSlider extends StatelessWidget {
   const BannersSlider({super.key, required this.imageUrl});
@@ -18,14 +18,8 @@ class BannersSlider extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
           child: CachedNetworkImage(
             imageUrl: imageUrl,
-            errorWidget: (context, url, error) => Shimmer.fromColors(
-              baseColor: Colors.grey[300]!,
-              highlightColor: Colors.grey[100]!,
-              child: Container(
-                color: Colors.grey,
-                alignment: Alignment.center,
-                child: const Text('Error loading image'),
-              ),
+            errorWidget: (context, url, error) => const CustomShimmerForBanners(
+              childOfShimmer: Text('Error loading image'),
             ),
             fit: BoxFit.fill,
           ),

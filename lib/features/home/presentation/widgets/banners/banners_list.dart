@@ -6,6 +6,7 @@ import 'package:shop_app/features/home/logic/cubit/home_cubit.dart';
 import '../../../../../core/helper/extensions.dart';
 import '../../../logic/cubit/home_state.dart';
 import 'banners_slider.dart';
+import 'shimmer_banner_slider.dart';
 
 class BannersList extends StatelessWidget {
   const BannersList({super.key});
@@ -15,7 +16,9 @@ class BannersList extends StatelessWidget {
     return BlocBuilder<HomeCubit, HomeState>(
       builder: (context, state) {
         return state.maybeWhen(
-          bannerLoading: () => const Center(child: CircularProgressIndicator()),
+          bannerLoading: () => const Center(
+            child: CustomShimmerForBanners(),
+          ),
           bannerSuccess: (bannerResponse) {
             return Column(
               children: [
