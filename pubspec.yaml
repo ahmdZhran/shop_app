@@ -34,22 +34,33 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
+
+  ## Core
+
   # for splash screen
   flutter_native_splash: ^2.4.0
+  # for adapting screen and font size.
+  flutter_screenutil: ^5.9.3
+  # for dependency injection
+  get_it: ^7.7.0
+
+  ## UI
   # Customizable animated page indicator with a set of built-in effects.
   smooth_page_indicator: ^1.1.0
   # An SVG rendering and widget library for Flutter, which allows painting
   flutter_svg: ^2.0.10+1
+  # A package provides an easy way to add shimmer effect in Flutter project
+  shimmer: ^3.0.0
   # for Bottom navigatoin bar
   persistent_bottom_nav_bar: ^5.0.2
+  # for auto sliding carousel
+  carousel_slider: ^4.2.1
   # Reading and writing simple key-value pairs.
   shared_preferences: ^2.2.3
-  # for adapting screen and font size.
-  flutter_screenutil: ^5.9.3
+
   # State management
   flutter_bloc: ^8.1.6
-  # for dependency injection
-  get_it: ^7.7.0
+
   # Flutter plugin for selecting images from the Android and iOS image library
   image_picker: ^1.1.2
   # Provides a collection of Flutter grids layouts
