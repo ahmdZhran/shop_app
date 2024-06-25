@@ -12,4 +12,7 @@ abstract class HomeApiService {
 
   @GET(HomeApiConstatnts.banners)
   Future<BannerResponse> getBannerDate();
+  
+  @GET(HomeApiConstatnts.categories)
+  Future<BannerResponse> getCategories();
 }
