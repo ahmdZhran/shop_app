@@ -10,7 +10,7 @@ class CategoryTextWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 20),
+      padding: const EdgeInsets.only(left: 12.0),
       child: Text(
         AppStrings.category,
         style: CustomTextStyle.medium14
