@@ -8,7 +8,7 @@ import '../widgets/cart_head_icon.dart';
 import '../widgets/custom_search_bar.dart';
 import '../widgets/custom_staggered_gride_view.dart';
 import '../widgets/category_text.dart';
-import '../widgets/list_of_category.dart';
+import '../widgets/category/list_of_category.dart';
 import '../widgets/see_all_text.dart';
 
 class HomeView extends StatelessWidget {
