@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/http.dart';
 import 'package:shop_app/core/networking/api_constants.dart';
-import 'package:shop_app/features/home/data/models/banner_response.dart';
+import 'package:shop_app/features/home/data/models/banners_models/banner_response.dart';
 
 import 'home_api_constatnts.dart';
 part 'home_api_service.g.dart';

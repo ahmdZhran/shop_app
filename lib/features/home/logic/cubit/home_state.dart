@@ -1,7 +1,7 @@
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../data/models/banner_response.dart';
+import '../../data/models/banners_models/banner_response.dart';
 
 part 'home_state.freezed.dart';
 @freezed

@@ -1,7 +1,7 @@
 import 'package:shop_app/core/networking/api_error_handler.dart';
 import 'package:shop_app/core/networking/api_result.dart';
 import 'package:shop_app/features/home/data/api/home_api_service.dart';
-import 'package:shop_app/features/home/data/models/banner_response.dart';
+import 'package:shop_app/features/home/data/models/banners_models/banner_response.dart';
 
 class HomeRepo {
   final HomeApiService _homeApiService;
