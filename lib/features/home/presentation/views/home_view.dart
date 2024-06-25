@@ -41,7 +41,10 @@ class HomeView extends StatelessWidget {
                   ],
                 ),
                 2.0.getVerticalSpacer(),
-                const ListOfCategory(),
+                BlocProvider(
+                  create: (context) => HomeCubit(getIt())..fetchCategories(),
+                  child: const ListOfCategory(),
+                ),
                 10.0.getVerticalSpacer(),
                 const CustomStaggeredGridView()
               ],
