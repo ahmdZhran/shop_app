@@ -16,4 +16,14 @@ class HomeCubit extends Cubit<HomeState> {
       emit(HomeState.bannerError(error: error.apiErrorModel.message ?? ""));
     });
   }
+
+  void fetchCategories() async {
+    emit(const HomeState.categoryLoading());
+    final response = await _homeRepo.getCategories();
+    response.when(success: (categoryResponse) {
+      emit(HomeState.categorySuccess(categoryResponse));
+    }, failure: (error) {
+      emit(HomeState.categoryError(error: error.apiErrorModel.message ?? ""));
+    });
+  }
 }

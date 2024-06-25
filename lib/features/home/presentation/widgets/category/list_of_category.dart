@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shop_app/features/home/logic/cubit/home_cubit.dart';
+import 'package:shop_app/features/home/logic/cubit/home_state.dart';
 
 import 'category_cilrcle_avatar.dart';
 
@@ -8,14 +11,36 @@ class ListOfCategory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 85.h,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) {
-          return const CategoryCircleAvatar();
-        },
-      ),
+    return BlocBuilder<HomeCubit, HomeState>(
+      builder: (context, state) {
+        return state.maybeWhen(
+          categoryLoading: () => const Center(
+            child: CircularProgressIndicator(),
+          ),
+          categorySuccess: (categoryResponse) {
+            return SizedBox(
+              height: 85.h,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount:
+                    categoryResponse.categoryDataWrapper!.categories!.length,
+                itemBuilder: (context, index) {
+                  return CategoryCircleAvatar(
+                    imageUrl: categoryResponse
+                        .categoryDataWrapper!.categories![index].image
+                        .toString(),
+                    text: categoryResponse
+                        .categoryDataWrapper!.categories![index].name
+                        .toString(),
+                  );
+                },
+              ),
+            );
+          },
+          bannerError: (error) => Text(error),
+          orElse: () => const Text('or else.................'),
+        );
+      },
     );
   }
 }

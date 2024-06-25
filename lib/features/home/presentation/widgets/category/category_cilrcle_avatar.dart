@@ -4,24 +4,27 @@ import 'package:shop_app/core/helper/extensions.dart';
 class CategoryCircleAvatar extends StatelessWidget {
   const CategoryCircleAvatar({
     super.key,
+    required this.imageUrl,
+    required this.text,
   });
-
+  final String imageUrl;
+  final String text;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: Column(
         children: [
-          const CircleAvatar(
-            backgroundColor: Colors.purple,
-            radius: 30,
-            backgroundImage: AssetImage(
-              'assets/images/Laptop.png',
-            ),
-          ),
+          CircleAvatar(
+              backgroundColor: Colors.transparent,
+              radius: 30,
+              backgroundImage: NetworkImage(imageUrl)),
           5.0.getVerticalSpacer(),
-          const Text('data'),
-          const Text('data')
+          Text(
+            text,
+            maxLines: 1,
+            textAlign: TextAlign.center,
+          ),
         ],
       ),
     );
