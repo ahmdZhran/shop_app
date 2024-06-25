@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shop_app/core/utils/app_strings.dart';
 
-import '../../../../core/utils/text_styles.dart';
+import '../../../../../core/utils/text_styles.dart';
 
 class CategoryTextWidget extends StatelessWidget {
   const CategoryTextWidget({super.key});
