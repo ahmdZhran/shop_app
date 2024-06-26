@@ -17,16 +17,14 @@ class ShimmerCategoryCircleAvatar extends StatelessWidget {
           itemCount: 10,
           itemBuilder: (context, index) {
             return Shimmer.fromColors(
-              baseColor: Colors.grey[300]!,
-              highlightColor: Colors.grey[100]!,
-              child: CircleAvatar(
-                backgroundColor: ColorManager.kDarkGreyColor,
+              baseColor: ColorManager.kDarkGreyColor,
+              highlightColor: Colors.grey[700]!,
+              child: const CircleAvatar(
                 radius: 30,
               ),
             );
           },
-          separatorBuilder: (context, index) =>
-              SizedBox(width: 8.w), 
+          separatorBuilder: (context, index) => SizedBox(width: 8.w),
         ),
       ),
     );
