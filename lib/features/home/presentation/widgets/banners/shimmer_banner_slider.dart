@@ -12,12 +12,12 @@ class CustomShimmerForBanners extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Shimmer.fromColors(
-      baseColor: Colors.grey[300]!,
-      highlightColor: Colors.grey[100]!,
+      baseColor: ColorManager.kDarkGreyColor,
+      highlightColor: Colors.grey[700]!,
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
-          color: ColorManager.kDarkGreyColor,
+        
         ),
         height: 110.h,
         alignment: Alignment.center,
