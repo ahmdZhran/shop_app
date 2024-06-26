@@ -20,7 +20,7 @@ class DioFactory {
         ..options.receiveTimeout = timeOut;
       addDioHeaders();
       addDioInterceptor();
-      
+
       return dio!;
     } else {
       return dio!;
@@ -35,14 +35,17 @@ class DioFactory {
     };
   }
 
-  static void setTokenIntoHeaderAfterLogin(String token) {
+  static void setTokenIntoHeaderAfterLogin(String token) async {
     dio?.options.headers = {
-      'Authorization': 'Bearer $token',
+      'Authorization':
+          'Bearer ${await SharedPrefHelper.getString(SharedPrefKeys.userToken)}',
     };
   }
 
+
+
   static void addDioInterceptor() {
-     dio?.interceptors.add(ApiInterceptor());
+    dio?.interceptors.add(ApiInterceptor());
     dio?.interceptors.add(
       PrettyDioLogger(
         requestBody: true,

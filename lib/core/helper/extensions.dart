@@ -24,3 +24,7 @@ extension SpacesHelper on double {
   Widget getHorizontalSpacer() => SizedBox(width: w);
   Widget getVerticalSpacer() => SizedBox(height: h);
 }
+
+extension StringExtension on String? {
+  bool isNullOrEmpty() => this == null || this == "";
+}
