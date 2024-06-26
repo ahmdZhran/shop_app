@@ -19,10 +19,7 @@ checkLoggedInUser() async {
       await SharedPrefHelper.getString(SharedPrefKeys.userToken);
   if (userToken.isNullOrEmpty()) {
     isLoggedInUser = false;
-    print('this is the first time login ');
   } else {
     isLoggedInUser = true;
-    print(userToken);
-    print('no this is noooooooooooooot first time for it ................. ');
   }
 }
