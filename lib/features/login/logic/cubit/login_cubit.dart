@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:shop_app/core/helper/shared_prefrence.dart';
 import 'package:shop_app/core/helper/shared_prefrence_keys.dart';
+import 'package:shop_app/core/networking/dio_factory.dart';
 import '../../data/models/login_request_body.dart';
 import '../../data/repo/login_repo.dart';
 import 'login_state.dart';
@@ -25,7 +26,14 @@ class LoginCubit extends Cubit<LoginState> {
     ));
 
     response.when(success: (loginResponse) async {
-      await saveUserToken(loginResponse.userData!.token ?? '');
+      final token = loginResponse.userData?.token;
+      if (token != null) {
+        await SharedPrefHelper.setData(SharedPrefKeys.userToken, token);
+      }
+
+      DioFactory.setTokenAfterLogin(token!);
+      DioFactory.addDioHeaders();
+
       emit(LoginState.success(loginResponse));
     }, failure: (error) {
       emit(LoginState.error(error: error.apiErrorModel.message ?? ''));
@@ -33,6 +41,7 @@ class LoginCubit extends Cubit<LoginState> {
   }
 
   Future<void> saveUserToken(String token) async {
-    await SharedPrefHelper.setData(SharedPrefKeys.userToken,token);
+    await SharedPrefHelper.setData(SharedPrefKeys.userToken, token);
+    DioFactory.setTokenAfterLogin(token);
   }
 }
