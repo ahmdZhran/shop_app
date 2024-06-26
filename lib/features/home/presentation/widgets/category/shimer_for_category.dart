@@ -26,7 +26,7 @@ class ShimmerCategoryCircleAvatar extends StatelessWidget {
             );
           },
           separatorBuilder: (context, index) =>
-              SizedBox(width: 8.w), // Adjust the width as needed
+              SizedBox(width: 8.w), 
         ),
       ),
     );
