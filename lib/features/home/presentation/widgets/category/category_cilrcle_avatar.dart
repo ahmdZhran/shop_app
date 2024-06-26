@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shop_app/core/helper/extensions.dart';
 
 class CategoryCircleAvatar extends StatelessWidget {
@@ -20,10 +21,13 @@ class CategoryCircleAvatar extends StatelessWidget {
               radius: 30,
               backgroundImage: NetworkImage(imageUrl)),
           5.0.getVerticalSpacer(),
-          Text(
-            text,
-            maxLines: 1,
-            textAlign: TextAlign.center,
+          SizedBox(
+            width: 70.w,
+            child: Text(
+              text,
+              textAlign: TextAlign.center,
+              overflow: TextOverflow.ellipsis,
+            ),
           ),
         ],
       ),
