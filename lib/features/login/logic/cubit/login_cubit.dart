@@ -1,11 +1,15 @@
 import 'package:flutter/widgets.dart';
+import 'package:shop_app/core/helper/shared_prefrence.dart';
+import 'package:shop_app/core/helper/shared_prefrence_keys.dart';
 import '../../data/models/login_request_body.dart';
 import '../../data/repo/login_repo.dart';
 import 'login_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LoginCubit extends Cubit<LoginState> {
-  LoginCubit(this._loginRepo) : super(const LoginState.initial());
+  LoginCubit(
+    this._loginRepo,
+  ) : super(const LoginState.initial());
 
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
@@ -20,10 +24,15 @@ class LoginCubit extends Cubit<LoginState> {
       password: passwordController.text,
     ));
 
-    response.when(success: (loginResponse) {
+    response.when(success: (loginResponse) async {
+      await saveUserToken(loginResponse.userData!.token ?? '');
       emit(LoginState.success(loginResponse));
     }, failure: (error) {
       emit(LoginState.error(error: error.apiErrorModel.message ?? ''));
     });
+  }
+
+  Future<void> saveUserToken(String token) async {
+    await SharedPrefHelper.setData(SharedPrefKeys.userToken,token);
   }
 }
