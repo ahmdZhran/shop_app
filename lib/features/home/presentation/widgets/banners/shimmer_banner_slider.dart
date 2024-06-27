@@ -6,7 +6,8 @@ import '../../../../../core/utils/color_manager.dart';
 
 class CustomShimmerForBanners extends StatelessWidget {
   const CustomShimmerForBanners({
-    super.key, this.childOfShimmer,
+    super.key,
+    this.childOfShimmer,
   });
   final Widget? childOfShimmer;
   @override
@@ -17,7 +18,6 @@ class CustomShimmerForBanners extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
-        
         ),
         height: 110.h,
         alignment: Alignment.center,
