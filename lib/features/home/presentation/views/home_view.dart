@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shop_app/core/di/dependency_injection.dart';
-import 'package:shop_app/core/helper/extensions.dart';
-import 'package:shop_app/features/home/logic/cubit/home_cubit.dart';
-import 'package:shop_app/features/home/presentation/widgets/banners/banners_list.dart';
-import '../../../../core/utils/text_styles.dart';
+import '../../../../core/di/dependency_injection.dart';
+import '../../../../core/helper/extensions.dart';
+import '../../../../core/utils/app_strings.dart';
+import '../../logic/cubit/home_cubit.dart';
+import '../widgets/banners/banners_list.dart';
 import '../widgets/cart_head_icon.dart';
-import '../widgets/custom_staggered_gride_view.dart';
 import '../widgets/category/category_text.dart';
 import '../widgets/category/list_of_category.dart';
+import '../widgets/custom_staggered_gride_view.dart';
 import '../widgets/see_all_text.dart';
 
 class HomeView extends StatelessWidget {
@@ -28,6 +27,7 @@ class HomeView extends StatelessWidget {
               children: [
                 const CartHeadIcon(),
                 // 10.0.getVerticalSpacer(),
+                //TODO move search bar into separted screen
                 // const CustomSearchBar(),
                 15.0.getVerticalSpacer(),
                 BlocProvider(
@@ -35,28 +35,13 @@ class HomeView extends StatelessWidget {
                   child: const BannersList(),
                 ),
                 3.0.getVerticalSpacer(),
-                const Row(
-                  children: [
-                    CategoryTextWidget(),
-                    Spacer(),
-                    SeeAllTextWidget(),
-                  ],
-                ),
+                const TitleOfSections(titleOfSection: AppStrings.category),
                 2.0.getVerticalSpacer(),
                 BlocProvider(
                   create: (context) => HomeCubit(getIt())..fetchCategories(),
                   child: const ListOfCategory(),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                    left: 12.0,
-                  ),
-                  child: Text(
-                    'Products',
-                    style: CustomTextStyle.medium14
-                        .copyWith(fontSize: 17.sp, fontWeight: FontWeight.bold),
-                  ),
-                ),
+                const TitleOfSections(titleOfSection: AppStrings.products),
                 10.0.getVerticalSpacer(),
                 const CustomStaggeredGridView()
               ],
@@ -64,6 +49,24 @@ class HomeView extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class TitleOfSections extends StatelessWidget {
+  const TitleOfSections({
+    super.key,
+    required this.titleOfSection,
+  });
+  final String titleOfSection;
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        CategoryTextWidget(titleTextWidget: titleOfSection),
+        const Spacer(),
+        const SeeAllTextWidget(),
+      ],
     );
   }
 }
