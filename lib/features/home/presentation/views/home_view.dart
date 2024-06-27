@@ -7,7 +7,6 @@ import 'package:shop_app/features/home/logic/cubit/home_cubit.dart';
 import 'package:shop_app/features/home/presentation/widgets/banners/banners_list.dart';
 import '../../../../core/utils/text_styles.dart';
 import '../widgets/cart_head_icon.dart';
-import '../widgets/custom_search_bar.dart';
 import '../widgets/custom_staggered_gride_view.dart';
 import '../widgets/category/category_text.dart';
 import '../widgets/category/list_of_category.dart';

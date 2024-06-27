@@ -22,6 +22,7 @@ class ListOfCategory extends StatelessWidget {
             return SizedBox(
               height: 70.h,
               child: ListView.builder(
+                physics: const BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
                 itemCount:
                     categoryResponse.categoryDataWrapper!.categories!.length,
