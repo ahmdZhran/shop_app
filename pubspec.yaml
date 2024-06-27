@@ -59,6 +59,8 @@ dependencies:
   carousel_slider: ^4.2.1
   # Reading and writing simple key-value pairs.
   shared_preferences: ^2.2.3
+  # Flutter Secure Storage provides API to store data in secure storage.
+  flutter_secure_storage: ^9.2.2
 
   # State management
   flutter_bloc: ^8.1.6
