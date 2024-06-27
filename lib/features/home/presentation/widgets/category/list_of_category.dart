@@ -30,9 +30,6 @@ class ListOfCategory extends StatelessWidget {
                     imageUrl: categoryResponse
                         .categoryDataWrapper!.categories![index].image
                         .toString(),
-                    text: categoryResponse
-                        .categoryDataWrapper!.categories![index].name
-                        .toString(),
                   );
                 },
               ),
