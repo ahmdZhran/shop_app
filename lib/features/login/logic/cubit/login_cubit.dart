@@ -26,15 +26,21 @@ class LoginCubit extends Cubit<LoginState> {
     ));
 
     response.when(success: (loginResponse) async {
-      final token = loginResponse.userData?.token;
-      if (token != null) {
-        await SharedPrefHelper.setData(SharedPrefKeys.userToken, token);
-        DioFactory.setTokenIntoHeaderAfterLogin(token);
-      }
+      // final token = loginResponse.userData?.token;
+      // if (token != null) {
+      //   await SharedPrefHelper.setData(SharedPrefKeys.userToken, token);
+      //   // DioFactory.setTokenIntoHeaderAfterLogin(token);
+      //   //  DioFactory.setTokenAfterLogin(token!);
+      // }
+      await saveUserToken(loginResponse.userData?.token ?? "");
       emit(LoginState.success(loginResponse));
     }, failure: (error) {
       emit(LoginState.error(error: error.apiErrorModel.message ?? ''));
     });
   }
 
+  Future<void> saveUserToken(String token) async {
+   await SharedPrefHelper.setSecuredString(SharedPrefKeys.userToken, token);
+    DioFactory.setTokenIntoHeaderAfterLogin(token);
+  }
 }
