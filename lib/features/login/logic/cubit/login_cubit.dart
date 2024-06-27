@@ -26,12 +26,6 @@ class LoginCubit extends Cubit<LoginState> {
     ));
 
     response.when(success: (loginResponse) async {
-      // final token = loginResponse.userData?.token;
-      // if (token != null) {
-      //   await SharedPrefHelper.setData(SharedPrefKeys.userToken, token);
-      //   // DioFactory.setTokenIntoHeaderAfterLogin(token);
-      //   //  DioFactory.setTokenAfterLogin(token!);
-      // }
       await saveUserToken(loginResponse.userData?.token ?? "");
       emit(LoginState.success(loginResponse));
     }, failure: (error) {
@@ -40,7 +34,7 @@ class LoginCubit extends Cubit<LoginState> {
   }
 
   Future<void> saveUserToken(String token) async {
-   await SharedPrefHelper.setSecuredString(SharedPrefKeys.userToken, token);
+    await SharedPrefHelper.setSecuredString(SharedPrefKeys.userToken, token);
     DioFactory.setTokenIntoHeaderAfterLogin(token);
   }
 }
