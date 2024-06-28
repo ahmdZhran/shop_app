@@ -3,6 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shop_app/features/home/data/models/category_models/category_response.dart';
 
 import '../../data/models/banners_models/banner_response.dart';
+import '../../data/models/products_model/products_response.dart';
 
 part 'home_state.freezed.dart';
 @freezed
@@ -18,5 +19,10 @@ class HomeState with _$HomeState {
   const factory HomeState.categoryLoading() = CategoryLoading;
   const factory HomeState.categorySuccess(CategoryResponse bannerResponse) = CategorySuccess;
   const factory HomeState.categoryError({required String error}) = CategoryError;
+
+  // products states
+  const factory HomeState.productsLoading() = ProductsLoading;
+  const factory HomeState.productsSuccess(ProductResponse productResponse) = ProductsSuccess;
+  const factory HomeState.productsError({required String error}) = ProductsError;
 
 }
