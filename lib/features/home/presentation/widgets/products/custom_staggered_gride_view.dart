@@ -19,27 +19,27 @@ class CustomStaggeredGridView extends StatelessWidget {
           productsLoading: () => const Center(
             child: ShimmerCardItem(),
           ),
-          productsSuccess: (productsResponse) {
+          productsSuccess: (homeproductsResponse) {
             return SizedBox(
               height: 400.h,
               child: MasonryGridView.count(
                 physics: const BouncingScrollPhysics(),
                 crossAxisCount: 2,
-                itemCount: productsResponse.data!.products!.length,
+                itemCount: homeproductsResponse.data!.products!.length,
                 mainAxisSpacing: 4,
                 shrinkWrap: true,
                 itemBuilder: (BuildContext context, int index) {
                   return CardItem(
-                    imageurl: productsResponse
+                    imageurl: homeproductsResponse
                         .data!.products![index].images!.first
                         .toString(),
                     titleOfItem:
-                        productsResponse.data!.products![index].name.toString(),
-                    price: productsResponse.data!.products![index].price
+                        homeproductsResponse.data!.products![index].name.toString(),
+                    price: homeproductsResponse.data!.products![index].price
                         .toString(),
-                    oldPrice: productsResponse.data!.products![index].oldPrice
+                    oldPrice: homeproductsResponse.data!.products![index].oldPrice
                         .toString(),
-                    discount: productsResponse.data!.products![index].discount
+                    discount: homeproductsResponse.data!.products![index].discount
                         .toString(),
                   );
                 },
