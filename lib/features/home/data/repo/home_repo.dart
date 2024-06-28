@@ -30,10 +30,10 @@ class HomeRepo {
     }
   }
 
-  Future<ApiResult<ProductResponse>> getProducts() async {
+  Future<ApiResult<HomeProductsResponse>> getHomeProducts() async {
     try {
-      final response = await _homeApiService.getProducts();
-    
+      final response = await _homeApiService.getHomeProducts();
+
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ErrorHandler.handle(error));

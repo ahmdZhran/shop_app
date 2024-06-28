@@ -27,8 +27,8 @@ class CustomStaggeredGridView extends StatelessWidget {
                 shrinkWrap: true,
                 itemBuilder: (BuildContext context, int index) {
                   return CardItem(
-                    imageurl:
-                        productsResponse.productData![index].image.toString(),
+                    imageurl: productsResponse.productData![index].images!.first
+                        .toString(),
                     titleOfItem:
                         productsResponse.productData![index].name.toString(),
                     price:

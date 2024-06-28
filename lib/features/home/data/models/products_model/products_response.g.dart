@@ -6,8 +6,9 @@ part of 'products_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-ProductResponse _$ProductResponseFromJson(Map<String, dynamic> json) =>
-    ProductResponse(
+HomeProductsResponse _$HomeProductsResponseFromJson(
+        Map<String, dynamic> json) =>
+    HomeProductsResponse(
       status: json['status'] as bool?,
       message: json['message'] as String?,
       productData: (json['data'] as List<dynamic>?)
@@ -15,7 +16,8 @@ ProductResponse _$ProductResponseFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$ProductResponseToJson(ProductResponse instance) =>
+Map<String, dynamic> _$HomeProductsResponseToJson(
+        HomeProductsResponse instance) =>
     <String, dynamic>{
       'status': instance.status,
       'message': instance.message,
@@ -27,7 +29,8 @@ ProductsData _$ProductsDataFromJson(Map<String, dynamic> json) => ProductsData(
       price: (json['price'] as num?)?.toDouble(),
       oldPrice: (json['old_price'] as num?)?.toDouble(),
       discount: (json['discount'] as num?)?.toInt(),
-      image: json['image'] as String?,
+      images:
+          (json['image'] as List<dynamic>?)?.map((e) => e as String).toList(),
       name: json['name'] as String?,
       description: json['description'] as String?,
       inFavorites: json['in_favorites'] as bool?,
@@ -40,7 +43,7 @@ Map<String, dynamic> _$ProductsDataToJson(ProductsData instance) =>
       'price': instance.price,
       'old_price': instance.oldPrice,
       'discount': instance.discount,
-      'image': instance.image,
+      'image': instance.images,
       'name': instance.name,
       'description': instance.description,
       'in_favorites': instance.inFavorites,
