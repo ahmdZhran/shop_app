@@ -1,14 +1,19 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'product_card_header.dart';
 
 class CardItem extends StatelessWidget {
-  const CardItem(
-      {super.key,
-      required this.imageurl,
-      required this.titleOfItem,
-      required this.price,
-      required this.oldPrice,
-      required this.discount});
-  final bool isFavorite = true;
+  const CardItem({
+    super.key,
+    required this.imageurl,
+    required this.titleOfItem,
+    required this.price,
+    required this.oldPrice,
+    required this.discount,
+  });
+
+  final bool isFavorite = false;
   final String imageurl;
   final String titleOfItem;
   final String price;
@@ -20,7 +25,7 @@ class CardItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        width: 160,
+        width: 160.w,
         decoration: BoxDecoration(
           color: Colors.black,
           borderRadius: BorderRadius.circular(15.0),
@@ -35,16 +40,21 @@ class CardItem extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  ClipRRect(
-                    borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(15.0),
-                      topRight: Radius.circular(15.0),
-                    ),
-                    child: Image.network(
-                      imageurl,
-                      height: 100,
-                      width: double.infinity,
-                      fit: BoxFit.cover,
+                  ProductCardHeader(discount: discount, isFavorite: isFavorite),
+                  SizedBox(
+                    height: 100.h,
+                    width: double.infinity,
+                    child: Center(
+                      child: CachedNetworkImage(
+                        imageUrl: imageurl,
+                        height: 100.h,
+                        width: double.infinity,
+                        fit: BoxFit.contain,
+                        placeholder: (context, url) =>
+                            const Center(child: CircularProgressIndicator()),
+                        errorWidget: (context, url, error) =>
+                            const Center(child: Icon(Icons.error)),
+                      ),
                     ),
                   ),
                   Padding(
@@ -84,34 +94,6 @@ class CardItem extends StatelessWidget {
                     ),
                   ),
                 ],
-              ),
-              Positioned(
-                right: 8,
-                top: 8,
-                child: Icon(
-                  isFavorite ? Icons.favorite : Icons.favorite_border,
-                  color: isFavorite ? Colors.red : Colors.grey,
-                ),
-              ),
-              Positioned(
-                left: 8,
-                top: 8,
-                child: Container(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 6.0, vertical: 2.0),
-                  decoration: BoxDecoration(
-                    color: Colors.pink,
-                    borderRadius: BorderRadius.circular(12.0),
-                  ),
-                  child: Text(
-                    '$discount%',
-                    style: const TextStyle(
-                      fontSize: 12,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
               ),
             ],
           ),
