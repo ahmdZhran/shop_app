@@ -4,7 +4,7 @@ import 'package:shop_app/features/home/data/api/home_api_service.dart';
 import 'package:shop_app/features/home/data/models/banners_models/banner_response.dart';
 import 'package:shop_app/features/home/data/models/category_models/category_response.dart';
 
-import '../models/products_model/products_response.dart';
+import '../models/home_products_model/products_response.dart';
 
 class HomeRepo {
   final HomeApiService _homeApiService;
@@ -30,7 +30,7 @@ class HomeRepo {
     }
   }
 
-  Future<ApiResult<ProductResponse>> getHomeProducts() async {
+  Future<ApiResult<HomeProductsResponse>> getHomeProducts() async {
     try {
       final response = await _homeApiService.getHomeProducts();
 
