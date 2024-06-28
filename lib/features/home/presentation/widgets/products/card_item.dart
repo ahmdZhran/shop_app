@@ -1,8 +1,19 @@
 import 'package:flutter/material.dart';
 
-class ItemCard extends StatelessWidget {
-  const ItemCard({super.key});
+class CardItem extends StatelessWidget {
+  const CardItem(
+      {super.key,
+      required this.imageurl,
+      required this.titleOfItem,
+      required this.price,
+      required this.oldPrice,
+      required this.discount});
   final bool isFavorite = true;
+  final String imageurl;
+  final String titleOfItem;
+  final String price;
+  final String oldPrice;
+  final String discount;
 
   @override
   Widget build(BuildContext context) {
@@ -29,18 +40,18 @@ class ItemCard extends StatelessWidget {
                       topLeft: Radius.circular(15.0),
                       topRight: Radius.circular(15.0),
                     ),
-                    child: Image.asset(
-                      'assets/images/Laptop.png',
+                    child: Image.network(
+                      imageurl,
                       height: 100,
                       width: double.infinity,
                       fit: BoxFit.cover,
                     ),
                   ),
-                  const Padding(
-                    padding: EdgeInsets.all(8.0),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      'Apple 2021 Apple 16-inch MacBook Pro',
-                      style: TextStyle(
+                      titleOfItem,
+                      style: const TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
@@ -49,23 +60,23 @@ class ItemCard extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
-                  const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 8.0),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
                     child: Text(
-                      '\$2,639.90',
-                      style: TextStyle(
+                      '\$$price',
+                      style: const TextStyle(
                         fontSize: 14,
                         color: Colors.green,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
-                  const Padding(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 8.0, vertical: 4.0),
                     child: Text(
-                      '\$2,920.90',
-                      style: TextStyle(
+                      '\$$oldPrice',
+                      style: const TextStyle(
                         fontSize: 12,
                         color: Colors.grey,
                         decoration: TextDecoration.lineThrough,
@@ -92,9 +103,9 @@ class ItemCard extends StatelessWidget {
                     color: Colors.pink,
                     borderRadius: BorderRadius.circular(12.0),
                   ),
-                  child: const Text(
-                    '50%',
-                    style: TextStyle(
+                  child: Text(
+                    '$discount%',
+                    style: const TextStyle(
                       fontSize: 12,
                       color: Colors.white,
                       fontWeight: FontWeight.bold,

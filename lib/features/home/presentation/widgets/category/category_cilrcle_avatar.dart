@@ -6,10 +6,10 @@ class CategoryCircleAvatar extends StatelessWidget {
   const CategoryCircleAvatar({
     super.key,
     required this.imageUrl,
-    required this.text,
+ 
   });
   final String imageUrl;
-  final String text;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -23,11 +23,7 @@ class CategoryCircleAvatar extends StatelessWidget {
           5.0.getVerticalSpacer(),
           SizedBox(
             width: 70.w,
-            child: Text(
-              text,
-              textAlign: TextAlign.center,
-              overflow: TextOverflow.ellipsis,
-            ),
+          
           ),
         ],
       ),

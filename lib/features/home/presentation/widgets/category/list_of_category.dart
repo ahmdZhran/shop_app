@@ -20,8 +20,9 @@ class ListOfCategory extends StatelessWidget {
           ),
           categorySuccess: (categoryResponse) {
             return SizedBox(
-              height: 70.h,
+              height: 60.h,
               child: ListView.builder(
+                physics: const BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
                 itemCount:
                     categoryResponse.categoryDataWrapper!.categories!.length,
@@ -29,9 +30,6 @@ class ListOfCategory extends StatelessWidget {
                   return CategoryCircleAvatar(
                     imageUrl: categoryResponse
                         .categoryDataWrapper!.categories![index].image
-                        .toString(),
-                    text: categoryResponse
-                        .categoryDataWrapper!.categories![index].name
                         .toString(),
                   );
                 },
