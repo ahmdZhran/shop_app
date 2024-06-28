@@ -6,34 +6,38 @@ part of 'products_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-ProductResponse _$ProductResponseFromJson(Map<String, dynamic> json) =>
-    ProductResponse(
+HomeProductsResponse _$HomeProductsResponseFromJson(
+        Map<String, dynamic> json) =>
+    HomeProductsResponse(
       status: json['status'] as bool?,
       message: json['message'] as String?,
       data: json['data'] == null
           ? null
-          : ProductData.fromJson(json['data'] as Map<String, dynamic>),
+          : HomeProductsData.fromJson(json['data'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$ProductResponseToJson(ProductResponse instance) =>
+Map<String, dynamic> _$HomeProductsResponseToJson(
+        HomeProductsResponse instance) =>
     <String, dynamic>{
       'status': instance.status,
       'message': instance.message,
       'data': instance.data,
     };
 
-ProductData _$ProductDataFromJson(Map<String, dynamic> json) => ProductData(
+HomeProductsData _$HomeProductsDataFromJson(Map<String, dynamic> json) =>
+    HomeProductsData(
       products: (json['products'] as List<dynamic>?)
-          ?.map((e) => Product.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => ProductDetails.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
-Map<String, dynamic> _$ProductDataToJson(ProductData instance) =>
+Map<String, dynamic> _$HomeProductsDataToJson(HomeProductsData instance) =>
     <String, dynamic>{
       'products': instance.products,
     };
 
-Product _$ProductFromJson(Map<String, dynamic> json) => Product(
+ProductDetails _$ProductDetailsFromJson(Map<String, dynamic> json) =>
+    ProductDetails(
       id: (json['id'] as num?)?.toInt(),
       price: (json['price'] as num?)?.toInt(),
       oldPrice: (json['old_price'] as num?)?.toInt(),
@@ -47,7 +51,8 @@ Product _$ProductFromJson(Map<String, dynamic> json) => Product(
       inCart: json['in_cart'] as bool?,
     );
 
-Map<String, dynamic> _$ProductToJson(Product instance) => <String, dynamic>{
+Map<String, dynamic> _$ProductDetailsToJson(ProductDetails instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'price': instance.price,
       'old_price': instance.oldPrice,
