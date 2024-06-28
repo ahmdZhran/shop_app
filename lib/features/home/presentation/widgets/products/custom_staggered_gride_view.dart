@@ -49,17 +49,7 @@ class CustomStaggeredGridView extends StatelessWidget {
           orElse: () {
             return Text("State is not ProductsSuccess, current state: $state");
           },
-          // return SizedBox(
-          //   height: 400.h,
-          //   child: MasonryGridView.count(
-          //     crossAxisCount: 2,
-          //     mainAxisSpacing: 4,
-          //     shrinkWrap: true,
-          //     itemBuilder: (BuildContext context, int index) {
-          //       return const ItemCard();
-          //     },
-          //   ),
-          // );
+         
         );
       },
     );
