@@ -30,7 +30,7 @@ class HomeRepo {
     }
   }
 
-  Future<ApiResult<HomeProductsResponse>> getHomeProducts() async {
+  Future<ApiResult<ProductResponse>> getHomeProducts() async {
     try {
       final response = await _homeApiService.getHomeProducts();
 

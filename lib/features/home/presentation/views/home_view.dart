@@ -44,7 +44,7 @@ class HomeView extends StatelessWidget {
                 const TitleOfSections(titleOfSection: AppStrings.products),
                 10.0.getVerticalSpacer(),
                 BlocProvider(
-                  create: (context) => HomeCubit(getIt())..fetchProducts(),
+                  create: (context) => HomeCubit(getIt())..fetchHomeProducts(),
                   child: const CustomStaggeredGridView(),
                 )
               ],

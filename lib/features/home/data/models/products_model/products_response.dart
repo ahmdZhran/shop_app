@@ -1,44 +1,58 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+
 part 'products_response.g.dart';
 
 @JsonSerializable()
-class HomeProductsResponse {
+class ProductResponse {
   bool? status;
   String? message;
-  @JsonKey(name: 'data')
-  List<ProductsData>? productData;
-  HomeProductsResponse({this.status, this.message, this.productData});
-  factory HomeProductsResponse.fromJson(Map<String, dynamic> json) =>
-      _$HomeProductsResponseFromJson(json);
+  ProductData? data;
+
+  ProductResponse({this.status, this.message, this.data});
+
+  factory ProductResponse.fromJson(Map<String, dynamic> json) =>
+      _$ProductResponseFromJson(json);
 }
 
 @JsonSerializable()
-class ProductsData {
+class ProductData {
+  List<Product>? products;
+
+  ProductData({this.products});
+
+  factory ProductData.fromJson(Map<String, dynamic> json) =>
+      _$ProductDataFromJson(json);
+}
+
+@JsonSerializable()
+class Product {
   int? id;
-  double? price;
+  int? price;
   @JsonKey(name: 'old_price')
-  double? oldPrice;
+  int? oldPrice;
   int? discount;
-  @JsonKey(name: 'image')
-  List<String>? images;
+  String? image;
   String? name;
   String? description;
+  List<String>? images;
   @JsonKey(name: 'in_favorites')
   bool? inFavorites;
   @JsonKey(name: 'in_cart')
   bool? inCart;
 
-  ProductsData({
+  Product({
     this.id,
     this.price,
     this.oldPrice,
     this.discount,
-    this.images,
+    this.image,
     this.name,
     this.description,
+    this.images,
     this.inFavorites,
     this.inCart,
   });
-  factory ProductsData.fromJson(Map<String, dynamic> json) =>
-      _$ProductsDataFromJson(json);
+
+  factory Product.fromJson(Map<String, dynamic> json) =>
+      _$ProductFromJson(json);
 }

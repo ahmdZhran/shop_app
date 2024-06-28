@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import '../../../logic/cubit/home_cubit.dart';
@@ -18,24 +19,25 @@ class CustomStaggeredGridView extends StatelessWidget {
             child: CircularProgressIndicator(),
           ),
           productsSuccess: (productsResponse) {
-            return Expanded(
-              // height: 400.h,
+            return SizedBox(
+              height: 400.h,
               child: MasonryGridView.count(
                 crossAxisCount: 2,
-                itemCount: productsResponse.productData!.length,
+                itemCount: productsResponse.data!.products!.length,
                 mainAxisSpacing: 4,
                 shrinkWrap: true,
                 itemBuilder: (BuildContext context, int index) {
                   return CardItem(
-                    imageurl: productsResponse.productData![index].images!.first
+                    imageurl: productsResponse
+                        .data!.products![index].images!.first
                         .toString(),
                     titleOfItem:
-                        productsResponse.productData![index].name.toString(),
-                    price:
-                        productsResponse.productData![index].price.toString(),
-                    oldPrice: productsResponse.productData![index].oldPrice
+                        productsResponse.data!.products![index].name.toString(),
+                    price: productsResponse.data!.products![index].price
                         .toString(),
-                    discount: productsResponse.productData![index].discount
+                    oldPrice: productsResponse.data!.products![index].oldPrice
+                        .toString(),
+                    discount: productsResponse.data!.products![index].discount
                         .toString(),
                   );
                 },
@@ -43,8 +45,7 @@ class CustomStaggeredGridView extends StatelessWidget {
             );
           },
           orElse: () {
-            print("State is not ProductsSuccess, current state: $state");
-            return const Text('there is something went wrong ');
+            return Text("State is not ProductsSuccess, current state: $state");
           },
           // return SizedBox(
           //   height: 400.h,

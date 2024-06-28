@@ -19,5 +19,5 @@ abstract class HomeApiService {
   Future<CategoryResponse> getCategories();
 
   @GET(HomeApiConstatnts.home)
-  Future<HomeProductsResponse> getHomeProducts();
+  Future<ProductResponse> getHomeProducts();
 }

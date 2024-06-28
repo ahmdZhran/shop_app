@@ -27,7 +27,7 @@ class HomeCubit extends Cubit<HomeState> {
     });
   }
 
-  void fetchProducts() async {
+  void fetchHomeProducts() async {
     emit(const HomeState.productsLoading());
     final response = await _homeRepo.getHomeProducts();
     response.when(success: (productResponse) {

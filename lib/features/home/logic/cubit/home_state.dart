@@ -25,8 +25,10 @@ class HomeState with _$HomeState {
 
   // products states
   const factory HomeState.productsLoading() = ProductsLoading;
+
   const factory HomeState.productsSuccess(
-      HomeProductsResponse productResponse) = ProductsSuccess;
+      ProductResponse productResponse) = ProductsSuccess;
+      
   const factory HomeState.productsError({required String error}) =
       ProductsError;
 }
