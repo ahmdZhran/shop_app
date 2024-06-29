@@ -4,7 +4,7 @@ import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:shop_app/core/utils/color_manager.dart';
 
 import '../../../core/utils/app_assets.dart';
-import '../../search/presentation/views/cart_view.dart';
+import '../../search/presentation/views/search_view.dart';
 import '../../categorys/presentation/views/category_view.dart';
 import '../../porfile/views/profile_view.dart';
 import '../../home/presentation/views/home_view.dart';
