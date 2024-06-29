@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'products_response.g.dart';
+part 'home_products_response.g.dart';
 
 @JsonSerializable()
 class HomeProductsResponse {
