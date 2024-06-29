@@ -1,7 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shop_app/features/search/logic/cubit/search_state.dart';
-
-import '../../data/repo/repo.dart';
+import '../../data/repo/search_repo.dart';
+import 'search_state.dart';
 
 class SearchCubit extends Cubit<SearchState> {
   SearchCubit(this._searchRepo) : super(const SearchState.initial());
