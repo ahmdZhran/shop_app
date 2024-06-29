@@ -15,7 +15,7 @@ class SearchRepo {
               element.name!.toLowerCase().contains(query.toLowerCase()))
           .toList();
       if (filerProducts == null || filerProducts.isEmpty) {
-        return ApiResult.failure(ErrorHandler.handle('no data'));
+        return ApiResult.failure(ErrorHandler.handle('no data found'));
       }
       return ApiResult.success(filerProducts);
     } catch (error) {
