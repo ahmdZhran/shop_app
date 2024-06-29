@@ -25,6 +25,7 @@ Future<void> setupGetIt() async {
   // home
   getIt.registerLazySingleton<HomeApiService>(() => HomeApiService(dio));
   getIt.registerLazySingleton<HomeRepo>(() => HomeRepo(getIt()));
+
   // search
   getIt.registerLazySingleton<SearchRepo>(() => SearchRepo(getIt()));
 }

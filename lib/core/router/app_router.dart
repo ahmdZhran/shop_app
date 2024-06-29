@@ -36,11 +36,7 @@ class AppRouter {
       case Routes.mainNavBottomBar:
         return MaterialPageRoute(builder: (_) => const HomeNavBarWidget());
       case Routes.home:
-        return MaterialPageRoute(
-            builder: (_) => BlocProvider(
-                  create: (context) => HomeCubit(getIt())..fetchHomeProducts(),
-                  child: const HomeView(),
-                ));
+        return MaterialPageRoute(builder: (_) => const HomeView());
 
       default:
         return null;
