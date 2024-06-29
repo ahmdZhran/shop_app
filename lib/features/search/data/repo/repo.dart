@@ -1,7 +1,7 @@
-import 'package:shop_app/core/networking/api_error_handler.dart';
-import 'package:shop_app/core/networking/api_result.dart';
-import 'package:shop_app/features/home/data/api/home_api_service.dart';
-import 'package:shop_app/features/home/data/models/home_products_model/home_products_response.dart';
+import '../../../../core/networking/api_error_handler.dart';
+import '../../../../core/networking/api_result.dart';
+import '../../../home/data/api/home_api_service.dart';
+import '../../../home/data/models/home_products_model/home_products_response.dart';
 
 class SearchRepo {
   final HomeApiService _apiApiService;
@@ -14,7 +14,10 @@ class SearchRepo {
           ?.where((element) =>
               element.name!.toLowerCase().contains(query.toLowerCase()))
           .toList();
-      return ApiResult.success(filerProducts ?? []);
+      if (filerProducts == null || filerProducts.isEmpty) {
+        return ApiResult.failure(ErrorHandler.handle('no data'));
+      }
+      return ApiResult.success(filerProducts);
     } catch (error) {
       return ApiResult.failure(ErrorHandler.handle(error));
     }

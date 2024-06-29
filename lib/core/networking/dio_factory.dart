@@ -11,7 +11,7 @@ class DioFactory {
   static Dio? dio;
 
   static Dio getDio() {
-    Duration timeOut = const Duration(seconds: 50);
+    Duration timeOut = const Duration(seconds: 30);
 
     if (dio == null) {
       dio = Dio();
@@ -41,8 +41,6 @@ class DioFactory {
           'Bearer ${await SharedPrefHelper.getString(SharedPrefKeys.userToken)}',
     };
   }
-
-
 
   static void addDioInterceptor() {
     dio?.interceptors.add(ApiInterceptor());
