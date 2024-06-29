@@ -6,10 +6,9 @@ import '../../../../core/utils/app_strings.dart';
 import '../../logic/cubit/home_cubit.dart';
 import '../widgets/banners/banners_list.dart';
 import '../widgets/cart_head_icon.dart';
-import '../widgets/category/category_text.dart';
 import '../widgets/category/list_of_category.dart';
 import '../widgets/products/custom_staggered_gride_view.dart';
-import '../widgets/see_all_text.dart';
+import '../widgets/products/title_of_sections.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -52,24 +51,6 @@ class HomeView extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
-
-class TitleOfSections extends StatelessWidget {
-  const TitleOfSections({
-    super.key,
-    required this.titleOfSection,
-  });
-  final String titleOfSection;
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        CategoryTextWidget(titleTextWidget: titleOfSection),
-        const Spacer(),
-        const SeeAllTextWidget(),
-      ],
     );
   }
 }
