@@ -25,9 +25,6 @@ class HomeView extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const CartHeadIcon(),
-                // 10.0.getVerticalSpacer(),
-                //TODO move search bar into separted screen
-                // const CustomSearchBar(),
                 15.0.getVerticalSpacer(),
                 BlocProvider(
                   create: (context) => HomeCubit(getIt())..fetchBannerDate(),
