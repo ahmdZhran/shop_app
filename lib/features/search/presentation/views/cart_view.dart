@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/features/home/presentation/widgets/custom_search_bar.dart';
+import 'package:shop_app/features/search/presentation/widgets/custom_search_bar.dart';
 
 class SearchView extends StatelessWidget {
   const SearchView({super.key});
