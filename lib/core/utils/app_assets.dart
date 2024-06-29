@@ -22,8 +22,8 @@ class AppAssets {
   static const String laptop = "assets/images/Laptop.png";
 
   // search
-
   static const String searchIconSvg = "assets/svg/search.svg";
-
   static const String searchActiveSvg = "assets/svg/search_active.svg";
+  static const String lottieSearchOnResult = "assets/lottie/search_result.json";
+  static const String lottieNotFound = "assets/lottie/not_found_result.json";
 }
