@@ -31,7 +31,6 @@ class HomeCubit extends Cubit<HomeState> {
     emit(const HomeState.productsLoading());
     final response = await _homeRepo.getHomeProducts();
     response.when(success: (productResponse) {
-      print('yessssssssssssssssssssssssssssssssssssssssssssssssssssssssssss');
       emit(HomeState.productsSuccess(productResponse));
     }, failure: (error) {
       emit(HomeState.productsError(error: error.apiErrorModel.message ?? ""));
