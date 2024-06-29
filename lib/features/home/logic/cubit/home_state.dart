@@ -2,7 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shop_app/features/home/data/models/category_models/category_response.dart';
 
 import '../../data/models/banners_models/banner_response.dart';
-import '../../data/models/home_products_model/products_response.dart';
+import '../../data/models/home_products_model/home_products_response.dart';
 
 part 'home_state.freezed.dart';
 

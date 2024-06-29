@@ -4,7 +4,7 @@ import 'package:shop_app/core/networking/api_constants.dart';
 import 'package:shop_app/features/home/data/models/banners_models/banner_response.dart';
 
 import '../models/category_models/category_response.dart';
-import '../models/home_products_model/products_response.dart';
+import '../models/home_products_model/home_products_response.dart';
 import 'home_api_constatnts.dart';
 part 'home_api_service.g.dart';
 
