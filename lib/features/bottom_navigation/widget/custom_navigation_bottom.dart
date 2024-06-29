@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
@@ -60,12 +62,16 @@ List<PersistentBottomNavBarItem> _navBarsItems() {
     ),
     PersistentBottomNavBarItem(
         icon: SvgPicture.asset(
-          AppAssets.cartActive,
+          width: 30,
+          height: 30,
+          AppAssets.searchActiveSvg,
           colorFilter:
               ColorFilter.mode(ColorManager.kBlackColor, BlendMode.srcIn),
         ),
         inactiveIcon: SvgPicture.asset(
-          AppAssets.cart,
+          width: 30,
+          height: 30,
+          AppAssets.searchIconSvg,
           colorFilter:
               ColorFilter.mode(ColorManager.kBlackColor, BlendMode.srcIn),
         )),
