@@ -20,4 +20,10 @@ class AppAssets {
   static const String arrow = "assets/images/arrow.svg";
   static const String heart = "assets/images/heart.svg";
   static const String laptop = "assets/images/Laptop.png";
+
+  // search
+
+  static const String searchIconSvg = "assets/svg/search.svg";
+
+  static const String searchActiveSvg = "assets/svg/search_active.svg";
 }

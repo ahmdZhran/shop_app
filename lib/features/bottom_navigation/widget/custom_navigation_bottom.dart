@@ -4,7 +4,7 @@ import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:shop_app/core/utils/color_manager.dart';
 
 import '../../../core/utils/app_assets.dart';
-import '../../cart/presentation/views/cart_view.dart';
+import '../../search/presentation/views/cart_view.dart';
 import '../../categorys/presentation/views/category_view.dart';
 import '../../porfile/views/profile_view.dart';
 import '../../home/presentation/views/home_view.dart';
@@ -38,7 +38,7 @@ class HomeNavBarWidget extends StatelessWidget {
 List<Widget> _buildScreens() {
   return [
     const HomeView(),
-    const CartView(),
+    const SearchView(),
     const CategoryView(),
     const ProfileView()
   ];
@@ -60,12 +60,16 @@ List<PersistentBottomNavBarItem> _navBarsItems() {
     ),
     PersistentBottomNavBarItem(
         icon: SvgPicture.asset(
-          AppAssets.cartActive,
+          width: 30,
+          height: 30,
+          AppAssets.searchActiveSvg,
           colorFilter:
               ColorFilter.mode(ColorManager.kBlackColor, BlendMode.srcIn),
         ),
         inactiveIcon: SvgPicture.asset(
-          AppAssets.cart,
+          width: 30,
+          height: 30,
+          AppAssets.searchIconSvg,
           colorFilter:
               ColorFilter.mode(ColorManager.kBlackColor, BlendMode.srcIn),
         )),
