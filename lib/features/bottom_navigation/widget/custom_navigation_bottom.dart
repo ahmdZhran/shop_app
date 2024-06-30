@@ -20,7 +20,7 @@ class HomeNavBarWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return PersistentTabView(
       context,
-      screens: _buildScreens(),
+      screens: _buildScreens(context),
       controller: _controller,
       items: _navBarsItems(),
       navBarStyle: NavBarStyle.style13,
@@ -37,7 +37,7 @@ class HomeNavBarWidget extends StatelessWidget {
   }
 }
 
-List<Widget> _buildScreens() {
+List<Widget> _buildScreens(BuildContext context) {
   return [
     const HomeView(),
     BlocProvider(

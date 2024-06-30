@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shimmer/shimmer.dart';
-import 'package:shop_app/core/utils/color_manager.dart';
+import '../../../../../core/utils/color_manager.dart';
 
 class ShimmerCategoryCircleAvatar extends StatelessWidget {
   const ShimmerCategoryCircleAvatar({super.key});

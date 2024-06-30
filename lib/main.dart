@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/core/helper/extensions.dart';
-import 'package:shop_app/core/helper/shared_prefrence.dart';
+import 'core/helper/extensions.dart';
+import 'core/helper/shared_prefrence.dart';
 import 'core/di/dependency_injection.dart';
 
 import 'core/app/shop_app.dart';
