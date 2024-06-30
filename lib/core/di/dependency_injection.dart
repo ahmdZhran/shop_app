@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
+import 'package:shop_app/features/search/data/repo/search_repo.dart';
 import '../../features/home/data/api/home_api_service.dart';
 import '../../features/home/data/repo/home_repo.dart';
 import '../../features/sign_up/data/repo/sign_up_repo.dart';
@@ -24,5 +25,7 @@ Future<void> setupGetIt() async {
   // home
   getIt.registerLazySingleton<HomeApiService>(() => HomeApiService(dio));
   getIt.registerLazySingleton<HomeRepo>(() => HomeRepo(getIt()));
-  
+
+  // search
+  getIt.registerLazySingleton<SearchRepo>(() => SearchRepo(getIt()));
 }

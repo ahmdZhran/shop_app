@@ -8,7 +8,7 @@ import '../widgets/banners/banners_list.dart';
 import '../widgets/cart_head_icon.dart';
 import '../widgets/category/list_of_category.dart';
 import '../widgets/products/custom_staggered_gride_view.dart';
-import '../widgets/products/title_of_sections.dart';
+import '../widgets/title_of_section.dart'; // Consolidated import
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -18,7 +18,7 @@ class HomeView extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
-          physics: const NeverScrollableScrollPhysics(),
+          physics: const BouncingScrollPhysics(), // Merged physics
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(
