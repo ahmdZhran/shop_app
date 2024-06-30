@@ -1,8 +1,8 @@
-import 'package:shop_app/core/networking/api_error_handler.dart';
-import 'package:shop_app/core/networking/api_result.dart';
-import 'package:shop_app/features/home/data/api/home_api_service.dart';
-import 'package:shop_app/features/home/data/models/banners_models/banner_response.dart';
-import 'package:shop_app/features/home/data/models/category_models/category_response.dart';
+import '../../../../core/networking/api_error_handler.dart';
+import '../../../../core/networking/api_result.dart';
+import '../api/home_api_service.dart';
+import '../models/banners_models/banner_response.dart';
+import '../models/category_models/category_response.dart';
 
 import '../models/home_products_model/home_products_response.dart';
 

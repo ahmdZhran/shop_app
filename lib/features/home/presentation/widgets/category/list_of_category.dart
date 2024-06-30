@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shop_app/features/home/logic/cubit/home_cubit.dart';
-import 'package:shop_app/features/home/logic/cubit/home_state.dart';
+import '../../../logic/cubit/home_cubit.dart';
+import '../../../logic/cubit/home_state.dart';
 
 import 'category_cilrcle_avatar.dart';
 import 'shimer_for_category.dart';

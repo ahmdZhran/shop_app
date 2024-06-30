@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../category/category_text.dart';
@@ -16,7 +15,9 @@ class TitleOfSections extends StatelessWidget {
       children: [
         CategoryTextWidget(titleTextWidget: titleOfSection),
         const Spacer(),
-        const SeeAllTextWidget(),
+        SeeAllTextWidget(
+          onPressed: () {},
+        ),
       ],
     );
   }

@@ -1,4 +1,4 @@
-import 'package:shop_app/core/networking/api_error_handler.dart';
+import '../../../../core/networking/api_error_handler.dart';
 
 import '../../../../core/networking/api_result.dart';
 import '../../../../core/networking/api_services.dart';
