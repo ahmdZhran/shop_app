@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:shop_app/features/home/presentation/widgets/products/shimmer_card_item.dart';
 import '../../../logic/cubit/home_cubit.dart';
 import '../../../logic/cubit/home_state.dart';
 import 'card_item.dart';
+import 'shimmer_card_item.dart';
 
 class CustomStaggeredGridView extends StatelessWidget {
   const CustomStaggeredGridView({super.key});
