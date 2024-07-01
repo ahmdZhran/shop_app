@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/di/dependency_injection.dart';
 import '../../../../core/helper/extensions.dart';
+import '../../../../core/router/routes.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../logic/cubit/home_cubit.dart';
 import '../widgets/banners/banners_list.dart';
@@ -35,7 +36,9 @@ class HomeView extends StatelessWidget {
               ),
               TitleOfSections(
                 titleOfSection: AppStrings.products,
-                onPressed: () {},
+                onPressed: () {
+                  context.pushNamed(Routes.allProducts);
+                },
               ),
               10.0.getVerticalSpacer(),
               BlocProvider(
