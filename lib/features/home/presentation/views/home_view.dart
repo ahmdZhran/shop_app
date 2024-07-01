@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shop_app/features/home/logic/cubit/home_state.dart';
-import '../widgets/all_categories/all_categories.dart';
 import '../../../../core/di/dependency_injection.dart';
 import '../../../../core/helper/extensions.dart';
 import '../../../../core/utils/app_strings.dart';
@@ -37,9 +35,7 @@ class HomeView extends StatelessWidget {
               ),
               TitleOfSections(
                 titleOfSection: AppStrings.products,
-                onPressed: () {
-                  
-                },
+                onPressed: () {},
               ),
               10.0.getVerticalSpacer(),
               BlocProvider(

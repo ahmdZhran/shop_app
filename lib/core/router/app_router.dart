@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../features/bottom_navigation/widget/custom_navigation_bottom.dart';
 import '../../features/home/presentation/views/home_view.dart';
-import '../../features/home/presentation/widgets/all_categories/all_categories.dart';
 import '../../features/login/logic/cubit/login_cubit.dart';
 import '../../features/login/presentation/views/login_view.dart';
 import '../../features/onboarding/presentation/views/onboarding_view.dart';
@@ -37,10 +36,6 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const HomeNavBarWidget());
       case Routes.home:
         return MaterialPageRoute(builder: (_) => const HomeView());
-
-      case Routes.allCategories:
-        return MaterialPageRoute(builder: (_) => const AllCategoriesView());
-
       default:
         return null;
     }
