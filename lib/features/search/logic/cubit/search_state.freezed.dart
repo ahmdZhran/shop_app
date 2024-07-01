@@ -20,7 +20,7 @@ mixin _$SearchState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() searchLoading,
-    required TResult Function(List<dynamic> products) searchSuccess,
+    required TResult Function(List<ProductDetails> products) searchSuccess,
     required TResult Function(String error) searchError,
   }) =>
       throw _privateConstructorUsedError;
@@ -28,7 +28,7 @@ mixin _$SearchState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? searchLoading,
-    TResult? Function(List<dynamic> products)? searchSuccess,
+    TResult? Function(List<ProductDetails> products)? searchSuccess,
     TResult? Function(String error)? searchError,
   }) =>
       throw _privateConstructorUsedError;
@@ -36,7 +36,7 @@ mixin _$SearchState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? searchLoading,
-    TResult Function(List<dynamic> products)? searchSuccess,
+    TResult Function(List<ProductDetails> products)? searchSuccess,
     TResult Function(String error)? searchError,
     required TResult orElse(),
   }) =>
@@ -126,7 +126,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() searchLoading,
-    required TResult Function(List<dynamic> products) searchSuccess,
+    required TResult Function(List<ProductDetails> products) searchSuccess,
     required TResult Function(String error) searchError,
   }) {
     return initial();
@@ -137,7 +137,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? searchLoading,
-    TResult? Function(List<dynamic> products)? searchSuccess,
+    TResult? Function(List<ProductDetails> products)? searchSuccess,
     TResult? Function(String error)? searchError,
   }) {
     return initial?.call();
@@ -148,7 +148,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? searchLoading,
-    TResult Function(List<dynamic> products)? searchSuccess,
+    TResult Function(List<ProductDetails> products)? searchSuccess,
     TResult Function(String error)? searchError,
     required TResult orElse(),
   }) {
@@ -240,7 +240,7 @@ class _$SearchLoadingImpl implements SearchLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() searchLoading,
-    required TResult Function(List<dynamic> products) searchSuccess,
+    required TResult Function(List<ProductDetails> products) searchSuccess,
     required TResult Function(String error) searchError,
   }) {
     return searchLoading();
@@ -251,7 +251,7 @@ class _$SearchLoadingImpl implements SearchLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? searchLoading,
-    TResult? Function(List<dynamic> products)? searchSuccess,
+    TResult? Function(List<ProductDetails> products)? searchSuccess,
     TResult? Function(String error)? searchError,
   }) {
     return searchLoading?.call();
@@ -262,7 +262,7 @@ class _$SearchLoadingImpl implements SearchLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? searchLoading,
-    TResult Function(List<dynamic> products)? searchSuccess,
+    TResult Function(List<ProductDetails> products)? searchSuccess,
     TResult Function(String error)? searchError,
     required TResult orElse(),
   }) {
@@ -320,7 +320,7 @@ abstract class _$$SearchSuccessImplCopyWith<$Res> {
           _$SearchSuccessImpl value, $Res Function(_$SearchSuccessImpl) then) =
       __$$SearchSuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<dynamic> products});
+  $Res call({List<ProductDetails> products});
 }
 
 /// @nodoc
@@ -340,7 +340,7 @@ class __$$SearchSuccessImplCopyWithImpl<$Res>
       null == products
           ? _value._products
           : products // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
+              as List<ProductDetails>,
     ));
   }
 }
@@ -348,12 +348,12 @@ class __$$SearchSuccessImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SearchSuccessImpl implements SearchSuccess {
-  const _$SearchSuccessImpl(final List<dynamic> products)
+  const _$SearchSuccessImpl(final List<ProductDetails> products)
       : _products = products;
 
-  final List<dynamic> _products;
+  final List<ProductDetails> _products;
   @override
-  List<dynamic> get products {
+  List<ProductDetails> get products {
     if (_products is EqualUnmodifiableListView) return _products;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_products);
@@ -387,7 +387,7 @@ class _$SearchSuccessImpl implements SearchSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() searchLoading,
-    required TResult Function(List<dynamic> products) searchSuccess,
+    required TResult Function(List<ProductDetails> products) searchSuccess,
     required TResult Function(String error) searchError,
   }) {
     return searchSuccess(products);
@@ -398,7 +398,7 @@ class _$SearchSuccessImpl implements SearchSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? searchLoading,
-    TResult? Function(List<dynamic> products)? searchSuccess,
+    TResult? Function(List<ProductDetails> products)? searchSuccess,
     TResult? Function(String error)? searchError,
   }) {
     return searchSuccess?.call(products);
@@ -409,7 +409,7 @@ class _$SearchSuccessImpl implements SearchSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? searchLoading,
-    TResult Function(List<dynamic> products)? searchSuccess,
+    TResult Function(List<ProductDetails> products)? searchSuccess,
     TResult Function(String error)? searchError,
     required TResult orElse(),
   }) {
@@ -458,10 +458,10 @@ class _$SearchSuccessImpl implements SearchSuccess {
 }
 
 abstract class SearchSuccess implements SearchState {
-  const factory SearchSuccess(final List<dynamic> products) =
+  const factory SearchSuccess(final List<ProductDetails> products) =
       _$SearchSuccessImpl;
 
-  List<dynamic> get products;
+  List<ProductDetails> get products;
   @JsonKey(ignore: true)
   _$$SearchSuccessImplCopyWith<_$SearchSuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -533,7 +533,7 @@ class _$SearchErrorImpl implements SearchError {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() searchLoading,
-    required TResult Function(List<dynamic> products) searchSuccess,
+    required TResult Function(List<ProductDetails> products) searchSuccess,
     required TResult Function(String error) searchError,
   }) {
     return searchError(error);
@@ -544,7 +544,7 @@ class _$SearchErrorImpl implements SearchError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? searchLoading,
-    TResult? Function(List<dynamic> products)? searchSuccess,
+    TResult? Function(List<ProductDetails> products)? searchSuccess,
     TResult? Function(String error)? searchError,
   }) {
     return searchError?.call(error);
@@ -555,7 +555,7 @@ class _$SearchErrorImpl implements SearchError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? searchLoading,
-    TResult Function(List<dynamic> products)? searchSuccess,
+    TResult Function(List<ProductDetails> products)? searchSuccess,
     TResult Function(String error)? searchError,
     required TResult orElse(),
   }) {

@@ -18,7 +18,7 @@ class HomeState with _$HomeState {
 
   // category states
   const factory HomeState.categoryLoading() = CategoryLoading;
-  const factory HomeState.categorySuccess(CategoryResponse bannerResponse) =
+  const factory HomeState.categorySuccess(CategoryResponse categoryResponse) =
       CategorySuccess;
   const factory HomeState.categoryError({required String error}) =
       CategoryError;

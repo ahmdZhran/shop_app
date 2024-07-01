@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../widgets/all_categories/all_categories.dart';
 import '../../../../core/di/dependency_injection.dart';
 import '../../../../core/helper/extensions.dart';
 import '../../../../core/utils/app_strings.dart';
@@ -29,25 +28,14 @@ class HomeView extends StatelessWidget {
                 create: (context) => HomeCubit(getIt())..fetchBannerDate(),
                 child: const BannersList(),
               ),
-              3.0.getVerticalSpacer(),
-              TitleOfSections(
-                titleOfSection: AppStrings.category,
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return const AllCategoriesView();
-                  }));
-                },
-              ),
-              2.0.getVerticalSpacer(),
+              10.0.getVerticalSpacer(),
               BlocProvider(
                 create: (context) => HomeCubit(getIt())..fetchCategories(),
                 child: const ListOfCategory(),
               ),
               TitleOfSections(
                 titleOfSection: AppStrings.products,
-                onPressed: () {
-                  //TODO navigate to all products
-                },
+                onPressed: () {},
               ),
               10.0.getVerticalSpacer(),
               BlocProvider(
