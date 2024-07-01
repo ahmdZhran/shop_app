@@ -4,5 +4,5 @@ class Routes {
   static const String signup = '/signupscreen';
   static const String login = '/login';
   static const String mainNavBottomBar = '/mainNavBottomBar';
-  static const String allCategories = '/allCategories';
+  static const String allProducts = '/allProducts';
 }
