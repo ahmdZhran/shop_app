@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shop_app/features/home/presentation/widgets/all_produts/all_products.dart';
 import '../../../../core/di/dependency_injection.dart';
 import '../../../../core/helper/extensions.dart';
-import '../../../../core/router/routes.dart';
-import '../../../../core/utils/app_strings.dart';
 import '../../logic/cubit/home_cubit.dart';
 import '../widgets/banners/banners_list.dart';
 import '../widgets/cart_head_icon.dart';
@@ -34,13 +33,18 @@ class HomeView extends StatelessWidget {
                 create: (context) => HomeCubit(getIt())..fetchCategories(),
                 child: const ListOfCategory(),
               ),
-              TitleOfSections(
-                titleOfSection: AppStrings.products,
+              ProductsSection(
                 onPressed: () {
-                  context.pushNamed(Routes.allProducts);
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => BlocProvider.value(
+                                value: context.read<HomeCubit>()
+                                  ..fetchHomeProducts(),
+                                child: const AllProducts(),
+                              )));
                 },
               ),
-              10.0.getVerticalSpacer(),
               BlocProvider(
                 create: (context) => HomeCubit(getIt())..fetchHomeProducts(),
                 child: const CustomStaggeredGridView(),
