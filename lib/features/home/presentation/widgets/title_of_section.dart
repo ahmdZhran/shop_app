@@ -1,22 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shop_app/core/utils/app_strings.dart';
+import 'package:shop_app/core/utils/text_styles.dart';
 
-import 'category/category_text.dart';
 import 'see_all_text.dart';
 
-class TitleOfSections extends StatelessWidget {
-  const TitleOfSections({
+class ProductsSection extends StatelessWidget {
+  const ProductsSection({
     super.key,
-    required this.titleOfSection, required this.onPressed,
+    required this.onPressed,
   });
-  final String titleOfSection;
   final void Function() onPressed;
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        CategoryTextWidget(titleTextWidget: titleOfSection),
+        Text(
+          AppStrings.products,
+          style: CustomTextStyle.soraBoldstyleBold.copyWith(fontSize: 17.sp),
+        ),
         const Spacer(),
-         SeeAllTextWidget(
+        SeeAllTextWidget(
           onPressed: onPressed,
         ),
       ],

@@ -18,27 +18,32 @@ class CustomStaggeredGridView extends StatelessWidget {
             child: ShimmerCardItem(),
           ),
           productsSuccess: (homeproductsResponse) {
-            return MasonryGridView.count(
-              physics: const NeverScrollableScrollPhysics(),
-              crossAxisCount: 2,
-              itemCount: homeproductsResponse.data!.products!.length,
-              mainAxisSpacing: 4,
-              shrinkWrap: true,
-              itemBuilder: (BuildContext context, int index) {
-                return CardItem(
-                  imageurl: homeproductsResponse
-                      .data!.products![index].images!.first
-                      .toString(),
-                  titleOfItem: homeproductsResponse.data!.products![index].name
-                      .toString(),
-                  price: homeproductsResponse.data!.products![index].price
-                      .toString(),
-                  oldPrice: homeproductsResponse.data!.products![index].oldPrice
-                      .toString(),
-                  discount: homeproductsResponse.data!.products![index].discount
-                      .toString(),
-                );
-              },
+            return Expanded(
+              child: MasonryGridView.count(
+                physics: const NeverScrollableScrollPhysics(),
+                crossAxisCount: 2,
+                itemCount: homeproductsResponse.data!.products!.length,
+                mainAxisSpacing: 4,
+                shrinkWrap: true,
+                itemBuilder: (BuildContext context, int index) {
+                  return CardItem(
+                    imageurl: homeproductsResponse
+                        .data!.products![index].images!.first
+                        .toString(),
+                    titleOfItem: homeproductsResponse
+                        .data!.products![index].name
+                        .toString(),
+                    price: homeproductsResponse.data!.products![index].price
+                        .toString(),
+                    oldPrice: homeproductsResponse
+                        .data!.products![index].oldPrice
+                        .toString(),
+                    discount: homeproductsResponse
+                        .data!.products![index].discount
+                        .toString(),
+                  );
+                },
+              ),
             );
           },
           orElse: () {
