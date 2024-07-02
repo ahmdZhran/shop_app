@@ -64,6 +64,7 @@ dependencies:
 
   ## animation
   animate_do: ^3.3.4
+  flutter_animate: ^4.5.0
 
   # State management
   flutter_bloc: ^8.1.6
