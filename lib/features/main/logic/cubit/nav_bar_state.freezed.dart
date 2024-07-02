@@ -19,19 +19,19 @@ mixin _$NavBarState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() iconSelected,
+    required TResult Function(NavBarEnum navBarEnum) iconSelected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? iconSelected,
+    TResult? Function(NavBarEnum navBarEnum)? iconSelected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? iconSelected,
+    TResult Function(NavBarEnum navBarEnum)? iconSelected,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -113,7 +113,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() iconSelected,
+    required TResult Function(NavBarEnum navBarEnum) iconSelected,
   }) {
     return initial();
   }
@@ -122,7 +122,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? iconSelected,
+    TResult? Function(NavBarEnum navBarEnum)? iconSelected,
   }) {
     return initial?.call();
   }
@@ -131,7 +131,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? iconSelected,
+    TResult Function(NavBarEnum navBarEnum)? iconSelected,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -181,6 +181,8 @@ abstract class _$$IconSelectedImplCopyWith<$Res> {
   factory _$$IconSelectedImplCopyWith(
           _$IconSelectedImpl value, $Res Function(_$IconSelectedImpl) then) =
       __$$IconSelectedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({NavBarEnum navBarEnum});
 }
 
 /// @nodoc
@@ -190,54 +192,79 @@ class __$$IconSelectedImplCopyWithImpl<$Res>
   __$$IconSelectedImplCopyWithImpl(
       _$IconSelectedImpl _value, $Res Function(_$IconSelectedImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? navBarEnum = null,
+  }) {
+    return _then(_$IconSelectedImpl(
+      null == navBarEnum
+          ? _value.navBarEnum
+          : navBarEnum // ignore: cast_nullable_to_non_nullable
+              as NavBarEnum,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$IconSelectedImpl implements IconSelected {
-  const _$IconSelectedImpl();
+  const _$IconSelectedImpl(this.navBarEnum);
+
+  @override
+  final NavBarEnum navBarEnum;
 
   @override
   String toString() {
-    return 'NavBarState.iconSelected()';
+    return 'NavBarState.iconSelected(navBarEnum: $navBarEnum)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$IconSelectedImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$IconSelectedImpl &&
+            (identical(other.navBarEnum, navBarEnum) ||
+                other.navBarEnum == navBarEnum));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, navBarEnum);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$IconSelectedImplCopyWith<_$IconSelectedImpl> get copyWith =>
+      __$$IconSelectedImplCopyWithImpl<_$IconSelectedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() iconSelected,
+    required TResult Function(NavBarEnum navBarEnum) iconSelected,
   }) {
-    return iconSelected();
+    return iconSelected(navBarEnum);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? iconSelected,
+    TResult? Function(NavBarEnum navBarEnum)? iconSelected,
   }) {
-    return iconSelected?.call();
+    return iconSelected?.call(navBarEnum);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? iconSelected,
+    TResult Function(NavBarEnum navBarEnum)? iconSelected,
     required TResult orElse(),
   }) {
     if (iconSelected != null) {
-      return iconSelected();
+      return iconSelected(navBarEnum);
     }
     return orElse();
   }
@@ -275,5 +302,10 @@ class _$IconSelectedImpl implements IconSelected {
 }
 
 abstract class IconSelected implements NavBarState {
-  const factory IconSelected() = _$IconSelectedImpl;
+  const factory IconSelected(final NavBarEnum navBarEnum) = _$IconSelectedImpl;
+
+  NavBarEnum get navBarEnum;
+  @JsonKey(ignore: true)
+  _$$IconSelectedImplCopyWith<_$IconSelectedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
