@@ -7,11 +7,11 @@ import '../../../../core/utils/color_manager.dart';
 class IconNavBar extends StatelessWidget {
   const IconNavBar({
     super.key,
-    this.onTap,
+    required this.onTap,
     required this.icon,
     required this.isSelected,
   });
-  final void Function()? onTap;
+  final void Function() onTap;
   final String icon;
   final bool isSelected;
   @override

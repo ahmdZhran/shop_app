@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shop_app/core/animations/animate_do.dart';
+import 'package:shop_app/core/utils/app_assets.dart';
 import 'package:shop_app/core/utils/color_manager.dart';
+import 'package:shop_app/features/main/widgets/bottom_nav_bar/icons_bottom_nav_bar.dart';
 
 class MainBottonNavBar extends StatelessWidget {
   const MainBottonNavBar({super.key});
@@ -26,16 +28,35 @@ class MainBottonNavBar extends StatelessWidget {
                 ),
               ),
               child: SizedBox(
-                height: 45.h,
+                height: 60.h,
                 width: double.infinity,
                 child: Padding(
                   padding: EdgeInsets.symmetric(
-                    horizontal: 20.w,
+                    horizontal: 40.w,
                   ),
-                  child: const Row(
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      
+                      IconNavBar(
+                        icon: AppAssets.home,
+                        isSelected: true,
+                        onTap: () {},
+                      ),
+                      IconNavBar(
+                        icon: AppAssets.search,
+                        isSelected: true,
+                        onTap: () {},
+                      ),
+                      IconNavBar(
+                        icon: AppAssets.heart,
+                        isSelected: true,
+                        onTap: () {},
+                      ),
+                      IconNavBar(
+                        icon: AppAssets.profile,
+                        isSelected: true,
+                        onTap: () {},
+                      )
                     ],
                   ),
                 ),
