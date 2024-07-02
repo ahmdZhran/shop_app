@@ -8,11 +8,11 @@ class HomeState with _$HomeState {
   const factory HomeState.initial() = _Initial;
 
   // category states
-  const factory HomeState.categoryLoading() = CategoryLoading;
-  const factory HomeState.categorySuccess(CategoryResponse categoryResponse) =
-      CategorySuccess;
-  const factory HomeState.categoryError({required String error}) =
-      CategoryError;
+  // const factory HomeState.categoryLoading() = CategoryLoading;
+  // const factory HomeState.categorySuccess(CategoryResponse categoryResponse) =
+  //     CategorySuccess;
+  // const factory HomeState.categoryError({required String error}) =
+  //     CategoryError;
 
   // products states
   const factory HomeState.productsLoading() = ProductsLoading;

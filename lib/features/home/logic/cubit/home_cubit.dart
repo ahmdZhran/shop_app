@@ -7,15 +7,15 @@ class HomeCubit extends Cubit<HomeState> {
 
   final HomeRepo _homeRepo;
 
-  void fetchCategories() async {
-    emit(const HomeState.categoryLoading());
-    final response = await _homeRepo.getCategories();
-    response.when(success: (categoryResponse) {
-      emit(HomeState.categorySuccess(categoryResponse));
-    }, failure: (error) {
-      emit(HomeState.categoryError(error: error.apiErrorModel.message ?? ""));
-    });
-  }
+  // void fetchCategories() async {
+  //   emit(const HomeState.categoryLoading());
+  //   final response = await _homeRepo.getCategories();
+  //   response.when(success: (categoryResponse) {
+  //     emit(HomeState.categorySuccess(categoryResponse));
+  //   }, failure: (error) {
+  //     emit(HomeState.categoryError(error: error.apiErrorModel.message ?? ""));
+  //   });
+  // }
 
   void fetchHomeProducts() async {
     emit(const HomeState.productsLoading());
