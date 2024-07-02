@@ -8,16 +8,8 @@ class NavBarCubit extends Cubit<NavBarState> {
 
   NavBarEnum navBarEnum = NavBarEnum.home;
 
-  void iconSelected(NavBarEnum navBarEnum) {
-    if (navBarEnum == NavBarEnum.home) {
-      navBarEnum = NavBarEnum.home;
-    } else if (navBarEnum == NavBarEnum.search) {
-      navBarEnum = NavBarEnum.search;
-    } else if (navBarEnum == NavBarEnum.favorites) {
-      navBarEnum = NavBarEnum.favorites;
-    } else if (navBarEnum == NavBarEnum.profile) {
-      navBarEnum = NavBarEnum.profile;
-    }
+  void iconSelected(NavBarEnum newNavBarEnum) {
+    navBarEnum = newNavBarEnum;
     emit(NavBarState.iconSelected(navBarEnum));
   }
 }

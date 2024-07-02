@@ -18,7 +18,8 @@ class AppAssets {
   static const String search = "assets/images/search.svg";
   static const String tag = "assets/images/Tag.svg";
   static const String arrow = "assets/images/arrow.svg";
-  static const String heart = "assets/images/heart.svg";
+  static const String favorite = "assets/images/heart.svg";
+  static const String favoriteActive = "assets/svg/active_favorite.svg";
   static const String laptop = "assets/images/Laptop.png";
 
   // search
