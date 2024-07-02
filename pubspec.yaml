@@ -53,8 +53,6 @@ dependencies:
   shimmer: ^3.0.0
   # Flutter library to load and cache network images.
   cached_network_image: ^3.3.1
-  # for Bottom navigatoin bar
-  persistent_bottom_nav_bar: ^5.0.2
   # for auto sliding carousel
   carousel_slider: ^4.2.1
   # Reading and writing simple key-value pairs.
