@@ -17,13 +17,13 @@ class HomeCubit extends Cubit<HomeState> {
   //   });
   // }
 
-  void fetchHomeProducts() async {
-    emit(const HomeState.productsLoading());
-    final response = await _homeRepo.getHomeProducts();
-    response.when(success: (productResponse) {
-      emit(HomeState.productsSuccess(productResponse));
-    }, failure: (error) {
-      emit(HomeState.productsError(error: error.apiErrorModel.message ?? ""));
-    });
-  }
+  // void fetchHomeProducts() async {
+  //   emit(const HomeState.productsLoading());
+  //   final response = await _homeRepo.getHomeProducts();
+  //   response.when(success: (productResponse) {
+  //     emit(HomeState.productsSuccess(productResponse));
+  //   }, failure: (error) {
+  //     emit(HomeState.productsError(error: error.apiErrorModel.message ?? ""));
+  //   });
+  // }
 }
