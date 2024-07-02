@@ -7,16 +7,6 @@ class HomeCubit extends Cubit<HomeState> {
 
   final HomeRepo _homeRepo;
 
-  // void fetchBannerDate() async {
-  //   emit(const HomeState.bannerLoading());
-  //   final response = await _homeRepo.getBannerDate();
-  //   response.when(success: (bannerResponse) {
-  //     emit(HomeState.bannerSuccess(bannerResponse));
-  //   }, failure: (error) {
-  //     emit(HomeState.bannerError(error: error.apiErrorModel.message ?? ""));
-  //   });
-  // }
-
   void fetchCategories() async {
     emit(const HomeState.categoryLoading());
     final response = await _homeRepo.getCategories();
