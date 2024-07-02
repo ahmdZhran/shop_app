@@ -44,13 +44,6 @@ class AppRouter {
           ),
         );
 
-      // case Routes.mainNavBottomBar:
-      //   return MaterialPageRoute(
-      //       builder: (_) => BlocProvider(
-      //             create: (context) => HomeCubit(getIt()),
-      //             child: const HomeNavBarWidget(),
-      //           ));
-
       case Routes.allProducts:
         return MaterialPageRoute(builder: (_) => const AllProducts());
       case Routes.home:
