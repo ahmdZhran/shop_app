@@ -6,6 +6,7 @@ import '../../features/home/presentation/views/home_view.dart';
 import '../../features/home/presentation/widgets/all_produts/all_products.dart';
 import '../../features/login/logic/cubit/login_cubit.dart';
 import '../../features/login/presentation/views/login_view.dart';
+import '../../features/main/presentation/views/main_view.dart';
 import '../../features/onboarding/presentation/views/onboarding_view.dart';
 import '../../features/sign_up/logic/cubit/signup_cubit.dart';
 import '../../features/sign_up/presentation/views/sign_up_view.dart';
@@ -34,12 +35,18 @@ class AppRouter {
                   child: const SignUpView(),
                 ));
 
+      case Routes.mainScreen:
+        return MaterialPageRoute(
+          builder: (_) => const MainView(),
+        );
+        
       case Routes.mainNavBottomBar:
         return MaterialPageRoute(
             builder: (_) => BlocProvider(
                   create: (context) => HomeCubit(getIt()),
                   child: const HomeNavBarWidget(),
                 ));
+
       case Routes.allProducts:
         return MaterialPageRoute(builder: (_) => const AllProducts());
       case Routes.home:
