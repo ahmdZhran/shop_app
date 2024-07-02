@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop_app/features/main/logic/cubit/nav_bar_cubit.dart';
-import '../../features/bottom_navigation/widget/custom_navigation_bottom.dart';
 import '../../features/home/logic/cubit/home_cubit.dart';
 import '../../features/home/presentation/views/home_view.dart';
 import '../../features/home/presentation/widgets/all_produts/all_products.dart';
