@@ -8,12 +8,13 @@ class SearchView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
+      backgroundColor: Colors.red,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: [
               CustomSearchBar(),
-              SearchBlocBuilder(),
+              // SearchBlocBuilder(),
             ],
           ),
         ),
