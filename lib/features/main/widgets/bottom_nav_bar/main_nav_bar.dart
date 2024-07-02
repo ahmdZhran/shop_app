@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shop_app/core/animations/animate_do.dart';
-import 'package:shop_app/core/utils/color_manager.dart';
+import '../../../../core/animations/animate_do.dart';
+import '../../../../core/utils/color_manager.dart';
 
 import 'nav_bar_bloc_builder.dart';
 
