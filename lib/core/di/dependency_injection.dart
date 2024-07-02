@@ -16,18 +16,13 @@ Future<void> setupGetIt() async {
   // Dio & ApiService
   Dio dio = DioFactory.getDio();
   getIt.registerLazySingleton<ApiService>(() => ApiService(dio));
-
   // login
   getIt.registerLazySingleton<LoginRepo>(() => LoginRepo(getIt()));
-
   //signup
-
   getIt.registerLazySingleton<SignUpRepo>(() => SignUpRepo(getIt()));
-
   // home
   getIt.registerLazySingleton<HomeApiService>(() => HomeApiService(dio));
   getIt.registerLazySingleton<HomeRepo>(() => HomeRepo(getIt()));
-
   // banner
   getIt.registerLazySingleton<BannerRepo>(() => BannerRepo(getIt()));
 

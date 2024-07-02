@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop_app/core/di/dependency_injection.dart';
+import 'package:shop_app/features/home/data/repos/categories/categories_repo.dart';
+import 'package:shop_app/features/home/logic/cubits/categories/categories_cubit.dart';
 import '../../../favorits/favorits_view.dart';
 import '../../../home/data/repos/banner/banner_repo.dart';
 import '../../../home/logic/cubits/banner/banner_cubit.dart';
@@ -22,6 +24,10 @@ class MainView extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (_) => BannerCubit(getIt<BannerRepo>())..fetchBannerDate(),
+        ),
+        BlocProvider(
+          create: (_) =>
+              CategoriesCubit(getIt<CategoriesRepo>())..fetchCategories(),
         ),
       ],
       child: Column(
