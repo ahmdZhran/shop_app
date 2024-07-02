@@ -11,14 +11,14 @@ class HomeRepo {
 
   HomeRepo(this._homeApiService);
 
-  Future<ApiResult<BannerResponse>> getBannerDate() async {
-    try {
-      final response = await _homeApiService.getBannerDate();
-      return ApiResult.success(response);
-    } catch (error) {
-      return ApiResult.failure(ErrorHandler.handle(error));
-    }
-  }
+  // Future<ApiResult<BannerResponse>> getBannerDate() async {
+  //   try {
+  //     final response = await _homeApiService.getBannerDate();
+  //     return ApiResult.success(response);
+  //   } catch (error) {
+  //     return ApiResult.failure(ErrorHandler.handle(error));
+  //   }
+  // }
 
   Future<ApiResult<CategoryResponse>> getCategories() async {
     try {

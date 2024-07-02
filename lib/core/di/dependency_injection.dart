@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import '../../features/search/data/repo/search_repo.dart';
 import '../../features/home/data/api/home_api_service.dart';
-import '../../features/home/data/repo/home_repo.dart';
+import '../../features/home/data/repos/home_repo.dart';
 import '../../features/sign_up/data/repo/sign_up_repo.dart';
 import '../networking/api_services.dart';
 import '../networking/dio_factory.dart';

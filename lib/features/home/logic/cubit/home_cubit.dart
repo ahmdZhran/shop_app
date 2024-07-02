@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../data/repo/home_repo.dart';
+import '../../data/repos/home_repo.dart';
 import 'home_state.dart';
 
 class HomeCubit extends Cubit<HomeState> {
@@ -7,15 +7,15 @@ class HomeCubit extends Cubit<HomeState> {
 
   final HomeRepo _homeRepo;
 
-  void fetchBannerDate() async {
-    emit(const HomeState.bannerLoading());
-    final response = await _homeRepo.getBannerDate();
-    response.when(success: (bannerResponse) {
-      emit(HomeState.bannerSuccess(bannerResponse));
-    }, failure: (error) {
-      emit(HomeState.bannerError(error: error.apiErrorModel.message ?? ""));
-    });
-  }
+  // void fetchBannerDate() async {
+  //   emit(const HomeState.bannerLoading());
+  //   final response = await _homeRepo.getBannerDate();
+  //   response.when(success: (bannerResponse) {
+  //     emit(HomeState.bannerSuccess(bannerResponse));
+  //   }, failure: (error) {
+  //     emit(HomeState.bannerError(error: error.apiErrorModel.message ?? ""));
+  //   });
+  // }
 
   void fetchCategories() async {
     emit(const HomeState.categoryLoading());
