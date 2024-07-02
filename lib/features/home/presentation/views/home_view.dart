@@ -2,20 +2,13 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shop_app/features/home/logic/cubits/banner/banner_cubit.dart';
+import '../../logic/cubits/banner/banner_cubit.dart';
 import '../../data/models/banners_models/banner_response.dart';
 import '../../logic/cubits/banner/banner_state.dart';
-import '../widgets/all_produts/all_products.dart';
-import '../../../../core/di/dependency_injection.dart';
 import '../../../../core/helper/extensions.dart';
-import '../../logic/cubit/home_cubit.dart';
-import '../widgets/banners/banners_list.dart';
 import '../widgets/banners/banners_slider.dart';
 import '../widgets/banners/shimmer_banner_slider.dart';
 import '../widgets/cart_head_icon.dart';
-import '../widgets/category/list_of_category.dart';
-import '../widgets/products/custom_staggered_gride_view.dart';
-import '../widgets/title_of_section.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});

@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop_app/core/di/dependency_injection.dart';
 import '../../../favorits/favorits_view.dart';
 import '../../../home/data/repos/banner/banner_repo.dart';
-import '../../../home/data/repos/home_repo.dart';
 import '../../../home/logic/cubits/banner/banner_cubit.dart';
 import '../../../home/presentation/views/home_view.dart';
 import '../../../porfile/views/profile_view.dart';
