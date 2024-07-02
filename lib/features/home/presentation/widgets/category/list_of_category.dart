@@ -36,7 +36,7 @@ class ListOfCategory extends StatelessWidget {
               ),
             );
           },
-          bannerError: (error) => Text(error),
+          categoryError: (error) => Text(error),
           orElse: () => const Text('something went wrong '),
         );
       },
