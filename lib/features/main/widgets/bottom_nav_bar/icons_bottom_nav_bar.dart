@@ -19,9 +19,8 @@ class IconNavBar extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: SvgPicture.asset(icon,
-              color: isSelected
-                  ? ColorManager.kGreyColor
-                  : ColorManager.kBlackColor,
+              colorFilter:
+                  ColorFilter.mode(ColorManager.kBlackColor, BlendMode.srcIn),
               height: 20)
           .animate(target: isSelected ? 1 : 0)
           .scaleXY(end: 1.2),
