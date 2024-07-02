@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shop_app/features/main/logic/cubit/nav_bar_cubit.dart';
 import '../../features/bottom_navigation/widget/custom_navigation_bottom.dart';
 import '../../features/home/logic/cubit/home_cubit.dart';
 import '../../features/home/presentation/views/home_view.dart';
@@ -37,15 +38,18 @@ class AppRouter {
 
       case Routes.mainScreen:
         return MaterialPageRoute(
-          builder: (_) => const MainView(),
+          builder: (_) => BlocProvider(
+            create: (context) => NavBarCubit(),
+            child: const MainView(),
+          ),
         );
-        
-      case Routes.mainNavBottomBar:
-        return MaterialPageRoute(
-            builder: (_) => BlocProvider(
-                  create: (context) => HomeCubit(getIt()),
-                  child: const HomeNavBarWidget(),
-                ));
+
+      // case Routes.mainNavBottomBar:
+      //   return MaterialPageRoute(
+      //       builder: (_) => BlocProvider(
+      //             create: (context) => HomeCubit(getIt()),
+      //             child: const HomeNavBarWidget(),
+      //           ));
 
       case Routes.allProducts:
         return MaterialPageRoute(builder: (_) => const AllProducts());

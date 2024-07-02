@@ -17,72 +17,80 @@ class MainBottonNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomFadeInUp(
       duration: 800,
-      child: SizedBox(
-        height: 50.h,
-        width: double.infinity,
+      child: Align(
+        alignment: Alignment.bottomCenter,
         child: Stack(
           children: [
-            Container(
-              height: 60.h,
-              decoration: BoxDecoration(
-                color: ColorManager.kPrimaryColor,
-                borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(60),
-                  topRight: Radius.circular(60),
+            Column(
+              children: [
+                Container(
+                  height: 40.h,
+                  decoration: BoxDecoration(
+                      color: ColorManager.kPrimaryColor,
+                      borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(60),
+                        topRight: Radius.circular(60),
+                      )),
+                  child: BlocBuilder<NavBarCubit, NavBarState>(
+                    builder: (context, state) {
+                      final cubit = context.read<NavBarCubit>();
+                      return Align(
+                        alignment: Alignment.topRight,
+                        child: SizedBox(
+                          height: 60.h,
+                          width: double.infinity,
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 40.w,
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                IconNavBar(
+                                  selectedIcon: AppAssets.homeActive,
+                                  unselectedIcon: AppAssets.home,
+                                  isSelected:
+                                      cubit.navBarEnum == NavBarEnum.home,
+                                  onTap: () {
+                                    cubit.iconSelected(NavBarEnum.home);
+                                  },
+                                ),
+                                IconNavBar(
+                                  selectedIcon: AppAssets.searchActiveSvg,
+                                  unselectedIcon: AppAssets.search,
+                                  isSelected:
+                                      cubit.navBarEnum == NavBarEnum.search,
+                                  onTap: () {
+                                    cubit.iconSelected(NavBarEnum.search);
+                                  },
+                                ),
+                                IconNavBar(
+                                  selectedIcon: AppAssets.favoriteActive,
+                                  unselectedIcon: AppAssets.favorite,
+                                  isSelected:
+                                      cubit.navBarEnum == NavBarEnum.favorites,
+                                  onTap: () {
+                                    cubit.iconSelected(NavBarEnum.favorites);
+                                  },
+                                ),
+                                IconNavBar(
+                                  selectedIcon: AppAssets.profileActive,
+                                  unselectedIcon: AppAssets.profile,
+                                  isSelected:
+                                      cubit.navBarEnum == NavBarEnum.profile,
+                                  onTap: () {
+                                    cubit.iconSelected(NavBarEnum.profile);
+                                  },
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  ),
                 ),
-              ),
-              child: BlocBuilder<NavBarCubit, NavBarState>(
-                builder: (context, state) {
-                  final cubit = context.read<NavBarCubit>();
-                  return SizedBox(
-                    height: 60.h,
-                    width: double.infinity,
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 40.w,
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          IconNavBar(
-                            selectedIcon: AppAssets.homeActive,
-                            unselectedIcon: AppAssets.home,
-                            isSelected: cubit.navBarEnum == NavBarEnum.home,
-                            onTap: () {
-                              cubit.iconSelected(NavBarEnum.home);
-                            },
-                          ),
-                          IconNavBar(
-                            selectedIcon: AppAssets.searchActiveSvg,
-                            unselectedIcon: AppAssets.search,
-                            isSelected: cubit.navBarEnum == NavBarEnum.search,
-                            onTap: () {
-                              cubit.iconSelected(NavBarEnum.search);
-                            },
-                          ),
-                          IconNavBar(
-                            selectedIcon: AppAssets.favoriteActive,
-                            unselectedIcon: AppAssets.favorite,
-                            isSelected:
-                                cubit.navBarEnum == NavBarEnum.favorites,
-                            onTap: () {
-                              cubit.iconSelected(NavBarEnum.favorites);
-                            },
-                          ),
-                          IconNavBar(
-                            selectedIcon: AppAssets.profileActive,
-                            unselectedIcon: AppAssets.profile,
-                            isSelected: cubit.navBarEnum == NavBarEnum.profile,
-                            onTap: () {
-                              cubit.iconSelected(NavBarEnum.profile);
-                            },
-                          )
-                        ],
-                      ),
-                    ),
-                  );
-                },
-              ),
+              ],
             ),
           ],
         ),
