@@ -23,7 +23,7 @@ class ShopApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Shop app',
         onGenerateRoute: appRouter.onGenerateRoute,
-        initialRoute: isLoggedInUser ? Routes.mainNavBottomBar : Routes.login,
+        initialRoute: isLoggedInUser ? Routes.mainScreen : Routes.login,
       ),
     );
   }
