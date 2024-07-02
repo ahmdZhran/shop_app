@@ -14,6 +14,7 @@ import '../widgets/banners/shimmer_banner_slider.dart';
 import '../widgets/cart_head_icon.dart';
 import '../widgets/category/category_cilrcle_avatar.dart';
 import '../widgets/category/shimer_for_category.dart';
+import '../widgets/title_of_section.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -53,6 +54,11 @@ class HomeView extends StatelessWidget {
                   orElse: () => const SizedBox.shrink(),
                 );
               }),
+              20.0.getVerticalSpacer(),
+              ProductsSection(
+                onPressed: () {},
+              ),
+              
               // BlocProvider(
               //   create: (context) => BannerCubit(getIt())..fetchBannerDate(),
               //   child: const BannersList(),
