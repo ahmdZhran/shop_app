@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import '../../data/models/category_models/category_response.dart';
 import '../../data/models/home_products_model/home_products_response.dart';
 part 'home_state.freezed.dart';
 
