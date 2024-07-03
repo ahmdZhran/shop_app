@@ -9,7 +9,7 @@ class ShimmerCardItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 50.h,
+      height: 700.h,
       child: GridView.builder(
         itemCount: 10,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(

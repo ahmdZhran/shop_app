@@ -2,9 +2,9 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shop_app/features/home/logic/cubits/banner/banner_state.dart';
+import 'package:shop_app/features/home/cubits/banner/banner_state.dart';
 import '../../../../../core/helper/extensions.dart';
-import '../../../logic/cubits/banner/banner_cubit.dart';
+import '../../../cubits/banner/banner_cubit.dart';
 import 'banners_slider.dart';
 import 'shimmer_banner_slider.dart';
 

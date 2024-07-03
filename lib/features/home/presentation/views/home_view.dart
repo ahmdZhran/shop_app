@@ -4,14 +4,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:shop_app/features/home/data/models/home_products_model/home_products_response.dart';
-import 'package:shop_app/features/home/logic/cubits/categories/categories_cubit.dart';
-import 'package:shop_app/features/home/logic/cubits/categories/categories_state.dart';
-import 'package:shop_app/features/home/logic/cubits/products/cubit/products_cubit.dart';
-import 'package:shop_app/features/home/logic/cubits/products/cubit/products_state.dart';
+import 'package:shop_app/features/home/cubits/categories/categories_cubit.dart';
+import 'package:shop_app/features/home/cubits/categories/categories_state.dart';
+import 'package:shop_app/features/home/cubits/products/products_cubit.dart';
+import 'package:shop_app/features/home/cubits/products/products_state.dart';
 import '../../data/models/category_models/category_response.dart';
-import '../../logic/cubits/banner/banner_cubit.dart';
+import '../../cubits/banner/banner_cubit.dart';
 import '../../data/models/banners_models/banner_response.dart';
-import '../../logic/cubits/banner/banner_state.dart';
+import '../../cubits/banner/banner_state.dart';
 import '../../../../core/helper/extensions.dart';
 import '../widgets/banners/banners_slider.dart';
 import '../widgets/banners/shimmer_banner_slider.dart';
@@ -64,19 +64,19 @@ class HomeView extends StatelessWidget {
               ProductsSection(
                 onPressed: () {},
               ),
-              // BlocBuilder<ProductsCubit, ProductsState>(
-              //     builder: (context, state) {
-              //   return state.maybeWhen(
-              //     productsLoading: () {
-              //       return const Center(
-              //         child: ShimmerCardItem(),
-              //       );
-              //     },
-              //     productsSuccess: (productResponse) =>
-              //         buildProducts(productResponse.data!.products!),
-              //     orElse: () => const SizedBox.shrink(),
-              //   );
-              // })
+              BlocBuilder<ProductsCubit, ProductsState>(
+                  builder: (context, state) {
+                return state.maybeWhen(
+                  productsLoading: () {
+                    return const Center(
+                      child: ShimmerCardItem(),
+                    );
+                  },
+                  productsSuccess: (productResponse) =>
+                      buildProducts(productResponse.data!.products!),
+                  orElse: () => const SizedBox.shrink(),
+                );
+              })
             ],
           ),
         ),
@@ -120,26 +120,24 @@ class HomeView extends StatelessWidget {
     );
   }
 
-  // Widget buildProducts(List<ProductDetails> products) {
-  //   return const Text("products.name.toString");
-
-  //   Expanded(
-  //     child: MasonryGridView.count(
-  //       physics: const NeverScrollableScrollPhysics(),
-  //       crossAxisCount: 2,
-  //       itemCount: products.length,
-  //       mainAxisSpacing: 4,
-  //       shrinkWrap: true,
-  //       itemBuilder: (BuildContext context, int index) {
-  //         return CardItem(
-  //           imageurl: products[index].images!.first.toString(),
-  //           titleOfItem: products[index].name.toString(),
-  //           price: products[index].price.toString(),
-  //           oldPrice: products[index].oldPrice.toString(),
-  //           discount: products[index].discount.toString(),
-  //         );
-  //       },
-  //     ),
-  //   );
-  // }
+  Widget buildProducts(List<ProductDetails> products) {
+    return Expanded(
+      child: MasonryGridView.count(
+        physics: const NeverScrollableScrollPhysics(),
+        crossAxisCount: 2,
+        itemCount: products.length,
+        mainAxisSpacing: 4,
+        shrinkWrap: true,
+        itemBuilder: (BuildContext context, int index) {
+          return CardItem(
+            imageurl: products[index].images!.first.toString(),
+            titleOfItem: products[index].name.toString(),
+            price: products[index].price.toString(),
+            oldPrice: products[index].oldPrice.toString(),
+            discount: products[index].discount.toString(),
+          );
+        },
+      ),
+    );
+  }
 }

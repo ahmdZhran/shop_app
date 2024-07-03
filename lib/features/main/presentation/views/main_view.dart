@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/di/dependency_injection.dart';
-import '../../../home/logic/cubits/categories/categories_cubit.dart';
-import '../../../home/logic/cubits/products/cubit/products_cubit.dart';
+import '../../../home/cubits/categories/categories_cubit.dart';
+import '../../../home/cubits/products/products_cubit.dart';
 import '../../../favorits/favorits_view.dart';
-import '../../../home/logic/cubits/banner/banner_cubit.dart';
+import '../../../home/cubits/banner/banner_cubit.dart';
 import '../../../home/presentation/views/home_view.dart';
 import '../../../porfile/views/profile_view.dart';
 import '../../../search/presentation/views/search_view.dart';

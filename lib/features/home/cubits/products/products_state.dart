@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../../data/models/home_products_model/home_products_response.dart';
+import '../../data/models/home_products_model/home_products_response.dart';
 
 part 'products_state.freezed.dart';
 

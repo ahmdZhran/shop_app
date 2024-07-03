@@ -5,7 +5,6 @@ import '../../features/home/data/repos/categories/categories_repo.dart';
 import '../../features/home/data/repos/products/products_repo.dart';
 import '../../features/search/data/repo/search_repo.dart';
 import '../../features/home/data/api/home_api_service.dart';
-import '../../features/home/data/repos/home_repo.dart';
 import '../../features/sign_up/data/repo/sign_up_repo.dart';
 import '../networking/api_services.dart';
 import '../networking/dio_factory.dart';
@@ -23,7 +22,7 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<SignUpRepo>(() => SignUpRepo(getIt()));
   // home
   getIt.registerLazySingleton<HomeApiService>(() => HomeApiService(dio));
-  getIt.registerLazySingleton<HomeRepo>(() => HomeRepo(getIt()));
+
   // banner
   getIt.registerLazySingleton<BannerRepo>(() => BannerRepo(getIt()));
 
