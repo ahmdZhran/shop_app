@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shop_app/features/home/data/models/home_products_model/home_products_response.dart';
 import 'package:shop_app/features/main/logic/cubit/nav_bar_cubit.dart';
+import 'package:shop_app/features/product_details/presentation/views/product_details.dart';
 import '../../features/home/presentation/views/home_view.dart';
 import '../../features/login/logic/cubit/login_cubit.dart';
 import '../../features/login/presentation/views/login_view.dart';
@@ -45,6 +47,8 @@ class AppRouter {
       //   return MaterialPageRoute(builder: (_) => const AllProducts());
       case Routes.home:
         return MaterialPageRoute(builder: (_) => const HomeView());
+      case Routes.productDetails:
+        return MaterialPageRoute(builder: (_) => const ProductDetailsView());
       default:
         return null;
     }
