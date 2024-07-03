@@ -1,7 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shop_app/core/helper/extensions.dart';
 import '../widgets/custom_app_bar.dart';
 
 class ProductDetailsView extends StatelessWidget {
