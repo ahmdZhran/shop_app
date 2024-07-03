@@ -1,9 +1,6 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shop_app/core/helper/extensions.dart';
-import 'package:shop_app/core/utils/color_manager.dart';
-import 'package:shop_app/features/onboarding/presentation/widgets/custom_smooth_page_indicator.dart';
+import '../../../../core/helper/extensions.dart';
+import '../../../onboarding/presentation/widgets/custom_smooth_page_indicator.dart';
 import '../widgets/custom_app_bar.dart';
 import 'images_page_view_builder.dart';
 
