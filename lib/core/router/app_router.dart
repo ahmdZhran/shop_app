@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shop_app/features/home/data/models/home_products_model/home_products_response.dart';
 import 'package:shop_app/features/main/logic/cubit/nav_bar_cubit.dart';
 import 'package:shop_app/features/product_details/presentation/views/product_details.dart';
 import '../../features/home/presentation/views/home_view.dart';
@@ -15,6 +14,8 @@ import 'routes.dart';
 
 class AppRouter {
   Route? onGenerateRoute(RouteSettings settings) {
+    final arguments = settings.arguments;
+
     switch (settings.name) {
       case Routes.onboarding:
         return MaterialPageRoute(
@@ -45,10 +46,17 @@ class AppRouter {
 
       // case Routes.allProducts:
       //   return MaterialPageRoute(builder: (_) => const AllProducts());
+
       case Routes.home:
         return MaterialPageRoute(builder: (_) => const HomeView());
+       
+      // Product Details 
       case Routes.productDetails:
-        return MaterialPageRoute(builder: (_) => const ProductDetailsView());
+        return MaterialPageRoute(
+            builder: (_) => ProductDetailsView(
+                  productId: arguments as int,
+                ));
+
       default:
         return null;
     }

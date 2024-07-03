@@ -12,6 +12,7 @@ class CardItem extends StatelessWidget {
     required this.price,
     required this.oldPrice,
     required this.discount,
+    required this.productId,
   });
 
   final bool isFavorite = false;
@@ -20,6 +21,7 @@ class CardItem extends StatelessWidget {
   final String price;
   final String oldPrice;
   final String discount;
+  final int productId;
 
   @override
   Widget build(BuildContext context) {
@@ -38,14 +40,16 @@ class CardItem extends StatelessWidget {
           ),
           child: GestureDetector(
             onTap: () {
-               Navigator.pushNamed(context, Routes.productDetails);
+              Navigator.pushNamed(context, Routes.productDetails,
+                  arguments: productId);
             },
             child: Stack(
               children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    ProductCardHeader(discount: discount, isFavorite: isFavorite),
+                    ProductCardHeader(
+                        discount: discount, isFavorite: isFavorite),
                     SizedBox(
                       height: 100.h,
                       width: double.infinity,
