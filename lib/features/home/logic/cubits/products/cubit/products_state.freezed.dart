@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'home_state.dart';
+part of 'products_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$HomeState {
+mixin _$ProductsState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
@@ -70,15 +70,16 @@ mixin _$HomeState {
 }
 
 /// @nodoc
-abstract class $HomeStateCopyWith<$Res> {
-  factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) then) =
-      _$HomeStateCopyWithImpl<$Res, HomeState>;
+abstract class $ProductsStateCopyWith<$Res> {
+  factory $ProductsStateCopyWith(
+          ProductsState value, $Res Function(ProductsState) then) =
+      _$ProductsStateCopyWithImpl<$Res, ProductsState>;
 }
 
 /// @nodoc
-class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
-    implements $HomeStateCopyWith<$Res> {
-  _$HomeStateCopyWithImpl(this._value, this._then);
+class _$ProductsStateCopyWithImpl<$Res, $Val extends ProductsState>
+    implements $ProductsStateCopyWith<$Res> {
+  _$ProductsStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -95,7 +96,7 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$ProductsStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
@@ -109,7 +110,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'HomeState.initial()';
+    return 'ProductsState.initial()';
   }
 
   @override
@@ -197,7 +198,7 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements HomeState {
+abstract class _Initial implements ProductsState {
   const factory _Initial() = _$InitialImpl;
 }
 
@@ -210,7 +211,7 @@ abstract class _$$ProductsLoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$ProductsLoadingImplCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$ProductsLoadingImpl>
+    extends _$ProductsStateCopyWithImpl<$Res, _$ProductsLoadingImpl>
     implements _$$ProductsLoadingImplCopyWith<$Res> {
   __$$ProductsLoadingImplCopyWithImpl(
       _$ProductsLoadingImpl _value, $Res Function(_$ProductsLoadingImpl) _then)
@@ -224,7 +225,7 @@ class _$ProductsLoadingImpl implements ProductsLoading {
 
   @override
   String toString() {
-    return 'HomeState.productsLoading()';
+    return 'ProductsState.productsLoading()';
   }
 
   @override
@@ -312,7 +313,7 @@ class _$ProductsLoadingImpl implements ProductsLoading {
   }
 }
 
-abstract class ProductsLoading implements HomeState {
+abstract class ProductsLoading implements ProductsState {
   const factory ProductsLoading() = _$ProductsLoadingImpl;
 }
 
@@ -327,7 +328,7 @@ abstract class _$$ProductsSuccessImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$ProductsSuccessImplCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$ProductsSuccessImpl>
+    extends _$ProductsStateCopyWithImpl<$Res, _$ProductsSuccessImpl>
     implements _$$ProductsSuccessImplCopyWith<$Res> {
   __$$ProductsSuccessImplCopyWithImpl(
       _$ProductsSuccessImpl _value, $Res Function(_$ProductsSuccessImpl) _then)
@@ -357,7 +358,7 @@ class _$ProductsSuccessImpl implements ProductsSuccess {
 
   @override
   String toString() {
-    return 'HomeState.productsSuccess(productResponse: $productResponse)';
+    return 'ProductsState.productsSuccess(productResponse: $productResponse)';
   }
 
   @override
@@ -455,7 +456,7 @@ class _$ProductsSuccessImpl implements ProductsSuccess {
   }
 }
 
-abstract class ProductsSuccess implements HomeState {
+abstract class ProductsSuccess implements ProductsState {
   const factory ProductsSuccess(final HomeProductsResponse productResponse) =
       _$ProductsSuccessImpl;
 
@@ -476,7 +477,7 @@ abstract class _$$ProductsErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$ProductsErrorImplCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$ProductsErrorImpl>
+    extends _$ProductsStateCopyWithImpl<$Res, _$ProductsErrorImpl>
     implements _$$ProductsErrorImplCopyWith<$Res> {
   __$$ProductsErrorImplCopyWithImpl(
       _$ProductsErrorImpl _value, $Res Function(_$ProductsErrorImpl) _then)
@@ -506,7 +507,7 @@ class _$ProductsErrorImpl implements ProductsError {
 
   @override
   String toString() {
-    return 'HomeState.productsError(error: $error)';
+    return 'ProductsState.productsError(error: $error)';
   }
 
   @override
@@ -602,7 +603,7 @@ class _$ProductsErrorImpl implements ProductsError {
   }
 }
 
-abstract class ProductsError implements HomeState {
+abstract class ProductsError implements ProductsState {
   const factory ProductsError({required final String error}) =
       _$ProductsErrorImpl;
 

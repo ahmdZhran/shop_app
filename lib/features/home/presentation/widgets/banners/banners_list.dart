@@ -2,9 +2,9 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../logic/cubit/home_cubit.dart';
+import 'package:shop_app/features/home/logic/cubits/banner/banner_state.dart';
 import '../../../../../core/helper/extensions.dart';
-import '../../../logic/cubit/home_state.dart';
+import '../../../logic/cubits/banner/banner_cubit.dart';
 import 'banners_slider.dart';
 import 'shimmer_banner_slider.dart';
 
@@ -13,10 +13,10 @@ class BannersList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<HomeCubit, HomeState>(
+    return BlocBuilder<BannerCubit, BannerState>(
       builder: (context, state) {
         return state.maybeWhen(
-          bannerLoading: () => const Center(
+       bannerLoading   : () => const Center(
             child: CustomShimmerForBanners(),
           ),
           bannerSuccess: (bannerResponse) {

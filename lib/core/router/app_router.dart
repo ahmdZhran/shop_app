@@ -43,8 +43,8 @@ class AppRouter {
           ),
         );
 
-      case Routes.allProducts:
-        return MaterialPageRoute(builder: (_) => const AllProducts());
+      // case Routes.allProducts:
+      //   return MaterialPageRoute(builder: (_) => const AllProducts());
       case Routes.home:
         return MaterialPageRoute(
             builder: (_) => BlocProvider(
