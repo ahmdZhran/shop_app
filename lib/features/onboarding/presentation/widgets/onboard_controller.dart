@@ -30,7 +30,13 @@ class OnBoardingControllerWidget extends StatelessWidget {
                 const SizedBox(
                   height: 90,
                 ),
-                CustomSmoothPageIndicator(controller: _controller),
+                CustomSmoothPageIndicator(
+                  controller: _controller,
+                  widthOfBackGroundDot: 25,
+                  heightOfBackGroundDot: 7,
+                  widthOfDot: 10,
+                  heighOfDot: 10,
+                ),
                 const SizedBox(
                   height: 20,
                 ),
