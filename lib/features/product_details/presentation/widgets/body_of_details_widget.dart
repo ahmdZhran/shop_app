@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:shop_app/core/helper/extensions.dart';
-
-import '../../../../core/utils/app_assets.dart';
 import '../../../../core/utils/text_styles.dart';
 import '../../../../core/widgets/custom_buttons.dart';
+import 'share_item_or_save_it.dart';
 
 class BodyOfItemDetails extends StatelessWidget {
   const BodyOfItemDetails({super.key});
@@ -43,31 +41,7 @@ class BodyOfItemDetails extends StatelessWidget {
                 style: TextStyle(color: Colors.black),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 60),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      SvgPicture.asset(AppAssets.favorite),
-                      const SizedBox(width: 5),
-                      const Text('Favorite'),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.share),
-                      ),
-                      const SizedBox(width: 5),
-                      const Text('Share'),
-                    ],
-                  ),
-                ],
-              ),
-            ),
+            const SaveItemOrShareIt(),
           ],
         ),
       ),
