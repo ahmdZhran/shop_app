@@ -26,8 +26,8 @@ class ImagesPageViewBuilder extends StatelessWidget {
           return Hero(
             tag: widget.productId,
             child: Container(
-              height: 100,
-              width: 270,
+              height: 150.h,
+              width: 270.w,
               decoration: const BoxDecoration(color: Colors.white),
               child: CachedNetworkImage(
                 imageUrl: widget.images[index],
