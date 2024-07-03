@@ -24,15 +24,15 @@ class CustomSmoothPageIndicator extends StatelessWidget {
       count: onBoardingData.length,
       effect: CustomizableEffect(
         activeDotDecoration: DotDecoration(
-          width: widthOfBackGroundDot, // 25
-          height: heightOfBackGroundDot, // 7
+          width: widthOfBackGroundDot,
+          height: heightOfBackGroundDot,
           color: ColorManager.kPrimaryColor,
           rotationAngle: 180,
           borderRadius: BorderRadius.circular(24),
         ),
         dotDecoration: DotDecoration(
-            width: widthOfDot, // 10
-            height: heighOfDot, // 10
+            width: widthOfDot,
+            height: heighOfDot,
             color: ColorManager.kGreyColor,
             borderRadius: BorderRadius.circular(20)),
       ),
