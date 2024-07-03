@@ -36,6 +36,7 @@ class OnBoardingControllerWidget extends StatelessWidget {
                   heightOfBackGroundDot: 7,
                   widthOfDot: 10,
                   heighOfDot: 10,
+                  countOfDots: onBoardingData.length,
                 ),
                 const SizedBox(
                   height: 20,

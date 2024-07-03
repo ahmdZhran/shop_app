@@ -1,13 +1,21 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shop_app/features/onboarding/presentation/widgets/custom_smooth_page_indicator.dart';
 import '../widgets/custom_app_bar.dart';
 
-class ProductDetailsView extends StatelessWidget {
+class ProductDetailsView extends StatefulWidget {
   const ProductDetailsView(
       {super.key, required this.productId, required this.images});
   final int productId;
   final List<String> images;
+
+  @override
+  State<ProductDetailsView> createState() => _ProductDetailsViewState();
+}
+
+class _ProductDetailsViewState extends State<ProductDetailsView> {
+  final PageController _controller = PageController();
 
   @override
   Widget build(BuildContext context) {
@@ -20,12 +28,13 @@ class ProductDetailsView extends StatelessWidget {
             height: 300.h,
             width: double.infinity,
             child: PageView.builder(
-              itemCount: images.length,
+              controller: _controller,
+              itemCount: widget.images.length,
               itemBuilder: (context, index) {
                 return Hero(
-                  tag: productId,
+                  tag: widget.productId,
                   child: CachedNetworkImage(
-                    imageUrl: images[index],
+                    imageUrl: widget.images[index],
                     fit: BoxFit.contain,
                     placeholder: (context, url) =>
                         const Center(child: CircularProgressIndicator()),
@@ -36,6 +45,13 @@ class ProductDetailsView extends StatelessWidget {
               },
             ),
           ),
+          CustomSmoothPageIndicator(
+              countOfDots: widget.images.length,
+              controller: _controller,
+              widthOfDot: 10,
+              heighOfDot: 10,
+              widthOfBackGroundDot: 15,
+              heightOfBackGroundDot: 15)
         ],
       ),
     );
