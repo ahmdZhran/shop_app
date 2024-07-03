@@ -6,10 +6,14 @@ class ProductDetailsView extends StatelessWidget {
   final int productId;
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
         body: Column(
       children: [
-        CustomAppBarWidget(),
+        const CustomAppBarWidget(),
+        Hero(
+            tag: productId,
+            child: Image.network(
+                'https://recordofragnarok.shop/wp-content/uploads/2022/03/Anime-Attack-on-Titan-Pullovers-Tops-Long-Sleeves-Hoodie-Male-Cloth-1.jpg')),
       ],
     ));
   }

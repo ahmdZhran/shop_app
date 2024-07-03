@@ -14,9 +14,15 @@ class CustomAppBarWidget extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          SvgPicture.asset(
-            AppAssets.arroBack,
-            colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+          InkWell(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: SvgPicture.asset(
+              AppAssets.arroBack,
+              colorFilter:
+                  const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+            ),
           ),
           const Spacer(),
           Text(

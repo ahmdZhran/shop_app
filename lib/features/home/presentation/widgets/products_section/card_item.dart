@@ -33,16 +33,19 @@ class CardItem extends StatelessWidget {
           color: Colors.black,
           borderRadius: BorderRadius.circular(15.0),
         ),
-        child: Card(
-          color: Colors.black,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(15.0),
-          ),
-          child: GestureDetector(
-            onTap: () {
-              Navigator.pushNamed(context, Routes.productDetails,
-                  arguments: productId);
-            },
+        child: GestureDetector(
+          onTap: () {
+            Navigator.pushNamed(
+              context,
+              Routes.productDetails,
+              arguments: productId,
+            );
+          },
+          child: Card(
+            color: Colors.black,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15.0),
+            ),
             child: Stack(
               children: [
                 Column(
@@ -53,16 +56,19 @@ class CardItem extends StatelessWidget {
                     SizedBox(
                       height: 100.h,
                       width: double.infinity,
-                      child: Center(
-                        child: CachedNetworkImage(
-                          imageUrl: imageurl,
-                          height: 100.h,
-                          width: double.infinity,
-                          fit: BoxFit.contain,
-                          placeholder: (context, url) =>
-                              const Center(child: CircularProgressIndicator()),
-                          errorWidget: (context, url, error) =>
-                              const Center(child: Icon(Icons.error)),
+                      child: Hero(
+                        tag: productId,
+                        child: Center(
+                          child: CachedNetworkImage(
+                            imageUrl: imageurl,
+                            height: 100.h,
+                            width: double.infinity,
+                            fit: BoxFit.contain,
+                            placeholder: (context, url) =>
+                                const Center(child: CircularProgressIndicator()),
+                            errorWidget: (context, url, error) =>
+                                const Center(child: Icon(Icons.error)),
+                          ),
                         ),
                       ),
                     ),
