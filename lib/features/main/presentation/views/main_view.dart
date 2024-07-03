@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shop_app/core/di/dependency_injection.dart';
-import 'package:shop_app/features/home/data/repos/categories/categories_repo.dart';
-import 'package:shop_app/features/home/logic/cubits/categories/categories_cubit.dart';
+import '../../../../core/di/dependency_injection.dart';
+import '../../../home/logic/cubits/categories/categories_cubit.dart';
+import '../../../home/logic/cubits/products/cubit/products_cubit.dart';
 import '../../../favorits/favorits_view.dart';
-import '../../../home/data/repos/banner/banner_repo.dart';
 import '../../../home/logic/cubits/banner/banner_cubit.dart';
 import '../../../home/presentation/views/home_view.dart';
 import '../../../porfile/views/profile_view.dart';
@@ -23,11 +22,13 @@ class MainView extends StatelessWidget {
         body: MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (_) => BannerCubit(getIt<BannerRepo>())..fetchBannerDate(),
+          create: (_) => BannerCubit(getIt())..fetchBannerDate(),
         ),
         BlocProvider(
-          create: (_) =>
-              CategoriesCubit(getIt<CategoriesRepo>())..fetchCategories(),
+          create: (_) => CategoriesCubit(getIt())..fetchCategories(),
+        ),
+        BlocProvider(
+          create: (_) => ProductsCubit(getIt())..fetchHomeProducts(),
         ),
       ],
       child: Column(
