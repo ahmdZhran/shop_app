@@ -27,4 +27,7 @@ class AppAssets {
   static const String searchActiveSvg = "assets/svg/search_active.svg";
   static const String lottieSearchOnResult = "assets/lottie/search_result.json";
   static const String lottieNotFound = "assets/lottie/not_found_result.json";
+
+  // Product Details
+  static const String arroBack = "assets/svg/arrow_back.svg";
 }

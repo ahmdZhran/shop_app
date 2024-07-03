@@ -23,6 +23,7 @@ class ProductsGrid extends StatelessWidget {
           price: products[index].price.toString(),
           oldPrice: products[index].oldPrice.toString(),
           discount: products[index].discount.toString(),
+           productId:products[index].id!,
         );
       },
     );

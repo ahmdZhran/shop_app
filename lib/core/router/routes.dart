@@ -6,4 +6,6 @@ class Routes {
   static const String mainNavBottomBar = '/mainNavBottomBar';
   static const String allProducts = '/allProducts';
   static const String mainScreen = '/mainScreen';
+
+  static const String productDetails = '/productDetails';
 }
