@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../core/helper/extensions.dart';
-import '../../../onboarding/presentation/widgets/custom_smooth_page_indicator.dart';
-import '../widgets/custom_app_bar.dart';
+import '../widgets/image_slider_indicator.dart';
 import 'images_page_view_builder.dart';
 
 class ProductDetailsView extends StatelessWidget {
@@ -32,22 +30,7 @@ class ProductDetailsView extends StatelessWidget {
               ),
             ),
           ),
-          SliverToBoxAdapter(
-            child: Column(
-              children: [
-                10.0.getVerticalSpacer(),
-                CustomSmoothPageIndicator(
-                  countOfDots: images.length,
-                  controller: controller,
-                  widthOfDot: 10,
-                  heighOfDot: 10,
-                  widthOfBackGroundDot: 15,
-                  heightOfBackGroundDot: 15,
-                ),
-                // Add other content here
-              ],
-            ),
-          ),
+          ImageSliderIndicator(images: images, controller: controller),
         ],
       ),
     );
