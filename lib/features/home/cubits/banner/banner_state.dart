@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../data/models/banners_models/banner_response.dart';
+import '../../data/models/banners_models/banner_response.dart';
 
 part  'banner_state.freezed.dart';
 

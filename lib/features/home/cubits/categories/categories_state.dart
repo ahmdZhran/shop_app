@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../data/models/category_models/category_response.dart';
+import '../../data/models/category_models/category_response.dart';
 
 part 'categories_state.freezed.dart';
 
