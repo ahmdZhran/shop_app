@@ -12,7 +12,8 @@ class CardItem extends StatelessWidget {
     required this.price,
     required this.oldPrice,
     required this.discount,
-    required this.productId,
+    required this.productId, 
+    required this.images,
   });
 
   final bool isFavorite = false;
@@ -22,6 +23,7 @@ class CardItem extends StatelessWidget {
   final String oldPrice;
   final String discount;
   final int productId;
+  final List<String> images;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +40,11 @@ class CardItem extends StatelessWidget {
             Navigator.pushNamed(
               context,
               Routes.productDetails,
-              arguments: productId,
+              arguments: {
+                'id': productId,
+                'images': images,
+              },
+            
             );
           },
           child: Card(

@@ -52,9 +52,12 @@ class AppRouter {
        
       // Product Details 
       case Routes.productDetails:
+       final args = settings.arguments as Map<String, dynamic>;
         return MaterialPageRoute(
+          
             builder: (_) => ProductDetailsView(
-                  productId: arguments as int,
+                  productId: args['id'],
+                  images: args['images'],
                 ));
 
       default:

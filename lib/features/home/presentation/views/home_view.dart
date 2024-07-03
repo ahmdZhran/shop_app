@@ -24,7 +24,7 @@ class HomeView extends StatelessWidget {
               20.0.getVerticalSpacer(),
               const CategoriesSection(),
               20.0.getVerticalSpacer(),
-              ProductsSection(onPressed: () {}),
+              ProductsSection(seeAllProducts: () {}),
               const ProductsList(),
             ],
           ),

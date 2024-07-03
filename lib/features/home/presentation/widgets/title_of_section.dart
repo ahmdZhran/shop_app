@@ -8,9 +8,9 @@ import 'see_all_text.dart';
 class ProductsSection extends StatelessWidget {
   const ProductsSection({
     super.key,
-    required this.onPressed,
+    required this.seeAllProducts,
   });
-  final void Function() onPressed;
+  final void Function() seeAllProducts;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -21,7 +21,7 @@ class ProductsSection extends StatelessWidget {
         ),
         const Spacer(),
         SeeAllTextWidget(
-          onPressed: onPressed,
+          onPressed: seeAllProducts,
         ),
       ],
     );
