@@ -14,8 +14,6 @@ import 'routes.dart';
 
 class AppRouter {
   Route? onGenerateRoute(RouteSettings settings) {
-    final arguments = settings.arguments;
-
     switch (settings.name) {
       case Routes.onboarding:
         return MaterialPageRoute(
@@ -49,12 +47,14 @@ class AppRouter {
 
       case Routes.home:
         return MaterialPageRoute(builder: (_) => const HomeView());
-       
-      // Product Details 
+
+      // Product Details
       case Routes.productDetails:
+        final args = settings.arguments as Map<String, dynamic>;
         return MaterialPageRoute(
             builder: (_) => ProductDetailsView(
-                  productId: arguments as int,
+                  productId: args['id'],
+                  images: args['images'],
                 ));
 
       default:

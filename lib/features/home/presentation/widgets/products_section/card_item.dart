@@ -12,7 +12,8 @@ class CardItem extends StatelessWidget {
     required this.price,
     required this.oldPrice,
     required this.discount,
-    required this.productId,
+    required this.productId, 
+    required this.images,
   });
 
   final bool isFavorite = false;
@@ -22,6 +23,7 @@ class CardItem extends StatelessWidget {
   final String oldPrice;
   final String discount;
   final int productId;
+  final List<String> images;
 
   @override
   Widget build(BuildContext context) {
@@ -33,16 +35,23 @@ class CardItem extends StatelessWidget {
           color: Colors.black,
           borderRadius: BorderRadius.circular(15.0),
         ),
-        child: Card(
-          color: Colors.black,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(15.0),
-          ),
-          child: GestureDetector(
-            onTap: () {
-              Navigator.pushNamed(context, Routes.productDetails,
-                  arguments: productId);
-            },
+        child: GestureDetector(
+          onTap: () {
+            Navigator.pushNamed(
+              context,
+              Routes.productDetails,
+              arguments: {
+                'id': productId,
+                'images': images,
+              },
+            
+            );
+          },
+          child: Card(
+            color: Colors.black,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15.0),
+            ),
             child: Stack(
               children: [
                 Column(
@@ -53,16 +62,19 @@ class CardItem extends StatelessWidget {
                     SizedBox(
                       height: 100.h,
                       width: double.infinity,
-                      child: Center(
-                        child: CachedNetworkImage(
-                          imageUrl: imageurl,
-                          height: 100.h,
-                          width: double.infinity,
-                          fit: BoxFit.contain,
-                          placeholder: (context, url) =>
-                              const Center(child: CircularProgressIndicator()),
-                          errorWidget: (context, url, error) =>
-                              const Center(child: Icon(Icons.error)),
+                      child: Hero(
+                        tag: productId,
+                        child: Center(
+                          child: CachedNetworkImage(
+                            imageUrl: imageurl,
+                            height: 100.h,
+                            width: double.infinity,
+                            fit: BoxFit.contain,
+                            placeholder: (context, url) =>
+                                const Center(child: CircularProgressIndicator()),
+                            errorWidget: (context, url, error) =>
+                                const Center(child: Icon(Icons.error)),
+                          ),
                         ),
                       ),
                     ),
