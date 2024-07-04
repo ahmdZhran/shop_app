@@ -11,7 +11,7 @@ class FavoriteRepo {
   }
 
   void addToFavorite(FavoriteItemModel item) {
-    _favoritItemsbox.add(item);
+    _favoritItemsbox.put(item.id, item); 
   }
 
   void removeFromFavorite(FavoriteItemModel item) {
