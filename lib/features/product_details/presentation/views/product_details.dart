@@ -49,13 +49,10 @@ class ProductDetailsView extends StatelessWidget {
           SliverToBoxAdapter(
             child: SizedBox(height: 40.h),
           ),
-          SliverToBoxAdapter(
-            child: BodyOfItemDetails(
-              description: description,
+          BodyOfItemDetails(
               price: price,
               nameOfProduct: nameOfProduct,
-            ),
-          )
+              description: description),
         ],
       ),
     );
