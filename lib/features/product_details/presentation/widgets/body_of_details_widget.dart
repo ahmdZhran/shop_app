@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:readmore/readmore.dart';
+import 'package:shop_app/core/animations/animate_do.dart';
 import '../../../../core/helper/extensions.dart';
 import '../../../../core/utils/color_manager.dart';
 import '../../../../core/widgets/custom_buttons.dart';
@@ -32,36 +33,39 @@ class BodyOfItemDetails extends StatelessWidget {
         ),
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Center(
-                child: Container(color: Colors.grey, width: 30, height: 5),
-              ),
-              30.0.getVerticalSpacer(),
-              Text('Price: \$$price', style: CustomTextStyle.medium25),
-              20.0.getVerticalSpacer(),
-              Text('Name: $nameOfProduct', style: CustomTextStyle.medium15),
-              20.0.getVerticalSpacer(),
-              ReadMoreText(
-                'Description: $description',
-                trimLines: 6,
-                colorClickableText: ColorManager.kPrimaryColor,
-                trimMode: TrimMode.Line,
-                trimCollapsedText: 'Show more',
-                trimExpandedText: 'Show less',
-                style: CustomTextStyle.medium15,
-              ),
-              const SizedBox(height: 20),
-              CustomButton(
-                onPressed: () {},
-                text: const Text(
-                  'Add To Cart',
-                  style: TextStyle(color: Colors.black),
+          child: CustomFadeInUp(
+            duration: 800,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Center(
+                  child: Container(color: Colors.grey, width: 30, height: 5),
                 ),
-              ),
-              const SaveItemOrShareIt(),
-            ],
+                30.0.getVerticalSpacer(),
+                Text('Price: \$$price', style: CustomTextStyle.medium25),
+                20.0.getVerticalSpacer(),
+                Text('Name: $nameOfProduct', style: CustomTextStyle.medium15),
+                20.0.getVerticalSpacer(),
+                ReadMoreText(
+                  'Description: $description',
+                  trimLines: 6,
+                  colorClickableText: ColorManager.kPrimaryColor,
+                  trimMode: TrimMode.Line,
+                  trimCollapsedText: 'Show more',
+                  trimExpandedText: 'Show less',
+                  style: CustomTextStyle.medium15,
+                ),
+                const SizedBox(height: 20),
+                CustomButton(
+                  onPressed: () {},
+                  text: const Text(
+                    'Add To Cart',
+                    style: TextStyle(color: Colors.black),
+                  ),
+                ),
+                const SaveItemOrShareIt(),
+              ],
+            ),
           ),
         ),
       ),
