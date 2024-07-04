@@ -14,8 +14,8 @@ class FavoriteRepo {
     _favoritItemsbox.put(item.id, item); 
   }
 
-  void removeFromFavorite(FavoriteItemModel item) {
-    _favoritItemsbox.delete(item.id);
+ void removeFromFavorite(int id) {
+    _favoritItemsbox.delete(id); 
   }
 
   bool isFavorite(int id) {
