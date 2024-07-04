@@ -31,5 +31,16 @@ class FavoritCubit extends Cubit<FavoritState> {
     }
   }
 
-  
+  void removeFromFavorit(int id) {
+    try {
+      _favoritRepo.removeFromFavorite(id);
+      fetchFavoritItems();
+    } catch (error) {
+      emit(FavoritState.favoriteError(message: error.toString()));
+    }
+  }
+
+  bool isFavorite(int id) {
+    return _favoritRepo.isFavorite(id);
+  }
 }
