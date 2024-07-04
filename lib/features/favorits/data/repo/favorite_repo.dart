@@ -2,7 +2,7 @@ import 'package:hive/hive.dart';
 
 import '../models/favorite_item_model.dart';
 
-class FavoriteRepo {
+class FavoritRepo {
   final Box<FavoriteItemModel> _favoritItemsbox =
       Hive.box<FavoriteItemModel>('favorites');
 
@@ -11,14 +11,14 @@ class FavoriteRepo {
   }
 
   void addToFavorite(FavoriteItemModel item) {
-    _favoritItemsbox.add(item);
+    _favoritItemsbox.put(item.id, item);
   }
 
-  void removeFromFavorite(FavoriteItemModel item) {
-    _favoritItemsbox.delete(item.id);
+  void removeFromFavorite(int id) {
+    _favoritItemsbox.delete(id);
   }
 
   bool isFavorite(int id) {
-    return _favoritItemsbox.values.any((element) => element.id == id);
+    return _favoritItemsbox.containsKey(id);
   }
 }
