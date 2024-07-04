@@ -23,13 +23,15 @@ class FavoriteItemModelAdapter extends TypeAdapter<FavoriteItemModel> {
       price: fields[3] as String,
       description: fields[4] as String,
       images: (fields[5] as List).cast<String>(),
+      discount: fields[6] as String,
+      oldPrice: fields[7] as String,
     );
   }
 
   @override
   void write(BinaryWriter writer, FavoriteItemModel obj) {
     writer
-      ..writeByte(6)
+      ..writeByte(8)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -41,7 +43,11 @@ class FavoriteItemModelAdapter extends TypeAdapter<FavoriteItemModel> {
       ..writeByte(4)
       ..write(obj.description)
       ..writeByte(5)
-      ..write(obj.images);
+      ..write(obj.images)
+      ..writeByte(6)
+      ..write(obj.discount)
+      ..writeByte(7)
+      ..write(obj.oldPrice);
   }
 
   @override
