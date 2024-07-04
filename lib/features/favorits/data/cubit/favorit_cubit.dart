@@ -1,10 +1,16 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:shop_app/features/favorits/data/models/favorite_item_model.dart';
 
-import '../models/favorite_item_model.dart';
-
-part 'favorit_state.dart';
+import '../repo/favorite_repo.dart';
+import 'favorit_state.dart';
 
 class FavoritCubit extends Cubit<FavoritState> {
-  FavoritCubit() : super(const FavoritState.initial());
+  FavoritCubit(this._favoritRepo) : super(const FavoritState.initial());
+
+  final FavoriteRepo _favoritRepo;
+
+  void addToFavorite(FavoriteItemModel item) {
+    _favoritRepo.addToFavorite(item);
+    emit(FavoritState.favoriteAdded(_favoritRepo.getFavoriteItems()));
+  }
 }
