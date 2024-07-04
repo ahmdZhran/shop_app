@@ -18,7 +18,7 @@ class FavoriteRepo {
     _favoritItemsbox.delete(id); 
   }
 
-  bool isFavorite(int id) {
-    return _favoritItemsbox.values.any((element) => element.id == id);
+   bool isFavorite(int id) {
+    return _favoritItemsbox.containsKey(id);  // Check if the id exists in the box
   }
 }
