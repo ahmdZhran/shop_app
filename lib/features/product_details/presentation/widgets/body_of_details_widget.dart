@@ -6,8 +6,14 @@ import '../../../../core/widgets/custom_buttons.dart';
 import 'share_item_or_save_it.dart';
 
 class BodyOfItemDetails extends StatelessWidget {
-  const BodyOfItemDetails({super.key});
-
+  const BodyOfItemDetails(
+      {super.key,
+      required this.description,
+      required this.price,
+      required this.nameOfProduct});
+  final String description;
+  final String price;
+  final String nameOfProduct;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -26,12 +32,12 @@ class BodyOfItemDetails extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             30.0.getVerticalSpacer(),
-            Text('3000', style: CustomTextStyle.medium25),
+            Text('Price:$price', style: CustomTextStyle.medium25),
             20.0.getVerticalSpacer(),
-            Text('Smart Screen', style: CustomTextStyle.medium25),
+            Text('Name:$nameOfProduct', style: CustomTextStyle.medium25),
             20.0.getVerticalSpacer(),
-            const Text(
-              'Description: this is the lap top mak fa5er men ela5er really you cant fina like it in any where exception here we have any think in you mind just think and you will find it ',
+            Text(
+              'Description:$description, ',
             ),
             const Spacer(),
             CustomButton(
