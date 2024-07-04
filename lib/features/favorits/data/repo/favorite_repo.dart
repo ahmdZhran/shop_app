@@ -11,14 +11,14 @@ class FavoriteRepo {
   }
 
   void addToFavorite(FavoriteItemModel item) {
-    _favoritItemsbox.put(item.id, item); 
+    _favoritItemsbox.put(item.id, item);
   }
 
- void removeFromFavorite(int id) {
-    _favoritItemsbox.delete(id); 
+  void removeFromFavorite(int id) {
+    _favoritItemsbox.delete(id);
   }
 
-   bool isFavorite(int id) {
-    return _favoritItemsbox.containsKey(id);  // Check if the id exists in the box
+  bool isFavorite(int id) {
+    return _favoritItemsbox.containsKey(id);
   }
 }
