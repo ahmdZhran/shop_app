@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 import '../../../../../core/utils/color_manager.dart';
 
@@ -6,11 +7,10 @@ class ProductCardHeader extends StatelessWidget {
   const ProductCardHeader({
     super.key,
     required this.discount,
-    required this.isFavorite,
   });
 
   final String discount;
-  final bool isFavorite;
+  final bool isFavorite = false;
 
   @override
   Widget build(BuildContext context) {
@@ -36,10 +36,11 @@ class ProductCardHeader extends StatelessWidget {
             ),
           ),
         const Spacer(),
-        Icon(
-          isFavorite ? Icons.favorite : Icons.favorite_border,
+        IconButton(
+          onPressed: () {},
+          icon: Icon(isFavorite ? Icons.favorite : Icons.favorite_border),
           color: ColorManager.kPrimaryColor,
-        ),
+        ).animate(target: isFavorite ? 1 : 0).scaleXY(end: 1.2),
       ],
     );
   }
