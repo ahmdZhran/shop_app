@@ -63,7 +63,16 @@ class CardItem extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    ProductCardHeader(discount: discount),
+                    ProductCardHeader(
+                      discount: discount,
+                      productId: productId,
+                      description: description,
+                      images: images,
+                      imageurl: imageurl,
+                      oldPrice: oldPrice,
+                      price: price,
+                      titleOfItem: titleOfItem,
+                    ),
                     SizedBox(
                       height: 100.h,
                       width: double.infinity,
