@@ -12,8 +12,10 @@ class CardItem extends StatelessWidget {
     required this.price,
     required this.oldPrice,
     required this.discount,
-    required this.productId, 
+    required this.productId,
     required this.images,
+    required this.description,
+    required this.nameOfProduct,
   });
 
   final bool isFavorite = false;
@@ -24,6 +26,8 @@ class CardItem extends StatelessWidget {
   final String discount;
   final int productId;
   final List<String> images;
+  final String description;
+  final String nameOfProduct;
 
   @override
   Widget build(BuildContext context) {
@@ -43,8 +47,10 @@ class CardItem extends StatelessWidget {
               arguments: {
                 'id': productId,
                 'images': images,
+                'price': price,
+                'description': description,
+                'title': nameOfProduct,
               },
-            
             );
           },
           child: Card(
@@ -70,8 +76,8 @@ class CardItem extends StatelessWidget {
                             height: 100.h,
                             width: double.infinity,
                             fit: BoxFit.contain,
-                            placeholder: (context, url) =>
-                                const Center(child: CircularProgressIndicator()),
+                            placeholder: (context, url) => const Center(
+                                child: CircularProgressIndicator()),
                             errorWidget: (context, url, error) =>
                                 const Center(child: Icon(Icons.error)),
                           ),

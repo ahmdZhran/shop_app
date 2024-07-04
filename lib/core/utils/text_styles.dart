@@ -29,4 +29,9 @@ abstract class CustomTextStyle {
       color: ColorManager.kWhiteColor,
       fontFamily: "Inter",
       fontSize: 25);
+  static final medium15 = TextStyle(
+      fontWeight: FontWeight.w300,
+      color: ColorManager.kWhiteColor,
+      fontFamily: "Inter",
+      fontSize: 15);
 }

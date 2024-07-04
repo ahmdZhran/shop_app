@@ -55,6 +55,9 @@ class AppRouter {
             builder: (_) => ProductDetailsView(
                   productId: args['id'],
                   images: args['images'],
+                  description: args['description'],
+                  price: args['price'],
+                  nameOfProduct: args['title'],
                 ));
 
       default:

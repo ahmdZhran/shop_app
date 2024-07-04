@@ -9,10 +9,16 @@ class ProductDetailsView extends StatelessWidget {
     super.key,
     required this.productId,
     required this.images,
+    required this.description,
+    required this.price,
+    required this.nameOfProduct,
   });
 
   final int productId;
   final List<String> images;
+  final String description;
+  final String price;
+  final String nameOfProduct;
 
   @override
   Widget build(BuildContext context) {
@@ -36,13 +42,17 @@ class ProductDetailsView extends StatelessWidget {
               ),
             ),
           ),
-          ImageSliderIndicator(images: images, controller: controller),
+          ImageSliderIndicator(
+            images: images,
+            controller: controller,
+          ),
           SliverToBoxAdapter(
             child: SizedBox(height: 40.h),
           ),
-          const SliverToBoxAdapter(
-            child: BodyOfItemDetails(),
-          )
+          BodyOfItemDetails(
+              price: price,
+              nameOfProduct: nameOfProduct,
+              description: description),
         ],
       ),
     );
