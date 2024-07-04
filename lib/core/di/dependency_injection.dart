@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
+import '../../features/favorits/data/repo/favorite_repo.dart';
 import '../../features/home/data/repos/banner/banner_repo.dart';
 import '../../features/home/data/repos/categories/categories_repo.dart';
 import '../../features/home/data/repos/products/products_repo.dart';
@@ -34,4 +35,7 @@ Future<void> setupGetIt() async {
 
   // search
   getIt.registerLazySingleton<SearchRepo>(() => SearchRepo(getIt()));
+
+  // favorit
+  getIt.registerLazySingleton<FavoritRepo>(() => FavoritRepo());
 }

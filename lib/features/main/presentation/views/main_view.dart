@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/di/dependency_injection.dart';
 import '../../../home/cubits/categories/categories_cubit.dart';
 import '../../../home/cubits/products/products_cubit.dart';
-import '../../../favorits/favorits_view.dart';
+import '../../../favorits/presentations/views/favorits_view.dart';
 import '../../../home/cubits/banner/banner_cubit.dart';
 import '../../../home/presentation/views/home_view.dart';
 import '../../../porfile/views/profile_view.dart';

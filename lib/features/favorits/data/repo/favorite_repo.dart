@@ -2,7 +2,7 @@ import 'package:hive/hive.dart';
 
 import '../models/favorite_item_model.dart';
 
-class FavoriteRepo {
+class FavoritRepo {
   final Box<FavoriteItemModel> _favoritItemsbox =
       Hive.box<FavoriteItemModel>('favorites');
 
