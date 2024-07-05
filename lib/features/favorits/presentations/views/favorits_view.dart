@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:lottie/lottie.dart';
+import 'package:shop_app/core/utils/app_assets.dart';
 import 'package:shop_app/features/favorits/cubit/favorit_cubit.dart';
 import 'package:shop_app/features/favorits/cubit/favorit_state.dart';
 
@@ -21,8 +23,8 @@ class FavoritesView extends StatelessWidget {
             loading: () => const Center(
               child: CircularProgressIndicator(),
             ),
-            favoriteEmpty: (message) => const Center(
-              child: Text('No favorites yet!'),
+            favoriteEmpty: (message) => Center(
+              child: LottieBuilder.asset(AppAssets.wishListLottie),
             ),
             favoriteError: (message) => Center(
               child: Text('Error: $message'),
