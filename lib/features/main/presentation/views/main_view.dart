@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shop_app/features/favorits/cubit/favorit_cubit.dart';
 import '../../../../core/di/dependency_injection.dart';
+import '../../../favorits/cubit/favorit_cubit.dart';
 import '../../../home/cubits/categories/categories_cubit.dart';
 import '../../../home/cubits/products/products_cubit.dart';
 import '../../../favorits/presentations/views/favorits_view.dart';

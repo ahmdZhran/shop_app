@@ -30,4 +30,7 @@ class AppAssets {
 
   // Product Details
   static const String arroBack = "assets/svg/arrow_back.svg";
+
+  // Favorites
+  static const String wishListLottie = "assets/lottie/wishlist.json";
 }

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:lottie/lottie.dart';
+import 'package:shop_app/core/utils/app_assets.dart';
 import 'package:shop_app/features/favorits/cubit/favorit_cubit.dart';
 import 'package:shop_app/features/favorits/cubit/favorit_state.dart';
+
 import '../../../home/presentation/widgets/products_section/card_item.dart';
-import '../../data/models/favorite_item_model.dart';
 
 class FavoritesView extends StatelessWidget {
   const FavoritesView({super.key});
@@ -21,20 +23,31 @@ class FavoritesView extends StatelessWidget {
             loading: () => const Center(
               child: CircularProgressIndicator(),
             ),
-            favoriteEmpty: (message) => const Center(
-              child: Text('No favorites yet!'),
+            favoriteEmpty: (message) => Center(
+              child: LottieBuilder.asset(AppAssets.wishListLottie),
             ),
             favoriteError: (message) => Center(
               child: Text('Error: $message'),
             ),
             favoriteAdded: (favoriteItems) => MasonryGridView.count(
+              physics: const NeverScrollableScrollPhysics(),
               crossAxisCount: 2,
               itemCount: favoriteItems.length,
               mainAxisSpacing: 4,
               shrinkWrap: true,
-              itemBuilder: (context, index) {
-                final item = favoriteItems[index];
-                return _buildFavoriteItem(context, item);
+              itemBuilder: (BuildContext context, int index) {
+                final favItem = favoriteItems[index];
+                return CardItem(
+                  imageurl: favItem.images.first.toString(),
+                  titleOfItem: favItem.name.toString(),
+                  price: favItem.price.toString(),
+                  oldPrice: favItem.oldPrice.toString(),
+                  discount: favItem.discount.toString(),
+                  productId: favItem.id,
+                  images: favItem.images,
+                  description: favItem.description,
+                  nameOfProduct: favItem.name,
+                );
               },
             ),
             orElse: () => const Center(
@@ -43,20 +56,6 @@ class FavoritesView extends StatelessWidget {
           );
         },
       ),
-    );
-  }
-
-  Widget _buildFavoriteItem(BuildContext context, FavoriteItemModel item) {
-    return CardItem(
-      imageurl: item.image,
-      titleOfItem: item.name,
-      price: item.price.toString(),
-      oldPrice: item.price.toString(),
-      discount: item.price.toString(),
-      productId: item.id,
-      images: item.images,
-      description: item.description,
-      nameOfProduct: item.name,
     );
   }
 }
