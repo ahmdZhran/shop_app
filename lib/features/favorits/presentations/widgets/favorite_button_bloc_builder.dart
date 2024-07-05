@@ -54,7 +54,7 @@ class FavoritButtonBlocBuilder extends StatelessWidget {
           },
           icon: Icon(isFavorite ? Icons.favorite : Icons.favorite_border),
           color: ColorManager.kPrimaryColor,
-        ).animate(target: isFavorite ? 1 : 0).scaleXY(end: 1.3);
+        ).animate(target: isFavorite ? 1 : 0).scaleXY(end: 1.2);
       },
     );
   }
