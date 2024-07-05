@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:shop_app/core/helper/extensions.dart';
+import '../../../../core/router/routes.dart';
 import '../../../../core/utils/color_manager.dart';
-
 import '../../../../core/utils/app_assets.dart';
 
 class CartHeadIcon extends StatelessWidget {
@@ -17,7 +18,9 @@ class CartHeadIcon extends StatelessWidget {
           colorFilter:
               ColorFilter.mode(ColorManager.kPrimaryColor, BlendMode.srcIn),
         ),
-        onPressed: () {},
+        onPressed: () {
+          context.pushNamed(Routes.cart);
+        },
       ),
     );
   }
