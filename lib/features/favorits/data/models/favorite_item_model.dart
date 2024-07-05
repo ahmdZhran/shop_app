@@ -23,10 +23,9 @@ class FavoriteItemModel extends HiveObject {
   final List<String> images;
 
   @HiveField(6)
-  final String discount;
-  
-   @HiveField(7)
-  final String oldPrice;
+  String? oldPrice;
+  @HiveField(7)
+  String? discount;
 
   FavoriteItemModel({
     required this.id,
@@ -35,7 +34,7 @@ class FavoriteItemModel extends HiveObject {
     required this.price,
     required this.description,
     required this.images,
-    required this.discount,
-    required this.oldPrice,
+    this.oldPrice,
+    this.discount,
   });
 }

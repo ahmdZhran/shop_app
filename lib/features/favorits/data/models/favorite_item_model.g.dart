@@ -23,8 +23,8 @@ class FavoriteItemModelAdapter extends TypeAdapter<FavoriteItemModel> {
       price: fields[3] as String,
       description: fields[4] as String,
       images: (fields[5] as List).cast<String>(),
-      discount: fields[6] as String,
-      oldPrice: fields[7] as String,
+      oldPrice: fields[6] as String?,
+      discount: fields[7] as String?,
     );
   }
 
@@ -45,9 +45,9 @@ class FavoriteItemModelAdapter extends TypeAdapter<FavoriteItemModel> {
       ..writeByte(5)
       ..write(obj.images)
       ..writeByte(6)
-      ..write(obj.discount)
+      ..write(obj.oldPrice)
       ..writeByte(7)
-      ..write(obj.oldPrice);
+      ..write(obj.discount);
   }
 
   @override

@@ -64,8 +64,10 @@ class ProductCardHeader extends StatelessWidget {
                   name: titleOfItem,
                   image: imageurl,
                   price: price,
-                  description: description,
                   images: images,
+                  discount: discount,
+                  oldPrice: oldPrice,
+                  description: description,
                 );
                 if (isFavorite) {
                   context.read<FavoritCubit>().removeFromFavorit(productId);
