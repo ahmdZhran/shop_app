@@ -1,3 +1,3 @@
 class CartApiConstants {
-  static const String getCart = '/carts';
+  static const String cart = '/carts';
 }
