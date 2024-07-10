@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/core/utils/color_manager.dart';
+import 'package:shop_app/core/utils/text_styles.dart';
+import '../../../../core/widgets/custom_buttons.dart';
 import '../widgets/cart_app_bar_.dart';
 import '../widgets/cart_item_card.dart';
 
@@ -22,6 +25,12 @@ class CartView extends StatelessWidget {
               ),
             ]),
           ),
+          CustomButton(
+              onPressed: () {},
+              text: Text(
+                'Check Out',
+                style: CustomTextStyle.medium16,
+              ))
         ],
       ),
     );
