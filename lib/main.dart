@@ -3,7 +3,6 @@ import 'package:hive_flutter/adapters.dart';
 import 'core/helper/extensions.dart';
 import 'core/helper/shared_prefrence.dart';
 import 'core/di/dependency_injection.dart';
-
 import 'core/app/shop_app.dart';
 import 'core/helper/shared_prefrence_keys.dart';
 import 'core/router/app_router.dart';

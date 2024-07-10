@@ -8,26 +8,17 @@ class CustomAppBarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return const SafeArea(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            GestureDetector(
-              onTap: () {
-                context.pop();
-              },
-              child: CircleAvatar(
-                backgroundColor: Colors.grey.withOpacity(0.2),
-                child: SvgPicture.asset(
-                  AppAssets.arroBack,
-                ),
-              ),
-            ),
+            BackArrowButton(),
           ],
         ),
       ),
     );
   }
 }
+
