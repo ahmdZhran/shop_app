@@ -7,10 +7,12 @@ class CartView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Column(
-        children: [
-          CartAppBar(),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            CartAppBar(),
+          ],
+        ),
       ),
     );
   }
