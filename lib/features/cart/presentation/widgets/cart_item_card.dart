@@ -50,10 +50,10 @@ class CartItemCard extends StatelessWidget {
               children: [
                 Text(
                   itemName,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 18.0,
                     fontWeight: FontWeight.bold,
-                    color: Colors.black,
+                    color: ColorManager.kDarkColor,
                   ),
                 ),
                 const SizedBox(height: 10.0),
