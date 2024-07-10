@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/core/utils/color_manager.dart';
 
 class CartItemCard extends StatelessWidget {
   final String imageUrl;
@@ -52,7 +53,7 @@ class CartItemCard extends StatelessWidget {
                   style: const TextStyle(
                     fontSize: 18.0,
                     fontWeight: FontWeight.bold,
-                    color: Colors.purple,
+                    color: Colors.black,
                   ),
                 ),
                 const SizedBox(height: 10.0),
@@ -61,7 +62,7 @@ class CartItemCard extends StatelessWidget {
                   style: const TextStyle(
                     fontSize: 16.0,
                     fontWeight: FontWeight.bold,
-                    color: Colors.purple,
+                    color: Colors.green,
                   ),
                 ),
               ],
@@ -74,13 +75,13 @@ class CartItemCard extends StatelessWidget {
                   // Add item count logic here
                 },
                 icon: const Icon(Icons.add_circle_outline),
-                color: Colors.purple,
+                color: ColorManager.kDarkColor,
               ),
               Text(
                 itemCount.toString(),
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 18.0,
-                  color: Colors.purple,
+                  color: ColorManager.kDarkColor,
                 ),
               ),
               IconButton(
@@ -88,7 +89,7 @@ class CartItemCard extends StatelessWidget {
                   // Subtract item count logic here
                 },
                 icon: const Icon(Icons.remove_circle_outline),
-                color: Colors.purple,
+                color: ColorManager.kDarkColor,
               ),
             ],
           ),
