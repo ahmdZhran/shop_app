@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/core/utils/color_manager.dart';
 import 'package:shop_app/core/utils/text_styles.dart';
 import '../../../../core/widgets/custom_buttons.dart';
 import '../widgets/cart_app_bar_.dart';

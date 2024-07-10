@@ -1,21 +1,28 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shop_app/features/cart/data/repos/cart_repo.dart';
+
+import '../../data/models/cart_item_model.dart';
+import '../../data/repos/cart_repo.dart';
 import 'cart_state.dart';
 
 class CartCubit extends Cubit<CartState> {
-  CartCubit(this._cartRepo) : super(const CartState.initial());
   final CartRepo _cartRepo;
-  void fetchCart() async {
-    try {
-      emit(const CartState.cartLoading());
-      final response = await _cartRepo.getCart();
-      response.when(success: (cartResponse) {
-        emit(CartState.cartSuccess(cartResponse));
-      }, failure: (error) {
-        emit(CartState.cartError(error: error.apiErrorModel.message ?? ""));
-      });
-    } catch (error) {
-      emit(CartState.cartError(error: error.toString()));
-    }
+
+  CartCubit(this._cartRepo) : super(const CartState.initial());
+
+  void fetchCartItems() {
+    final items = _cartRepo.getCartItems();
+    emit(CartState.loaded(items));
+  }
+
+  void addItemToCart(CartItemModel item) {
+    _cartRepo.addCartItem(item);
+    final items = _cartRepo.getCartItems();
+    emit(CartState.itemAdded(items));
+  }
+
+  void deleteItemFromCart(int id) {
+    _cartRepo.deleteItemFromCart(id);
+    final items = _cartRepo.getCartItems();
+    emit(CartState.itemDeleted(items));
   }
 }

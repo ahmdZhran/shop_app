@@ -1,19 +1,23 @@
-import 'package:shop_app/core/networking/api_error_handler.dart';
-import 'package:shop_app/core/networking/api_result.dart';
-import 'package:shop_app/features/cart/data/api/cart_api_service.dart';
+import 'package:hive/hive.dart';
+import '../models/cart_item_model.dart';
 
-import '../models/cart_response.dart';
+class CartRepo {
+  final Box<CartItemModel> cartBox;
+  CartRepo({required this.cartBox});
 
-class CartRepo{
- final CartApiService _cartApiService;
- CartRepo(this._cartApiService);
+  List<CartItemModel> getCartItems() {
+    return cartBox.values.toList();
+  }
 
- Future<ApiResult<CartResponse>> getCart() async {
-   try {
-     final response = await _cartApiService.getCart();
-     return ApiResult.success(response);
-   } catch (error) {
-     return ApiResult.failure(ErrorHandler.handle(error));
-   }
- } 
+  void addCartItem(CartItemModel cartItem) {
+    cartBox.add(cartItem);
+  }
+
+  void deleteItemFromCart(int id) {
+    cartBox.delete(id);
+  }
+
+  void clearCart() {
+    cartBox.clear();
+  }
 }

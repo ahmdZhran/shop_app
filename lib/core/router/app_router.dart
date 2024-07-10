@@ -51,17 +51,13 @@ class AppRouter {
       case Routes.home:
         return MaterialPageRoute(
             builder: (_) => BlocProvider(
-              //TODO see this why I have to add this here 
+                  //TODO see this why I have to add this here
                   create: (context) => BannerCubit(getIt()),
                   child: const HomeView(),
                 ));
 
       case Routes.cart:
-        return MaterialPageRoute(
-            builder: (_) => BlocProvider(
-                  create: (context) => CartCubit(getIt())..fetchCart(),
-                  child: const CartView(),
-                ));
+        return MaterialPageRoute(builder: (_) => const CartView());
 
       // Product Details
       case Routes.productDetails:

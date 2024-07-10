@@ -42,6 +42,6 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<FavoritRepo>(() => FavoritRepo());
 
   // Cart
-  getIt.registerLazySingleton<CartApiService>(() => CartApiService(dio));
-  getIt.registerLazySingleton<CartRepo>(() => CartRepo(getIt()));
+  // getIt.registerLazySingleton<CartApiService>(() => CartApiService(dio));
+  // getIt.registerLazySingleton<CartRepo>(() => CartRepo(getIt()));
 }
