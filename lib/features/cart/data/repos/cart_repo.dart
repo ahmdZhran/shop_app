@@ -13,8 +13,8 @@ class CartRepo {
     cartBox.add(cartItem);
   }
 
-  void removeCartItem(CartItemModel cartItem) {
-    cartBox.delete(cartItem.id);
+  void deleteItemFromCart(int id) {
+    cartBox.delete(id);
   }
 
   void clearCart() {

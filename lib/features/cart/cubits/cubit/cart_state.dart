@@ -1,15 +1,14 @@
-// import 'package:freezed_annotation/freezed_annotation.dart';
-// import 'package:shop_app/features/cart/data/models/cart_item_model.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-// part 'cart_state.freezed.dart';
+import '../../data/models/cart_item_model.dart';
 
-// @freezed
-// class CartState with _$CartState {
-//   const factory CartState.initial() = _Initial;
+part 'cart_state.freezed.dart';
 
-//   const factory CartState.cartLoading() = CartLoading;
-
-//   const factory CartState.cartSuccess(CartResponse cartResponse) = CartSuccess;
-
-//   const factory CartState.cartError({required String error}) = CartError;
-// }
+@freezed
+class CartState with _$CartState {
+  const factory CartState.initial() = _CartInitial;
+  const factory CartState.loaded(List<CartItemModel> cartItems) = _CartLoaded;
+  const factory CartState.itemAdded(List<CartItemModel> cartItems) = _CartItemAdded;
+  const factory CartState.itemDeleted(List<CartItemModel> cartItems) = _CartItemDeleted;
+  const factory CartState.cleared() = _CartCleared;
+}
