@@ -47,6 +47,7 @@ class CardItem extends StatelessWidget {
               arguments: {
                 'id': productId,
                 'images': images,
+                'image': imageurl,
                 'price': price,
                 'description': description,
                 'title': nameOfProduct,
@@ -70,7 +71,6 @@ class CardItem extends StatelessWidget {
                       images: images,
                       imageurl: imageurl,
                       oldPrice: oldPrice,
-                      
                       price: price,
                       titleOfItem: titleOfItem,
                     ),
