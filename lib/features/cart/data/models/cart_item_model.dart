@@ -20,7 +20,7 @@ class CartItemModel extends HiveObject {
   final String description;
 
   @HiveField(5)
-  final List<String> images;
+  final List<String>? images;
 
   @HiveField(6)
   String? oldPrice;
@@ -34,7 +34,7 @@ class CartItemModel extends HiveObject {
     required this.image,
     required this.price,
     required this.description,
-    required this.images,
+    this.images,
     this.oldPrice,
     this.discount,
   });
