@@ -12,10 +12,12 @@ class ProductDetailsView extends StatelessWidget {
     required this.description,
     required this.price,
     required this.nameOfProduct,
+    required this.image,
   });
 
   final int productId;
   final List<String> images;
+  final String image;
   final String description;
   final String price;
   final String nameOfProduct;
@@ -50,9 +52,12 @@ class ProductDetailsView extends StatelessWidget {
             child: SizedBox(height: 40.h),
           ),
           BodyOfItemDetails(
-              price: price,
-              nameOfProduct: nameOfProduct,
-              description: description),
+            price: price,
+            nameOfProduct: nameOfProduct,
+            description: description,
+            id: productId,
+            image: image,
+          ),
         ],
       ),
     );

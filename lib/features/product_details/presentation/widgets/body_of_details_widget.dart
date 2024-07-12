@@ -13,8 +13,11 @@ class BodyOfItemDetails extends StatelessWidget {
     required this.price,
     required this.nameOfProduct,
     required this.description,
+    required this.id,
+    required this.image,
   });
-
+  final int id;
+  final String image;
   final String price;
   final String nameOfProduct;
   final String description;

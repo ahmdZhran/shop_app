@@ -69,6 +69,7 @@ class AppRouter {
                   description: args['description'],
                   price: args['price'],
                   nameOfProduct: args['title'],
+                  image: args['image'],
                 ));
 
       default:
