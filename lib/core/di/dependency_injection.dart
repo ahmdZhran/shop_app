@@ -43,5 +43,5 @@ Future<void> setupGetIt() async {
 
   // Cart
   // getIt.registerLazySingleton<CartApiService>(() => CartApiService(dio));
-  // getIt.registerLazySingleton<CartRepo>(() => CartRepo(getIt()));
+  // getIt.registerLazySingleton<CartRepo>(() => CartRepo());
 }

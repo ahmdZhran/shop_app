@@ -22,7 +22,7 @@ class CartItemModelAdapter extends TypeAdapter<CartItemModel> {
       image: fields[2] as String,
       price: fields[3] as String,
       description: fields[4] as String,
-      images: (fields[5] as List).cast<String>(),
+      images: (fields[5] as List?)?.cast<String>(),
       oldPrice: fields[6] as String?,
       discount: fields[7] as String?,
     );

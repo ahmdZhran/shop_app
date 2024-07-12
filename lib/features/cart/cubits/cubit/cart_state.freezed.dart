@@ -19,7 +19,7 @@ mixin _$CartState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<CartItemModel> cartItems) loaded,
+    required TResult Function(List<CartItemModel> cartItems) cartSuccess,
     required TResult Function(List<CartItemModel> cartItems) itemAdded,
     required TResult Function(List<CartItemModel> cartItems) itemDeleted,
     required TResult Function() cleared,
@@ -28,7 +28,7 @@ mixin _$CartState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<CartItemModel> cartItems)? loaded,
+    TResult? Function(List<CartItemModel> cartItems)? cartSuccess,
     TResult? Function(List<CartItemModel> cartItems)? itemAdded,
     TResult? Function(List<CartItemModel> cartItems)? itemDeleted,
     TResult? Function()? cleared,
@@ -37,7 +37,7 @@ mixin _$CartState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<CartItemModel> cartItems)? loaded,
+    TResult Function(List<CartItemModel> cartItems)? cartSuccess,
     TResult Function(List<CartItemModel> cartItems)? itemAdded,
     TResult Function(List<CartItemModel> cartItems)? itemDeleted,
     TResult Function()? cleared,
@@ -47,7 +47,7 @@ mixin _$CartState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CartInitial value) initial,
-    required TResult Function(_CartLoaded value) loaded,
+    required TResult Function(_CartSuccess value) cartSuccess,
     required TResult Function(_CartItemAdded value) itemAdded,
     required TResult Function(_CartItemDeleted value) itemDeleted,
     required TResult Function(_CartCleared value) cleared,
@@ -56,7 +56,7 @@ mixin _$CartState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CartInitial value)? initial,
-    TResult? Function(_CartLoaded value)? loaded,
+    TResult? Function(_CartSuccess value)? cartSuccess,
     TResult? Function(_CartItemAdded value)? itemAdded,
     TResult? Function(_CartItemDeleted value)? itemDeleted,
     TResult? Function(_CartCleared value)? cleared,
@@ -65,7 +65,7 @@ mixin _$CartState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CartInitial value)? initial,
-    TResult Function(_CartLoaded value)? loaded,
+    TResult Function(_CartSuccess value)? cartSuccess,
     TResult Function(_CartItemAdded value)? itemAdded,
     TResult Function(_CartItemDeleted value)? itemDeleted,
     TResult Function(_CartCleared value)? cleared,
@@ -130,7 +130,7 @@ class _$CartInitialImpl implements _CartInitial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<CartItemModel> cartItems) loaded,
+    required TResult Function(List<CartItemModel> cartItems) cartSuccess,
     required TResult Function(List<CartItemModel> cartItems) itemAdded,
     required TResult Function(List<CartItemModel> cartItems) itemDeleted,
     required TResult Function() cleared,
@@ -142,7 +142,7 @@ class _$CartInitialImpl implements _CartInitial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<CartItemModel> cartItems)? loaded,
+    TResult? Function(List<CartItemModel> cartItems)? cartSuccess,
     TResult? Function(List<CartItemModel> cartItems)? itemAdded,
     TResult? Function(List<CartItemModel> cartItems)? itemDeleted,
     TResult? Function()? cleared,
@@ -154,7 +154,7 @@ class _$CartInitialImpl implements _CartInitial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<CartItemModel> cartItems)? loaded,
+    TResult Function(List<CartItemModel> cartItems)? cartSuccess,
     TResult Function(List<CartItemModel> cartItems)? itemAdded,
     TResult Function(List<CartItemModel> cartItems)? itemDeleted,
     TResult Function()? cleared,
@@ -170,7 +170,7 @@ class _$CartInitialImpl implements _CartInitial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CartInitial value) initial,
-    required TResult Function(_CartLoaded value) loaded,
+    required TResult Function(_CartSuccess value) cartSuccess,
     required TResult Function(_CartItemAdded value) itemAdded,
     required TResult Function(_CartItemDeleted value) itemDeleted,
     required TResult Function(_CartCleared value) cleared,
@@ -182,7 +182,7 @@ class _$CartInitialImpl implements _CartInitial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CartInitial value)? initial,
-    TResult? Function(_CartLoaded value)? loaded,
+    TResult? Function(_CartSuccess value)? cartSuccess,
     TResult? Function(_CartItemAdded value)? itemAdded,
     TResult? Function(_CartItemDeleted value)? itemDeleted,
     TResult? Function(_CartCleared value)? cleared,
@@ -194,7 +194,7 @@ class _$CartInitialImpl implements _CartInitial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CartInitial value)? initial,
-    TResult Function(_CartLoaded value)? loaded,
+    TResult Function(_CartSuccess value)? cartSuccess,
     TResult Function(_CartItemAdded value)? itemAdded,
     TResult Function(_CartItemDeleted value)? itemDeleted,
     TResult Function(_CartCleared value)? cleared,
@@ -212,20 +212,20 @@ abstract class _CartInitial implements CartState {
 }
 
 /// @nodoc
-abstract class _$$CartLoadedImplCopyWith<$Res> {
-  factory _$$CartLoadedImplCopyWith(
-          _$CartLoadedImpl value, $Res Function(_$CartLoadedImpl) then) =
-      __$$CartLoadedImplCopyWithImpl<$Res>;
+abstract class _$$CartSuccessImplCopyWith<$Res> {
+  factory _$$CartSuccessImplCopyWith(
+          _$CartSuccessImpl value, $Res Function(_$CartSuccessImpl) then) =
+      __$$CartSuccessImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<CartItemModel> cartItems});
 }
 
 /// @nodoc
-class __$$CartLoadedImplCopyWithImpl<$Res>
-    extends _$CartStateCopyWithImpl<$Res, _$CartLoadedImpl>
-    implements _$$CartLoadedImplCopyWith<$Res> {
-  __$$CartLoadedImplCopyWithImpl(
-      _$CartLoadedImpl _value, $Res Function(_$CartLoadedImpl) _then)
+class __$$CartSuccessImplCopyWithImpl<$Res>
+    extends _$CartStateCopyWithImpl<$Res, _$CartSuccessImpl>
+    implements _$$CartSuccessImplCopyWith<$Res> {
+  __$$CartSuccessImplCopyWithImpl(
+      _$CartSuccessImpl _value, $Res Function(_$CartSuccessImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -233,7 +233,7 @@ class __$$CartLoadedImplCopyWithImpl<$Res>
   $Res call({
     Object? cartItems = null,
   }) {
-    return _then(_$CartLoadedImpl(
+    return _then(_$CartSuccessImpl(
       null == cartItems
           ? _value._cartItems
           : cartItems // ignore: cast_nullable_to_non_nullable
@@ -244,8 +244,8 @@ class __$$CartLoadedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$CartLoadedImpl implements _CartLoaded {
-  const _$CartLoadedImpl(final List<CartItemModel> cartItems)
+class _$CartSuccessImpl implements _CartSuccess {
+  const _$CartSuccessImpl(final List<CartItemModel> cartItems)
       : _cartItems = cartItems;
 
   final List<CartItemModel> _cartItems;
@@ -258,14 +258,14 @@ class _$CartLoadedImpl implements _CartLoaded {
 
   @override
   String toString() {
-    return 'CartState.loaded(cartItems: $cartItems)';
+    return 'CartState.cartSuccess(cartItems: $cartItems)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CartLoadedImpl &&
+            other is _$CartSuccessImpl &&
             const DeepCollectionEquality()
                 .equals(other._cartItems, _cartItems));
   }
@@ -277,45 +277,45 @@ class _$CartLoadedImpl implements _CartLoaded {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$CartLoadedImplCopyWith<_$CartLoadedImpl> get copyWith =>
-      __$$CartLoadedImplCopyWithImpl<_$CartLoadedImpl>(this, _$identity);
+  _$$CartSuccessImplCopyWith<_$CartSuccessImpl> get copyWith =>
+      __$$CartSuccessImplCopyWithImpl<_$CartSuccessImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<CartItemModel> cartItems) loaded,
+    required TResult Function(List<CartItemModel> cartItems) cartSuccess,
     required TResult Function(List<CartItemModel> cartItems) itemAdded,
     required TResult Function(List<CartItemModel> cartItems) itemDeleted,
     required TResult Function() cleared,
   }) {
-    return loaded(cartItems);
+    return cartSuccess(cartItems);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<CartItemModel> cartItems)? loaded,
+    TResult? Function(List<CartItemModel> cartItems)? cartSuccess,
     TResult? Function(List<CartItemModel> cartItems)? itemAdded,
     TResult? Function(List<CartItemModel> cartItems)? itemDeleted,
     TResult? Function()? cleared,
   }) {
-    return loaded?.call(cartItems);
+    return cartSuccess?.call(cartItems);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<CartItemModel> cartItems)? loaded,
+    TResult Function(List<CartItemModel> cartItems)? cartSuccess,
     TResult Function(List<CartItemModel> cartItems)? itemAdded,
     TResult Function(List<CartItemModel> cartItems)? itemDeleted,
     TResult Function()? cleared,
     required TResult orElse(),
   }) {
-    if (loaded != null) {
-      return loaded(cartItems);
+    if (cartSuccess != null) {
+      return cartSuccess(cartItems);
     }
     return orElse();
   }
@@ -324,50 +324,50 @@ class _$CartLoadedImpl implements _CartLoaded {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CartInitial value) initial,
-    required TResult Function(_CartLoaded value) loaded,
+    required TResult Function(_CartSuccess value) cartSuccess,
     required TResult Function(_CartItemAdded value) itemAdded,
     required TResult Function(_CartItemDeleted value) itemDeleted,
     required TResult Function(_CartCleared value) cleared,
   }) {
-    return loaded(this);
+    return cartSuccess(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CartInitial value)? initial,
-    TResult? Function(_CartLoaded value)? loaded,
+    TResult? Function(_CartSuccess value)? cartSuccess,
     TResult? Function(_CartItemAdded value)? itemAdded,
     TResult? Function(_CartItemDeleted value)? itemDeleted,
     TResult? Function(_CartCleared value)? cleared,
   }) {
-    return loaded?.call(this);
+    return cartSuccess?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CartInitial value)? initial,
-    TResult Function(_CartLoaded value)? loaded,
+    TResult Function(_CartSuccess value)? cartSuccess,
     TResult Function(_CartItemAdded value)? itemAdded,
     TResult Function(_CartItemDeleted value)? itemDeleted,
     TResult Function(_CartCleared value)? cleared,
     required TResult orElse(),
   }) {
-    if (loaded != null) {
-      return loaded(this);
+    if (cartSuccess != null) {
+      return cartSuccess(this);
     }
     return orElse();
   }
 }
 
-abstract class _CartLoaded implements CartState {
-  const factory _CartLoaded(final List<CartItemModel> cartItems) =
-      _$CartLoadedImpl;
+abstract class _CartSuccess implements CartState {
+  const factory _CartSuccess(final List<CartItemModel> cartItems) =
+      _$CartSuccessImpl;
 
   List<CartItemModel> get cartItems;
   @JsonKey(ignore: true)
-  _$$CartLoadedImplCopyWith<_$CartLoadedImpl> get copyWith =>
+  _$$CartSuccessImplCopyWith<_$CartSuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -444,7 +444,7 @@ class _$CartItemAddedImpl implements _CartItemAdded {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<CartItemModel> cartItems) loaded,
+    required TResult Function(List<CartItemModel> cartItems) cartSuccess,
     required TResult Function(List<CartItemModel> cartItems) itemAdded,
     required TResult Function(List<CartItemModel> cartItems) itemDeleted,
     required TResult Function() cleared,
@@ -456,7 +456,7 @@ class _$CartItemAddedImpl implements _CartItemAdded {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<CartItemModel> cartItems)? loaded,
+    TResult? Function(List<CartItemModel> cartItems)? cartSuccess,
     TResult? Function(List<CartItemModel> cartItems)? itemAdded,
     TResult? Function(List<CartItemModel> cartItems)? itemDeleted,
     TResult? Function()? cleared,
@@ -468,7 +468,7 @@ class _$CartItemAddedImpl implements _CartItemAdded {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<CartItemModel> cartItems)? loaded,
+    TResult Function(List<CartItemModel> cartItems)? cartSuccess,
     TResult Function(List<CartItemModel> cartItems)? itemAdded,
     TResult Function(List<CartItemModel> cartItems)? itemDeleted,
     TResult Function()? cleared,
@@ -484,7 +484,7 @@ class _$CartItemAddedImpl implements _CartItemAdded {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CartInitial value) initial,
-    required TResult Function(_CartLoaded value) loaded,
+    required TResult Function(_CartSuccess value) cartSuccess,
     required TResult Function(_CartItemAdded value) itemAdded,
     required TResult Function(_CartItemDeleted value) itemDeleted,
     required TResult Function(_CartCleared value) cleared,
@@ -496,7 +496,7 @@ class _$CartItemAddedImpl implements _CartItemAdded {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CartInitial value)? initial,
-    TResult? Function(_CartLoaded value)? loaded,
+    TResult? Function(_CartSuccess value)? cartSuccess,
     TResult? Function(_CartItemAdded value)? itemAdded,
     TResult? Function(_CartItemDeleted value)? itemDeleted,
     TResult? Function(_CartCleared value)? cleared,
@@ -508,7 +508,7 @@ class _$CartItemAddedImpl implements _CartItemAdded {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CartInitial value)? initial,
-    TResult Function(_CartLoaded value)? loaded,
+    TResult Function(_CartSuccess value)? cartSuccess,
     TResult Function(_CartItemAdded value)? itemAdded,
     TResult Function(_CartItemDeleted value)? itemDeleted,
     TResult Function(_CartCleared value)? cleared,
@@ -605,7 +605,7 @@ class _$CartItemDeletedImpl implements _CartItemDeleted {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<CartItemModel> cartItems) loaded,
+    required TResult Function(List<CartItemModel> cartItems) cartSuccess,
     required TResult Function(List<CartItemModel> cartItems) itemAdded,
     required TResult Function(List<CartItemModel> cartItems) itemDeleted,
     required TResult Function() cleared,
@@ -617,7 +617,7 @@ class _$CartItemDeletedImpl implements _CartItemDeleted {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<CartItemModel> cartItems)? loaded,
+    TResult? Function(List<CartItemModel> cartItems)? cartSuccess,
     TResult? Function(List<CartItemModel> cartItems)? itemAdded,
     TResult? Function(List<CartItemModel> cartItems)? itemDeleted,
     TResult? Function()? cleared,
@@ -629,7 +629,7 @@ class _$CartItemDeletedImpl implements _CartItemDeleted {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<CartItemModel> cartItems)? loaded,
+    TResult Function(List<CartItemModel> cartItems)? cartSuccess,
     TResult Function(List<CartItemModel> cartItems)? itemAdded,
     TResult Function(List<CartItemModel> cartItems)? itemDeleted,
     TResult Function()? cleared,
@@ -645,7 +645,7 @@ class _$CartItemDeletedImpl implements _CartItemDeleted {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CartInitial value) initial,
-    required TResult Function(_CartLoaded value) loaded,
+    required TResult Function(_CartSuccess value) cartSuccess,
     required TResult Function(_CartItemAdded value) itemAdded,
     required TResult Function(_CartItemDeleted value) itemDeleted,
     required TResult Function(_CartCleared value) cleared,
@@ -657,7 +657,7 @@ class _$CartItemDeletedImpl implements _CartItemDeleted {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CartInitial value)? initial,
-    TResult? Function(_CartLoaded value)? loaded,
+    TResult? Function(_CartSuccess value)? cartSuccess,
     TResult? Function(_CartItemAdded value)? itemAdded,
     TResult? Function(_CartItemDeleted value)? itemDeleted,
     TResult? Function(_CartCleared value)? cleared,
@@ -669,7 +669,7 @@ class _$CartItemDeletedImpl implements _CartItemDeleted {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CartInitial value)? initial,
-    TResult Function(_CartLoaded value)? loaded,
+    TResult Function(_CartSuccess value)? cartSuccess,
     TResult Function(_CartItemAdded value)? itemAdded,
     TResult Function(_CartItemDeleted value)? itemDeleted,
     TResult Function(_CartCleared value)? cleared,
@@ -731,7 +731,7 @@ class _$CartClearedImpl implements _CartCleared {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<CartItemModel> cartItems) loaded,
+    required TResult Function(List<CartItemModel> cartItems) cartSuccess,
     required TResult Function(List<CartItemModel> cartItems) itemAdded,
     required TResult Function(List<CartItemModel> cartItems) itemDeleted,
     required TResult Function() cleared,
@@ -743,7 +743,7 @@ class _$CartClearedImpl implements _CartCleared {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<CartItemModel> cartItems)? loaded,
+    TResult? Function(List<CartItemModel> cartItems)? cartSuccess,
     TResult? Function(List<CartItemModel> cartItems)? itemAdded,
     TResult? Function(List<CartItemModel> cartItems)? itemDeleted,
     TResult? Function()? cleared,
@@ -755,7 +755,7 @@ class _$CartClearedImpl implements _CartCleared {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<CartItemModel> cartItems)? loaded,
+    TResult Function(List<CartItemModel> cartItems)? cartSuccess,
     TResult Function(List<CartItemModel> cartItems)? itemAdded,
     TResult Function(List<CartItemModel> cartItems)? itemDeleted,
     TResult Function()? cleared,
@@ -771,7 +771,7 @@ class _$CartClearedImpl implements _CartCleared {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CartInitial value) initial,
-    required TResult Function(_CartLoaded value) loaded,
+    required TResult Function(_CartSuccess value) cartSuccess,
     required TResult Function(_CartItemAdded value) itemAdded,
     required TResult Function(_CartItemDeleted value) itemDeleted,
     required TResult Function(_CartCleared value) cleared,
@@ -783,7 +783,7 @@ class _$CartClearedImpl implements _CartCleared {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CartInitial value)? initial,
-    TResult? Function(_CartLoaded value)? loaded,
+    TResult? Function(_CartSuccess value)? cartSuccess,
     TResult? Function(_CartItemAdded value)? itemAdded,
     TResult? Function(_CartItemDeleted value)? itemDeleted,
     TResult? Function(_CartCleared value)? cleared,
@@ -795,7 +795,7 @@ class _$CartClearedImpl implements _CartCleared {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CartInitial value)? initial,
-    TResult Function(_CartLoaded value)? loaded,
+    TResult Function(_CartSuccess value)? cartSuccess,
     TResult Function(_CartItemAdded value)? itemAdded,
     TResult Function(_CartItemDeleted value)? itemDeleted,
     TResult Function(_CartCleared value)? cleared,
