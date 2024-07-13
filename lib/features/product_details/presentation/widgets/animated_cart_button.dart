@@ -43,17 +43,27 @@ class AnimatedCartButtonState extends State<AnimatedCartButton>
   }
 
   void _onAddToCart() {
-    context.read<CartCubit>().addItemToCart(widget.cartItem);
-
-    _controller.forward().then((value) {
+    final cartCubit = context.read<CartCubit>();
+    final isInCart = cartCubit.isItemInCart(widget.cartItem.id);
+    if (isInCart) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text('Item added to cart!'),
+          content: Text('This item has already been added to the cart.'),
           duration: Duration(seconds: 2),
         ),
       );
-      _controller.reset();
-    });
+    } else {
+      cartCubit.addItemToCart(widget.cartItem);
+      _controller.forward().then((value) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Item added to cart!'),
+            duration: Duration(seconds: 2),
+          ),
+        );
+        _controller.reset();
+      });
+    }
   }
 
   @override
