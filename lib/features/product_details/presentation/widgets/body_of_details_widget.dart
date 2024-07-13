@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:readmore/readmore.dart';
 import '../../../../core/animations/animate_do.dart';
-import '../../../cart/cubits/cubit/cart_cubit.dart';
 import '../../../cart/data/models/cart_item_model.dart';
 import '../../../../core/helper/extensions.dart';
 import '../../../../core/utils/color_manager.dart';
-import '../../../../core/widgets/custom_buttons.dart';
 import 'animated_cart_button.dart';
 import 'share_item_or_save_it.dart';
 import '../../../../core/utils/text_styles.dart';
