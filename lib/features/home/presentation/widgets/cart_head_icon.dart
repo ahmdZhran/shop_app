@@ -13,17 +13,20 @@ class CartHeadIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Align(
-      alignment: Alignment.topRight,
-      child: IconButton(
-        icon: SvgPicture.asset(
-          AppAssets.cart,
-          colorFilter:
-              ColorFilter.mode(ColorManager.kPrimaryColor, BlendMode.srcIn),
+    return BlocProvider(
+      create: (context) => CartCubit(CartRepo())..fetchCartItems(),
+      child: Align(
+        alignment: Alignment.topRight,
+        child: IconButton(
+          icon: SvgPicture.asset(
+            AppAssets.cart,
+            colorFilter:
+                ColorFilter.mode(ColorManager.kPrimaryColor, BlendMode.srcIn),
+          ),
+          onPressed: () {
+            context.pushNamed(Routes.cart);
+          },
         ),
-        onPressed: () {
-          context.pushNamed(Routes.cart);
-        },
       ),
     );
   }

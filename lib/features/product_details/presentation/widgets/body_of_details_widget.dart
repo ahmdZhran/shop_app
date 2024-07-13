@@ -72,6 +72,8 @@ class BodyOfItemDetails extends StatelessWidget {
                       description: description,
                     );
                     context.read<CartCubit>().addItemToCart(cartItem);
+                    print(
+                        'Add to cart button pressed: $cartItem^^^^^^^^^^^^^^^^^^^^^^^^^^^^^');
                   },
                   text: const Text(
                     'Add To Cart',
