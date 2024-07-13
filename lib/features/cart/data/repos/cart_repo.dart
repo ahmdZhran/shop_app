@@ -19,4 +19,8 @@ class CartRepo {
   void clearCart() {
     cartBox.clear();
   }
+
+  bool isItemInCart(int id) {
+    return cartBox.values.any((item) => item.id == id);
+  }
 }
