@@ -51,7 +51,8 @@ dependencies:
   flutter_svg: ^2.0.10+1
   # A package provides an easy way to add shimmer effect in Flutter project
   shimmer: ^3.0.0
-
+  # Easily create toast messages in single line of code
+  fluttertoast: ^8.2.6
   # A Flutter package that allows for dynamic expansion and collapse of text
   readmore: ^3.0.0
   # Flutter library to load and cache network images.
