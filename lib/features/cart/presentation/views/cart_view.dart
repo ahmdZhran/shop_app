@@ -17,12 +17,12 @@ class CartView extends StatelessWidget {
       body: Column(
         children: [
           const CartAppBar(),
-          BlocBuilder<CartCubit, CartState>(builder: (context, state) {
-            return state.maybeWhen(
-              cartSuccess: (item) => _buildCartList(context, item),
-              orElse: () => const SizedBox.shrink(),
-            );
-          }),
+          // BlocBuilder<CartCubit, CartState>(builder: (context, state) {
+          //   return state.maybeWhen(
+          //     cartSuccess: (item) => _buildCartList(context, item),
+          //     orElse: () => const SizedBox.shrink(),
+          //   );
+          // }),
           // Expanded(
           //   child: ListView(children: const [
           //     CartItemCard(
@@ -46,23 +46,23 @@ class CartView extends StatelessWidget {
   }
 }
 
-Widget _buildCartList(BuildContext context, List<CartItemModel> items) {
-  return SizedBox(
-    height: 20,
-    child: ListView.builder(
-      itemCount: items.length,
-      itemBuilder: (context, index) {
-        final item = items[index];
-        return CartItemCard(
-          imageUrl: item.image,
-          itemName: item.name,
-          itemPrice: double.parse(item.price),
-          itemCount: 1,
-          onDelete: () {
-            context.read<CartCubit>().deleteItemFromCart(item.id);
-          },
-        );
-      },
-    ),
-  );
-}
+// Widget _buildCartList(BuildContext context, List<CartItemModel> items) {
+//   return SizedBox(
+//     height: 20,
+//     child: ListView.builder(
+//       itemCount: items.length,
+//       itemBuilder: (context, index) {
+//         final item = items[index];
+//         return CartItemCard(
+//           imageUrl: item.image,
+//           itemName: item.name,
+//           itemPrice: double.parse(item.price),
+//           itemCount: 1,
+//           onDelete: () {
+//             context.read<CartCubit>().deleteItemFromCart(item.id);
+//           },
+//         );
+//       },
+//     ),
+//   );
+// }

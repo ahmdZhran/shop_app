@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop_app/features/cart/cubits/cubit/cart_cubit.dart';
+import 'package:shop_app/features/cart/data/repos/cart_repo.dart';
 import 'package:shop_app/features/cart/presentation/views/cart_view.dart';
 import 'package:shop_app/features/home/cubits/banner/banner_cubit.dart';
 import '../../features/main/logic/cubit/nav_bar_cubit.dart';
@@ -57,7 +58,11 @@ class AppRouter {
                 ));
 
       case Routes.cart:
-        return MaterialPageRoute(builder: (_) => const CartView());
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                  create: (context) => CartCubit(CartRepo())..fetchCartItems(),
+                  child: const CartView(),
+                ));
 
       // Product Details
       case Routes.productDetails:
