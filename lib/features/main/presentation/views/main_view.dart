@@ -34,9 +34,6 @@ class MainView extends StatelessWidget {
         BlocProvider(
           create: (_) => FavoritCubit(getIt())..fetchFavoritItems(),
         ),
-        // BlocProvider(
-        //   create: (_) => CartCubit(getIt())..fetchCartItems(),
-        // ),
       ],
       child: Column(
         children: [
