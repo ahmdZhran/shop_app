@@ -6,6 +6,7 @@ class CartItemCard extends StatelessWidget {
   final String itemName;
   final double itemPrice;
   final int itemCount;
+  final void Function()? onDelete;
 
   const CartItemCard({
     super.key,
@@ -13,6 +14,7 @@ class CartItemCard extends StatelessWidget {
     required this.itemName,
     required this.itemPrice,
     required this.itemCount,
+    this.onDelete,
   });
 
   @override
@@ -71,9 +73,7 @@ class CartItemCard extends StatelessWidget {
           Column(
             children: [
               IconButton(
-                onPressed: () {
-                  // Add item count logic here
-                },
+                onPressed: onDelete,
                 icon: const Icon(Icons.add_circle_outline),
                 color: ColorManager.kDarkColor,
               ),

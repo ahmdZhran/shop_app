@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
+import 'package:shop_app/features/cart/data/models/cart_item_model.dart';
 import 'core/helper/extensions.dart';
 import 'core/helper/shared_prefrence.dart';
 import 'core/di/dependency_injection.dart';
@@ -13,6 +14,8 @@ void main() async {
   await Hive.initFlutter();
   Hive.registerAdapter(FavoriteItemModelAdapter());
   await Hive.openBox<FavoriteItemModel>('favorites');
+  Hive.registerAdapter(CartItemModelAdapter());
+  await Hive.openBox<CartItemModel>('cart_items');
   setupGetIt();
   await checkLoggedInUser();
   runApp(ShopApp(appRouter: AppRouter()));

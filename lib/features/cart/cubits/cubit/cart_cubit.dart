@@ -11,7 +11,7 @@ class CartCubit extends Cubit<CartState> {
 
   void fetchCartItems() {
     final items = _cartRepo.getCartItems();
-    emit(CartState.loaded(items));
+    emit(CartState.cartSuccess(items));
   }
 
   void addItemToCart(CartItemModel item) {

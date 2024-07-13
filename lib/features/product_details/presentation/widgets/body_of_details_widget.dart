@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:readmore/readmore.dart';
 import 'package:shop_app/core/animations/animate_do.dart';
+import 'package:shop_app/features/cart/cubits/cubit/cart_cubit.dart';
+import 'package:shop_app/features/cart/data/models/cart_item_model.dart';
 import '../../../../core/helper/extensions.dart';
 import '../../../../core/utils/color_manager.dart';
 import '../../../../core/widgets/custom_buttons.dart';
@@ -60,7 +63,18 @@ class BodyOfItemDetails extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 CustomButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    final cartItem = CartItemModel(
+                      id: id,
+                      name: nameOfProduct,
+                      image: image,
+                      price: price,
+                      description: description,
+                    );
+                    context.read<CartCubit>().addItemToCart(cartItem);
+                    print(
+                        'Add to cart button pressed: $cartItem^^^^^^^^^^^^^^^^^^^^^^^^^^^^^');
+                  },
                   text: const Text(
                     'Add To Cart',
                     style: TextStyle(color: Colors.black),

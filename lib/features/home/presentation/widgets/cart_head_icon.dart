@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:shop_app/core/helper/extensions.dart';
+import 'package:shop_app/features/cart/cubits/cubit/cart_cubit.dart';
+import 'package:shop_app/features/cart/data/repos/cart_repo.dart';
 import '../../../../core/router/routes.dart';
 import '../../../../core/utils/color_manager.dart';
 import '../../../../core/utils/app_assets.dart';
@@ -10,17 +13,20 @@ class CartHeadIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Align(
-      alignment: Alignment.topRight,
-      child: IconButton(
-        icon: SvgPicture.asset(
-          AppAssets.cart,
-          colorFilter:
-              ColorFilter.mode(ColorManager.kPrimaryColor, BlendMode.srcIn),
+    return BlocProvider(
+      create: (context) => CartCubit(CartRepo())..fetchCartItems(),
+      child: Align(
+        alignment: Alignment.topRight,
+        child: IconButton(
+          icon: SvgPicture.asset(
+            AppAssets.cart,
+            colorFilter:
+                ColorFilter.mode(ColorManager.kPrimaryColor, BlendMode.srcIn),
+          ),
+          onPressed: () {
+            context.pushNamed(Routes.cart);
+          },
         ),
-        onPressed: () {
-          context.pushNamed(Routes.cart);
-        },
       ),
     );
   }
