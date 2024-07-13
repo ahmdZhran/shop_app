@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/core/helper/extensions.dart';
+import '../../../../core/helper/extensions.dart';
 import '../widgets/banners_section/banner_bloc_builder.dart';
 import '../widgets/cart_head_icon.dart';
 import '../widgets/categories_section/categories_bloc_builder.dart';

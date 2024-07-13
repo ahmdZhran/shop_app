@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
-import 'package:shop_app/features/cart/data/repos/cart_repo.dart';
+import '../../features/cart/data/repos/cart_repo.dart';
 import '../../features/favorits/data/repo/favorite_repo.dart';
 import '../../features/home/data/repos/banner/banner_repo.dart';
 import '../../features/home/data/repos/categories/categories_repo.dart';

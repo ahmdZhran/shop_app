@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:readmore/readmore.dart';
-import 'package:shop_app/core/animations/animate_do.dart';
-import 'package:shop_app/features/cart/cubits/cubit/cart_cubit.dart';
-import 'package:shop_app/features/cart/data/models/cart_item_model.dart';
+import '../../../../core/animations/animate_do.dart';
+import '../../../cart/cubits/cubit/cart_cubit.dart';
+import '../../../cart/data/models/cart_item_model.dart';
 import '../../../../core/helper/extensions.dart';
 import '../../../../core/utils/color_manager.dart';
 import '../../../../core/widgets/custom_buttons.dart';

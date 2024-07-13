@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/core/helper/extensions.dart';
+import '../../../../core/helper/extensions.dart';
 
 import '../../../onboarding/presentation/widgets/custom_smooth_page_indicator.dart';
 
