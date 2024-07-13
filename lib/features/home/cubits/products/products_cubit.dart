@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shop_app/features/home/data/repos/products/products_repo.dart';
+import '../../data/repos/products/products_repo.dart';
 
 import 'products_state.dart';
 

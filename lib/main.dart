@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
-import 'package:shop_app/features/cart/data/models/cart_item_model.dart';
+
+import 'core/app/shop_app.dart';
+import 'core/di/dependency_injection.dart';
 import 'core/helper/extensions.dart';
 import 'core/helper/shared_prefrence.dart';
-import 'core/di/dependency_injection.dart';
-import 'core/app/shop_app.dart';
 import 'core/helper/shared_prefrence_keys.dart';
 import 'core/router/app_router.dart';
+import 'features/cart/data/models/cart_item_model.dart';
 import 'features/favorits/data/models/favorite_item_model.dart';
 
 void main() async {

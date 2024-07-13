@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shop_app/features/home/data/repos/banner/banner_repo.dart';
+import '../../data/repos/banner/banner_repo.dart';
 import 'banner_state.dart';
 
 class BannerCubit extends Cubit<BannerState> {

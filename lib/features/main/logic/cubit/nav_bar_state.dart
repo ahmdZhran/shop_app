@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:shop_app/features/main/logic/enums/nav_bar_enum.dart';
+import '../enums/nav_bar_enum.dart';
 
 part 'nav_bar_state.freezed.dart';
 

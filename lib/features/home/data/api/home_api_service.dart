@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/http.dart';
 import '../../../../core/networking/api_constants.dart';
-import '../../../cart/data/models/cart_item_model.dart';
 import '../models/banners_models/banner_response.dart';
 import '../models/category_models/category_response.dart';
 import '../models/home_products_model/home_products_response.dart';

@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:lottie/lottie.dart';
-import 'package:shop_app/core/utils/app_assets.dart';
-import 'package:shop_app/features/favorits/cubit/favorit_cubit.dart';
-import 'package:shop_app/features/favorits/cubit/favorit_state.dart';
+import '../../../../core/utils/app_assets.dart';
+import '../../cubit/favorit_cubit.dart';
+import '../../cubit/favorit_state.dart';
 
 import '../../../home/presentation/widgets/products_section/card_item.dart';
 

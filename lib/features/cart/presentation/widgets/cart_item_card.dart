@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/core/utils/color_manager.dart';
+import '../../../../core/utils/color_manager.dart';
 
 class CartItemCard extends StatelessWidget {
   final String imageUrl;

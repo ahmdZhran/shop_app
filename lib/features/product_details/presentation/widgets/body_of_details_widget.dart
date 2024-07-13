@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:readmore/readmore.dart';
-import 'package:shop_app/core/animations/animate_do.dart';
-import 'package:shop_app/features/cart/cubits/cubit/cart_cubit.dart';
-import 'package:shop_app/features/cart/data/models/cart_item_model.dart';
+import '../../../../core/animations/animate_do.dart';
+import '../../../cart/data/models/cart_item_model.dart';
 import '../../../../core/helper/extensions.dart';
 import '../../../../core/utils/color_manager.dart';
-import '../../../../core/widgets/custom_buttons.dart';
+import 'animated_cart_button.dart';
 import 'share_item_or_save_it.dart';
 import '../../../../core/utils/text_styles.dart';
 
@@ -62,22 +60,13 @@ class BodyOfItemDetails extends StatelessWidget {
                   style: CustomTextStyle.medium15,
                 ),
                 const SizedBox(height: 20),
-                CustomButton(
-                  onPressed: () {
-                    final cartItem = CartItemModel(
-                      id: id,
-                      name: nameOfProduct,
-                      image: image,
-                      price: price,
-                      description: description,
-                    );
-                    context.read<CartCubit>().addItemToCart(cartItem);
-                    print(
-                        'Add to cart button pressed: $cartItem^^^^^^^^^^^^^^^^^^^^^^^^^^^^^');
-                  },
-                  text: const Text(
-                    'Add To Cart',
-                    style: TextStyle(color: Colors.black),
+                AnimatedCartButton(
+                  cartItem: CartItemModel(
+                    id: id,
+                    name: nameOfProduct,
+                    image: image,
+                    price: price,
+                    description: description,
                   ),
                 ),
                 const SaveItemOrShareIt(),

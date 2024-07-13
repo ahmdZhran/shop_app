@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shop_app/features/home/data/repos/categories/categories_repo.dart';
+import '../../data/repos/categories/categories_repo.dart';
 
 import 'categories_state.dart';
 
