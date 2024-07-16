@@ -85,8 +85,9 @@ class AnimatedCartButtonState extends State<AnimatedCartButton>
           position: _offsetAnimation,
           child: const Padding(
             padding: EdgeInsets.only(left: 90, top: 15),
-            child:
-                Center(child: Icon(Icons.shopping_cart, color: Colors.black)),
+            child: Center(
+              child: Icon(Icons.shopping_cart, color: Colors.black),
+            ),
           ),
         ),
       ],
