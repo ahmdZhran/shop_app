@@ -5,28 +5,28 @@ import 'package:fluttertoast/fluttertoast.dart';
 class ShowToast {
   const ShowToast._();
 
-  static void showToastErrorTop({
+  static void showToastErrorBottom({
     required String message,
     int? seconds,
   }) =>
       Fluttertoast.showToast(
         msg: message,
         toastLength: Toast.LENGTH_LONG,
-        gravity: ToastGravity.TOP,
+        gravity: ToastGravity.BOTTOM,
         timeInSecForIosWeb: seconds ?? 3,
         backgroundColor: Colors.red,
         textColor: Colors.white,
         fontSize: 16.sp,
       );
 
-  static void showToastSuccessTop({
+  static void showToastSuccessBottom({
     required String message,
     int? seconds,
   }) =>
       Fluttertoast.showToast(
         msg: message,
         toastLength: Toast.LENGTH_LONG,
-        gravity: ToastGravity.TOP,
+        gravity: ToastGravity.BOTTOM,
         timeInSecForIosWeb: seconds ?? 3,
         backgroundColor: Colors.green,
         textColor: Colors.white,

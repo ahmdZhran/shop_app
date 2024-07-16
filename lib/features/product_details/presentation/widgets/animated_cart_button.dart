@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/widgets/custom_buttons.dart';
+import '../../../../core/widgets/custom_toast.dart';
 import '../../../cart/cubits/cubit/cart_cubit.dart';
 import '../../../cart/data/models/cart_item_model.dart';
 
@@ -46,11 +47,14 @@ class AnimatedCartButtonState extends State<AnimatedCartButton>
     final cartCubit = context.read<CartCubit>();
     final isInCart = cartCubit.isItemInCart(widget.cartItem.id);
     if (isInCart) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('This item has already been added to the cart.'),
-          duration: Duration(seconds: 2),
-        ),
+      // ScaffoldMessenger.of(context).showSnackBar(
+      //   const SnackBar(
+      //     content: Text('This item has already been added to the cart.'),
+      //     duration: Duration(seconds: 2),
+      //   ),
+      // );
+      ShowToast.showToastErrorBottom(
+        message: 'This item has already been added to the cart.',
       );
     } else {
       cartCubit.addItemToCart(widget.cartItem);
