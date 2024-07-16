@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
-
 import 'core/app/shop_app.dart';
 import 'core/di/dependency_injection.dart';
 import 'core/helper/extensions.dart';
