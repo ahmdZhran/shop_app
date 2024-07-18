@@ -25,16 +25,29 @@ class CartView extends StatelessWidget {
                       itemCount: items.length,
                       itemBuilder: (context, index) {
                         final item = items[index];
-                        return CartItemCard(
-                          imageUrl: item.image,
-                          itemName: item.name,
-                          itemPrice: double.parse(item.price),
-                          itemCount: 2,
-                          onDelete: () {
-                            context
-                                .read<CartCubit>()
-                                .deleteItemFromCart(item.id);
-                          },
+                        return Dismissible(
+                          background: Container(
+                            color: Colors.redAccent,
+                            alignment: Alignment.centerRight,
+                            padding: const EdgeInsets.symmetric(horizontal: 20),
+                            child: const Icon(
+                              Icons.delete,
+                              size: 30,
+                              color: Colors.white,
+                            ),
+                          ),
+                          key: Key(item.id.toString()),
+                          child: CartItemCard(
+                            imageUrl: item.image,
+                            itemName: item.name,
+                            itemPrice: double.parse(item.price),
+                            itemCount: 2,
+                            onDelete: () {
+                              context
+                                  .read<CartCubit>()
+                                  .deleteItemFromCart(item.id);
+                            },
+                          ),
                         );
                       },
                     ),
@@ -44,7 +57,6 @@ class CartView extends StatelessWidget {
               );
             },
           ),
-          const Spacer(),
           CustomButton(
             onPressed: () {},
             text: Text(
