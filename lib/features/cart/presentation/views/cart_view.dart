@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shop_app/core/widgets/custom_toast.dart';
 import '../../../../core/utils/text_styles.dart';
 import '../../../../core/widgets/custom_buttons.dart';
 import '../../cubits/cubit/cart_cubit.dart';
@@ -25,16 +26,36 @@ class CartView extends StatelessWidget {
                       itemCount: items.length,
                       itemBuilder: (context, index) {
                         final item = items[index];
-                        return CartItemCard(
-                          imageUrl: item.image,
-                          itemName: item.name,
-                          itemPrice: double.parse(item.price),
-                          itemCount: 2,
-                          onDelete: () {
+                        return Dismissible(
+                          background: Container(
+                            color: Colors.redAccent,
+                            alignment: Alignment.centerRight,
+                            padding: const EdgeInsets.symmetric(horizontal: 20),
+                            child: const Icon(
+                              Icons.delete,
+                              size: 30,
+                              color: Colors.white,
+                            ),
+                          ),
+                          onDismissed: (direction) {
                             context
                                 .read<CartCubit>()
                                 .deleteItemFromCart(item.id);
+                            ShowToast.showToastErrorBottom(
+                                message: 'Item Delelted From Cart');
                           },
+                          key: Key(item.id.toString()),
+                          child: CartItemCard(
+                            imageUrl: item.image,
+                            itemName: item.name,
+                            itemPrice: double.parse(item.price),
+                            itemCount: 2,
+                            onDelete: () {
+                              context
+                                  .read<CartCubit>()
+                                  .deleteItemFromCart(item.id);
+                            },
+                          ),
                         );
                       },
                     ),

@@ -9,7 +9,7 @@ class CartRepo {
   }
 
   void addCartItem(CartItemModel cartItem) {
-    cartBox.add(cartItem);
+    cartBox.put(cartItem.id, cartItem);
   }
 
   void deleteItemFromCart(int id) {
