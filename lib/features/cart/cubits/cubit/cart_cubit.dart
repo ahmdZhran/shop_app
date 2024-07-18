@@ -20,6 +20,11 @@ class CartCubit extends Cubit<CartState> {
     emit(CartState.itemAdded(items));
   }
 
+  void clearCartItems() {
+    _cartRepo.clearCart();
+    emit(const CartState.cleared());
+  }
+
   void deleteItemFromCart(int id) {
     _cartRepo.deleteItemFromCart(id);
     final items = _cartRepo.getCartItems();
