@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shop_app/core/widgets/custom_toast.dart';
 import '../../../../core/utils/text_styles.dart';
 import '../../../../core/widgets/custom_buttons.dart';
 import '../../cubits/cubit/cart_cubit.dart';
@@ -36,6 +37,13 @@ class CartView extends StatelessWidget {
                               color: Colors.white,
                             ),
                           ),
+                          onDismissed: (direction) {
+                            context
+                                .read<CartCubit>()
+                                .deleteItemFromCart(item.id);
+                            ShowToast.showToastErrorBottom(
+                                message: 'Item Delelted From Cart');
+                          },
                           key: Key(item.id.toString()),
                           child: CartItemCard(
                             imageUrl: item.image,
