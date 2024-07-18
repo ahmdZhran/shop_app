@@ -44,6 +44,7 @@ class CartView extends StatelessWidget {
               );
             },
           ),
+          const Spacer(),
           CustomButton(
             onPressed: () {},
             text: Text(
