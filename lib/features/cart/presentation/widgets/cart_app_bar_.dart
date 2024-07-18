@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shop_app/features/cart/cubits/cubit/cart_cubit.dart';
 
 import '../../../../core/utils/color_manager.dart';
 import '../../../../core/utils/text_styles.dart';
@@ -18,7 +20,9 @@ class CartAppBar extends StatelessWidget {
             const BackArrowButton(),
             Text('Cart', style: CustomTextStyle.medium18),
             IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  context.read<CartCubit>().clearCartItems();
+                },
                 icon: Icon(
                   Icons.delete,
                   color: ColorManager.kPrimaryColor,
