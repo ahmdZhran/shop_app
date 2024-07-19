@@ -1,5 +1,4 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../data/models/cart_item_model.dart';
 import '../../data/repos/cart_repo.dart';
 import 'cart_state.dart';
@@ -10,28 +9,56 @@ class CartCubit extends Cubit<CartState> {
   CartCubit(this._cartRepo) : super(const CartState.initial());
 
   void fetchCartItems() {
-    final items = _cartRepo.getCartItems();
-    emit(CartState.cartSuccess(items));
+    emit(const CartState.loading());
+    try {
+      final items = _cartRepo.getCartItems();
+      if (items.isEmpty) {
+        emit(const CartState.cartEmpty(message: 'Cart is empty.'));
+      } else {
+        emit(CartState.cartSuccess(items));
+      }
+    } catch (error) {
+      emit(CartState.cartError(message: error.toString()));
+    }
   }
 
   void addItemToCart(CartItemModel item) {
-    _cartRepo.addCartItem(item);
-    final items = _cartRepo.getCartItems();
-    emit(CartState.itemAdded(items));
+    emit(const CartState.loading());
+    try {
+      _cartRepo.addCartItem(item);
+      final items = _cartRepo.getCartItems();
+      emit(CartState.itemAdded(items));
+    } catch (error) {
+      emit(CartState.cartError(message: error.toString()));
+    }
   }
 
   void clearCartItems() {
-    _cartRepo.clearCart();
-    emit(const CartState.cleared());
+    emit(const CartState.loading());
+    try {
+      _cartRepo.clearCart();
+      emit(const CartState.cartEmpty(message: 'Cart is empty.'));
+    } catch (error) {
+      emit(CartState.cartError(message: error.toString()));
+    }
   }
 
   void deleteItemFromCart(int id) {
-    _cartRepo.deleteItemFromCart(id);
-    fetchCartItems();
-    emit(const CartState.itemDeleted());
+    emit(const CartState.loading());
+    try {
+      _cartRepo.deleteItemFromCart(id);
+      fetchCartItems();
+    } catch (error) {
+      emit(CartState.cartError(message: error.toString()));
+    }
   }
 
   bool isItemInCart(int id) {
-    return _cartRepo.isItemInCart(id);
+    try {
+      return _cartRepo.isItemInCart(id);
+    } catch (error) {
+      emit(CartState.cartError(message: error.toString()));
+      return false;
+    }
   }
 }
