@@ -17,12 +17,12 @@ class CartView extends StatelessWidget {
       body: Column(
         children: [
           const CartAppBar(),
-          BlocBuilder<CartCubit, CartState>(
-            builder: (context, state) {
-              return state.maybeWhen(
-                cartSuccess: (items) {
-                  return Expanded(
-                    child: ListView.builder(
+          Expanded(
+            child: BlocBuilder<CartCubit, CartState>(
+              builder: (context, state) {
+                return state.maybeWhen(
+                  cartSuccess: (items) {
+                    return ListView.builder(
                       itemCount: items.length,
                       itemBuilder: (context, index) {
                         final item = items[index];
@@ -42,7 +42,7 @@ class CartView extends StatelessWidget {
                                 .read<CartCubit>()
                                 .deleteItemFromCart(item.id);
                             ShowToast.showToastErrorBottom(
-                                message: 'Item Delelted From Cart');
+                                message: 'Item Deleted From Cart');
                           },
                           key: Key(item.id.toString()),
                           child: CartItemCard(
@@ -58,18 +58,21 @@ class CartView extends StatelessWidget {
                           ),
                         );
                       },
-                    ),
-                  );
-                },
-                orElse: () => const Center(child: Text('no items')),
-              );
-            },
+                    );
+                  },
+                  orElse: () => const SizedBox.shrink(),
+                );
+              },
+            ),
           ),
-          CustomButton(
-            onPressed: () {},
-            text: Text(
-              'Check Out',
-              style: CustomTextStyle.medium16,
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: CustomButton(
+              onPressed: () {},
+              text: Text(
+                'Check Out',
+                style: CustomTextStyle.medium16,
+              ),
             ),
           ),
         ],
