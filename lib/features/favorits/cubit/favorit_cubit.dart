@@ -23,21 +23,13 @@ class FavoritCubit extends Cubit<FavoritState> {
   }
 
   void addToFavorit(FavoriteItemModel item) {
-    try {
-      _favoritRepo.addToFavorite(item);
-      fetchFavoritItems();
-    } catch (error) {
-      emit(FavoritState.favoriteError(message: error.toString()));
-    }
+    _favoritRepo.addToFavorite(item);
+    fetchFavoritItems();
   }
 
   void removeFromFavorit(int id) {
-    try {
-      _favoritRepo.removeFromFavorite(id);
-      fetchFavoritItems();
-    } catch (error) {
-      emit(FavoritState.favoriteError(message: error.toString()));
-    }
+    _favoritRepo.removeFromFavorite(id);
+    fetchFavoritItems();
   }
 
   bool isFavorite(int id) {

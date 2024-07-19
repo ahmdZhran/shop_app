@@ -1,5 +1,4 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../data/models/cart_item_model.dart';
 import '../../data/repos/cart_repo.dart';
 import 'cart_state.dart';
@@ -10,8 +9,17 @@ class CartCubit extends Cubit<CartState> {
   CartCubit(this._cartRepo) : super(const CartState.initial());
 
   void fetchCartItems() {
-    final items = _cartRepo.getCartItems();
-    emit(CartState.cartSuccess(items));
+    emit(const CartState.loading());
+    try {
+      final items = _cartRepo.getCartItems();
+      if (items.isEmpty) {
+        emit(const CartState.cartEmpty(message: 'Cart is empty.'));
+      } else {
+        emit(CartState.cartSuccess(items));
+      }
+    } catch (error) {
+      emit(CartState.cartError(message: error.toString()));
+    }
   }
 
   void addItemToCart(CartItemModel item) {
@@ -22,14 +30,12 @@ class CartCubit extends Cubit<CartState> {
 
   void clearCartItems() {
     _cartRepo.clearCart();
-    emit(const CartState.cleared());
+    emit(const CartState.cartEmpty(message: 'Cart is empty.'));
   }
 
   void deleteItemFromCart(int id) {
     _cartRepo.deleteItemFromCart(id);
-    // final items = _cartRepo.getCartItems();
-fetchCartItems();
-    emit(CartState.itemDeleted());
+    fetchCartItems();
   }
 
   bool isItemInCart(int id) {
