@@ -23,34 +23,19 @@ class CartCubit extends Cubit<CartState> {
   }
 
   void addItemToCart(CartItemModel item) {
-    emit(const CartState.loading());
-    try {
-      _cartRepo.addCartItem(item);
-      final items = _cartRepo.getCartItems();
-      emit(CartState.itemAdded(items));
-    } catch (error) {
-      emit(CartState.cartError(message: error.toString()));
-    }
+    _cartRepo.addCartItem(item);
+    final items = _cartRepo.getCartItems();
+    emit(CartState.itemAdded(items));
   }
 
   void clearCartItems() {
-    emit(const CartState.loading());
-    try {
-      _cartRepo.clearCart();
-      emit(const CartState.cartEmpty(message: 'Cart is empty.'));
-    } catch (error) {
-      emit(CartState.cartError(message: error.toString()));
-    }
+    _cartRepo.clearCart();
+    emit(const CartState.cartEmpty(message: 'Cart is empty.'));
   }
 
   void deleteItemFromCart(int id) {
-    emit(const CartState.loading());
-    try {
-      _cartRepo.deleteItemFromCart(id);
-      fetchCartItems();
-    } catch (error) {
-      emit(CartState.cartError(message: error.toString()));
-    }
+    _cartRepo.deleteItemFromCart(id);
+    fetchCartItems();
   }
 
   bool isItemInCart(int id) {
