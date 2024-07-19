@@ -52,6 +52,8 @@ class CartItemCard extends StatelessWidget {
               children: [
                 Text(
                   itemName,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     fontSize: 18.0,
                     fontWeight: FontWeight.bold,

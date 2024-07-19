@@ -54,11 +54,6 @@ class CartCubit extends Cubit<CartState> {
   }
 
   bool isItemInCart(int id) {
-    try {
-      return _cartRepo.isItemInCart(id);
-    } catch (error) {
-      emit(CartState.cartError(message: error.toString()));
-      return false;
-    }
+    return _cartRepo.isItemInCart(id);
   }
 }
