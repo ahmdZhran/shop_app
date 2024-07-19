@@ -27,9 +27,8 @@ class CartCubit extends Cubit<CartState> {
 
   void deleteItemFromCart(int id) {
     _cartRepo.deleteItemFromCart(id);
-    // final items = _cartRepo.getCartItems();
-fetchCartItems();
-    emit(CartState.itemDeleted());
+    fetchCartItems();
+    emit(const CartState.itemDeleted());
   }
 
   bool isItemInCart(int id) {
