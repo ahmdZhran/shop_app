@@ -9,8 +9,8 @@ import '../../cubit/favorit_state.dart';
 import '../../../home/presentation/widgets/products_section/card_item.dart';
 
 class FavoritesView extends StatelessWidget {
-  const FavoritesView({super.key});
-
+  const FavoritesView({super.key, this.physics});
+  final ScrollPhysics? physics;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +30,7 @@ class FavoritesView extends StatelessWidget {
               child: Text('Error: $message'),
             ),
             favoriteAdded: (favoriteItems) => MasonryGridView.count(
-              physics: const NeverScrollableScrollPhysics(),
+              physics: physics,
               crossAxisCount: 2,
               itemCount: favoriteItems.length,
               mainAxisSpacing: 4,
