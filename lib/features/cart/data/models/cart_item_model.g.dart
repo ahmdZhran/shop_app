@@ -25,7 +25,7 @@ class CartItemModelAdapter extends TypeAdapter<CartItemModel> {
       images: (fields[5] as List?)?.cast<String>(),
       oldPrice: fields[6] as String?,
       discount: fields[7] as String?,
-      count: fields[8] as int,
+      quantity: fields[8] as int,
     );
   }
 
@@ -50,7 +50,7 @@ class CartItemModelAdapter extends TypeAdapter<CartItemModel> {
       ..writeByte(7)
       ..write(obj.discount)
       ..writeByte(8)
-      ..write(obj.count);
+      ..write(obj.quantity);
   }
 
   @override
