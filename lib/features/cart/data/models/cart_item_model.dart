@@ -28,7 +28,10 @@ class CartItemModel extends HiveObject {
   @HiveField(7)
   String? discount;
 
-  CartItemModel({
+  @HiveField(8)
+   final int count;
+
+  CartItemModel(this.count, {
     required this.id,
     required this.name,
     required this.image,
