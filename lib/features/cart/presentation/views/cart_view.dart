@@ -50,11 +50,6 @@ class CartView extends StatelessWidget {
                             itemName: item.name,
                             itemPrice: double.parse(item.price),
                             itemCount: 2,
-                            onDelete: () {
-                              context
-                                  .read<CartCubit>()
-                                  .deleteItemFromCart(item.id);
-                            },
                           ),
                         );
                       },

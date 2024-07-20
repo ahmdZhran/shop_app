@@ -20,13 +20,14 @@ class CartAppBar extends StatelessWidget {
             const BackArrowButton(),
             Text('Cart', style: CustomTextStyle.medium18),
             IconButton(
-                onPressed: () {
-                  context.read<CartCubit>().clearCartItems();
-                },
-                icon: Icon(
-                  Icons.delete,
-                  color: ColorManager.kPrimaryColor,
-                )),
+              onPressed: () {
+                context.read<CartCubit>().clearCartItems();
+              },
+              icon: Icon(
+                Icons.delete,
+                color: ColorManager.kPrimaryColor,
+              ),
+            ),
           ],
         ),
       ),
