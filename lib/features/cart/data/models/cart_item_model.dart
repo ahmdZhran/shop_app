@@ -29,9 +29,9 @@ class CartItemModel extends HiveObject {
   String? discount;
 
   @HiveField(8)
-   final int count;
+  final int count;
 
-  CartItemModel(this.count, {
+  CartItemModel({
     required this.id,
     required this.name,
     required this.image,
@@ -40,5 +40,27 @@ class CartItemModel extends HiveObject {
     this.images,
     this.oldPrice,
     this.discount,
+    this.count = 1,
   });
+
+  CartItemModel copyWith({
+    int? id,
+    String? name,
+    String? image,
+    String? price,
+    String? description,
+    List<String>? images,
+    String? oldPrice,
+    String? discount,
+    int? count,
+  }) {
+    return CartItemModel(
+      id: id ?? this.id,
+      name: name ?? this.name,
+      image: image ?? this.image,
+      price: price ?? this.price,
+      description: description ?? this.description,
+      count: count ?? this.count,
+    );
+  }
 }

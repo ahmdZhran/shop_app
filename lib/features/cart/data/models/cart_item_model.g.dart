@@ -17,7 +17,6 @@ class CartItemModelAdapter extends TypeAdapter<CartItemModel> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return CartItemModel(
-      fields[8] as int,
       id: fields[0] as int,
       name: fields[1] as String,
       image: fields[2] as String,
@@ -26,6 +25,7 @@ class CartItemModelAdapter extends TypeAdapter<CartItemModel> {
       images: (fields[5] as List?)?.cast<String>(),
       oldPrice: fields[6] as String?,
       discount: fields[7] as String?,
+      count: fields[8] as int,
     );
   }
 
