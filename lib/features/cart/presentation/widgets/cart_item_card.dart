@@ -92,7 +92,7 @@ class CartItemCard extends StatelessWidget {
               ),
               IconButton(
                 onPressed: () {
-                  // Subtract item count logic here
+                  context.read<CartCubit>().decrementItemCount(itemId);
                 },
                 icon: const Icon(Icons.remove_circle_outline),
                 color: ColorManager.kDarkColor,
