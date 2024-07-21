@@ -20,8 +20,10 @@ mixin _$CartState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<CartItemModel> cartItems) cartSuccess,
-    required TResult Function(List<CartItemModel> cartItems) itemAdded,
+    required TResult Function(List<CartItemModel> cartItems, double totalPrice)
+        cartSuccess,
+    required TResult Function(List<CartItemModel> cartItems, double totalPrice)
+        itemAdded,
     required TResult Function(String message) cartEmpty,
     required TResult Function(String message) cartError,
   }) =>
@@ -30,8 +32,10 @@ mixin _$CartState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<CartItemModel> cartItems)? cartSuccess,
-    TResult? Function(List<CartItemModel> cartItems)? itemAdded,
+    TResult? Function(List<CartItemModel> cartItems, double totalPrice)?
+        cartSuccess,
+    TResult? Function(List<CartItemModel> cartItems, double totalPrice)?
+        itemAdded,
     TResult? Function(String message)? cartEmpty,
     TResult? Function(String message)? cartError,
   }) =>
@@ -40,8 +44,10 @@ mixin _$CartState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<CartItemModel> cartItems)? cartSuccess,
-    TResult Function(List<CartItemModel> cartItems)? itemAdded,
+    TResult Function(List<CartItemModel> cartItems, double totalPrice)?
+        cartSuccess,
+    TResult Function(List<CartItemModel> cartItems, double totalPrice)?
+        itemAdded,
     TResult Function(String message)? cartEmpty,
     TResult Function(String message)? cartError,
     required TResult orElse(),
@@ -137,8 +143,10 @@ class _$CartInitialImpl implements _CartInitial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<CartItemModel> cartItems) cartSuccess,
-    required TResult Function(List<CartItemModel> cartItems) itemAdded,
+    required TResult Function(List<CartItemModel> cartItems, double totalPrice)
+        cartSuccess,
+    required TResult Function(List<CartItemModel> cartItems, double totalPrice)
+        itemAdded,
     required TResult Function(String message) cartEmpty,
     required TResult Function(String message) cartError,
   }) {
@@ -150,8 +158,10 @@ class _$CartInitialImpl implements _CartInitial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<CartItemModel> cartItems)? cartSuccess,
-    TResult? Function(List<CartItemModel> cartItems)? itemAdded,
+    TResult? Function(List<CartItemModel> cartItems, double totalPrice)?
+        cartSuccess,
+    TResult? Function(List<CartItemModel> cartItems, double totalPrice)?
+        itemAdded,
     TResult? Function(String message)? cartEmpty,
     TResult? Function(String message)? cartError,
   }) {
@@ -163,8 +173,10 @@ class _$CartInitialImpl implements _CartInitial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<CartItemModel> cartItems)? cartSuccess,
-    TResult Function(List<CartItemModel> cartItems)? itemAdded,
+    TResult Function(List<CartItemModel> cartItems, double totalPrice)?
+        cartSuccess,
+    TResult Function(List<CartItemModel> cartItems, double totalPrice)?
+        itemAdded,
     TResult Function(String message)? cartEmpty,
     TResult Function(String message)? cartError,
     required TResult orElse(),
@@ -263,8 +275,10 @@ class _$CartLoadingImpl implements _CartLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<CartItemModel> cartItems) cartSuccess,
-    required TResult Function(List<CartItemModel> cartItems) itemAdded,
+    required TResult Function(List<CartItemModel> cartItems, double totalPrice)
+        cartSuccess,
+    required TResult Function(List<CartItemModel> cartItems, double totalPrice)
+        itemAdded,
     required TResult Function(String message) cartEmpty,
     required TResult Function(String message) cartError,
   }) {
@@ -276,8 +290,10 @@ class _$CartLoadingImpl implements _CartLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<CartItemModel> cartItems)? cartSuccess,
-    TResult? Function(List<CartItemModel> cartItems)? itemAdded,
+    TResult? Function(List<CartItemModel> cartItems, double totalPrice)?
+        cartSuccess,
+    TResult? Function(List<CartItemModel> cartItems, double totalPrice)?
+        itemAdded,
     TResult? Function(String message)? cartEmpty,
     TResult? Function(String message)? cartError,
   }) {
@@ -289,8 +305,10 @@ class _$CartLoadingImpl implements _CartLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<CartItemModel> cartItems)? cartSuccess,
-    TResult Function(List<CartItemModel> cartItems)? itemAdded,
+    TResult Function(List<CartItemModel> cartItems, double totalPrice)?
+        cartSuccess,
+    TResult Function(List<CartItemModel> cartItems, double totalPrice)?
+        itemAdded,
     TResult Function(String message)? cartEmpty,
     TResult Function(String message)? cartError,
     required TResult orElse(),
@@ -355,7 +373,7 @@ abstract class _$$CartSuccessImplCopyWith<$Res> {
           _$CartSuccessImpl value, $Res Function(_$CartSuccessImpl) then) =
       __$$CartSuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<CartItemModel> cartItems});
+  $Res call({List<CartItemModel> cartItems, double totalPrice});
 }
 
 /// @nodoc
@@ -370,12 +388,17 @@ class __$$CartSuccessImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? cartItems = null,
+    Object? totalPrice = null,
   }) {
     return _then(_$CartSuccessImpl(
       null == cartItems
           ? _value._cartItems
           : cartItems // ignore: cast_nullable_to_non_nullable
               as List<CartItemModel>,
+      null == totalPrice
+          ? _value.totalPrice
+          : totalPrice // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
@@ -383,7 +406,7 @@ class __$$CartSuccessImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$CartSuccessImpl implements _CartSuccess {
-  const _$CartSuccessImpl(final List<CartItemModel> cartItems)
+  const _$CartSuccessImpl(final List<CartItemModel> cartItems, this.totalPrice)
       : _cartItems = cartItems;
 
   final List<CartItemModel> _cartItems;
@@ -395,8 +418,11 @@ class _$CartSuccessImpl implements _CartSuccess {
   }
 
   @override
+  final double totalPrice;
+
+  @override
   String toString() {
-    return 'CartState.cartSuccess(cartItems: $cartItems)';
+    return 'CartState.cartSuccess(cartItems: $cartItems, totalPrice: $totalPrice)';
   }
 
   @override
@@ -405,12 +431,14 @@ class _$CartSuccessImpl implements _CartSuccess {
         (other.runtimeType == runtimeType &&
             other is _$CartSuccessImpl &&
             const DeepCollectionEquality()
-                .equals(other._cartItems, _cartItems));
+                .equals(other._cartItems, _cartItems) &&
+            (identical(other.totalPrice, totalPrice) ||
+                other.totalPrice == totalPrice));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_cartItems));
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_cartItems), totalPrice);
 
   @JsonKey(ignore: true)
   @override
@@ -423,12 +451,14 @@ class _$CartSuccessImpl implements _CartSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<CartItemModel> cartItems) cartSuccess,
-    required TResult Function(List<CartItemModel> cartItems) itemAdded,
+    required TResult Function(List<CartItemModel> cartItems, double totalPrice)
+        cartSuccess,
+    required TResult Function(List<CartItemModel> cartItems, double totalPrice)
+        itemAdded,
     required TResult Function(String message) cartEmpty,
     required TResult Function(String message) cartError,
   }) {
-    return cartSuccess(cartItems);
+    return cartSuccess(cartItems, totalPrice);
   }
 
   @override
@@ -436,12 +466,14 @@ class _$CartSuccessImpl implements _CartSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<CartItemModel> cartItems)? cartSuccess,
-    TResult? Function(List<CartItemModel> cartItems)? itemAdded,
+    TResult? Function(List<CartItemModel> cartItems, double totalPrice)?
+        cartSuccess,
+    TResult? Function(List<CartItemModel> cartItems, double totalPrice)?
+        itemAdded,
     TResult? Function(String message)? cartEmpty,
     TResult? Function(String message)? cartError,
   }) {
-    return cartSuccess?.call(cartItems);
+    return cartSuccess?.call(cartItems, totalPrice);
   }
 
   @override
@@ -449,14 +481,16 @@ class _$CartSuccessImpl implements _CartSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<CartItemModel> cartItems)? cartSuccess,
-    TResult Function(List<CartItemModel> cartItems)? itemAdded,
+    TResult Function(List<CartItemModel> cartItems, double totalPrice)?
+        cartSuccess,
+    TResult Function(List<CartItemModel> cartItems, double totalPrice)?
+        itemAdded,
     TResult Function(String message)? cartEmpty,
     TResult Function(String message)? cartError,
     required TResult orElse(),
   }) {
     if (cartSuccess != null) {
-      return cartSuccess(cartItems);
+      return cartSuccess(cartItems, totalPrice);
     }
     return orElse();
   }
@@ -506,10 +540,12 @@ class _$CartSuccessImpl implements _CartSuccess {
 }
 
 abstract class _CartSuccess implements CartState {
-  const factory _CartSuccess(final List<CartItemModel> cartItems) =
+  const factory _CartSuccess(
+          final List<CartItemModel> cartItems, final double totalPrice) =
       _$CartSuccessImpl;
 
   List<CartItemModel> get cartItems;
+  double get totalPrice;
   @JsonKey(ignore: true)
   _$$CartSuccessImplCopyWith<_$CartSuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -521,7 +557,7 @@ abstract class _$$CartItemAddedImplCopyWith<$Res> {
           _$CartItemAddedImpl value, $Res Function(_$CartItemAddedImpl) then) =
       __$$CartItemAddedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<CartItemModel> cartItems});
+  $Res call({List<CartItemModel> cartItems, double totalPrice});
 }
 
 /// @nodoc
@@ -536,12 +572,17 @@ class __$$CartItemAddedImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? cartItems = null,
+    Object? totalPrice = null,
   }) {
     return _then(_$CartItemAddedImpl(
       null == cartItems
           ? _value._cartItems
           : cartItems // ignore: cast_nullable_to_non_nullable
               as List<CartItemModel>,
+      null == totalPrice
+          ? _value.totalPrice
+          : totalPrice // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
@@ -549,7 +590,8 @@ class __$$CartItemAddedImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$CartItemAddedImpl implements _CartItemAdded {
-  const _$CartItemAddedImpl(final List<CartItemModel> cartItems)
+  const _$CartItemAddedImpl(
+      final List<CartItemModel> cartItems, this.totalPrice)
       : _cartItems = cartItems;
 
   final List<CartItemModel> _cartItems;
@@ -561,8 +603,11 @@ class _$CartItemAddedImpl implements _CartItemAdded {
   }
 
   @override
+  final double totalPrice;
+
+  @override
   String toString() {
-    return 'CartState.itemAdded(cartItems: $cartItems)';
+    return 'CartState.itemAdded(cartItems: $cartItems, totalPrice: $totalPrice)';
   }
 
   @override
@@ -571,12 +616,14 @@ class _$CartItemAddedImpl implements _CartItemAdded {
         (other.runtimeType == runtimeType &&
             other is _$CartItemAddedImpl &&
             const DeepCollectionEquality()
-                .equals(other._cartItems, _cartItems));
+                .equals(other._cartItems, _cartItems) &&
+            (identical(other.totalPrice, totalPrice) ||
+                other.totalPrice == totalPrice));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_cartItems));
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_cartItems), totalPrice);
 
   @JsonKey(ignore: true)
   @override
@@ -589,12 +636,14 @@ class _$CartItemAddedImpl implements _CartItemAdded {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<CartItemModel> cartItems) cartSuccess,
-    required TResult Function(List<CartItemModel> cartItems) itemAdded,
+    required TResult Function(List<CartItemModel> cartItems, double totalPrice)
+        cartSuccess,
+    required TResult Function(List<CartItemModel> cartItems, double totalPrice)
+        itemAdded,
     required TResult Function(String message) cartEmpty,
     required TResult Function(String message) cartError,
   }) {
-    return itemAdded(cartItems);
+    return itemAdded(cartItems, totalPrice);
   }
 
   @override
@@ -602,12 +651,14 @@ class _$CartItemAddedImpl implements _CartItemAdded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<CartItemModel> cartItems)? cartSuccess,
-    TResult? Function(List<CartItemModel> cartItems)? itemAdded,
+    TResult? Function(List<CartItemModel> cartItems, double totalPrice)?
+        cartSuccess,
+    TResult? Function(List<CartItemModel> cartItems, double totalPrice)?
+        itemAdded,
     TResult? Function(String message)? cartEmpty,
     TResult? Function(String message)? cartError,
   }) {
-    return itemAdded?.call(cartItems);
+    return itemAdded?.call(cartItems, totalPrice);
   }
 
   @override
@@ -615,14 +666,16 @@ class _$CartItemAddedImpl implements _CartItemAdded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<CartItemModel> cartItems)? cartSuccess,
-    TResult Function(List<CartItemModel> cartItems)? itemAdded,
+    TResult Function(List<CartItemModel> cartItems, double totalPrice)?
+        cartSuccess,
+    TResult Function(List<CartItemModel> cartItems, double totalPrice)?
+        itemAdded,
     TResult Function(String message)? cartEmpty,
     TResult Function(String message)? cartError,
     required TResult orElse(),
   }) {
     if (itemAdded != null) {
-      return itemAdded(cartItems);
+      return itemAdded(cartItems, totalPrice);
     }
     return orElse();
   }
@@ -672,10 +725,12 @@ class _$CartItemAddedImpl implements _CartItemAdded {
 }
 
 abstract class _CartItemAdded implements CartState {
-  const factory _CartItemAdded(final List<CartItemModel> cartItems) =
+  const factory _CartItemAdded(
+          final List<CartItemModel> cartItems, final double totalPrice) =
       _$CartItemAddedImpl;
 
   List<CartItemModel> get cartItems;
+  double get totalPrice;
   @JsonKey(ignore: true)
   _$$CartItemAddedImplCopyWith<_$CartItemAddedImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -747,8 +802,10 @@ class _$CartEmptyImpl implements _CartEmpty {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<CartItemModel> cartItems) cartSuccess,
-    required TResult Function(List<CartItemModel> cartItems) itemAdded,
+    required TResult Function(List<CartItemModel> cartItems, double totalPrice)
+        cartSuccess,
+    required TResult Function(List<CartItemModel> cartItems, double totalPrice)
+        itemAdded,
     required TResult Function(String message) cartEmpty,
     required TResult Function(String message) cartError,
   }) {
@@ -760,8 +817,10 @@ class _$CartEmptyImpl implements _CartEmpty {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<CartItemModel> cartItems)? cartSuccess,
-    TResult? Function(List<CartItemModel> cartItems)? itemAdded,
+    TResult? Function(List<CartItemModel> cartItems, double totalPrice)?
+        cartSuccess,
+    TResult? Function(List<CartItemModel> cartItems, double totalPrice)?
+        itemAdded,
     TResult? Function(String message)? cartEmpty,
     TResult? Function(String message)? cartError,
   }) {
@@ -773,8 +832,10 @@ class _$CartEmptyImpl implements _CartEmpty {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<CartItemModel> cartItems)? cartSuccess,
-    TResult Function(List<CartItemModel> cartItems)? itemAdded,
+    TResult Function(List<CartItemModel> cartItems, double totalPrice)?
+        cartSuccess,
+    TResult Function(List<CartItemModel> cartItems, double totalPrice)?
+        itemAdded,
     TResult Function(String message)? cartEmpty,
     TResult Function(String message)? cartError,
     required TResult orElse(),
@@ -904,8 +965,10 @@ class _$CartErrorImpl implements _CartError {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<CartItemModel> cartItems) cartSuccess,
-    required TResult Function(List<CartItemModel> cartItems) itemAdded,
+    required TResult Function(List<CartItemModel> cartItems, double totalPrice)
+        cartSuccess,
+    required TResult Function(List<CartItemModel> cartItems, double totalPrice)
+        itemAdded,
     required TResult Function(String message) cartEmpty,
     required TResult Function(String message) cartError,
   }) {
@@ -917,8 +980,10 @@ class _$CartErrorImpl implements _CartError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<CartItemModel> cartItems)? cartSuccess,
-    TResult? Function(List<CartItemModel> cartItems)? itemAdded,
+    TResult? Function(List<CartItemModel> cartItems, double totalPrice)?
+        cartSuccess,
+    TResult? Function(List<CartItemModel> cartItems, double totalPrice)?
+        itemAdded,
     TResult? Function(String message)? cartEmpty,
     TResult? Function(String message)? cartError,
   }) {
@@ -930,8 +995,10 @@ class _$CartErrorImpl implements _CartError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<CartItemModel> cartItems)? cartSuccess,
-    TResult Function(List<CartItemModel> cartItems)? itemAdded,
+    TResult Function(List<CartItemModel> cartItems, double totalPrice)?
+        cartSuccess,
+    TResult Function(List<CartItemModel> cartItems, double totalPrice)?
+        itemAdded,
     TResult Function(String message)? cartEmpty,
     TResult Function(String message)? cartError,
     required TResult orElse(),
