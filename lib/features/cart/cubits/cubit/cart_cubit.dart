@@ -12,10 +12,11 @@ class CartCubit extends Cubit<CartState> {
     emit(const CartState.loading());
     try {
       final items = _cartRepo.getCartItems();
+      final totalPrice = _calculateTotalPrice(items);
       if (items.isEmpty) {
         emit(const CartState.cartEmpty(message: 'Cart is empty.'));
       } else {
-        emit(CartState.cartSuccess(items));
+        emit(CartState.cartSuccess(items, totalPrice));
       }
     } catch (error) {
       emit(CartState.cartError(message: error.toString()));
@@ -25,7 +26,8 @@ class CartCubit extends Cubit<CartState> {
   void addItemToCart(CartItemModel item) {
     _cartRepo.addCartItem(item);
     final items = _cartRepo.getCartItems();
-    emit(CartState.itemAdded(items));
+    final totalPrice = _calculateTotalPrice(items);
+    emit(CartState.itemAdded(items, totalPrice));
   }
 
   void clearCartItems() {
@@ -60,5 +62,12 @@ class CartCubit extends Cubit<CartState> {
         fetchCartItems();
       }
     }
+  }
+
+  double _calculateTotalPrice(List<CartItemModel> items) {
+    return items.fold(
+      0,
+      (total, item) => total + (double.parse(item.price) * item.quantity),
+    );
   }
 }
