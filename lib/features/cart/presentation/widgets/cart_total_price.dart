@@ -28,9 +28,8 @@ class CartTotolPrice extends StatelessWidget {
                       .copyWith(color: ColorManager.kPrimaryColor),
                 ),
                 Text(
-                  '\$${totalPrice.toStringAsFixed(1)}',
-                  style: CustomTextStyle.medium16
-                      .copyWith(color: ColorManager.kPrimaryColor),
+                  '\$${totalPrice.toStringAsFixed(0)}',
+                  style: CustomTextStyle.medium16.copyWith(color: Colors.green),
                 ),
               ],
             ),
