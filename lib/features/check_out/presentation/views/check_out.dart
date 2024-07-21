@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/checkout_details.dart';
 import '../widgets/custom_checkout_app_bar.dart';
 import '../widgets/heat_text_checkout_text.dart';
 import '../widgets/payment_section.dart';
@@ -16,7 +17,8 @@ class CheckOutView extends StatelessWidget {
           children: [
             CustomCheckouAppBar(),
             ShippingAddressSection(),
-            PaymentSectionWidget()
+            PaymentSectionWidget(),
+            CheckoutDetails()
           ],
         ),
       ),
