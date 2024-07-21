@@ -17,6 +17,7 @@ class PaymentSectionWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          20.0.getVerticalSpacer(),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
