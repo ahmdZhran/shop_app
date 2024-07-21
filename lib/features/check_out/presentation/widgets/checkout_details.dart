@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/core/helper/extensions.dart';
+import 'package:shop_app/core/utils/text_styles.dart';
+import 'package:shop_app/core/widgets/custom_buttons.dart';
 
 import 'detials_of_amount.dart';
 
@@ -29,6 +31,13 @@ class CheckoutDetails extends StatelessWidget {
             title: 'Order:',
             value: '180\$',
           ),
+          30.0.getVerticalSpacer(),
+          CustomButton(
+              onPressed: () {},
+              text: Text(
+                'Submet Order',
+                style: CustomTextStyle.medium16,
+              ))
         ],
       ),
     );
