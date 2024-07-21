@@ -14,7 +14,7 @@ class CheckOutView extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CustomCheckouAppBar(),
-            HeadTextCheckoutText(),
+            ShippingAddressSection(),
           ],
         ),
       ),
