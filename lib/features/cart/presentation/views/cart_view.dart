@@ -19,7 +19,6 @@ class CartView extends StatelessWidget {
           Expanded(
             child: BlocBuilder<CartCubit, CartState>(
               builder: (context, state) {
-                
                 return state.maybeWhen(
                   cartSuccess: (items) {
                     return ListView.builder(
@@ -49,7 +48,7 @@ class CartView extends StatelessWidget {
                             imageUrl: item.image,
                             itemName: item.name,
                             itemPrice: double.parse(item.price),
-                            itemCount: 1,
+                            itemCount: item.quantity.toInt(),
                             itemId: item.id,
                           ),
                         );
