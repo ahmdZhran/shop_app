@@ -42,15 +42,4 @@ class CartItemModel extends HiveObject {
     this.discount,
     this.quantity = 1,
   });
-
-  CartItemModel copyWith({int? quantity}) {
-    return CartItemModel(
-      id: id,
-      name: name,
-      price: price,
-      quantity: 1,
-      image: image,
-      description: description,
-    );
-  }
 }

@@ -8,16 +8,20 @@ class CartRepo {
     return cartBox.values.toList();
   }
 
-  void addCartItem(CartItemModel cartItem) {
-    cartBox.put(cartItem.id, cartItem);
+  Future<void> addCartItem(CartItemModel cartItem) async {
+    await cartBox.put(cartItem.id, cartItem);
   }
 
-  void deleteItemFromCart(int id) {
-    cartBox.delete(id);
+  Future<void> deleteItemFromCart(int id) async {
+    await cartBox.delete(id);
   }
 
-  void clearCart() {
-    cartBox.clear();
+  Future<void> clearCart() async {
+    await cartBox.clear();
+  }
+
+  Future<void> updateCartItem(CartItemModel cartItem) async {
+    await cartBox.put(cartItem.id, cartItem);
   }
 
   bool isItemInCart(int id) {
