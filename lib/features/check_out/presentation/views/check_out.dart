@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../widgets/custom_checkout_app_bar.dart';
+import '../widgets/heat_text_checkout_text.dart';
 
 class CheckOutView extends StatelessWidget {
   const CheckOutView({super.key});
@@ -6,9 +8,16 @@ class CheckOutView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Center(
-        child: Text('this is hte checkout'),
+        body: SafeArea(
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            CustomCheckouAppBar(),
+            HeadTextCheckoutText(),
+          ],
+        ),
       ),
-    );
+    ));
   }
 }
