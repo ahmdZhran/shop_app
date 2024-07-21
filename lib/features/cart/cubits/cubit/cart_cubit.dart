@@ -61,4 +61,11 @@ class CartCubit extends Cubit<CartState> {
       }
     }
   }
+
+  double _calculateTotalPrice(List<CartItemModel> items) {
+    return items.fold(
+      0,
+      (total, item) => total + (double.parse(item.price) * item.quantity),
+    );
+  }
 }
