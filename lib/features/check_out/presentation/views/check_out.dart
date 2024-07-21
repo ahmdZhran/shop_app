@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:shop_app/core/helper/extensions.dart';
-import '../../../../core/utils/color_manager.dart';
-import '../../../../core/utils/text_styles.dart';
 import '../widgets/custom_checkout_app_bar.dart';
 import '../widgets/heat_text_checkout_text.dart';
 import '../widgets/payment_section.dart';
