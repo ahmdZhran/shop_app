@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/core/helper/extensions.dart';
 import '../widgets/checkout_details.dart';
-import '../widgets/detials_of_amount.dart';
 import '../widgets/custom_checkout_app_bar.dart';
 import '../widgets/heat_text_checkout_text.dart';
 import '../widgets/payment_section.dart';
