@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shop_app/core/utils/color_manager.dart';
 import 'package:shop_app/core/widgets/custom_toast.dart';
-import '../../../../core/utils/text_styles.dart';
-import '../../../../core/widgets/custom_buttons.dart';
 import '../../cubits/cubit/cart_cubit.dart';
 import '../../cubits/cubit/cart_state.dart';
 import '../widgets/cart_app_bar_.dart';
