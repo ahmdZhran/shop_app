@@ -45,8 +45,8 @@ class CartCubit extends Cubit<CartState> {
   void incrementItemCount(int id) {
     final item = _cartRepo.cartBox.get(id);
     if (item != null) {
-      final updatedItem = item.copyWith(quantity: (item.quantity) + 1);
-      _cartRepo.addCartItem(updatedItem);
+      item.quantity++;
+      _cartRepo.updateCartItem(item);
       fetchCartItems();
     }
   }
