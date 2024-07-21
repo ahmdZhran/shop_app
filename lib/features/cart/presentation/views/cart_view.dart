@@ -10,7 +10,6 @@ import '../widgets/cart_item_card.dart';
 
 class CartView extends StatelessWidget {
   const CartView({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,6 +19,7 @@ class CartView extends StatelessWidget {
           Expanded(
             child: BlocBuilder<CartCubit, CartState>(
               builder: (context, state) {
+                
                 return state.maybeWhen(
                   cartSuccess: (items) {
                     return ListView.builder(
@@ -49,12 +49,8 @@ class CartView extends StatelessWidget {
                             imageUrl: item.image,
                             itemName: item.name,
                             itemPrice: double.parse(item.price),
-                            itemCount: 2,
-                            onDelete: () {
-                              context
-                                  .read<CartCubit>()
-                                  .deleteItemFromCart(item.id);
-                            },
+                            itemCount: 1,
+                            itemId: item.id,
                           ),
                         );
                       },

@@ -59,7 +59,8 @@ class AppRouter {
       case Routes.cart:
         return MaterialPageRoute(
             builder: (_) => BlocProvider(
-                  create: (context) => CartCubit(getIt())..fetchCartItems(),
+                  create: (context) => CartCubit(getIt())
+                    ..fetchCartItems(),
                   child: const CartView(),
                 ));
 

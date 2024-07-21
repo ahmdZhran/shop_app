@@ -16,6 +16,7 @@ class CardItem extends StatelessWidget {
     required this.images,
     required this.description,
     required this.nameOfProduct,
+    this.count = 1,
   });
 
   final bool isFavorite = false;
@@ -28,6 +29,7 @@ class CardItem extends StatelessWidget {
   final List<String> images;
   final String description;
   final String nameOfProduct;
+  final int count;
 
   @override
   Widget build(BuildContext context) {
@@ -51,6 +53,7 @@ class CardItem extends StatelessWidget {
                 'price': price,
                 'description': description,
                 'title': nameOfProduct,
+                'count': count,
               },
             );
           },

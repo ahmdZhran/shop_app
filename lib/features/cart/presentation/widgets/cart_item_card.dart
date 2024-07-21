@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shop_app/features/cart/cubits/cubit/cart_cubit.dart';
 import '../../../../core/utils/color_manager.dart';
 
 class CartItemCard extends StatelessWidget {
@@ -6,7 +8,7 @@ class CartItemCard extends StatelessWidget {
   final String itemName;
   final double itemPrice;
   final int itemCount;
-  final void Function()? onDelete;
+  final int itemId;
 
   const CartItemCard({
     super.key,
@@ -14,7 +16,7 @@ class CartItemCard extends StatelessWidget {
     required this.itemName,
     required this.itemPrice,
     required this.itemCount,
-    this.onDelete,
+    required this.itemId,
   });
 
   @override
@@ -75,7 +77,9 @@ class CartItemCard extends StatelessWidget {
           Column(
             children: [
               IconButton(
-                onPressed: onDelete,
+                onPressed: () {
+                  context.read<CartCubit>().incrementItemCount(itemId);
+                },
                 icon: const Icon(Icons.add_circle_outline),
                 color: ColorManager.kDarkColor,
               ),

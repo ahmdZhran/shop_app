@@ -28,6 +28,9 @@ class CartItemModel extends HiveObject {
   @HiveField(7)
   String? discount;
 
+  @HiveField(8)
+  int quantity;
+
   CartItemModel({
     required this.id,
     required this.name,
@@ -37,5 +40,17 @@ class CartItemModel extends HiveObject {
     this.images,
     this.oldPrice,
     this.discount,
+    this.quantity = 1,
   });
+
+  CartItemModel copyWith({int? quantity}) {
+    return CartItemModel(
+      id: id,
+      name: name,
+      price: price,
+      quantity: 1,
+      image: image,
+      description: description,
+    );
+  }
 }
