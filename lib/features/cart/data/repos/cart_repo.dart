@@ -20,6 +20,10 @@ class CartRepo {
     await cartBox.clear();
   }
 
+  Future<void> updateCartItem(CartItemModel cartItem) async {
+    await cartBox.put(cartItem.id, cartItem);
+  }
+
   bool isItemInCart(int id) {
     return cartBox.values.any((item) => item.id == id);
   }

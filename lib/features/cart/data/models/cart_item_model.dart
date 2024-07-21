@@ -2,7 +2,7 @@ import 'package:hive/hive.dart';
 
 part 'cart_item_model.g.dart';
 
-@HiveType(typeId: 2)
+@HiveType(typeId: 1)
 class CartItemModel extends HiveObject {
   @HiveField(0)
   final int id;
