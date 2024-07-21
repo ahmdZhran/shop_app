@@ -20,7 +20,7 @@ class CartView extends StatelessWidget {
             child: BlocBuilder<CartCubit, CartState>(
               builder: (context, state) {
                 return state.maybeWhen(
-                  cartSuccess: (items) {
+                  cartSuccess: (items ,totalPrice) {
                     return ListView.builder(
                       itemCount: items.length,
                       itemBuilder: (context, index) {
