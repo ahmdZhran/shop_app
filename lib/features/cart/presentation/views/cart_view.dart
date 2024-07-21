@@ -60,7 +60,7 @@ class CartView extends StatelessWidget {
                               },
                             ),
                           ),
-                          CartTotolPrice(
+                          CartTotolPriceAndCheckOut(
                             totalPrice: totalPrice,
                           ),
                         ],
