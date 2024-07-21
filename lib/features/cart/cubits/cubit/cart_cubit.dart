@@ -54,9 +54,11 @@ class CartCubit extends Cubit<CartState> {
   void decrementItemCount(int id) {
     final item = _cartRepo.cartBox.get(id);
     if (item != null) {
-      item.quantity--;
-      _cartRepo.updateCartItem(item);
-      fetchCartItems();
+      if (item.quantity > 1) {
+        item.quantity--;
+        _cartRepo.updateCartItem(item);
+        fetchCartItems();
+      }
     }
   }
 }
