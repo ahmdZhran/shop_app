@@ -17,10 +17,23 @@ class CartTotolPrice extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text(
-            'Total: \$${totalPrice.toStringAsFixed(1)}',
-            style: CustomTextStyle.medium16
-                .copyWith(color: ColorManager.kPrimaryColor),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 25),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'total Amount:',
+                  style: CustomTextStyle.medium16
+                      .copyWith(color: ColorManager.kPrimaryColor),
+                ),
+                Text(
+                  '\$${totalPrice.toStringAsFixed(1)}',
+                  style: CustomTextStyle.medium16
+                      .copyWith(color: ColorManager.kPrimaryColor),
+                ),
+              ],
+            ),
           ),
           const SizedBox(height: 10.0),
           CustomButton(
