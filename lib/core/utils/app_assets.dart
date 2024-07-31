@@ -33,4 +33,8 @@ class AppAssets {
 
   // Favorites
   static const String wishListLottie = "assets/lottie/wishlist.json";
+
+  // checkout
+  static const String checkoutCartShopping =
+      "assets/lottie/checkout_cart_shopping.json";
 }
