@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import '../widgets/checkout_details.dart';
 import '../widgets/custom_checkout_app_bar.dart';
-import '../widgets/heat_text_checkout_text.dart';
-import '../widgets/payment_section.dart';
+import '../widgets/lottie_cart_shopping.dart';
 
 class CheckOutView extends StatelessWidget {
   const CheckOutView({super.key});
@@ -16,8 +15,7 @@ class CheckOutView extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CustomCheckouAppBar(),
-            ShippingAddressSection(),
-            PaymentSectionWidget(),
+            LottieCartShopping(),
             CheckoutDetails()
           ],
         ),
