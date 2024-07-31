@@ -77,8 +77,10 @@ class AppRouter {
                   image: args['image'],
                 ));
       case Routes.checkout:
+        final totalPrice = settings.arguments as double;
         return MaterialPageRoute(
-          builder: (_) => const CheckOutView(),
+
+          builder: (_) =>  CheckOutView(totalPrice: totalPrice, ),
         );
       default:
         return null;

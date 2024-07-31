@@ -38,7 +38,7 @@ class CartTotolPriceAndCheckOut extends StatelessWidget {
           const SizedBox(height: 10.0),
           CustomButton(
             onPressed: () {
-              context.pushNamed(Routes.checkout);
+              context.pushNamed(arguments: totalPrice, Routes.checkout);
             },
             text: Text(
               'Check Out',
