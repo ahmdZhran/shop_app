@@ -36,7 +36,9 @@ class CheckoutDetails extends StatelessWidget {
           ),
           100.0.getVerticalSpacer(),
           CustomButton(
-              onPressed: () {},
+              onPressed: () {
+                
+              },
               text: Text(
                 'Submet Order',
                 style: CustomTextStyle.medium16,
