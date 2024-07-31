@@ -6,32 +6,35 @@ import 'package:shop_app/core/widgets/custom_buttons.dart';
 import 'detials_of_amount.dart';
 
 class CheckoutDetails extends StatelessWidget {
-  const CheckoutDetails({
-    super.key,
-  });
+  const CheckoutDetails({super.key, required this.totalPrice});
+
+  final double totalPrice;
+  static const double deliveryFee = 50.0;
 
   @override
   Widget build(BuildContext context) {
+    final double finalTotal = totalPrice + deliveryFee;
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
         children: [
           80.0.getVerticalSpacer(),
-          const DetailsOfAmount(
+          DetailsOfAmount(
             title: 'Order:',
-            value: '130\$',
+            value: '\$${totalPrice.toStringAsFixed(0)}',
           ),
           20.0.getVerticalSpacer(),
-          const DetailsOfAmount(
-            title: 'Delevery:',
-            value: '50\$',
+          DetailsOfAmount(
+            title: 'Delivery:',
+            value: '\$${deliveryFee.toStringAsFixed(0)}',
           ),
           20.0.getVerticalSpacer(),
-          const DetailsOfAmount(
-            title: 'Order:',
-            value: '180\$',
+          DetailsOfAmount(
+            title: 'Total:',
+            value: '\$${finalTotal.toStringAsFixed(0)}',
           ),
-          30.0.getVerticalSpacer(),
+          100.0.getVerticalSpacer(),
           CustomButton(
               onPressed: () {},
               text: Text(
