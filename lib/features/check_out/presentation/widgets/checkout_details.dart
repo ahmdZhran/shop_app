@@ -29,12 +29,13 @@ class CheckoutDetails extends StatelessWidget {
             title: 'Delivery:',
             value: '\$${deliveryFee.toStringAsFixed(0)}',
           ),
+          
           20.0.getVerticalSpacer(),
           DetailsOfAmount(
             title: 'Total:',
             value: '\$${finalTotal.toStringAsFixed(0)}',
           ),
-          100.0.getVerticalSpacer(),
+          const Spacer(),
           CustomButton(
               onPressed: () {},
               text: Text(
