@@ -84,7 +84,8 @@ dependencies:
   jwt_decoder: ^2.0.1
   # Annotations for the freezed code-generator. This package does nothing without freezed too.
   freezed_annotation: ^2.4.1
-  
+  # payment
+  flutter_stripe: ^11.0.0
   ## Database
   hive: ^2.2.3
   hive_flutter: ^1.1.0
