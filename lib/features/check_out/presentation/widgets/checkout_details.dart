@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:shop_app/core/helper/extensions.dart';
 import 'package:shop_app/core/utils/text_styles.dart';
 import 'package:shop_app/core/widgets/custom_buttons.dart';
-
 import '../../../../core/utils/color_manager.dart';
 import 'detials_of_amount.dart';
 import 'payment_method_bottom_sheet_widget.dart';
