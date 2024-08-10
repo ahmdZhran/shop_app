@@ -92,7 +92,7 @@ dependencies:
   # Reading and writing simple key-value pairs.
   shared_preferences: ^2.2.3
   json_annotation: ^4.9.0
-  # flutter_stripe: ^11.0.0
+  flutter_stripe: ^11.0.0
 
 dev_dependencies:
   flutter_test:
