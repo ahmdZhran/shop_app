@@ -3,7 +3,7 @@ import 'package:json_annotation/json_annotation.dart';
 part 'payment_intetn_model.g.dart';
 
 @JsonSerializable()
-class PaymentIntent {
+class PaymentIntentModel {
   final String id;
   final String object;
   final int amount;
@@ -67,7 +67,7 @@ class PaymentIntent {
   @JsonKey(name: 'transfer_group')
   final String? transferGroup;
 
-  PaymentIntent({
+  PaymentIntentModel({
     required this.id,
     required this.object,
     required this.amount,
@@ -109,7 +109,8 @@ class PaymentIntent {
     this.transferGroup,
   });
 
-  factory PaymentIntent.fromJson(Map<String, dynamic> json) => _$PaymentIntentFromJson(json);
+  factory PaymentIntentModel.fromJson(Map<String, dynamic> json) =>
+      _$PaymentIntentFromJson(json);
   Map<String, dynamic> toJson() => _$PaymentIntentToJson(this);
 }
 
@@ -119,7 +120,8 @@ class AmountDetails {
 
   AmountDetails({required this.tip});
 
-  factory AmountDetails.fromJson(Map<String, dynamic> json) => _$AmountDetailsFromJson(json);
+  factory AmountDetails.fromJson(Map<String, dynamic> json) =>
+      _$AmountDetailsFromJson(json);
   Map<String, dynamic> toJson() => _$AmountDetailsToJson(this);
 }
 
@@ -129,7 +131,8 @@ class AutomaticPaymentMethods {
 
   AutomaticPaymentMethods({required this.enabled});
 
-  factory AutomaticPaymentMethods.fromJson(Map<String, dynamic> json) => _$AutomaticPaymentMethodsFromJson(json);
+  factory AutomaticPaymentMethods.fromJson(Map<String, dynamic> json) =>
+      _$AutomaticPaymentMethodsFromJson(json);
   Map<String, dynamic> toJson() => _$AutomaticPaymentMethodsToJson(this);
 }
 
@@ -140,7 +143,8 @@ class PaymentMethodOptions {
 
   PaymentMethodOptions({required this.card, required this.link});
 
-  factory PaymentMethodOptions.fromJson(Map<String, dynamic> json) => _$PaymentMethodOptionsFromJson(json);
+  factory PaymentMethodOptions.fromJson(Map<String, dynamic> json) =>
+      _$PaymentMethodOptionsFromJson(json);
   Map<String, dynamic> toJson() => _$PaymentMethodOptionsToJson(this);
 }
 
@@ -159,7 +163,8 @@ class CardOptions {
     required this.requestThreeDSecure,
   });
 
-  factory CardOptions.fromJson(Map<String, dynamic> json) => _$CardOptionsFromJson(json);
+  factory CardOptions.fromJson(Map<String, dynamic> json) =>
+      _$CardOptionsFromJson(json);
   Map<String, dynamic> toJson() => _$CardOptionsToJson(this);
 }
 
@@ -169,6 +174,7 @@ class LinkOptions {
 
   LinkOptions({this.persistentToken});
 
-  factory LinkOptions.fromJson(Map<String, dynamic> json) => _$LinkOptionsFromJson(json);
+  factory LinkOptions.fromJson(Map<String, dynamic> json) =>
+      _$LinkOptionsFromJson(json);
   Map<String, dynamic> toJson() => _$LinkOptionsToJson(this);
 }

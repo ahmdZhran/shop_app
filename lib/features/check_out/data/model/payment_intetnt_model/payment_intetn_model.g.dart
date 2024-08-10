@@ -6,8 +6,8 @@ part of 'payment_intetn_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-PaymentIntent _$PaymentIntentFromJson(Map<String, dynamic> json) =>
-    PaymentIntent(
+PaymentIntentModel _$PaymentIntentFromJson(Map<String, dynamic> json) =>
+    PaymentIntentModel(
       id: json['id'] as String,
       object: json['object'] as String,
       amount: (json['amount'] as num).toInt(),
@@ -54,7 +54,7 @@ PaymentIntent _$PaymentIntentFromJson(Map<String, dynamic> json) =>
       transferGroup: json['transfer_group'] as String?,
     );
 
-Map<String, dynamic> _$PaymentIntentToJson(PaymentIntent instance) =>
+Map<String, dynamic> _$PaymentIntentToJson(PaymentIntentModel instance) =>
     <String, dynamic>{
       'id': instance.id,
       'object': instance.object,
