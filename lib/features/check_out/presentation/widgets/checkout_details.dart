@@ -38,7 +38,7 @@ class CheckoutDetails extends StatelessWidget {
           100.0.getVerticalSpacer(),
           CustomButton(
             onPressed: () {
-              showBottomSheet(
+              showModalBottomSheet(
                   backgroundColor: ColorManager.kBlackColor,
                   showDragHandle: true,
                   enableDrag: true,
@@ -57,6 +57,3 @@ class CheckoutDetails extends StatelessWidget {
     );
   }
 }
-
-
-
