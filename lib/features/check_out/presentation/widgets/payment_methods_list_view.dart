@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'checkout_details.dart';
+import 'payment_method_item.dart';
 
 class PaymentMethodsListView extends StatefulWidget {
   const PaymentMethodsListView({super.key});
