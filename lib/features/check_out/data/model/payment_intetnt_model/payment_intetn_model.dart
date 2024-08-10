@@ -110,8 +110,8 @@ class PaymentIntentModel {
   });
 
   factory PaymentIntentModel.fromJson(Map<String, dynamic> json) =>
-      _$PaymentIntentFromJson(json);
-  Map<String, dynamic> toJson() => _$PaymentIntentToJson(this);
+      _$PaymentIntentModelFromJson(json);
+  Map<String, dynamic> toJson() => _$PaymentIntentModelToJson(this);
 }
 
 @JsonSerializable()
