@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:shop_app/core/helper/extensions.dart';
 import 'package:shop_app/core/utils/text_styles.dart';
 import 'package:shop_app/core/widgets/custom_buttons.dart';
-
+import '../../../../core/utils/color_manager.dart';
 import 'detials_of_amount.dart';
+import 'payment_method_bottom_sheet_widget.dart';
 
 class CheckoutDetails extends StatelessWidget {
   const CheckoutDetails({super.key, required this.totalPrice});
@@ -36,13 +37,21 @@ class CheckoutDetails extends StatelessWidget {
           ),
           100.0.getVerticalSpacer(),
           CustomButton(
-              onPressed: () {
-                
-              },
-              text: Text(
-                'Submet Order',
-                style: CustomTextStyle.medium16,
-              ))
+            onPressed: () {
+              showModalBottomSheet(
+                  backgroundColor: ColorManager.kBlackColor,
+                  showDragHandle: true,
+                  enableDrag: true,
+                  context: context,
+                  builder: (context) {
+                    return const PaymentMethodsBottomSheet();
+                  });
+            },
+            text: Text(
+              'Submet Order',
+              style: CustomTextStyle.medium16,
+            ),
+          ),
         ],
       ),
     );

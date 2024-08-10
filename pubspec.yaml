@@ -84,7 +84,6 @@ dependencies:
   jwt_decoder: ^2.0.1
   # Annotations for the freezed code-generator. This package does nothing without freezed too.
   freezed_annotation: ^2.4.1
-  
   ## Database
   hive: ^2.2.3
   hive_flutter: ^1.1.0
@@ -93,6 +92,7 @@ dependencies:
   # Reading and writing simple key-value pairs.
   shared_preferences: ^2.2.3
   json_annotation: ^4.9.0
+  flutter_stripe: ^11.0.0
 
 dev_dependencies:
   flutter_test:
