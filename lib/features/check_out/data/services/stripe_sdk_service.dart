@@ -10,4 +10,8 @@ class StripeSdkService {
       ),
     );
   }
+
+  Future displayPaymentSheet() async {
+    Stripe.instance.presentPaymentSheet();
+  }
 }
