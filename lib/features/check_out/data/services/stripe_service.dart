@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/http.dart';
-import 'package:shop_app/features/check_out/data/model/payment_intent_input_model/payment_intent_input_model.dart';
-import 'package:shop_app/features/check_out/data/services/api_stripe_contants.dart';
+import '../model/payment_intent_input_model/payment_intent_input_model.dart';
+import 'api_stripe_contants.dart';
 
 import '../model/payment_intetnt_model/payment_intetn_model.dart';
 
