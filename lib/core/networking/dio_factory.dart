@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
-
+import 'package:shop_app/features/check_out/data/services/api_stripe_keys.dart';
 import '../helper/shared_prefrence.dart';
 import '../helper/shared_prefrence_keys.dart';
 import 'api_interceptor.dart';
@@ -39,11 +39,16 @@ class DioFactory {
     };
   }
 
-  static void setTokenIntoHeaderAfterLogin(String token) async {
+  static Future<void> setCustomToken(String token,
+      {String? contentType}) async {
     dio?.options.headers = {
-      'Authorization':
-          'Bearer ${await SharedPrefHelper.getString(SharedPrefKeys.userToken)}',
+      'Authorization': 'Bearer $token',
+      'Content-Type': contentType ?? Headers.formUrlEncodedContentType,
     };
+  }
+
+  static void setTokenIntoHeaderAfterLogin(String token) async {
+    dio?.options.headers['Authorization'] = 'Bearer $token';
   }
 
   static void addDioInterceptor() {

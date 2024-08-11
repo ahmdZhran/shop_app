@@ -21,7 +21,7 @@ class _StripeService implements StripeService {
   String? baseUrl;
 
   @override
-  Future<PaymentIntentModel> createPaymentIntetn(
+  Future<PaymentIntentModel> createPaymentIntent(
       PaymentIntentInputModel paymentIntentInputModel) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};

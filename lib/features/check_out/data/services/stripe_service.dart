@@ -12,7 +12,7 @@ abstract class StripeService {
   factory StripeService(Dio dio, {String baseUrl}) = _StripeService;
 
   @POST(ApiStripeContants.paymentIntent)
-  Future<PaymentIntentModel> createPaymentIntetn(
+  Future<PaymentIntentModel> createPaymentIntent(
     @Body() PaymentIntentInputModel paymentIntentInputModel,
   );
 }
