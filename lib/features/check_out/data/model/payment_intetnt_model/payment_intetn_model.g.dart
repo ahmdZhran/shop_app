@@ -12,13 +12,17 @@ PaymentIntentModel _$PaymentIntentModelFromJson(Map<String, dynamic> json) =>
       object: json['object'] as String,
       amount: (json['amount'] as num).toInt(),
       amountCapturable: (json['amount_capturable'] as num).toInt(),
-      amountDetails: AmountDetails.fromJson(
-          json['amount_details'] as Map<String, dynamic>),
+      amountDetails: json['amount_details'] == null
+          ? null
+          : AmountDetails.fromJson(
+              json['amount_details'] as Map<String, dynamic>),
       amountReceived: (json['amount_received'] as num).toInt(),
       application: json['application'] as String?,
       applicationFeeAmount: (json['application_fee_amount'] as num?)?.toInt(),
-      automaticPaymentMethods: AutomaticPaymentMethods.fromJson(
-          json['automatic_payment_methods'] as Map<String, dynamic>),
+      automaticPaymentMethods: json['automatic_payment_methods'] == null
+          ? null
+          : AutomaticPaymentMethods.fromJson(
+              json['automatic_payment_methods'] as Map<String, dynamic>),
       canceledAt: (json['canceled_at'] as num?)?.toInt(),
       cancellationReason: json['cancellation_reason'] as String?,
       captureMethod: json['capture_method'] as String,
@@ -32,14 +36,16 @@ PaymentIntentModel _$PaymentIntentModelFromJson(Map<String, dynamic> json) =>
       lastPaymentError: json['last_payment_error'] as String?,
       latestCharge: json['latest_charge'] as String?,
       livemode: json['livemode'] as bool,
-      metadata: json['metadata'] as Map<String, dynamic>,
+      metadata: json['metadata'] as Map<String, dynamic>?,
       nextAction: json['next_action'] as String?,
       onBehalfOf: json['on_behalf_of'] as String?,
       paymentMethod: json['payment_method'] as String?,
-      paymentMethodOptions: PaymentMethodOptions.fromJson(
-          json['payment_method_options'] as Map<String, dynamic>),
-      paymentMethodTypes: (json['payment_method_types'] as List<dynamic>)
-          .map((e) => e as String)
+      paymentMethodOptions: json['payment_method_options'] == null
+          ? null
+          : PaymentMethodOptions.fromJson(
+              json['payment_method_options'] as Map<String, dynamic>),
+      paymentMethodTypes: (json['payment_method_types'] as List<dynamic>?)
+          ?.map((e) => e as String)
           .toList(),
       processing: json['processing'] as String?,
       receiptEmail: json['receipt_email'] as String?,
@@ -99,7 +105,7 @@ Map<String, dynamic> _$PaymentIntentModelToJson(PaymentIntentModel instance) =>
 
 AmountDetails _$AmountDetailsFromJson(Map<String, dynamic> json) =>
     AmountDetails(
-      tip: json['tip'] as Map<String, dynamic>,
+      tip: json['tip'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$AmountDetailsToJson(AmountDetails instance) =>
@@ -122,8 +128,12 @@ Map<String, dynamic> _$AutomaticPaymentMethodsToJson(
 PaymentMethodOptions _$PaymentMethodOptionsFromJson(
         Map<String, dynamic> json) =>
     PaymentMethodOptions(
-      card: CardOptions.fromJson(json['card'] as Map<String, dynamic>),
-      link: LinkOptions.fromJson(json['link'] as Map<String, dynamic>),
+      card: json['card'] == null
+          ? null
+          : CardOptions.fromJson(json['card'] as Map<String, dynamic>),
+      link: json['link'] == null
+          ? null
+          : LinkOptions.fromJson(json['link'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$PaymentMethodOptionsToJson(

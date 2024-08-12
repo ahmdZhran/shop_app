@@ -361,10 +361,10 @@ class __$$PaymentIntentCreatedImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? paymentIntentModel = freezed,
+    Object? paymentIntentModel = null,
   }) {
     return _then(_$PaymentIntentCreatedImpl(
-      freezed == paymentIntentModel
+      null == paymentIntentModel
           ? _value.paymentIntentModel
           : paymentIntentModel // ignore: cast_nullable_to_non_nullable
               as PaymentIntentModel,
@@ -390,13 +390,12 @@ class _$PaymentIntentCreatedImpl implements PaymentIntentCreated {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PaymentIntentCreatedImpl &&
-            const DeepCollectionEquality()
-                .equals(other.paymentIntentModel, paymentIntentModel));
+            (identical(other.paymentIntentModel, paymentIntentModel) ||
+                other.paymentIntentModel == paymentIntentModel));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(paymentIntentModel));
+  int get hashCode => Object.hash(runtimeType, paymentIntentModel);
 
   @JsonKey(ignore: true)
   @override
