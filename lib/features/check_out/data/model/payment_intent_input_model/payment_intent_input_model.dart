@@ -4,7 +4,7 @@ part 'payment_intent_input_model.g.dart';
 
 @JsonSerializable()
 class PaymentIntentInputModel {
-  final String amount;
+  final int amount;
   final String currency;
 
   PaymentIntentInputModel({required this.amount, required this.currency});

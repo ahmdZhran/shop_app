@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shop_app/features/check_out/logic/cubit/checkout_cubit.dart';
 import 'package:shop_app/features/check_out/presentation/views/check_out.dart';
 import '../../features/cart/cubits/cubit/cart_cubit.dart';
 import '../../features/cart/presentation/views/cart_view.dart';
@@ -79,8 +80,12 @@ class AppRouter {
       case Routes.checkout:
         final totalPrice = settings.arguments as double;
         return MaterialPageRoute(
-
-          builder: (_) =>  CheckOutView(totalPrice: totalPrice, ),
+          builder: (_) => BlocProvider(
+            create: (context) => CheckoutCubit(getIt()),
+            child: CheckOutView(
+              totalPrice: totalPrice,
+            ),
+          ),
         );
       default:
         return null;

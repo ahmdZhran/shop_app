@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
-import 'package:shop_app/features/check_out/data/services/api_stripe_keys.dart';
 import '../helper/shared_prefrence.dart';
 import '../helper/shared_prefrence_keys.dart';
 import 'api_interceptor.dart';
@@ -36,6 +35,9 @@ class DioFactory {
       'Authorization':
           'Bearer ${customToken ?? await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken)}',
       if (contentType != null) 'Content-Type': contentType,
+      // Adding the custom token for specific use cases
+      'Custom-Token':
+          'sk_test_51PfL9UFyJmiXsTheSMHbJA6ynmuB6JXVBGXeLeBHmyjSgCSJBea3PY0HEedCRcwWyZPq9rCBo4zkPrGtUxXD1R3I008af9xqfO',
     };
   }
 
@@ -43,7 +45,9 @@ class DioFactory {
       {String? contentType}) async {
     dio?.options.headers = {
       'Authorization': 'Bearer $token',
-      'Content-Type': contentType ?? Headers.formUrlEncodedContentType,
+      'Content-Type': Headers.formUrlEncodedContentType,
+      'Custom-Token':
+          'sk_test_51PfL9UFyJmiXsTheSMHbJA6ynmuB6JXVBGXeLeBHmyjSgCSJBea3PY0HEedCRcwWyZPq9rCBo4zkPrGtUxXD1R3I008af9xqfO',
     };
   }
 

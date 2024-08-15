@@ -10,14 +10,14 @@ class PaymentIntentModel {
   @JsonKey(name: 'amount_capturable')
   final int amountCapturable;
   @JsonKey(name: 'amount_details')
-  final AmountDetails amountDetails;
+  final AmountDetails? amountDetails;
   @JsonKey(name: 'amount_received')
   final int amountReceived;
   final String? application;
   @JsonKey(name: 'application_fee_amount')
   final int? applicationFeeAmount;
   @JsonKey(name: 'automatic_payment_methods')
-  final AutomaticPaymentMethods automaticPaymentMethods;
+  final AutomaticPaymentMethods? automaticPaymentMethods;
   @JsonKey(name: 'canceled_at')
   final int? canceledAt;
   @JsonKey(name: 'cancellation_reason')
@@ -38,7 +38,7 @@ class PaymentIntentModel {
   @JsonKey(name: 'latest_charge')
   final String? latestCharge;
   final bool livemode;
-  final Map<String, dynamic> metadata;
+  final Map<String, dynamic>? metadata;
   @JsonKey(name: 'next_action')
   final String? nextAction;
   @JsonKey(name: 'on_behalf_of')
@@ -46,9 +46,9 @@ class PaymentIntentModel {
   @JsonKey(name: 'payment_method')
   final String? paymentMethod;
   @JsonKey(name: 'payment_method_options')
-  final PaymentMethodOptions paymentMethodOptions;
+  final PaymentMethodOptions? paymentMethodOptions;
   @JsonKey(name: 'payment_method_types')
-  final List<String> paymentMethodTypes;
+  final List<String>? paymentMethodTypes;
   final String? processing;
   @JsonKey(name: 'receipt_email')
   final String? receiptEmail;
@@ -72,11 +72,11 @@ class PaymentIntentModel {
     required this.object,
     required this.amount,
     required this.amountCapturable,
-    required this.amountDetails,
+    this.amountDetails,
     required this.amountReceived,
     this.application,
     this.applicationFeeAmount,
-    required this.automaticPaymentMethods,
+    this.automaticPaymentMethods,
     this.canceledAt,
     this.cancellationReason,
     required this.captureMethod,
@@ -90,12 +90,12 @@ class PaymentIntentModel {
     this.lastPaymentError,
     this.latestCharge,
     required this.livemode,
-    required this.metadata,
+    this.metadata,
     this.nextAction,
     this.onBehalfOf,
     this.paymentMethod,
-    required this.paymentMethodOptions,
-    required this.paymentMethodTypes,
+    this.paymentMethodOptions,
+    this.paymentMethodTypes,
     this.processing,
     this.receiptEmail,
     this.review,
@@ -116,9 +116,9 @@ class PaymentIntentModel {
 
 @JsonSerializable()
 class AmountDetails {
-  final Map<String, dynamic> tip;
+  final Map<String, dynamic>? tip;
 
-  AmountDetails({required this.tip});
+  AmountDetails({this.tip});
 
   factory AmountDetails.fromJson(Map<String, dynamic> json) =>
       _$AmountDetailsFromJson(json);
@@ -138,10 +138,10 @@ class AutomaticPaymentMethods {
 
 @JsonSerializable()
 class PaymentMethodOptions {
-  final CardOptions card;
-  final LinkOptions link;
+  final CardOptions? card;
+  final LinkOptions? link;
 
-  PaymentMethodOptions({required this.card, required this.link});
+  PaymentMethodOptions({this.card, this.link});
 
   factory PaymentMethodOptions.fromJson(Map<String, dynamic> json) =>
       _$PaymentMethodOptionsFromJson(json);

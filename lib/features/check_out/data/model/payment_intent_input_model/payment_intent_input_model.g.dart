@@ -9,7 +9,7 @@ part of 'payment_intent_input_model.dart';
 PaymentIntentInputModel _$PaymentIntentInputModelFromJson(
         Map<String, dynamic> json) =>
     PaymentIntentInputModel(
-      amount: json['amount'] as String,
+      amount: (json['amount'] as num).toInt(),
       currency: json['currency'] as String,
     );
 
