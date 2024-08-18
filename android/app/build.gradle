@@ -24,24 +24,21 @@ if (flutterVersionName == null) {
 }
 
 android {
-    namespace = "com.example.shop_app"
+    namespace = "com.example.untitled1"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    ndkVersion = "26.1.10909125"
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = '1.8'
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "com.example.shop_app"
+        applicationId = "com.example.untitled1"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
-        minSdk = 21
+        minSdk = 24
         targetSdk = flutter.targetSdkVersion
         versionCode = flutterVersionCode.toInteger()
         versionName = flutterVersionName
@@ -58,10 +55,4 @@ android {
 
 flutter {
     source = "../.."
-}
-dependencies {
-    implementation 'com.google.android.material:material:1.7.0'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    // Add other dependencies your project might have here
-    implementation 'com.android.support:multidex:1.0.3'
 }

@@ -10,16 +10,12 @@ class CheckoutCubit extends Cubit<CheckoutState> {
 
   Future<void> createPaymentIntent(PaymentIntentInputModel inputModel) async {
     emit(const CheckoutState.paymentLoading());
-    print('loading.................................................');
     try {
       final paymentIntentModel =
           await _checkoutRepo.createPaymentIntent(inputModel);
 
       emit(CheckoutState.paymentIntentCreated(paymentIntentModel));
-      print('created......................................................');
       await _checkoutRepo.initPaymentSheet(paymentIntentModel.clientSecret);
-      print(
-          'initPayment......................................................');
       await _checkoutRepo.displayPaymentSheet();
       emit(const CheckoutState.paymentSuccess());
     } catch (e) {

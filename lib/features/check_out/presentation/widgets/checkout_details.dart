@@ -49,7 +49,7 @@ class CheckoutDetails extends StatelessWidget {
                   builder: (context) {
                     return BlocProvider(
                       create: (context) => CheckoutCubit(getIt()),
-                      child: const PaymentMethodsBottomSheet(),
+                      child: PaymentMethodsBottomSheet(totalPrice: finalTotal),
                     );
                   });
             },

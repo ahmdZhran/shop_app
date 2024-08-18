@@ -48,7 +48,7 @@ Future<void> setupGetIt() async {
   // StripeService
   getIt.registerLazySingleton<StripeService>(() => StripeService(dio));
 
-  // StripeSdkService
+  //StripeSdkService
   getIt.registerLazySingleton<StripeSdkService>(() => StripeSdkService());
   
   // Stripe Repository
