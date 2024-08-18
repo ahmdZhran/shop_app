@@ -79,14 +79,14 @@ class AppRouter {
                 ));
       case Routes.checkout:
         final totalPrice = settings.arguments as double;
-        return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (context) => CheckoutCubit(getIt()),
-            child: CheckOutView(
-              totalPrice: totalPrice,
-            ),
-          ),
-        );
+        // return MaterialPageRoute(
+        //   builder: (_) => BlocProvider(
+        //     create: (context) => CheckoutCubit(getIt()),
+        //     child: CheckOutView(
+        //       totalPrice: totalPrice,
+        //     ),
+        //   ),
+        // );
       default:
         return null;
     }
