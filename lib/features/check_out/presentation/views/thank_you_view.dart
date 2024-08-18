@@ -7,7 +7,6 @@ import 'package:shop_app/core/utils/app_assets.dart';
 import 'package:shop_app/core/utils/color_manager.dart';
 import 'package:shop_app/core/utils/text_styles.dart';
 import 'package:shop_app/core/widgets/custom_buttons.dart';
-import 'package:shop_app/features/check_out/presentation/views/orderd_not_confirmed_view.dart';
 
 class ThankYouView extends StatelessWidget {
   const ThankYouView({super.key});
@@ -43,12 +42,7 @@ class ThankYouView extends StatelessWidget {
           70.0.getVerticalSpacer(),
           CustomButton(
               onPressed: () {
-                // context.pushReplacementNamed(Routes.home);
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const OrderNotConfirmed(),
-                    ));
+                context.pushReplacementNamed(Routes.home);
               },
               text: Text(
                 'Back to home',
