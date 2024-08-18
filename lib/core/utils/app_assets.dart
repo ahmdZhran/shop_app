@@ -37,4 +37,8 @@ class AppAssets {
   // checkout
   static const String checkoutCartShopping =
       "assets/lottie/checkout_cart_shopping.json";
+
+  // Thank you
+  static const String oroderConfirmed = "assets/svg/order_confirmed.svg";
+  static const String oroderNotConfirmed = "assets/svg/order_not_onfirmed.svg";
 }

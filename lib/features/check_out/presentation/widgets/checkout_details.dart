@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop_app/core/di/dependency_injection.dart';
 import 'package:shop_app/core/helper/extensions.dart';
+import 'package:shop_app/core/router/routes.dart';
 import 'package:shop_app/core/utils/text_styles.dart';
 import 'package:shop_app/core/widgets/custom_buttons.dart';
 import 'package:shop_app/features/check_out/logic/cubit/checkout_cubit.dart';
@@ -41,17 +42,18 @@ class CheckoutDetails extends StatelessWidget {
           100.0.getVerticalSpacer(),
           CustomButton(
             onPressed: () {
-              showModalBottomSheet(
-                  backgroundColor: ColorManager.kBlackColor,
-                  showDragHandle: true,
-                  enableDrag: true,
-                  context: context,
-                  builder: (context) {
-                    return BlocProvider(
-                      create: (context) => CheckoutCubit(getIt()),
-                      child: PaymentMethodsBottomSheet(totalPrice: finalTotal),
-                    );
-                  });
+              // showModalBottomSheet(
+              //     backgroundColor: ColorManager.kBlackColor,
+              //     showDragHandle: true,
+              //     enableDrag: true,
+              //     context: context,
+              //     builder: (context) {
+              //       return BlocProvider(
+              //         create: (context) => CheckoutCubit(getIt()),
+              //         child: PaymentMethodsBottomSheet(totalPrice: finalTotal),
+              //       );
+              //     });
+              context.pushNamed(Routes.thankYou);
             },
             text: Text(
               'Submet Order',
