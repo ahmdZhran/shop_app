@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop_app/features/check_out/logic/cubit/checkout_cubit.dart';
 import 'package:shop_app/features/check_out/presentation/views/check_out.dart';
+import 'package:shop_app/features/check_out/presentation/views/orderd_not_confirmed_view.dart';
+import 'package:shop_app/features/check_out/presentation/views/thank_you_view.dart';
 import '../../features/cart/cubits/cubit/cart_cubit.dart';
 import '../../features/cart/presentation/views/cart_view.dart';
 import '../../features/home/cubits/banner/banner_cubit.dart';
@@ -65,6 +67,14 @@ class AppRouter {
                   child: const CartView(),
                 ));
 
+      case Routes.thankYou:
+        return MaterialPageRoute(
+          builder: (_) => const ThankYouView(),
+        );
+      case Routes.orderNotConfirmed:
+        return MaterialPageRoute(
+          builder: (_) => const OrderNotConfirmed(),
+        );
       // Product Details
       case Routes.productDetails:
         final args = settings.arguments as Map<String, dynamic>;
