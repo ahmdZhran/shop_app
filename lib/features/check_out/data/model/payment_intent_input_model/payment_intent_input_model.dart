@@ -8,6 +8,6 @@ class PaymentIntentInputModel {
   final String currency;
 
   PaymentIntentInputModel({required this.amount, required this.currency});
-  
+
   Map<String, dynamic> toJson() => _$PaymentIntentInputModelToJson(this);
 }

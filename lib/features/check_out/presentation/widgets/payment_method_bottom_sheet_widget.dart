@@ -9,8 +9,8 @@ import '../../logic/cubit/checkout_state.dart';
 import 'payment_methods_list.dart';
 
 class PaymentMethodsBottomSheet extends StatelessWidget {
-  const PaymentMethodsBottomSheet({super.key});
-
+  const PaymentMethodsBottomSheet({super.key, required this.totalPrice});
+  final double totalPrice;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -29,14 +29,11 @@ class PaymentMethodsBottomSheet extends StatelessWidget {
             listener: (context, state) {
               state.maybeWhen(
                 paymentSuccess: () {
-                  print(
-                      'yessssssssssssssssssssssssssssssss we did it+++++++++++++++++++++++++++++ ');
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(content: Text('Payment Successful!')),
                   );
                 },
                 paymentError: (message) {
-                  // Handle payment error
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(content: Text(message)),
                   );
@@ -52,9 +49,8 @@ class PaymentMethodsBottomSheet extends StatelessWidget {
                     if (state is! PaymentLoading) {
                       final cubit = context.read<CheckoutCubit>();
                       final inputModel = PaymentIntentInputModel(
-                        amount: 300,
+                        amount: totalPrice.toInt() * 100,
                         currency: "USD",
-                        // Initialize with the necessary fields
                       );
                       cubit.createPaymentIntent(inputModel);
                     }
