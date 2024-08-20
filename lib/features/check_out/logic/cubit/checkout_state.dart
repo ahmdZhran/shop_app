@@ -10,5 +10,5 @@ class CheckoutState with _$CheckoutState {
   const factory CheckoutState.paymentIntentCreated(
       PaymentIntentModel paymentIntentModel) = PaymentIntentCreated;
   const factory CheckoutState.paymentSuccess() = PaymentSuccess;
-  const factory CheckoutState.paymentError(String message) = PaymentError;
+  const factory CheckoutState.paymentError({required String message}) = PaymentError;
 }

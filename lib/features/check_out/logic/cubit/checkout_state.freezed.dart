@@ -645,7 +645,7 @@ class __$$PaymentErrorImplCopyWithImpl<$Res>
     Object? message = null,
   }) {
     return _then(_$PaymentErrorImpl(
-      null == message
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
@@ -656,7 +656,7 @@ class __$$PaymentErrorImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$PaymentErrorImpl implements PaymentError {
-  const _$PaymentErrorImpl(this.message);
+  const _$PaymentErrorImpl({required this.message});
 
   @override
   final String message;
@@ -768,7 +768,8 @@ class _$PaymentErrorImpl implements PaymentError {
 }
 
 abstract class PaymentError implements CheckoutState {
-  const factory PaymentError(final String message) = _$PaymentErrorImpl;
+  const factory PaymentError({required final String message}) =
+      _$PaymentErrorImpl;
 
   String get message;
   @JsonKey(ignore: true)

@@ -1,9 +1,9 @@
-import 'package:shop_app/features/check_out/data/model/payment_intent_input_model/payment_intent_input_model.dart';
-import 'package:shop_app/features/check_out/data/services/api_stripe_keys.dart';
-import 'package:shop_app/features/check_out/data/services/stripe_sdk_service.dart';
-import 'package:shop_app/features/check_out/data/services/stripe_service.dart';
 import '../../../../core/networking/dio_factory.dart';
+import '../model/payment_intent_input_model/payment_intent_input_model.dart';
 import '../model/payment_intetnt_model/payment_intetn_model.dart';
+import '../services/api_stripe_keys.dart';
+import '../services/stripe_sdk_service.dart';
+import '../services/stripe_service.dart';
 
 class CheckoutRepo {
   final StripeService _stripeService;
@@ -14,12 +14,10 @@ class CheckoutRepo {
   Future<PaymentIntentModel> createPaymentIntent(
       PaymentIntentInputModel inputModel) async {
     try {
-      await DioFactory.setCustomToken(
-        ApiStripeKeys.stripeSecretKey,
-      );
+      await DioFactory.setCustomToken(ApiStripeKeys.stripeSecretKey);
       return await _stripeService.createPaymentIntent(inputModel);
     } catch (e) {
-      print('there is an error on creating payment==============');
+      print('Error creating payment intent: $e');
       rethrow;
     }
   }
@@ -33,30 +31,37 @@ class CheckoutRepo {
       await _sdkService.initPaymentSheet(
           paymentIntentClientSecret: paymentIntentClientSecret);
     } catch (e) {
-      // Handle and log error
+      print('Error initializing payment sheet: $e');
       rethrow;
     }
   }
 
-  Future<void> displayPaymentSheet() async {
+  Future<bool> displayPaymentSheet() async {
     try {
-      await _sdkService.displayPaymentSheet();
+      final result = await _sdkService.displayPaymentSheet();
+      return result; 
     } catch (e) {
-      // Handle and log error
-      rethrow;
+     
+      print('Error displaying payment sheet: $e');
+      return false;
     }
   }
 
-  Future<void> makePayment(
+  Future<bool> makePayment(
       {required PaymentIntentInputModel paymentIntentInputModel}) async {
     try {
+      print('Creating payment intent...');
       var paymentIntentModel =
           await createPaymentIntent(paymentIntentInputModel);
+      print('Initializing payment sheet...');
       await initPaymentSheet(paymentIntentModel.clientSecret);
+      print('Displaying payment sheet...');
       await displayPaymentSheet();
+      print('Payment completed successfully');
+      return true;
     } catch (e) {
-      // Handle and log error
-      rethrow;
+      print('Payment failed: $e');
+      return false;
     }
   }
 }
