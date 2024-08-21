@@ -93,7 +93,6 @@ dependencies:
   shared_preferences: ^2.2.3
   json_annotation: ^4.9.0
   flutter_stripe: ^11.0.0
-  dartz: ^0.10.1
 dev_dependencies:
   flutter_test:
     sdk: flutter
