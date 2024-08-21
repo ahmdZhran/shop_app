@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import '../../../../core/networking/dio_factory.dart';
 import '../model/payment_intent_input_model/payment_intent_input_model.dart';
 import '../model/payment_intetnt_model/payment_intetn_model.dart';
@@ -38,8 +39,7 @@ class CheckoutRepo {
 
   Future<bool> displayPaymentSheet() async {
     try {
-      await _sdkService.displayPaymentSheet();
-      return true;
+      return await _sdkService.displayPaymentSheet();
     } catch (e) {
       print('Error displaying payment sheet: $e');
       return false;
@@ -49,22 +49,23 @@ class CheckoutRepo {
   Future<bool> makePayment(
       {required PaymentIntentInputModel paymentIntentInputModel}) async {
     try {
-      print('Creating payment intent...');
+      debugPrint('Creating payment intent...');
+
       var paymentIntentModel =
           await createPaymentIntent(paymentIntentInputModel);
-      print('Initializing payment sheet...');
+      debugPrint('Initializing payment sheet...');
       await initPaymentSheet(paymentIntentModel.clientSecret);
-      print('Displaying payment sheet...');
+      debugPrint('Displaying payment sheet...');
       bool paymentSuccess = await displayPaymentSheet();
       if (paymentSuccess) {
-        print('Payment completed successfully');
+        debugPrint('Payment completed successfully');
         return true;
       } else {
-        print('Payment sheet canceled or failed');
-        return false;
+        debugPrint('Payment sheet canceled or failed');
       }
+      return false;
     } catch (e) {
-      print('Payment failed: $e');
+      debugPrint('Payment failed: $e');
       return false;
     }
   }
