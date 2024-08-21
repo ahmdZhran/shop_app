@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shop_app/features/check_out/data/model/payment_intent_input_model/payment_intent_input_model.dart';
+import '../../data/model/payment_intent_input_model/payment_intent_input_model.dart';
 import '../../data/repo/checkout_repo.dart';
 import 'checkout_state.dart';
 
@@ -9,21 +9,19 @@ class CheckoutCubit extends Cubit<CheckoutState> {
   CheckoutCubit(this._checkoutRepo) : super(const CheckoutState.initial());
 
   Future<void> makePayment(PaymentIntentInputModel inputModel) async {
-    print('makePayment calleddddddddddddddddddddddddddddddddddddddddddddddddd');
-    emit(const CheckoutState.paymentLoading());
+    emit(const CheckoutState.loading());
+
     try {
       bool paymentSuccess =
           await _checkoutRepo.makePayment(paymentIntentInputModel: inputModel);
+
       if (paymentSuccess) {
-        print('Payment was successsssssssssssssssssssssssssssssssss');
-        emit(const CheckoutState.paymentSuccess());
+        emit(const CheckoutState.success());
       } else {
-        emit(const CheckoutState.paymentError(
-            message:
-                'there is somethng went wronggggggggggggggggggggggggggggggggggggggg '));
+        emit(const CheckoutState.failure('Payment was not successful.'));
       }
     } catch (e) {
-      emit(CheckoutState.paymentError(message: e.toString()));
+      emit(CheckoutState.failure('Payment failed: $e'));
     }
   }
 }
