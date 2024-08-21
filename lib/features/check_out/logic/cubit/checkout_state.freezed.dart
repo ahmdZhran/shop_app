@@ -19,59 +19,50 @@ mixin _$CheckoutState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() paymentLoading,
-    required TResult Function(PaymentIntentModel paymentIntentModel)
-        paymentIntentCreated,
-    required TResult Function() paymentSuccess,
-    required TResult Function(String message) paymentError,
+    required TResult Function() loading,
+    required TResult Function() success,
+    required TResult Function(String errorMessage) failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? paymentLoading,
-    TResult? Function(PaymentIntentModel paymentIntentModel)?
-        paymentIntentCreated,
-    TResult? Function()? paymentSuccess,
-    TResult? Function(String message)? paymentError,
+    TResult? Function()? loading,
+    TResult? Function()? success,
+    TResult? Function(String errorMessage)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? paymentLoading,
-    TResult Function(PaymentIntentModel paymentIntentModel)?
-        paymentIntentCreated,
-    TResult Function()? paymentSuccess,
-    TResult Function(String message)? paymentError,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function(String errorMessage)? failure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Initial value) initial,
-    required TResult Function(PaymentLoading value) paymentLoading,
-    required TResult Function(PaymentIntentCreated value) paymentIntentCreated,
-    required TResult Function(PaymentSuccess value) paymentSuccess,
-    required TResult Function(PaymentError value) paymentError,
+    required TResult Function(CheckoutInitial value) initial,
+    required TResult Function(CheckoutLoading value) loading,
+    required TResult Function(CheckoutSuccess value) success,
+    required TResult Function(CheckoutFailure value) failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Initial value)? initial,
-    TResult? Function(PaymentLoading value)? paymentLoading,
-    TResult? Function(PaymentIntentCreated value)? paymentIntentCreated,
-    TResult? Function(PaymentSuccess value)? paymentSuccess,
-    TResult? Function(PaymentError value)? paymentError,
+    TResult? Function(CheckoutInitial value)? initial,
+    TResult? Function(CheckoutLoading value)? loading,
+    TResult? Function(CheckoutSuccess value)? success,
+    TResult? Function(CheckoutFailure value)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(PaymentLoading value)? paymentLoading,
-    TResult Function(PaymentIntentCreated value)? paymentIntentCreated,
-    TResult Function(PaymentSuccess value)? paymentSuccess,
-    TResult Function(PaymentError value)? paymentError,
+    TResult Function(CheckoutInitial value)? initial,
+    TResult Function(CheckoutLoading value)? loading,
+    TResult Function(CheckoutSuccess value)? success,
+    TResult Function(CheckoutFailure value)? failure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -96,25 +87,25 @@ class _$CheckoutStateCopyWithImpl<$Res, $Val extends CheckoutState>
 }
 
 /// @nodoc
-abstract class _$$InitialImplCopyWith<$Res> {
-  factory _$$InitialImplCopyWith(
-          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
-      __$$InitialImplCopyWithImpl<$Res>;
+abstract class _$$CheckoutInitialImplCopyWith<$Res> {
+  factory _$$CheckoutInitialImplCopyWith(_$CheckoutInitialImpl value,
+          $Res Function(_$CheckoutInitialImpl) then) =
+      __$$CheckoutInitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$InitialImplCopyWithImpl<$Res>
-    extends _$CheckoutStateCopyWithImpl<$Res, _$InitialImpl>
-    implements _$$InitialImplCopyWith<$Res> {
-  __$$InitialImplCopyWithImpl(
-      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
+class __$$CheckoutInitialImplCopyWithImpl<$Res>
+    extends _$CheckoutStateCopyWithImpl<$Res, _$CheckoutInitialImpl>
+    implements _$$CheckoutInitialImplCopyWith<$Res> {
+  __$$CheckoutInitialImplCopyWithImpl(
+      _$CheckoutInitialImpl _value, $Res Function(_$CheckoutInitialImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$InitialImpl implements Initial {
-  const _$InitialImpl();
+class _$CheckoutInitialImpl implements CheckoutInitial {
+  const _$CheckoutInitialImpl();
 
   @override
   String toString() {
@@ -124,7 +115,7 @@ class _$InitialImpl implements Initial {
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitialImpl);
+        (other.runtimeType == runtimeType && other is _$CheckoutInitialImpl);
   }
 
   @override
@@ -134,11 +125,9 @@ class _$InitialImpl implements Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() paymentLoading,
-    required TResult Function(PaymentIntentModel paymentIntentModel)
-        paymentIntentCreated,
-    required TResult Function() paymentSuccess,
-    required TResult Function(String message) paymentError,
+    required TResult Function() loading,
+    required TResult Function() success,
+    required TResult Function(String errorMessage) failure,
   }) {
     return initial();
   }
@@ -147,11 +136,9 @@ class _$InitialImpl implements Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? paymentLoading,
-    TResult? Function(PaymentIntentModel paymentIntentModel)?
-        paymentIntentCreated,
-    TResult? Function()? paymentSuccess,
-    TResult? Function(String message)? paymentError,
+    TResult? Function()? loading,
+    TResult? Function()? success,
+    TResult? Function(String errorMessage)? failure,
   }) {
     return initial?.call();
   }
@@ -160,11 +147,9 @@ class _$InitialImpl implements Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? paymentLoading,
-    TResult Function(PaymentIntentModel paymentIntentModel)?
-        paymentIntentCreated,
-    TResult Function()? paymentSuccess,
-    TResult Function(String message)? paymentError,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function(String errorMessage)? failure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -176,11 +161,10 @@ class _$InitialImpl implements Initial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Initial value) initial,
-    required TResult Function(PaymentLoading value) paymentLoading,
-    required TResult Function(PaymentIntentCreated value) paymentIntentCreated,
-    required TResult Function(PaymentSuccess value) paymentSuccess,
-    required TResult Function(PaymentError value) paymentError,
+    required TResult Function(CheckoutInitial value) initial,
+    required TResult Function(CheckoutLoading value) loading,
+    required TResult Function(CheckoutSuccess value) success,
+    required TResult Function(CheckoutFailure value) failure,
   }) {
     return initial(this);
   }
@@ -188,11 +172,10 @@ class _$InitialImpl implements Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Initial value)? initial,
-    TResult? Function(PaymentLoading value)? paymentLoading,
-    TResult? Function(PaymentIntentCreated value)? paymentIntentCreated,
-    TResult? Function(PaymentSuccess value)? paymentSuccess,
-    TResult? Function(PaymentError value)? paymentError,
+    TResult? Function(CheckoutInitial value)? initial,
+    TResult? Function(CheckoutLoading value)? loading,
+    TResult? Function(CheckoutSuccess value)? success,
+    TResult? Function(CheckoutFailure value)? failure,
   }) {
     return initial?.call(this);
   }
@@ -200,11 +183,10 @@ class _$InitialImpl implements Initial {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(PaymentLoading value)? paymentLoading,
-    TResult Function(PaymentIntentCreated value)? paymentIntentCreated,
-    TResult Function(PaymentSuccess value)? paymentSuccess,
-    TResult Function(PaymentError value)? paymentError,
+    TResult Function(CheckoutInitial value)? initial,
+    TResult Function(CheckoutLoading value)? loading,
+    TResult Function(CheckoutSuccess value)? success,
+    TResult Function(CheckoutFailure value)? failure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -214,40 +196,40 @@ class _$InitialImpl implements Initial {
   }
 }
 
-abstract class Initial implements CheckoutState {
-  const factory Initial() = _$InitialImpl;
+abstract class CheckoutInitial implements CheckoutState {
+  const factory CheckoutInitial() = _$CheckoutInitialImpl;
 }
 
 /// @nodoc
-abstract class _$$PaymentLoadingImplCopyWith<$Res> {
-  factory _$$PaymentLoadingImplCopyWith(_$PaymentLoadingImpl value,
-          $Res Function(_$PaymentLoadingImpl) then) =
-      __$$PaymentLoadingImplCopyWithImpl<$Res>;
+abstract class _$$CheckoutLoadingImplCopyWith<$Res> {
+  factory _$$CheckoutLoadingImplCopyWith(_$CheckoutLoadingImpl value,
+          $Res Function(_$CheckoutLoadingImpl) then) =
+      __$$CheckoutLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$PaymentLoadingImplCopyWithImpl<$Res>
-    extends _$CheckoutStateCopyWithImpl<$Res, _$PaymentLoadingImpl>
-    implements _$$PaymentLoadingImplCopyWith<$Res> {
-  __$$PaymentLoadingImplCopyWithImpl(
-      _$PaymentLoadingImpl _value, $Res Function(_$PaymentLoadingImpl) _then)
+class __$$CheckoutLoadingImplCopyWithImpl<$Res>
+    extends _$CheckoutStateCopyWithImpl<$Res, _$CheckoutLoadingImpl>
+    implements _$$CheckoutLoadingImplCopyWith<$Res> {
+  __$$CheckoutLoadingImplCopyWithImpl(
+      _$CheckoutLoadingImpl _value, $Res Function(_$CheckoutLoadingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$PaymentLoadingImpl implements PaymentLoading {
-  const _$PaymentLoadingImpl();
+class _$CheckoutLoadingImpl implements CheckoutLoading {
+  const _$CheckoutLoadingImpl();
 
   @override
   String toString() {
-    return 'CheckoutState.paymentLoading()';
+    return 'CheckoutState.loading()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$PaymentLoadingImpl);
+        (other.runtimeType == runtimeType && other is _$CheckoutLoadingImpl);
   }
 
   @override
@@ -257,41 +239,35 @@ class _$PaymentLoadingImpl implements PaymentLoading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() paymentLoading,
-    required TResult Function(PaymentIntentModel paymentIntentModel)
-        paymentIntentCreated,
-    required TResult Function() paymentSuccess,
-    required TResult Function(String message) paymentError,
+    required TResult Function() loading,
+    required TResult Function() success,
+    required TResult Function(String errorMessage) failure,
   }) {
-    return paymentLoading();
+    return loading();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? paymentLoading,
-    TResult? Function(PaymentIntentModel paymentIntentModel)?
-        paymentIntentCreated,
-    TResult? Function()? paymentSuccess,
-    TResult? Function(String message)? paymentError,
+    TResult? Function()? loading,
+    TResult? Function()? success,
+    TResult? Function(String errorMessage)? failure,
   }) {
-    return paymentLoading?.call();
+    return loading?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? paymentLoading,
-    TResult Function(PaymentIntentModel paymentIntentModel)?
-        paymentIntentCreated,
-    TResult Function()? paymentSuccess,
-    TResult Function(String message)? paymentError,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function(String errorMessage)? failure,
     required TResult orElse(),
   }) {
-    if (paymentLoading != null) {
-      return paymentLoading();
+    if (loading != null) {
+      return loading();
     }
     return orElse();
   }
@@ -299,236 +275,75 @@ class _$PaymentLoadingImpl implements PaymentLoading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Initial value) initial,
-    required TResult Function(PaymentLoading value) paymentLoading,
-    required TResult Function(PaymentIntentCreated value) paymentIntentCreated,
-    required TResult Function(PaymentSuccess value) paymentSuccess,
-    required TResult Function(PaymentError value) paymentError,
+    required TResult Function(CheckoutInitial value) initial,
+    required TResult Function(CheckoutLoading value) loading,
+    required TResult Function(CheckoutSuccess value) success,
+    required TResult Function(CheckoutFailure value) failure,
   }) {
-    return paymentLoading(this);
+    return loading(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Initial value)? initial,
-    TResult? Function(PaymentLoading value)? paymentLoading,
-    TResult? Function(PaymentIntentCreated value)? paymentIntentCreated,
-    TResult? Function(PaymentSuccess value)? paymentSuccess,
-    TResult? Function(PaymentError value)? paymentError,
+    TResult? Function(CheckoutInitial value)? initial,
+    TResult? Function(CheckoutLoading value)? loading,
+    TResult? Function(CheckoutSuccess value)? success,
+    TResult? Function(CheckoutFailure value)? failure,
   }) {
-    return paymentLoading?.call(this);
+    return loading?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(PaymentLoading value)? paymentLoading,
-    TResult Function(PaymentIntentCreated value)? paymentIntentCreated,
-    TResult Function(PaymentSuccess value)? paymentSuccess,
-    TResult Function(PaymentError value)? paymentError,
+    TResult Function(CheckoutInitial value)? initial,
+    TResult Function(CheckoutLoading value)? loading,
+    TResult Function(CheckoutSuccess value)? success,
+    TResult Function(CheckoutFailure value)? failure,
     required TResult orElse(),
   }) {
-    if (paymentLoading != null) {
-      return paymentLoading(this);
+    if (loading != null) {
+      return loading(this);
     }
     return orElse();
   }
 }
 
-abstract class PaymentLoading implements CheckoutState {
-  const factory PaymentLoading() = _$PaymentLoadingImpl;
+abstract class CheckoutLoading implements CheckoutState {
+  const factory CheckoutLoading() = _$CheckoutLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$PaymentIntentCreatedImplCopyWith<$Res> {
-  factory _$$PaymentIntentCreatedImplCopyWith(_$PaymentIntentCreatedImpl value,
-          $Res Function(_$PaymentIntentCreatedImpl) then) =
-      __$$PaymentIntentCreatedImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({PaymentIntentModel paymentIntentModel});
+abstract class _$$CheckoutSuccessImplCopyWith<$Res> {
+  factory _$$CheckoutSuccessImplCopyWith(_$CheckoutSuccessImpl value,
+          $Res Function(_$CheckoutSuccessImpl) then) =
+      __$$CheckoutSuccessImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$PaymentIntentCreatedImplCopyWithImpl<$Res>
-    extends _$CheckoutStateCopyWithImpl<$Res, _$PaymentIntentCreatedImpl>
-    implements _$$PaymentIntentCreatedImplCopyWith<$Res> {
-  __$$PaymentIntentCreatedImplCopyWithImpl(_$PaymentIntentCreatedImpl _value,
-      $Res Function(_$PaymentIntentCreatedImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? paymentIntentModel = null,
-  }) {
-    return _then(_$PaymentIntentCreatedImpl(
-      null == paymentIntentModel
-          ? _value.paymentIntentModel
-          : paymentIntentModel // ignore: cast_nullable_to_non_nullable
-              as PaymentIntentModel,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$PaymentIntentCreatedImpl implements PaymentIntentCreated {
-  const _$PaymentIntentCreatedImpl(this.paymentIntentModel);
-
-  @override
-  final PaymentIntentModel paymentIntentModel;
-
-  @override
-  String toString() {
-    return 'CheckoutState.paymentIntentCreated(paymentIntentModel: $paymentIntentModel)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$PaymentIntentCreatedImpl &&
-            (identical(other.paymentIntentModel, paymentIntentModel) ||
-                other.paymentIntentModel == paymentIntentModel));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, paymentIntentModel);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$PaymentIntentCreatedImplCopyWith<_$PaymentIntentCreatedImpl>
-      get copyWith =>
-          __$$PaymentIntentCreatedImplCopyWithImpl<_$PaymentIntentCreatedImpl>(
-              this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() paymentLoading,
-    required TResult Function(PaymentIntentModel paymentIntentModel)
-        paymentIntentCreated,
-    required TResult Function() paymentSuccess,
-    required TResult Function(String message) paymentError,
-  }) {
-    return paymentIntentCreated(paymentIntentModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? paymentLoading,
-    TResult? Function(PaymentIntentModel paymentIntentModel)?
-        paymentIntentCreated,
-    TResult? Function()? paymentSuccess,
-    TResult? Function(String message)? paymentError,
-  }) {
-    return paymentIntentCreated?.call(paymentIntentModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? paymentLoading,
-    TResult Function(PaymentIntentModel paymentIntentModel)?
-        paymentIntentCreated,
-    TResult Function()? paymentSuccess,
-    TResult Function(String message)? paymentError,
-    required TResult orElse(),
-  }) {
-    if (paymentIntentCreated != null) {
-      return paymentIntentCreated(paymentIntentModel);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(Initial value) initial,
-    required TResult Function(PaymentLoading value) paymentLoading,
-    required TResult Function(PaymentIntentCreated value) paymentIntentCreated,
-    required TResult Function(PaymentSuccess value) paymentSuccess,
-    required TResult Function(PaymentError value) paymentError,
-  }) {
-    return paymentIntentCreated(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Initial value)? initial,
-    TResult? Function(PaymentLoading value)? paymentLoading,
-    TResult? Function(PaymentIntentCreated value)? paymentIntentCreated,
-    TResult? Function(PaymentSuccess value)? paymentSuccess,
-    TResult? Function(PaymentError value)? paymentError,
-  }) {
-    return paymentIntentCreated?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(PaymentLoading value)? paymentLoading,
-    TResult Function(PaymentIntentCreated value)? paymentIntentCreated,
-    TResult Function(PaymentSuccess value)? paymentSuccess,
-    TResult Function(PaymentError value)? paymentError,
-    required TResult orElse(),
-  }) {
-    if (paymentIntentCreated != null) {
-      return paymentIntentCreated(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class PaymentIntentCreated implements CheckoutState {
-  const factory PaymentIntentCreated(
-      final PaymentIntentModel paymentIntentModel) = _$PaymentIntentCreatedImpl;
-
-  PaymentIntentModel get paymentIntentModel;
-  @JsonKey(ignore: true)
-  _$$PaymentIntentCreatedImplCopyWith<_$PaymentIntentCreatedImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$PaymentSuccessImplCopyWith<$Res> {
-  factory _$$PaymentSuccessImplCopyWith(_$PaymentSuccessImpl value,
-          $Res Function(_$PaymentSuccessImpl) then) =
-      __$$PaymentSuccessImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$PaymentSuccessImplCopyWithImpl<$Res>
-    extends _$CheckoutStateCopyWithImpl<$Res, _$PaymentSuccessImpl>
-    implements _$$PaymentSuccessImplCopyWith<$Res> {
-  __$$PaymentSuccessImplCopyWithImpl(
-      _$PaymentSuccessImpl _value, $Res Function(_$PaymentSuccessImpl) _then)
+class __$$CheckoutSuccessImplCopyWithImpl<$Res>
+    extends _$CheckoutStateCopyWithImpl<$Res, _$CheckoutSuccessImpl>
+    implements _$$CheckoutSuccessImplCopyWith<$Res> {
+  __$$CheckoutSuccessImplCopyWithImpl(
+      _$CheckoutSuccessImpl _value, $Res Function(_$CheckoutSuccessImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$PaymentSuccessImpl implements PaymentSuccess {
-  const _$PaymentSuccessImpl();
+class _$CheckoutSuccessImpl implements CheckoutSuccess {
+  const _$CheckoutSuccessImpl();
 
   @override
   String toString() {
-    return 'CheckoutState.paymentSuccess()';
+    return 'CheckoutState.success()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$PaymentSuccessImpl);
+        (other.runtimeType == runtimeType && other is _$CheckoutSuccessImpl);
   }
 
   @override
@@ -538,41 +353,35 @@ class _$PaymentSuccessImpl implements PaymentSuccess {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() paymentLoading,
-    required TResult Function(PaymentIntentModel paymentIntentModel)
-        paymentIntentCreated,
-    required TResult Function() paymentSuccess,
-    required TResult Function(String message) paymentError,
+    required TResult Function() loading,
+    required TResult Function() success,
+    required TResult Function(String errorMessage) failure,
   }) {
-    return paymentSuccess();
+    return success();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? paymentLoading,
-    TResult? Function(PaymentIntentModel paymentIntentModel)?
-        paymentIntentCreated,
-    TResult? Function()? paymentSuccess,
-    TResult? Function(String message)? paymentError,
+    TResult? Function()? loading,
+    TResult? Function()? success,
+    TResult? Function(String errorMessage)? failure,
   }) {
-    return paymentSuccess?.call();
+    return success?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? paymentLoading,
-    TResult Function(PaymentIntentModel paymentIntentModel)?
-        paymentIntentCreated,
-    TResult Function()? paymentSuccess,
-    TResult Function(String message)? paymentError,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function(String errorMessage)? failure,
     required TResult orElse(),
   }) {
-    if (paymentSuccess != null) {
-      return paymentSuccess();
+    if (success != null) {
+      return success();
     }
     return orElse();
   }
@@ -580,74 +389,71 @@ class _$PaymentSuccessImpl implements PaymentSuccess {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Initial value) initial,
-    required TResult Function(PaymentLoading value) paymentLoading,
-    required TResult Function(PaymentIntentCreated value) paymentIntentCreated,
-    required TResult Function(PaymentSuccess value) paymentSuccess,
-    required TResult Function(PaymentError value) paymentError,
+    required TResult Function(CheckoutInitial value) initial,
+    required TResult Function(CheckoutLoading value) loading,
+    required TResult Function(CheckoutSuccess value) success,
+    required TResult Function(CheckoutFailure value) failure,
   }) {
-    return paymentSuccess(this);
+    return success(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Initial value)? initial,
-    TResult? Function(PaymentLoading value)? paymentLoading,
-    TResult? Function(PaymentIntentCreated value)? paymentIntentCreated,
-    TResult? Function(PaymentSuccess value)? paymentSuccess,
-    TResult? Function(PaymentError value)? paymentError,
+    TResult? Function(CheckoutInitial value)? initial,
+    TResult? Function(CheckoutLoading value)? loading,
+    TResult? Function(CheckoutSuccess value)? success,
+    TResult? Function(CheckoutFailure value)? failure,
   }) {
-    return paymentSuccess?.call(this);
+    return success?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(PaymentLoading value)? paymentLoading,
-    TResult Function(PaymentIntentCreated value)? paymentIntentCreated,
-    TResult Function(PaymentSuccess value)? paymentSuccess,
-    TResult Function(PaymentError value)? paymentError,
+    TResult Function(CheckoutInitial value)? initial,
+    TResult Function(CheckoutLoading value)? loading,
+    TResult Function(CheckoutSuccess value)? success,
+    TResult Function(CheckoutFailure value)? failure,
     required TResult orElse(),
   }) {
-    if (paymentSuccess != null) {
-      return paymentSuccess(this);
+    if (success != null) {
+      return success(this);
     }
     return orElse();
   }
 }
 
-abstract class PaymentSuccess implements CheckoutState {
-  const factory PaymentSuccess() = _$PaymentSuccessImpl;
+abstract class CheckoutSuccess implements CheckoutState {
+  const factory CheckoutSuccess() = _$CheckoutSuccessImpl;
 }
 
 /// @nodoc
-abstract class _$$PaymentErrorImplCopyWith<$Res> {
-  factory _$$PaymentErrorImplCopyWith(
-          _$PaymentErrorImpl value, $Res Function(_$PaymentErrorImpl) then) =
-      __$$PaymentErrorImplCopyWithImpl<$Res>;
+abstract class _$$CheckoutFailureImplCopyWith<$Res> {
+  factory _$$CheckoutFailureImplCopyWith(_$CheckoutFailureImpl value,
+          $Res Function(_$CheckoutFailureImpl) then) =
+      __$$CheckoutFailureImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String message});
+  $Res call({String errorMessage});
 }
 
 /// @nodoc
-class __$$PaymentErrorImplCopyWithImpl<$Res>
-    extends _$CheckoutStateCopyWithImpl<$Res, _$PaymentErrorImpl>
-    implements _$$PaymentErrorImplCopyWith<$Res> {
-  __$$PaymentErrorImplCopyWithImpl(
-      _$PaymentErrorImpl _value, $Res Function(_$PaymentErrorImpl) _then)
+class __$$CheckoutFailureImplCopyWithImpl<$Res>
+    extends _$CheckoutStateCopyWithImpl<$Res, _$CheckoutFailureImpl>
+    implements _$$CheckoutFailureImplCopyWith<$Res> {
+  __$$CheckoutFailureImplCopyWithImpl(
+      _$CheckoutFailureImpl _value, $Res Function(_$CheckoutFailureImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? message = null,
+    Object? errorMessage = null,
   }) {
-    return _then(_$PaymentErrorImpl(
-      message: null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
+    return _then(_$CheckoutFailureImpl(
+      null == errorMessage
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -655,73 +461,69 @@ class __$$PaymentErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$PaymentErrorImpl implements PaymentError {
-  const _$PaymentErrorImpl({required this.message});
+class _$CheckoutFailureImpl implements CheckoutFailure {
+  const _$CheckoutFailureImpl(this.errorMessage);
 
   @override
-  final String message;
+  final String errorMessage;
 
   @override
   String toString() {
-    return 'CheckoutState.paymentError(message: $message)';
+    return 'CheckoutState.failure(errorMessage: $errorMessage)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PaymentErrorImpl &&
-            (identical(other.message, message) || other.message == message));
+            other is _$CheckoutFailureImpl &&
+            (identical(other.errorMessage, errorMessage) ||
+                other.errorMessage == errorMessage));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, message);
+  int get hashCode => Object.hash(runtimeType, errorMessage);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$PaymentErrorImplCopyWith<_$PaymentErrorImpl> get copyWith =>
-      __$$PaymentErrorImplCopyWithImpl<_$PaymentErrorImpl>(this, _$identity);
+  _$$CheckoutFailureImplCopyWith<_$CheckoutFailureImpl> get copyWith =>
+      __$$CheckoutFailureImplCopyWithImpl<_$CheckoutFailureImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() paymentLoading,
-    required TResult Function(PaymentIntentModel paymentIntentModel)
-        paymentIntentCreated,
-    required TResult Function() paymentSuccess,
-    required TResult Function(String message) paymentError,
+    required TResult Function() loading,
+    required TResult Function() success,
+    required TResult Function(String errorMessage) failure,
   }) {
-    return paymentError(message);
+    return failure(errorMessage);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? paymentLoading,
-    TResult? Function(PaymentIntentModel paymentIntentModel)?
-        paymentIntentCreated,
-    TResult? Function()? paymentSuccess,
-    TResult? Function(String message)? paymentError,
+    TResult? Function()? loading,
+    TResult? Function()? success,
+    TResult? Function(String errorMessage)? failure,
   }) {
-    return paymentError?.call(message);
+    return failure?.call(errorMessage);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? paymentLoading,
-    TResult Function(PaymentIntentModel paymentIntentModel)?
-        paymentIntentCreated,
-    TResult Function()? paymentSuccess,
-    TResult Function(String message)? paymentError,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function(String errorMessage)? failure,
     required TResult orElse(),
   }) {
-    if (paymentError != null) {
-      return paymentError(message);
+    if (failure != null) {
+      return failure(errorMessage);
     }
     return orElse();
   }
@@ -729,50 +531,47 @@ class _$PaymentErrorImpl implements PaymentError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Initial value) initial,
-    required TResult Function(PaymentLoading value) paymentLoading,
-    required TResult Function(PaymentIntentCreated value) paymentIntentCreated,
-    required TResult Function(PaymentSuccess value) paymentSuccess,
-    required TResult Function(PaymentError value) paymentError,
+    required TResult Function(CheckoutInitial value) initial,
+    required TResult Function(CheckoutLoading value) loading,
+    required TResult Function(CheckoutSuccess value) success,
+    required TResult Function(CheckoutFailure value) failure,
   }) {
-    return paymentError(this);
+    return failure(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Initial value)? initial,
-    TResult? Function(PaymentLoading value)? paymentLoading,
-    TResult? Function(PaymentIntentCreated value)? paymentIntentCreated,
-    TResult? Function(PaymentSuccess value)? paymentSuccess,
-    TResult? Function(PaymentError value)? paymentError,
+    TResult? Function(CheckoutInitial value)? initial,
+    TResult? Function(CheckoutLoading value)? loading,
+    TResult? Function(CheckoutSuccess value)? success,
+    TResult? Function(CheckoutFailure value)? failure,
   }) {
-    return paymentError?.call(this);
+    return failure?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(PaymentLoading value)? paymentLoading,
-    TResult Function(PaymentIntentCreated value)? paymentIntentCreated,
-    TResult Function(PaymentSuccess value)? paymentSuccess,
-    TResult Function(PaymentError value)? paymentError,
+    TResult Function(CheckoutInitial value)? initial,
+    TResult Function(CheckoutLoading value)? loading,
+    TResult Function(CheckoutSuccess value)? success,
+    TResult Function(CheckoutFailure value)? failure,
     required TResult orElse(),
   }) {
-    if (paymentError != null) {
-      return paymentError(this);
+    if (failure != null) {
+      return failure(this);
     }
     return orElse();
   }
 }
 
-abstract class PaymentError implements CheckoutState {
-  const factory PaymentError({required final String message}) =
-      _$PaymentErrorImpl;
+abstract class CheckoutFailure implements CheckoutState {
+  const factory CheckoutFailure(final String errorMessage) =
+      _$CheckoutFailureImpl;
 
-  String get message;
+  String get errorMessage;
   @JsonKey(ignore: true)
-  _$$PaymentErrorImplCopyWith<_$PaymentErrorImpl> get copyWith =>
+  _$$CheckoutFailureImplCopyWith<_$CheckoutFailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shop_app/core/helper/extensions.dart';
 import 'package:shop_app/core/router/routes.dart';
-import '../../../../core/utils/text_styles.dart';
+import 'package:shop_app/core/utils/text_styles.dart';
 import '../../../../core/widgets/custom_buttons.dart';
 import '../../data/model/payment_intent_input_model/payment_intent_input_model.dart';
 import '../../logic/cubit/checkout_cubit.dart';
@@ -23,41 +24,42 @@ class PaymentMethodsBottomSheet extends StatelessWidget {
           const SizedBox(height: 16),
           const PaymentMethodsListView(),
           const SizedBox(height: 32),
-          BlocConsumer<CheckoutCubit, CheckoutState>(
+          BlocListener<CheckoutCubit, CheckoutState>(
             listener: (context, state) {
-              state.maybeWhen(
-                paymentSuccess: () {
-                  print('successssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss');
-                  Navigator.of(context).pushReplacementNamed(Routes.thankYou);
-                },
-                paymentError: (message) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text(message)),
-                  );
-                },
-                orElse: () {},
-              );
-            },
-            builder: (context, state) {
-              return state.maybeWhen(
-                paymentLoading: () => const CircularProgressIndicator(),
-                orElse: () => CustomButton(
-                  onPressed: () {
-                    final cubit = context.read<CheckoutCubit>();
-                    final inputModel = PaymentIntentInputModel(
-                      amount: (totalPrice * 100).toInt(),
-                      currency: "USD",
-                    );
-                    cubit.makePayment(inputModel);
+              state.when(
+                  initial: () {},
+                  loading: () {},
+                  success: () {
+                    context.pushNamed(Routes.thankYou);
                   },
-                  text: Text(
-                    "Next",
-                    style: CustomTextStyle.soraBoldstyleBold
-                        .copyWith(color: Colors.black, fontSize: 16.sp),
-                  ),
-                ),
-              );
+                  failure: (error) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text('Payment failed: $error')),
+                    );
+                  });
             },
+            child: BlocBuilder<CheckoutCubit, CheckoutState>(
+              builder: (context, state) {
+                return state.when(
+                  initial: () => CustomButton(
+                    onPressed: () {
+                      context.read<CheckoutCubit>().makePayment(
+                            PaymentIntentInputModel(
+                              amount: totalPrice.toInt() * 100,
+                              currency: 'USD',
+                            ),
+                          );
+                    },
+                    text: Text('Next',
+                        style: CustomTextStyle.soraBoldstyleBold
+                            .copyWith(color: Colors.black, fontSize: 16.sp)),
+                  ),
+                  loading: () => const CircularProgressIndicator(),
+                  success: () => const Text('Payment successful!'),
+                  failure: (error) => Text('Payment failed: $error'),
+                );
+              },
+            ),
           ),
         ],
       ),

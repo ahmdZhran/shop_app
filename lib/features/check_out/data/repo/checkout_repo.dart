@@ -38,10 +38,9 @@ class CheckoutRepo {
 
   Future<bool> displayPaymentSheet() async {
     try {
-      final result = await _sdkService.displayPaymentSheet();
-      return result; 
+      await _sdkService.displayPaymentSheet();
+      return true;
     } catch (e) {
-     
       print('Error displaying payment sheet: $e');
       return false;
     }
@@ -56,9 +55,14 @@ class CheckoutRepo {
       print('Initializing payment sheet...');
       await initPaymentSheet(paymentIntentModel.clientSecret);
       print('Displaying payment sheet...');
-      await displayPaymentSheet();
-      print('Payment completed successfully');
-      return true;
+      bool paymentSuccess = await displayPaymentSheet();
+      if (paymentSuccess) {
+        print('Payment completed successfully');
+        return true;
+      } else {
+        print('Payment sheet canceled or failed');
+        return false;
+      }
     } catch (e) {
       print('Payment failed: $e');
       return false;
