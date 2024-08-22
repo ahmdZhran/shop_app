@@ -6,7 +6,6 @@ import 'package:shop_app/features/check_out/presentation/views/orderd_not_confir
 import 'package:shop_app/features/check_out/presentation/views/thank_you_view.dart';
 import '../../features/cart/cubits/cubit/cart_cubit.dart';
 import '../../features/cart/presentation/views/cart_view.dart';
-import '../../features/home/cubits/banner/banner_cubit.dart';
 import '../../features/main/logic/cubit/nav_bar_cubit.dart';
 import '../../features/product_details/presentation/views/product_details.dart';
 import '../../features/home/presentation/views/home_view.dart';
@@ -53,12 +52,7 @@ class AppRouter {
       //   return MaterialPageRoute(builder: (_) => const AllProducts());
 
       case Routes.home:
-        return MaterialPageRoute(
-            builder: (_) => BlocProvider(
-                  //TODO see this why I have to add this here
-                  create: (context) => BannerCubit(getIt()),
-                  child: const HomeView(),
-                ));
+        return MaterialPageRoute(builder: (_) => const HomeView());
 
       case Routes.cart:
         return MaterialPageRoute(
