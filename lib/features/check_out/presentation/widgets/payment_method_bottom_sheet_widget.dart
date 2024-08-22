@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shop_app/core/helper/extensions.dart';
 import 'package:shop_app/core/router/routes.dart';
 import 'package:shop_app/core/utils/text_styles.dart';
+import 'package:shop_app/core/widgets/custom_toast.dart';
 import '../../../../core/widgets/custom_buttons.dart';
 import '../../data/model/payment_intent_input_model/payment_intent_input_model.dart';
 import '../../logic/cubit/checkout_cubit.dart';
@@ -33,9 +34,7 @@ class PaymentMethodsBottomSheet extends StatelessWidget {
                     context.pushNamed(Routes.thankYou);
                   },
                   failure: (error) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text('Payment failed: $error')),
-                    );
+                    ShowToast.showToastErrorBottom(message: error);
                   });
             },
             child: BlocBuilder<CheckoutCubit, CheckoutState>(
@@ -56,7 +55,7 @@ class PaymentMethodsBottomSheet extends StatelessWidget {
                   ),
                   loading: () => const CircularProgressIndicator(),
                   success: () => const Text('Payment successful!'),
-                  failure: (error) => Text('Payment failed: $error'),
+                  failure: (errorMessage) => const SizedBox.shrink(),
                 );
               },
             ),
