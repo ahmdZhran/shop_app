@@ -1,22 +1,25 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'details_model.dart';
 
-part 'amount_model.g.dart';
-@JsonSerializable()
 class AmountModel {
   final String total;
   final String currency;
-  Details? details;
+   Details? details;
 
-  AmountModel({
-    required this.total,
-    required this.currency,
-    this.details,
-  });
+  AmountModel(
+      {required this.total, required this.currency,  this.details});
 
-  factory AmountModel.fromJson(Map<String, dynamic> json) =>
-      _$AmountModelFromJson(json);
+  factory AmountModel.fromJson(Map<String, dynamic> json) => AmountModel(
+        total: json['total'] as String,
+        currency: json['currency'] as String,
+        details: json['details'] == null
+            ? null
+            : Details.fromJson(json['details'] as Map<String, dynamic>),
+      );
 
-  Map<String, dynamic> toJson() => _$AmountModelToJson(this);
+  Map<String, dynamic> toJson() => {
+        'total': total,
+        'currency': currency,
+        'details': details?.toJson(),
+      };
 }

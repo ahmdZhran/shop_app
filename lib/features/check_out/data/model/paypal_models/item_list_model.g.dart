@@ -1,19 +1,19 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
+// // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'item_list_model.dart';
+// part of 'item_list_model.dart';
 
-// **************************************************************************
-// JsonSerializableGenerator
-// **************************************************************************
+// // **************************************************************************
+// // JsonSerializableGenerator
+// // **************************************************************************
 
-ItemListModel _$ItemListModelFromJson(Map<String, dynamic> json) =>
-    ItemListModel(
-      orders: (json['orders'] as List<dynamic>?)
-          ?.map((e) => OrderItemModel.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
+// ItemListModel _$ItemListModelFromJson(Map<String, dynamic> json) =>
+//     ItemListModel(
+//       orders: (json['orders'] as List<dynamic>?)
+//           ?.map((e) => OrderItemModel.fromJson(e as Map<String, dynamic>))
+//           .toList(),
+//     );
 
-Map<String, dynamic> _$ItemListModelToJson(ItemListModel instance) =>
-    <String, dynamic>{
-      'orders': instance.orders,
-    };
+// Map<String, dynamic> _$ItemListModelToJson(ItemListModel instance) =>
+//     <String, dynamic>{
+//       'orders': instance.orders,
+//     };

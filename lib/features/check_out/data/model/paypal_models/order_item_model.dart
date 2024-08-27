@@ -1,8 +1,3 @@
-import 'package:json_annotation/json_annotation.dart';
-
-part 'order_item_model.g.dart';
-
-@JsonSerializable()
 class OrderItemModel {
   String? name;
   int? quantity;
@@ -11,8 +6,17 @@ class OrderItemModel {
 
   OrderItemModel({this.name, this.quantity, this.price, this.currency});
 
-  factory OrderItemModel.fromJson(Map<String, dynamic> json) =>
-      _$OrderItemModelFromJson(json);
+  factory OrderItemModel.fromJson(Map<String, dynamic> json) => OrderItemModel(
+        name: json['name'] as String?,
+        quantity: json['quantity'] as int?,
+        price: json['price'] as String?,
+        currency: json['currency'] as String?,
+      );
 
-  Map<String, dynamic> toJson() => _$OrderItemModelToJson(this);
+  Map<String, dynamic> toJson() => {
+        'name': name,
+        'quantity': quantity,
+        'price': price,
+        'currency': currency,
+      };
 }

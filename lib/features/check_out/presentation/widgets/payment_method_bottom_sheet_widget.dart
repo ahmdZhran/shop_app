@@ -11,7 +11,9 @@ import 'package:shop_app/core/widgets/custom_toast.dart';
 import '../../../../core/widgets/custom_buttons.dart';
 import '../../data/model/paypal_models/amount_model.dart';
 import '../../data/model/payment_intent_input_model/payment_intent_input_model.dart';
+import '../../data/model/paypal_models/details_model.dart';
 import '../../data/model/paypal_models/item_list_model.dart';
+import '../../data/model/paypal_models/order_item_model.dart';
 import '../../data/services/api_keys.dart';
 import '../../logic/cubit/checkout_cubit.dart';
 import '../../logic/cubit/checkout_state.dart';
@@ -48,12 +50,15 @@ class PaymentMethodsBottomSheet extends StatelessWidget {
                 return state.when(
                   initial: () => CustomButton(
                     onPressed: () {
-                      context.read<CheckoutCubit>().makePayment(
-                            PaymentIntentInputModel(
-                              amount: totalPrice.toInt() * 100,
-                              currency: 'USD',
-                            ),
-                          );
+                      // context.read<CheckoutCubit>().makePayment(
+                      //       PaymentIntentInputModel(
+                      //         amount: totalPrice.toInt() * 100,
+                      //         currency: 'USD',
+                      //       ),
+                      //     );
+                      context
+                          .read<CheckoutCubit>()
+                          .executePaypalPayment(context);
                     },
                     text: Text('Next',
                         style: CustomTextStyle.soraBoldstyleBold
@@ -100,5 +105,33 @@ class PaymentMethodsBottomSheet extends StatelessWidget {
         },
       ),
     ));
+  }
+
+  ({AmountModel amount, ItemListModel itemList}) getTransctoinData() {
+    var amount = AmountModel(
+        total: "100",
+        currency: 'USD',
+        details: Details(
+          shipping: "0",
+          shippingDiscount: 0,
+          subtotal: "100",
+        ));
+    List<OrderItemModel> orders = [
+      OrderItemModel(
+        currency: "USD",
+        name: "Apple",
+        price: "4",
+        quantity: 10,
+      ),
+      OrderItemModel(
+        currency: "USD",
+        name: "Screen",
+        price: "5",
+        quantity: 12,
+      )
+    ];
+    var itemList = ItemListModel(orders: orders);
+
+    return (amount: amount, itemList: itemList);
   }
 }

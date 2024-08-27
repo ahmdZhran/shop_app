@@ -1,17 +1,19 @@
-import 'package:json_annotation/json_annotation.dart';
-
 import 'order_item_model.dart';
 
-part 'item_list_model.g.dart';
-
-@JsonSerializable()
 class ItemListModel {
   List<OrderItemModel>? orders;
 
   ItemListModel({this.orders});
 
-  factory ItemListModel.fromJson(Map<String, dynamic> json) =>
-      _$ItemListModelFromJson(json);
+  factory ItemListModel.fromJson(Map<String, dynamic> json) {
+    return ItemListModel(
+      orders: (json['items'] as List<dynamic>?)
+          ?.map((e) => OrderItemModel.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+  }
 
-  Map<String, dynamic> toJson() => _$ItemListModelToJson(this);
+  Map<String, dynamic> toJson() => {
+        'items': orders?.map((e) => e.toJson()).toList(),
+      };
 }
