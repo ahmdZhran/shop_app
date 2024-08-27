@@ -93,6 +93,7 @@ dependencies:
   shared_preferences: ^2.2.3
   json_annotation: ^4.9.0
   flutter_stripe: ^11.0.0
+  flutter_paypal_payment: ^1.0.6
 dev_dependencies:
   flutter_test:
     sdk: flutter

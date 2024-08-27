@@ -22,6 +22,7 @@ mixin _$CheckoutState {
     required TResult Function() loading,
     required TResult Function() success,
     required TResult Function(String errorMessage) failure,
+    required TResult Function(AmountModel amount) payPalPaymentPrepared,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +31,7 @@ mixin _$CheckoutState {
     TResult? Function()? loading,
     TResult? Function()? success,
     TResult? Function(String errorMessage)? failure,
+    TResult? Function(AmountModel amount)? payPalPaymentPrepared,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +40,7 @@ mixin _$CheckoutState {
     TResult Function()? loading,
     TResult Function()? success,
     TResult Function(String errorMessage)? failure,
+    TResult Function(AmountModel amount)? payPalPaymentPrepared,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +50,8 @@ mixin _$CheckoutState {
     required TResult Function(CheckoutLoading value) loading,
     required TResult Function(CheckoutSuccess value) success,
     required TResult Function(CheckoutFailure value) failure,
+    required TResult Function(_PayPalPaymentPrepared value)
+        payPalPaymentPrepared,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +60,7 @@ mixin _$CheckoutState {
     TResult? Function(CheckoutLoading value)? loading,
     TResult? Function(CheckoutSuccess value)? success,
     TResult? Function(CheckoutFailure value)? failure,
+    TResult? Function(_PayPalPaymentPrepared value)? payPalPaymentPrepared,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +69,7 @@ mixin _$CheckoutState {
     TResult Function(CheckoutLoading value)? loading,
     TResult Function(CheckoutSuccess value)? success,
     TResult Function(CheckoutFailure value)? failure,
+    TResult Function(_PayPalPaymentPrepared value)? payPalPaymentPrepared,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -128,6 +135,7 @@ class _$CheckoutInitialImpl implements CheckoutInitial {
     required TResult Function() loading,
     required TResult Function() success,
     required TResult Function(String errorMessage) failure,
+    required TResult Function(AmountModel amount) payPalPaymentPrepared,
   }) {
     return initial();
   }
@@ -139,6 +147,7 @@ class _$CheckoutInitialImpl implements CheckoutInitial {
     TResult? Function()? loading,
     TResult? Function()? success,
     TResult? Function(String errorMessage)? failure,
+    TResult? Function(AmountModel amount)? payPalPaymentPrepared,
   }) {
     return initial?.call();
   }
@@ -150,6 +159,7 @@ class _$CheckoutInitialImpl implements CheckoutInitial {
     TResult Function()? loading,
     TResult Function()? success,
     TResult Function(String errorMessage)? failure,
+    TResult Function(AmountModel amount)? payPalPaymentPrepared,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -165,6 +175,8 @@ class _$CheckoutInitialImpl implements CheckoutInitial {
     required TResult Function(CheckoutLoading value) loading,
     required TResult Function(CheckoutSuccess value) success,
     required TResult Function(CheckoutFailure value) failure,
+    required TResult Function(_PayPalPaymentPrepared value)
+        payPalPaymentPrepared,
   }) {
     return initial(this);
   }
@@ -176,6 +188,7 @@ class _$CheckoutInitialImpl implements CheckoutInitial {
     TResult? Function(CheckoutLoading value)? loading,
     TResult? Function(CheckoutSuccess value)? success,
     TResult? Function(CheckoutFailure value)? failure,
+    TResult? Function(_PayPalPaymentPrepared value)? payPalPaymentPrepared,
   }) {
     return initial?.call(this);
   }
@@ -187,6 +200,7 @@ class _$CheckoutInitialImpl implements CheckoutInitial {
     TResult Function(CheckoutLoading value)? loading,
     TResult Function(CheckoutSuccess value)? success,
     TResult Function(CheckoutFailure value)? failure,
+    TResult Function(_PayPalPaymentPrepared value)? payPalPaymentPrepared,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -242,6 +256,7 @@ class _$CheckoutLoadingImpl implements CheckoutLoading {
     required TResult Function() loading,
     required TResult Function() success,
     required TResult Function(String errorMessage) failure,
+    required TResult Function(AmountModel amount) payPalPaymentPrepared,
   }) {
     return loading();
   }
@@ -253,6 +268,7 @@ class _$CheckoutLoadingImpl implements CheckoutLoading {
     TResult? Function()? loading,
     TResult? Function()? success,
     TResult? Function(String errorMessage)? failure,
+    TResult? Function(AmountModel amount)? payPalPaymentPrepared,
   }) {
     return loading?.call();
   }
@@ -264,6 +280,7 @@ class _$CheckoutLoadingImpl implements CheckoutLoading {
     TResult Function()? loading,
     TResult Function()? success,
     TResult Function(String errorMessage)? failure,
+    TResult Function(AmountModel amount)? payPalPaymentPrepared,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -279,6 +296,8 @@ class _$CheckoutLoadingImpl implements CheckoutLoading {
     required TResult Function(CheckoutLoading value) loading,
     required TResult Function(CheckoutSuccess value) success,
     required TResult Function(CheckoutFailure value) failure,
+    required TResult Function(_PayPalPaymentPrepared value)
+        payPalPaymentPrepared,
   }) {
     return loading(this);
   }
@@ -290,6 +309,7 @@ class _$CheckoutLoadingImpl implements CheckoutLoading {
     TResult? Function(CheckoutLoading value)? loading,
     TResult? Function(CheckoutSuccess value)? success,
     TResult? Function(CheckoutFailure value)? failure,
+    TResult? Function(_PayPalPaymentPrepared value)? payPalPaymentPrepared,
   }) {
     return loading?.call(this);
   }
@@ -301,6 +321,7 @@ class _$CheckoutLoadingImpl implements CheckoutLoading {
     TResult Function(CheckoutLoading value)? loading,
     TResult Function(CheckoutSuccess value)? success,
     TResult Function(CheckoutFailure value)? failure,
+    TResult Function(_PayPalPaymentPrepared value)? payPalPaymentPrepared,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -356,6 +377,7 @@ class _$CheckoutSuccessImpl implements CheckoutSuccess {
     required TResult Function() loading,
     required TResult Function() success,
     required TResult Function(String errorMessage) failure,
+    required TResult Function(AmountModel amount) payPalPaymentPrepared,
   }) {
     return success();
   }
@@ -367,6 +389,7 @@ class _$CheckoutSuccessImpl implements CheckoutSuccess {
     TResult? Function()? loading,
     TResult? Function()? success,
     TResult? Function(String errorMessage)? failure,
+    TResult? Function(AmountModel amount)? payPalPaymentPrepared,
   }) {
     return success?.call();
   }
@@ -378,6 +401,7 @@ class _$CheckoutSuccessImpl implements CheckoutSuccess {
     TResult Function()? loading,
     TResult Function()? success,
     TResult Function(String errorMessage)? failure,
+    TResult Function(AmountModel amount)? payPalPaymentPrepared,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -393,6 +417,8 @@ class _$CheckoutSuccessImpl implements CheckoutSuccess {
     required TResult Function(CheckoutLoading value) loading,
     required TResult Function(CheckoutSuccess value) success,
     required TResult Function(CheckoutFailure value) failure,
+    required TResult Function(_PayPalPaymentPrepared value)
+        payPalPaymentPrepared,
   }) {
     return success(this);
   }
@@ -404,6 +430,7 @@ class _$CheckoutSuccessImpl implements CheckoutSuccess {
     TResult? Function(CheckoutLoading value)? loading,
     TResult? Function(CheckoutSuccess value)? success,
     TResult? Function(CheckoutFailure value)? failure,
+    TResult? Function(_PayPalPaymentPrepared value)? payPalPaymentPrepared,
   }) {
     return success?.call(this);
   }
@@ -415,6 +442,7 @@ class _$CheckoutSuccessImpl implements CheckoutSuccess {
     TResult Function(CheckoutLoading value)? loading,
     TResult Function(CheckoutSuccess value)? success,
     TResult Function(CheckoutFailure value)? failure,
+    TResult Function(_PayPalPaymentPrepared value)? payPalPaymentPrepared,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -498,6 +526,7 @@ class _$CheckoutFailureImpl implements CheckoutFailure {
     required TResult Function() loading,
     required TResult Function() success,
     required TResult Function(String errorMessage) failure,
+    required TResult Function(AmountModel amount) payPalPaymentPrepared,
   }) {
     return failure(errorMessage);
   }
@@ -509,6 +538,7 @@ class _$CheckoutFailureImpl implements CheckoutFailure {
     TResult? Function()? loading,
     TResult? Function()? success,
     TResult? Function(String errorMessage)? failure,
+    TResult? Function(AmountModel amount)? payPalPaymentPrepared,
   }) {
     return failure?.call(errorMessage);
   }
@@ -520,6 +550,7 @@ class _$CheckoutFailureImpl implements CheckoutFailure {
     TResult Function()? loading,
     TResult Function()? success,
     TResult Function(String errorMessage)? failure,
+    TResult Function(AmountModel amount)? payPalPaymentPrepared,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -535,6 +566,8 @@ class _$CheckoutFailureImpl implements CheckoutFailure {
     required TResult Function(CheckoutLoading value) loading,
     required TResult Function(CheckoutSuccess value) success,
     required TResult Function(CheckoutFailure value) failure,
+    required TResult Function(_PayPalPaymentPrepared value)
+        payPalPaymentPrepared,
   }) {
     return failure(this);
   }
@@ -546,6 +579,7 @@ class _$CheckoutFailureImpl implements CheckoutFailure {
     TResult? Function(CheckoutLoading value)? loading,
     TResult? Function(CheckoutSuccess value)? success,
     TResult? Function(CheckoutFailure value)? failure,
+    TResult? Function(_PayPalPaymentPrepared value)? payPalPaymentPrepared,
   }) {
     return failure?.call(this);
   }
@@ -557,6 +591,7 @@ class _$CheckoutFailureImpl implements CheckoutFailure {
     TResult Function(CheckoutLoading value)? loading,
     TResult Function(CheckoutSuccess value)? success,
     TResult Function(CheckoutFailure value)? failure,
+    TResult Function(_PayPalPaymentPrepared value)? payPalPaymentPrepared,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -574,4 +609,159 @@ abstract class CheckoutFailure implements CheckoutState {
   @JsonKey(ignore: true)
   _$$CheckoutFailureImplCopyWith<_$CheckoutFailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$PayPalPaymentPreparedImplCopyWith<$Res> {
+  factory _$$PayPalPaymentPreparedImplCopyWith(
+          _$PayPalPaymentPreparedImpl value,
+          $Res Function(_$PayPalPaymentPreparedImpl) then) =
+      __$$PayPalPaymentPreparedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({AmountModel amount});
+}
+
+/// @nodoc
+class __$$PayPalPaymentPreparedImplCopyWithImpl<$Res>
+    extends _$CheckoutStateCopyWithImpl<$Res, _$PayPalPaymentPreparedImpl>
+    implements _$$PayPalPaymentPreparedImplCopyWith<$Res> {
+  __$$PayPalPaymentPreparedImplCopyWithImpl(_$PayPalPaymentPreparedImpl _value,
+      $Res Function(_$PayPalPaymentPreparedImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? amount = null,
+  }) {
+    return _then(_$PayPalPaymentPreparedImpl(
+      null == amount
+          ? _value.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as AmountModel,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$PayPalPaymentPreparedImpl implements _PayPalPaymentPrepared {
+  const _$PayPalPaymentPreparedImpl(this.amount);
+
+  @override
+  final AmountModel amount;
+
+  @override
+  String toString() {
+    return 'CheckoutState.payPalPaymentPrepared(amount: $amount)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$PayPalPaymentPreparedImpl &&
+            (identical(other.amount, amount) || other.amount == amount));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, amount);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$PayPalPaymentPreparedImplCopyWith<_$PayPalPaymentPreparedImpl>
+      get copyWith => __$$PayPalPaymentPreparedImplCopyWithImpl<
+          _$PayPalPaymentPreparedImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() success,
+    required TResult Function(String errorMessage) failure,
+    required TResult Function(AmountModel amount) payPalPaymentPrepared,
+  }) {
+    return payPalPaymentPrepared(amount);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? success,
+    TResult? Function(String errorMessage)? failure,
+    TResult? Function(AmountModel amount)? payPalPaymentPrepared,
+  }) {
+    return payPalPaymentPrepared?.call(amount);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function(String errorMessage)? failure,
+    TResult Function(AmountModel amount)? payPalPaymentPrepared,
+    required TResult orElse(),
+  }) {
+    if (payPalPaymentPrepared != null) {
+      return payPalPaymentPrepared(amount);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CheckoutInitial value) initial,
+    required TResult Function(CheckoutLoading value) loading,
+    required TResult Function(CheckoutSuccess value) success,
+    required TResult Function(CheckoutFailure value) failure,
+    required TResult Function(_PayPalPaymentPrepared value)
+        payPalPaymentPrepared,
+  }) {
+    return payPalPaymentPrepared(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(CheckoutInitial value)? initial,
+    TResult? Function(CheckoutLoading value)? loading,
+    TResult? Function(CheckoutSuccess value)? success,
+    TResult? Function(CheckoutFailure value)? failure,
+    TResult? Function(_PayPalPaymentPrepared value)? payPalPaymentPrepared,
+  }) {
+    return payPalPaymentPrepared?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CheckoutInitial value)? initial,
+    TResult Function(CheckoutLoading value)? loading,
+    TResult Function(CheckoutSuccess value)? success,
+    TResult Function(CheckoutFailure value)? failure,
+    TResult Function(_PayPalPaymentPrepared value)? payPalPaymentPrepared,
+    required TResult orElse(),
+  }) {
+    if (payPalPaymentPrepared != null) {
+      return payPalPaymentPrepared(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PayPalPaymentPrepared implements CheckoutState {
+  const factory _PayPalPaymentPrepared(final AmountModel amount) =
+      _$PayPalPaymentPreparedImpl;
+
+  AmountModel get amount;
+  @JsonKey(ignore: true)
+  _$$PayPalPaymentPreparedImplCopyWith<_$PayPalPaymentPreparedImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
