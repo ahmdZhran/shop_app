@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_paypal_payment/flutter_paypal_payment.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shop_app/core/helper/extensions.dart';
+import 'package:shop_app/core/router/routes.dart';
 import 'package:shop_app/core/widgets/custom_toast.dart';
+import 'package:shop_app/features/check_out/data/services/api_keys.dart';
 import '../../../../core/utils/text_styles.dart';
 import '../../../../core/widgets/custom_buttons.dart';
 import '../../data/model/payment_intent_input_model/payment_intent_input_model.dart';
@@ -43,18 +47,41 @@ class _PaymentMethodsBottomSheetState extends State<PaymentMethodsBottomSheet> {
                 initial: () {},
                 loading: () {},
                 success: () {
-                  Navigator.of(context)
-                      .pop(); // Close the bottom sheet on success
+                  context.pushNamed(Routes.thankYou);
                 },
                 failure: (error) {
                   ShowToast.showToastErrorBottom(message: error);
+                },
+                payPalPaymentPrepared: (amount) {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => PaypalCheckoutView(
+                        onSuccess: (Map param) async {
+                          context.pushNamed(Routes.thankYou);
+                        },
+                        onError: (error) {
+                          ShowToast.showToastErrorBottom(message: error);
+                        },
+                        onCancel: (error) {
+                          ShowToast.showToastErrorBottom(message: error);
+                        },
+                        transactions: [
+                          {
+                            "amount": amount.toJson(),
+                            "description":
+                                "The payment transaction description.",
+                          }
+                        ],
+                        clientId: ApiKeys.clientIdPaypal,
+                        secretKey: ApiKeys.secretPaypalKey),
+                  ));
                 },
               );
             },
             child: BlocBuilder<CheckoutCubit, CheckoutState>(
               builder: (context, state) {
-                return state.when(
-                  initial: () => CustomButton(
+                return state.maybeWhen(
+                  loading: () => const CircularProgressIndicator(),
+                  orElse: () => CustomButton(
                     onPressed: () {
                       if (selectedPaymentMethodIndex == 0) {
                         context.read<CheckoutCubit>().makePaymentWithStripe(
@@ -77,9 +104,6 @@ class _PaymentMethodsBottomSheetState extends State<PaymentMethodsBottomSheet> {
                       ),
                     ),
                   ),
-                  loading: () => const CircularProgressIndicator(),
-                  success: () => const Text('Payment successful!'),
-                  failure: (errorMessage) => const SizedBox.shrink(),
                 );
               },
             ),
