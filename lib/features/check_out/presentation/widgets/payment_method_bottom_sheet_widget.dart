@@ -14,7 +14,8 @@ class PaymentMethodsBottomSheet extends StatefulWidget {
   final double totalPrice;
 
   @override
-  State<PaymentMethodsBottomSheet> createState() => _PaymentMethodsBottomSheetState();
+  State<PaymentMethodsBottomSheet> createState() =>
+      _PaymentMethodsBottomSheetState();
 }
 
 class _PaymentMethodsBottomSheetState extends State<PaymentMethodsBottomSheet> {
@@ -42,7 +43,8 @@ class _PaymentMethodsBottomSheetState extends State<PaymentMethodsBottomSheet> {
                 initial: () {},
                 loading: () {},
                 success: () {
-                  Navigator.of(context).pop(); // Close the bottom sheet on success
+                  Navigator.of(context)
+                      .pop(); // Close the bottom sheet on success
                 },
                 failure: (error) {
                   ShowToast.showToastErrorBottom(message: error);
@@ -55,19 +57,20 @@ class _PaymentMethodsBottomSheetState extends State<PaymentMethodsBottomSheet> {
                   initial: () => CustomButton(
                     onPressed: () {
                       if (selectedPaymentMethodIndex == 0) {
-                        // Handle card payment
-                        context.read<CheckoutCubit>().makePayment(
-                          PaymentIntentInputModel(
-                            amount: (widget.totalPrice * 100).toInt(),
-                            currency: 'USD',
-                          ),
-                        );
+                        context.read<CheckoutCubit>().makePaymentWithStripe(
+                              PaymentIntentInputModel(
+                                amount: (widget.totalPrice * 100).toInt(),
+                                currency: 'USD',
+                              ),
+                            );
                       } else if (selectedPaymentMethodIndex == 1) {
-                        // Handle PayPal payment
-                        context.read<CheckoutCubit>().executePaypalPayment(context);
+                        context
+                            .read<CheckoutCubit>()
+                            .makePaymentWithPayPal(context, widget.totalPrice);
                       }
                     },
-                    text: Text('Next',
+                    text: Text(
+                      'Next',
                       style: CustomTextStyle.soraBoldstyleBold.copyWith(
                         color: Colors.black,
                         fontSize: 16.sp,
@@ -85,6 +88,4 @@ class _PaymentMethodsBottomSheetState extends State<PaymentMethodsBottomSheet> {
       ),
     );
   }
-
-
 }
