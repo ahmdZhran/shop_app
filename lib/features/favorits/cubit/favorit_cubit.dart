@@ -3,12 +3,12 @@ import '../data/models/favorite_item_model.dart';
 import '../data/repo/favorite_repo.dart';
 import 'favorit_state.dart';
 
-class FavoritCubit extends Cubit<FavoritState> {
-  FavoritCubit(this._favoritRepo) : super(const FavoritState.initial());
+class FavoriteCubit extends Cubit<FavoritState> {
+  FavoriteCubit(this._favoritRepo) : super(const FavoritState.initial());
 
   final FavoritRepo _favoritRepo;
 
-  void fetchFavoritItems() {
+  void fetchFavoriteItems() {
     emit(const FavoritState.loading());
     try {
       final favoriteItems = _favoritRepo.getFavoriteItems();
@@ -24,12 +24,12 @@ class FavoritCubit extends Cubit<FavoritState> {
 
   void addToFavorit(FavoriteItemModel item) {
     _favoritRepo.addToFavorite(item);
-    fetchFavoritItems();
+    fetchFavoriteItems();
   }
 
   void removeFromFavorit(int id) {
     _favoritRepo.removeFromFavorite(id);
-    fetchFavoritItems();
+    fetchFavoriteItems();
   }
 
   bool isFavorite(int id) {

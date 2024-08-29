@@ -31,9 +31,9 @@ class FavoritButtonBlocBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<FavoritCubit, FavoritState>(
+    return BlocBuilder<FavoriteCubit, FavoritState>(
       builder: (context, state) {
-        final isFavorite = context.read<FavoritCubit>().isFavorite(productId);
+        final isFavorite = context.read<FavoriteCubit>().isFavorite(productId);
         return IconButton(
           onPressed: () {
             final favoriteItem = FavoriteItemModel(
@@ -47,9 +47,9 @@ class FavoritButtonBlocBuilder extends StatelessWidget {
               description: description,
             );
             if (isFavorite) {
-              context.read<FavoritCubit>().removeFromFavorit(productId);
+              context.read<FavoriteCubit>().removeFromFavorit(productId);
             } else {
-              context.read<FavoritCubit>().addToFavorit(favoriteItem);
+              context.read<FavoriteCubit>().addToFavorit(favoriteItem);
             }
           },
           icon: Icon(isFavorite ? Icons.favorite : Icons.favorite_border),

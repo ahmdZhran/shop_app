@@ -7,6 +7,7 @@ import '../../features/check_out/data/services/stripe_service.dart';
 import '../../features/favorits/data/repo/favorite_repo.dart';
 import '../../features/home/data/repos/banner/banner_repo.dart';
 import '../../features/home/data/repos/categories/categories_repo.dart';
+import '../../features/home/data/repos/home_repo/home_repo.dart';
 import '../../features/home/data/repos/products/products_repo.dart';
 import '../../features/search/data/repo/search_repo.dart';
 import '../../features/home/data/api/home_api_service.dart';
@@ -27,7 +28,8 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<SignUpRepo>(() => SignUpRepo(getIt()));
   // home
   getIt.registerLazySingleton<HomeApiService>(() => HomeApiService(dio));
-
+  //TODO HomeRepository  (replaces BannerRepo, CategoriesRepo, and ProductsRepo)
+  getIt.registerLazySingleton<HomeRepository>(() => HomeRepository(getIt()));
   // banner
   getIt.registerLazySingleton<BannerRepo>(() => BannerRepo(getIt()));
 
