@@ -3,8 +3,8 @@ import '../../../../core/helper/extensions.dart';
 import 'is_has_an_account.dart';
 import 'text_form_field_body.dart';
 
-class LonginBodyWidget extends StatelessWidget {
-  const LonginBodyWidget({super.key});
+class LoginBodyWidget extends StatelessWidget {
+  const LoginBodyWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

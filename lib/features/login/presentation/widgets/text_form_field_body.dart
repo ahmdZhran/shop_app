@@ -17,7 +17,7 @@ class TextFormFieldBody extends StatelessWidget {
         children: [
           20.0.getVerticalSpacer(),
           Text(
-            AppStrings.wecomeBack,
+            AppStrings.welcomeBack,
             style: CustomTextStyle.soraBoldstyleBold.copyWith(fontSize: 30),
           ),
           5.0.getVerticalSpacer(),

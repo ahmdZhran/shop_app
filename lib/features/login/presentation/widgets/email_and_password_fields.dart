@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shop_app/core/widgets/custom_toast.dart';
 import '../../../../core/utils/color_manager.dart';
 import '../../../../core/helper/extensions.dart';
 import '../../../../core/utils/app_strings.dart';
@@ -20,11 +21,11 @@ class EmailAndPasswordFields extends StatefulWidget {
 
 class _EmailAndPasswordFieldsState extends State<EmailAndPasswordFields> {
   bool isPasswordShown = true;
-  late TextEditingController passworController;
+  late TextEditingController passwordController;
 
   @override
   void initState() {
-    passworController = context.read<LoginCubit>().passwordController;
+    passwordController = context.read<LoginCubit>().passwordController;
     super.initState();
   }
 
@@ -48,12 +49,8 @@ class _EmailAndPasswordFieldsState extends State<EmailAndPasswordFields> {
             context.pushNamed(Routes.home);
           },
           error: (error) {
-            print("Login failed: $error ..................................");
+            ShowToast.showToastErrorBottom(message: error);
             context.pop();
-            ScaffoldMessenger.maybeOf(context)!.showSnackBar(SnackBar(
-              content: Text(error),
-              backgroundColor: Colors.red,
-            ));
           },
         );
       },
@@ -64,7 +61,7 @@ class _EmailAndPasswordFieldsState extends State<EmailAndPasswordFields> {
             20.0.getVerticalSpacer(),
             CustomTextFormField(
               controller: context.read<LoginCubit>().emailController,
-              lableText: AppStrings.emailAdress,
+              labelText: AppStrings.emailAddress,
             ),
             20.0.getVerticalSpacer(),
             CustomTextFormField(
@@ -82,12 +79,12 @@ class _EmailAndPasswordFieldsState extends State<EmailAndPasswordFields> {
                       : Icons.visibility_outlined,
                 ),
               ),
-              lableText: AppStrings.password,
+              labelText: AppStrings.password,
             ),
             40.0.getVerticalSpacer(),
             CustomButton(
               onPressed: () {
-                valdiateThenDoLogin(context);
+                validateThenDoLogin(context);
               },
               text: Text(
                 AppStrings.login,
@@ -100,7 +97,7 @@ class _EmailAndPasswordFieldsState extends State<EmailAndPasswordFields> {
     );
   }
 
-  void valdiateThenDoLogin(BuildContext context) {
+  void validateThenDoLogin(BuildContext context) {
     if (context.read<LoginCubit>().formKey.currentState!.validate()) {
       context.read<LoginCubit>().emitLoginStates();
     }
