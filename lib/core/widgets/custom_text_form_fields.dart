@@ -6,7 +6,7 @@ import '../utils/text_styles.dart';
 class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField({
     super.key,
-    required this.lableText,
+    required this.labelText,
     this.onChanged,
     this.keyboardType,
     this.suffixIcon,
@@ -14,7 +14,7 @@ class CustomTextFormField extends StatelessWidget {
     this.controller,
   });
 
-  final String lableText;
+  final String labelText;
   final void Function(String)? onChanged;
   final TextInputType? keyboardType;
   final Widget? suffixIcon;
@@ -51,7 +51,7 @@ class CustomTextFormField extends StatelessWidget {
             fillColor: const Color(0xff101215),
             enabledBorder: outlineInputBorder(),
             focusedBorder: outlineInputBorder(),
-            labelText: lableText,
+            labelText: labelText,
             labelStyle: CustomTextStyle.regular14,
             errorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(25),

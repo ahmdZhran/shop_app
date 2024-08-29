@@ -15,7 +15,7 @@ class LoginView extends StatelessWidget {
           100.0.getVerticalSpacer(),
           const HeadOfLoginView(),
           110.0.getVerticalSpacer(),
-          const LonginBodyWidget()
+          const LoginBodyWidget()
         ],
       ),
     ));

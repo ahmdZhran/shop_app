@@ -7,12 +7,12 @@ abstract class AppStrings {
       getStarted = 'Get Started',
 
       // Strings for signin and regestration views
-      wecomeBack = 'Welcome Back!',
+      welcomeBack = 'Welcome Back!',
       enterYourDetailsBelow = 'Enter your details below',
       fullName = 'Full Name',
       dontHaveAnAccount = "Don't have an account?",
       phone = 'Phone',
-      emailAdress = 'Email Adress',
+      emailAddress = 'Email Adress',
       nationalId = 'National ID',
       password = 'Password',
       signUp = 'Sign Up',

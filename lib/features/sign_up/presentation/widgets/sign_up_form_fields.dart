@@ -68,19 +68,19 @@ class _SignUpFormFiedlsState extends State<SignUpFormFiedls> {
               const SizedBox(height: 16),
               CustomTextFormField(
                 controller: context.read<SignupCubit>().nameController,
-                lableText: AppStrings.fullName,
+                labelText: AppStrings.fullName,
                 keyboardType: TextInputType.name,
               ),
               const SizedBox(height: 16),
               CustomTextFormField(
                 controller: context.read<SignupCubit>().emailController,
-                lableText: AppStrings.emailAdress,
+                labelText: AppStrings.emailAddress,
                 keyboardType: TextInputType.emailAddress,
               ),
               const SizedBox(height: 16),
               CustomTextFormField(
                 controller: context.read<SignupCubit>().phoneController,
-                lableText: AppStrings.phone,
+                labelText: AppStrings.phone,
                 keyboardType: TextInputType.phone,
               ),
               const SizedBox(height: 16),
@@ -99,7 +99,7 @@ class _SignUpFormFiedlsState extends State<SignUpFormFiedls> {
                         : Icons.visibility_outlined,
                   ),
                 ),
-                lableText: AppStrings.password,
+                labelText: AppStrings.password,
               ),
               const SizedBox(height: 20),
               CustomButton(
