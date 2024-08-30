@@ -5,8 +5,8 @@ import '../../../../core/utils/color_manager.dart';
 
 import 'nav_bar_bloc_builder.dart';
 
-class MainBottomNavBar extends StatelessWidget {
-  const MainBottomNavBar({super.key});
+class MainBottonNavBar extends StatelessWidget {
+  const MainBottonNavBar({super.key});
 
   @override
   Widget build(BuildContext context) {
