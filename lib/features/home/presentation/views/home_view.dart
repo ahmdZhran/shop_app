@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shop_app/features/home/cubits/banner/banner_cubit.dart';
+import 'package:shop_app/features/home/cubits/categories/categories_cubit.dart';
+import 'package:shop_app/features/home/cubits/products/products_cubit.dart';
 import '../../../../core/helper/extensions.dart';
 import '../widgets/banners_section/banner_bloc_builder.dart';
 import '../widgets/cart_head_icon.dart';
@@ -6,8 +10,21 @@ import '../widgets/categories_section/categories_bloc_builder.dart';
 import '../widgets/products_section/products_bloc_builder.dart';
 import '../widgets/title_of_section.dart';
 
-class HomeView extends StatelessWidget {
+class HomeView extends StatefulWidget {
   const HomeView({super.key});
+
+  @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
+  @override
+  void initState() {
+    context.read<BannerCubit>().fetchBannerDate();
+    context.read<CategoriesCubit>().fetchCategories();
+    context.read<ProductsCubit>().fetchHomeProducts();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

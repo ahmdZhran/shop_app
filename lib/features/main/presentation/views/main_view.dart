@@ -23,16 +23,16 @@ class MainView extends StatelessWidget {
         body: MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (_) => BannerCubit(getIt())..fetchBannerDate(),
+          create: (_) => BannerCubit(getIt()),
         ),
         BlocProvider(
-          create: (_) => CategoriesCubit(getIt())..fetchCategories(),
+          create: (_) => CategoriesCubit(getIt()),
         ),
         BlocProvider(
-          create: (_) => ProductsCubit(getIt())..fetchHomeProducts(),
+          create: (_) => ProductsCubit(getIt()),
         ),
         BlocProvider(
-          create: (_) => FavoritCubit(getIt())..fetchFavoritItems(),
+          create: (_) => FavoriteCubit(getIt())..fetchFavoriteItems(),
         ),
       ],
       child: Column(

@@ -17,7 +17,7 @@ class FavoritesView extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Favorites'),
       ),
-      body: BlocBuilder<FavoritCubit, FavoritState>(
+      body: BlocBuilder<FavoriteCubit, FavoritState>(
         builder: (context, state) {
           return state.maybeWhen(
             loading: () => const Center(
