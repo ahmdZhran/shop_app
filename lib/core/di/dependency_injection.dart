@@ -4,7 +4,7 @@ import 'package:shop_app/features/check_out/data/repo/checkout_repo.dart';
 import '../../features/cart/data/repos/cart_repo.dart';
 import '../../features/check_out/data/services/stripe_sdk_service.dart';
 import '../../features/check_out/data/services/stripe_service.dart';
-import '../../features/favorits/data/repo/favorite_repo.dart';
+import '../../features/favorites/data/repo/favorite_repo.dart';
 import '../../features/home/data/repos/banner/banner_repo.dart';
 import '../../features/home/data/repos/categories/categories_repo.dart';
 import '../../features/home/data/repos/products/products_repo.dart';
