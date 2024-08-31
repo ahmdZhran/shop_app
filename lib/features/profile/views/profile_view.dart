@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shop_app/core/helper/extensions.dart';
 import 'package:shop_app/core/utils/color_manager.dart';
-import '../../../core/widgets/back_arrow_button.dart';
 import '../widgets/edit_or_logout_button_widget.dart';
 import '../widgets/profile_info_widget.dart';
 
@@ -15,7 +14,6 @@ class ProfileView extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Profile'),
         centerTitle: true,
-        leading: const BackArrowButton(),
         elevation: 0,
       ),
       body: Padding(
