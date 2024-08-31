@@ -5,8 +5,8 @@ import '../../../../core/utils/color_manager.dart';
 import '../../../../core/utils/text_styles.dart';
 import '../../../../core/widgets/custom_buttons.dart';
 
-class CartTotolPriceAndCheckOut extends StatelessWidget {
-  const CartTotolPriceAndCheckOut({
+class CartTotalPriceAndCheckOut extends StatelessWidget {
+  const CartTotalPriceAndCheckOut({
     super.key,
     required this.totalPrice,
   });

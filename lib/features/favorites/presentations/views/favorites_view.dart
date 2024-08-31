@@ -15,6 +15,7 @@ class FavoritesView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: const Text('Favorites'),
       ),
       body: BlocBuilder<FavoriteCubit, FavoritState>(
