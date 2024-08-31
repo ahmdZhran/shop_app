@@ -42,7 +42,7 @@ class ProfileInfoWidget extends StatelessWidget {
           ),
           5.0.getVerticalSpacer(),
           const CustomNamedContainerWidget(
-            data: 'ahmedmohameddx80@gmail.com',
+            data: '+201093059200',
           ),
         ],
       ),
