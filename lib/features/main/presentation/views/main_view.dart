@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/di/dependency_injection.dart';
-import '../../../favorits/cubit/favorit_cubit.dart';
+import '../../../favorites/cubit/favorit_cubit.dart';
 import '../../../home/cubits/categories/categories_cubit.dart';
 import '../../../home/cubits/products/products_cubit.dart';
-import '../../../favorits/presentations/views/favorits_view.dart';
+import '../../../favorites/presentations/views/favorites_view.dart';
 import '../../../home/cubits/banner/banner_cubit.dart';
 import '../../../home/presentation/views/home_view.dart';
-import '../../../porfile/views/profile_view.dart';
+import '../../../profile/views/profile_view.dart';
 import '../../../search/presentation/views/search_view.dart';
 import '../../logic/cubit/nav_bar_cubit.dart';
 import '../../logic/cubit/nav_bar_state.dart';

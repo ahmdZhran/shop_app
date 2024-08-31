@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../favorits/presentations/widgets/favorite_button_bloc_builder.dart';
+import '../../../../favorites/presentations/widgets/favorite_button_bloc_builder.dart';
 
 class ProductCardHeader extends StatelessWidget {
   const ProductCardHeader({

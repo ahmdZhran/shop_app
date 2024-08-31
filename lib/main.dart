@@ -9,7 +9,7 @@ import 'core/helper/shared_prefrence.dart';
 import 'core/helper/shared_prefrence_keys.dart';
 import 'core/router/app_router.dart';
 import 'features/cart/data/models/cart_item_model.dart';
-import 'features/favorits/data/models/favorite_item_model.dart';
+import 'features/favorites/data/models/favorite_item_model.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
