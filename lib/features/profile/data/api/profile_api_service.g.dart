@@ -21,7 +21,7 @@ class _ProfileApiService implements ProfileApiService {
   String? baseUrl;
 
   @override
-  Future<ProfileUserResponse> getProfile() async {
+  Future<ProfileUserResponse> getProfileData() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};

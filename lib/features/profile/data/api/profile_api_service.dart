@@ -11,5 +11,5 @@ abstract class ProfileApiService {
   factory ProfileApiService(Dio dio, {String baseUrl}) = _ProfileApiService;
 
   @GET(ProfileApiConstants.profile)
-  Future<ProfileUserResponse> getProfile();
+  Future<ProfileUserResponse> getProfileData();
 }
