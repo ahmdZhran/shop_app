@@ -7,8 +7,10 @@ part 'checkout_state.freezed.dart';
 @freezed
 class CheckoutState with _$CheckoutState {
   const factory CheckoutState.initial() = CheckoutInitial;
-  const factory CheckoutState.loading() = CheckoutLoading;
-  const factory CheckoutState.success() = CheckoutSuccess;
-  const factory CheckoutState.failure(String errorMessage) = CheckoutFailure;
-  const factory CheckoutState.payPalPaymentPrepared(AmountModel amount) = _PayPalPaymentPrepared;
+  const factory CheckoutState.checkoutLoading() = CheckoutLoading;
+  const factory CheckoutState.checkoutSuccess() = CheckoutSuccess;
+  const factory CheckoutState.checkoutFailure(String errorMessage) =
+      CheckoutFailure;
+  const factory CheckoutState.payPalPaymentPrepared(AmountModel amount) =
+      _PayPalPaymentPrepared;
 }

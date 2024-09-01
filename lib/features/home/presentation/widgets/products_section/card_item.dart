@@ -7,7 +7,7 @@ import 'product_card_header.dart';
 class CardItem extends StatelessWidget {
   const CardItem({
     super.key,
-    required this.imageurl,
+    required this.imageUrl,
     required this.titleOfItem,
     required this.price,
     required this.oldPrice,
@@ -20,7 +20,7 @@ class CardItem extends StatelessWidget {
   });
 
   final bool isFavorite = false;
-  final String imageurl;
+  final String imageUrl;
   final String titleOfItem;
   final String price;
   final String oldPrice;
@@ -49,7 +49,7 @@ class CardItem extends StatelessWidget {
               arguments: {
                 'id': productId,
                 'images': images,
-                'image': imageurl,
+                'image': imageUrl,
                 'price': price,
                 'description': description,
                 'title': nameOfProduct,
@@ -72,7 +72,7 @@ class CardItem extends StatelessWidget {
                       productId: productId,
                       description: description,
                       images: images,
-                      imageurl: imageurl,
+                      imageUrl: imageUrl,
                       oldPrice: oldPrice,
                       price: price,
                       titleOfItem: titleOfItem,
@@ -84,7 +84,7 @@ class CardItem extends StatelessWidget {
                         tag: productId,
                         child: Center(
                           child: CachedNetworkImage(
-                            imageUrl: imageurl,
+                            imageUrl: imageUrl,
                             height: 100.h,
                             width: double.infinity,
                             fit: BoxFit.contain,

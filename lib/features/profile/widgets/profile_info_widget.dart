@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/core/helper/extensions.dart';
-
 import '../../../core/utils/color_manager.dart';
 import '../../../core/utils/text_styles.dart';
 import 'custom_named_container_widget.dart';
 
 class ProfileInfoWidget extends StatelessWidget {
-  const ProfileInfoWidget({super.key});
+  final String userName;
+  final String email;
+  final String phone;
+
+  const ProfileInfoWidget({
+    super.key,
+    required this.userName,
+    required this.email,
+    required this.phone,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -16,33 +24,33 @@ class ProfileInfoWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'User Name',
+            'userName',
             style: CustomTextStyle.medium16
                 .copyWith(color: ColorManager.kGreyColor),
           ),
           5.0.getVerticalSpacer(),
-          const CustomNamedContainerWidget(data: 'Ahmed Mohamed'),
+          CustomNamedContainerWidget(data: userName),
           10.0.getVerticalSpacer(),
           Text(
-            'Email',
+            "email",
             style: CustomTextStyle.medium16.copyWith(
               color: ColorManager.kGreyColor,
             ),
           ),
           5.0.getVerticalSpacer(),
-          const CustomNamedContainerWidget(
-            data: 'ahmedmohameddx80@gmail.com',
+          CustomNamedContainerWidget(
+            data: email,
           ),
           10.0.getVerticalSpacer(),
           Text(
-            'Phone',
+            "phone",
             style: CustomTextStyle.medium16.copyWith(
               color: ColorManager.kGreyColor,
             ),
           ),
           5.0.getVerticalSpacer(),
-          const CustomNamedContainerWidget(
-            data: '+201093059200',
+          CustomNamedContainerWidget(
+            data: phone,
           ),
         ],
       ),
