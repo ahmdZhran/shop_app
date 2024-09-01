@@ -7,7 +7,7 @@ class ProductCardHeader extends StatelessWidget {
     required this.discount,
     required this.productId,
     required this.titleOfItem,
-    required this.imageurl,
+    required this.imageUrl,
     required this.price,
     required this.description,
     required this.images,
@@ -19,7 +19,7 @@ class ProductCardHeader extends StatelessWidget {
   final String oldPrice;
   final int productId;
   final String titleOfItem;
-  final String imageurl;
+  final String imageUrl;
   final String price;
   final List<String> images;
 
@@ -50,7 +50,7 @@ class ProductCardHeader extends StatelessWidget {
         FavoritButtonBlocBuilder(
           productId: productId,
           titleOfItem: titleOfItem,
-          imageurl: imageurl,
+          imageUrl: imageUrl,
           price: price,
           images: images,
           discount: discount,

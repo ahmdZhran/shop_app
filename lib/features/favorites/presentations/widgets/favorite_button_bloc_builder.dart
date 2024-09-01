@@ -10,7 +10,7 @@ import '../../../../core/utils/color_manager.dart';
 class FavoritButtonBlocBuilder extends StatelessWidget {
   final int productId;
   final String titleOfItem;
-  final String imageurl;
+  final String imageUrl;
   final String price;
   final List<String> images;
   final String discount;
@@ -21,7 +21,7 @@ class FavoritButtonBlocBuilder extends StatelessWidget {
     super.key,
     required this.productId,
     required this.titleOfItem,
-    required this.imageurl,
+    required this.imageUrl,
     required this.price,
     required this.images,
     required this.discount,
@@ -39,7 +39,7 @@ class FavoritButtonBlocBuilder extends StatelessWidget {
             final favoriteItem = FavoriteItemModel(
               id: productId,
               name: titleOfItem,
-              image: imageurl,
+              image: imageUrl,
               price: price,
               images: images,
               discount: discount,
