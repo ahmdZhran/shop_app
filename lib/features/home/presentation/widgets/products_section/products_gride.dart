@@ -18,7 +18,7 @@ class ProductsGrid extends StatelessWidget {
       shrinkWrap: true,
       itemBuilder: (BuildContext context, int index) {
         return CardItem(
-          imageurl: products[index].images!.first.toString(),
+          imageUrl: products[index].images!.first.toString(),
           titleOfItem: products[index].name.toString(),
           price: products[index].price.toString(),
           oldPrice: products[index].oldPrice.toString(),

@@ -39,7 +39,7 @@ class FavoritesView extends StatelessWidget {
               itemBuilder: (BuildContext context, int index) {
                 final favItem = favoriteItems[index];
                 return CardItem(
-                  imageurl: favItem.images.first.toString(),
+                  imageUrl: favItem.images.first.toString(),
                   titleOfItem: favItem.name.toString(),
                   price: favItem.price.toString(),
                   oldPrice: favItem.oldPrice.toString(),
