@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shop_app/core/utils/color_manager.dart';
 import 'package:shop_app/features/home/cubits/banner/banner_cubit.dart';
 import 'package:shop_app/features/home/cubits/categories/categories_cubit.dart';
 import 'package:shop_app/features/home/cubits/products/products_cubit.dart';
@@ -37,7 +38,8 @@ class _HomeViewState extends State<HomeView> {
         child: Padding(
           padding: const EdgeInsets.only(top: 16.0, left: 16.0, right: 16.0),
           child: RefreshIndicator(
-            onRefresh: _fetchData, 
+            color: ColorManager.kPrimaryColor,
+            onRefresh: _fetchData,
             child: ListView(
               physics: const BouncingScrollPhysics(),
               children: [

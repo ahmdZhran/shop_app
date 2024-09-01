@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shop_app/features/cart/cubits/cubit/cart_cubit.dart';
 import 'package:shop_app/features/profile/logic/cubit/profile_cubit.dart';
 import 'package:shop_app/features/search/logic/cubit/search_cubit.dart';
 import '../../../../core/di/dependency_injection.dart';
@@ -41,6 +42,9 @@ class MainView extends StatelessWidget {
         ),
         BlocProvider(
           create: (_) => SearchCubit(getIt()),
+        ),
+        BlocProvider(
+          create: (_) => CartCubit(getIt()),
         ),
       ],
       child: Column(
