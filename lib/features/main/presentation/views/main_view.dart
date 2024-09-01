@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shop_app/features/profile/logic/cubit/profile_cubit.dart';
 import '../../../../core/di/dependency_injection.dart';
 import '../../../favorites/cubit/favorit_cubit.dart';
 import '../../../home/cubits/categories/categories_cubit.dart';
@@ -33,6 +34,9 @@ class MainView extends StatelessWidget {
         ),
         BlocProvider(
           create: (_) => FavoriteCubit(getIt())..fetchFavoriteItems(),
+        ),
+        BlocProvider(
+          create: (_) => ProfileCubit(getIt()),
         ),
       ],
       child: Column(
