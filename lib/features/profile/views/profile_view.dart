@@ -35,8 +35,10 @@ class _ProfileViewState extends State<ProfileView> {
         child: BlocBuilder<ProfileCubit, ProfileState>(
           builder: (context, state) {
             return state.maybeWhen(
-              profileDataLoading: () =>
-                  const Center(child: CircularProgressIndicator()),
+              profileDataLoading: () => Center(
+                  child: CircularProgressIndicator(
+                color: ColorManager.kPrimaryColor,
+              )),
               profileDataSuccess: (profileUserResponse) {
                 final profileData = profileUserResponse.data;
 
