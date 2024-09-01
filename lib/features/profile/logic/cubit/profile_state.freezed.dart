@@ -20,7 +20,7 @@ mixin _$ProfileState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() profileDataLoading,
-    required TResult Function(ProfileUserData profileUserData)
+    required TResult Function(ProfileUserResponse profileUserResponse)
         profileDataSuccess,
     required TResult Function(String error) profileDataFailure,
   }) =>
@@ -29,7 +29,8 @@ mixin _$ProfileState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? profileDataLoading,
-    TResult? Function(ProfileUserData profileUserData)? profileDataSuccess,
+    TResult? Function(ProfileUserResponse profileUserResponse)?
+        profileDataSuccess,
     TResult? Function(String error)? profileDataFailure,
   }) =>
       throw _privateConstructorUsedError;
@@ -37,7 +38,8 @@ mixin _$ProfileState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? profileDataLoading,
-    TResult Function(ProfileUserData profileUserData)? profileDataSuccess,
+    TResult Function(ProfileUserResponse profileUserResponse)?
+        profileDataSuccess,
     TResult Function(String error)? profileDataFailure,
     required TResult orElse(),
   }) =>
@@ -45,24 +47,24 @@ mixin _$ProfileState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(ProfileLoading value) profileDataLoading,
-    required TResult Function(ProfileDataSuccess value) profileDataSuccess,
+    required TResult Function(ProfileUserLoading value) profileDataLoading,
+    required TResult Function(ProfileUserSuccess value) profileDataSuccess,
     required TResult Function(ProfileDataFailure value) profileDataFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(ProfileLoading value)? profileDataLoading,
-    TResult? Function(ProfileDataSuccess value)? profileDataSuccess,
+    TResult? Function(ProfileUserLoading value)? profileDataLoading,
+    TResult? Function(ProfileUserSuccess value)? profileDataSuccess,
     TResult? Function(ProfileDataFailure value)? profileDataFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(ProfileLoading value)? profileDataLoading,
-    TResult Function(ProfileDataSuccess value)? profileDataSuccess,
+    TResult Function(ProfileUserLoading value)? profileDataLoading,
+    TResult Function(ProfileUserSuccess value)? profileDataSuccess,
     TResult Function(ProfileDataFailure value)? profileDataFailure,
     required TResult orElse(),
   }) =>
@@ -127,7 +129,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() profileDataLoading,
-    required TResult Function(ProfileUserData profileUserData)
+    required TResult Function(ProfileUserResponse profileUserResponse)
         profileDataSuccess,
     required TResult Function(String error) profileDataFailure,
   }) {
@@ -139,7 +141,8 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? profileDataLoading,
-    TResult? Function(ProfileUserData profileUserData)? profileDataSuccess,
+    TResult? Function(ProfileUserResponse profileUserResponse)?
+        profileDataSuccess,
     TResult? Function(String error)? profileDataFailure,
   }) {
     return initial?.call();
@@ -150,7 +153,8 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? profileDataLoading,
-    TResult Function(ProfileUserData profileUserData)? profileDataSuccess,
+    TResult Function(ProfileUserResponse profileUserResponse)?
+        profileDataSuccess,
     TResult Function(String error)? profileDataFailure,
     required TResult orElse(),
   }) {
@@ -164,8 +168,8 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(ProfileLoading value) profileDataLoading,
-    required TResult Function(ProfileDataSuccess value) profileDataSuccess,
+    required TResult Function(ProfileUserLoading value) profileDataLoading,
+    required TResult Function(ProfileUserSuccess value) profileDataSuccess,
     required TResult Function(ProfileDataFailure value) profileDataFailure,
   }) {
     return initial(this);
@@ -175,8 +179,8 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(ProfileLoading value)? profileDataLoading,
-    TResult? Function(ProfileDataSuccess value)? profileDataSuccess,
+    TResult? Function(ProfileUserLoading value)? profileDataLoading,
+    TResult? Function(ProfileUserSuccess value)? profileDataSuccess,
     TResult? Function(ProfileDataFailure value)? profileDataFailure,
   }) {
     return initial?.call(this);
@@ -186,8 +190,8 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(ProfileLoading value)? profileDataLoading,
-    TResult Function(ProfileDataSuccess value)? profileDataSuccess,
+    TResult Function(ProfileUserLoading value)? profileDataLoading,
+    TResult Function(ProfileUserSuccess value)? profileDataSuccess,
     TResult Function(ProfileDataFailure value)? profileDataFailure,
     required TResult orElse(),
   }) {
@@ -203,25 +207,25 @@ abstract class _Initial implements ProfileState {
 }
 
 /// @nodoc
-abstract class _$$ProfileLoadingImplCopyWith<$Res> {
-  factory _$$ProfileLoadingImplCopyWith(_$ProfileLoadingImpl value,
-          $Res Function(_$ProfileLoadingImpl) then) =
-      __$$ProfileLoadingImplCopyWithImpl<$Res>;
+abstract class _$$ProfileUserLoadingImplCopyWith<$Res> {
+  factory _$$ProfileUserLoadingImplCopyWith(_$ProfileUserLoadingImpl value,
+          $Res Function(_$ProfileUserLoadingImpl) then) =
+      __$$ProfileUserLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ProfileLoadingImplCopyWithImpl<$Res>
-    extends _$ProfileStateCopyWithImpl<$Res, _$ProfileLoadingImpl>
-    implements _$$ProfileLoadingImplCopyWith<$Res> {
-  __$$ProfileLoadingImplCopyWithImpl(
-      _$ProfileLoadingImpl _value, $Res Function(_$ProfileLoadingImpl) _then)
+class __$$ProfileUserLoadingImplCopyWithImpl<$Res>
+    extends _$ProfileStateCopyWithImpl<$Res, _$ProfileUserLoadingImpl>
+    implements _$$ProfileUserLoadingImplCopyWith<$Res> {
+  __$$ProfileUserLoadingImplCopyWithImpl(_$ProfileUserLoadingImpl _value,
+      $Res Function(_$ProfileUserLoadingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ProfileLoadingImpl implements ProfileLoading {
-  const _$ProfileLoadingImpl();
+class _$ProfileUserLoadingImpl implements ProfileUserLoading {
+  const _$ProfileUserLoadingImpl();
 
   @override
   String toString() {
@@ -231,7 +235,7 @@ class _$ProfileLoadingImpl implements ProfileLoading {
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ProfileLoadingImpl);
+        (other.runtimeType == runtimeType && other is _$ProfileUserLoadingImpl);
   }
 
   @override
@@ -242,7 +246,7 @@ class _$ProfileLoadingImpl implements ProfileLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() profileDataLoading,
-    required TResult Function(ProfileUserData profileUserData)
+    required TResult Function(ProfileUserResponse profileUserResponse)
         profileDataSuccess,
     required TResult Function(String error) profileDataFailure,
   }) {
@@ -254,7 +258,8 @@ class _$ProfileLoadingImpl implements ProfileLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? profileDataLoading,
-    TResult? Function(ProfileUserData profileUserData)? profileDataSuccess,
+    TResult? Function(ProfileUserResponse profileUserResponse)?
+        profileDataSuccess,
     TResult? Function(String error)? profileDataFailure,
   }) {
     return profileDataLoading?.call();
@@ -265,7 +270,8 @@ class _$ProfileLoadingImpl implements ProfileLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? profileDataLoading,
-    TResult Function(ProfileUserData profileUserData)? profileDataSuccess,
+    TResult Function(ProfileUserResponse profileUserResponse)?
+        profileDataSuccess,
     TResult Function(String error)? profileDataFailure,
     required TResult orElse(),
   }) {
@@ -279,8 +285,8 @@ class _$ProfileLoadingImpl implements ProfileLoading {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(ProfileLoading value) profileDataLoading,
-    required TResult Function(ProfileDataSuccess value) profileDataSuccess,
+    required TResult Function(ProfileUserLoading value) profileDataLoading,
+    required TResult Function(ProfileUserSuccess value) profileDataSuccess,
     required TResult Function(ProfileDataFailure value) profileDataFailure,
   }) {
     return profileDataLoading(this);
@@ -290,8 +296,8 @@ class _$ProfileLoadingImpl implements ProfileLoading {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(ProfileLoading value)? profileDataLoading,
-    TResult? Function(ProfileDataSuccess value)? profileDataSuccess,
+    TResult? Function(ProfileUserLoading value)? profileDataLoading,
+    TResult? Function(ProfileUserSuccess value)? profileDataSuccess,
     TResult? Function(ProfileDataFailure value)? profileDataFailure,
   }) {
     return profileDataLoading?.call(this);
@@ -301,8 +307,8 @@ class _$ProfileLoadingImpl implements ProfileLoading {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(ProfileLoading value)? profileDataLoading,
-    TResult Function(ProfileDataSuccess value)? profileDataSuccess,
+    TResult Function(ProfileUserLoading value)? profileDataLoading,
+    TResult Function(ProfileUserSuccess value)? profileDataSuccess,
     TResult Function(ProfileDataFailure value)? profileDataFailure,
     required TResult orElse(),
   }) {
@@ -313,71 +319,71 @@ class _$ProfileLoadingImpl implements ProfileLoading {
   }
 }
 
-abstract class ProfileLoading implements ProfileState {
-  const factory ProfileLoading() = _$ProfileLoadingImpl;
+abstract class ProfileUserLoading implements ProfileState {
+  const factory ProfileUserLoading() = _$ProfileUserLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$ProfileDataSuccessImplCopyWith<$Res> {
-  factory _$$ProfileDataSuccessImplCopyWith(_$ProfileDataSuccessImpl value,
-          $Res Function(_$ProfileDataSuccessImpl) then) =
-      __$$ProfileDataSuccessImplCopyWithImpl<$Res>;
+abstract class _$$ProfileUserSuccessImplCopyWith<$Res> {
+  factory _$$ProfileUserSuccessImplCopyWith(_$ProfileUserSuccessImpl value,
+          $Res Function(_$ProfileUserSuccessImpl) then) =
+      __$$ProfileUserSuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({ProfileUserData profileUserData});
+  $Res call({ProfileUserResponse profileUserResponse});
 }
 
 /// @nodoc
-class __$$ProfileDataSuccessImplCopyWithImpl<$Res>
-    extends _$ProfileStateCopyWithImpl<$Res, _$ProfileDataSuccessImpl>
-    implements _$$ProfileDataSuccessImplCopyWith<$Res> {
-  __$$ProfileDataSuccessImplCopyWithImpl(_$ProfileDataSuccessImpl _value,
-      $Res Function(_$ProfileDataSuccessImpl) _then)
+class __$$ProfileUserSuccessImplCopyWithImpl<$Res>
+    extends _$ProfileStateCopyWithImpl<$Res, _$ProfileUserSuccessImpl>
+    implements _$$ProfileUserSuccessImplCopyWith<$Res> {
+  __$$ProfileUserSuccessImplCopyWithImpl(_$ProfileUserSuccessImpl _value,
+      $Res Function(_$ProfileUserSuccessImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? profileUserData = null,
+    Object? profileUserResponse = null,
   }) {
-    return _then(_$ProfileDataSuccessImpl(
-      null == profileUserData
-          ? _value.profileUserData
-          : profileUserData // ignore: cast_nullable_to_non_nullable
-              as ProfileUserData,
+    return _then(_$ProfileUserSuccessImpl(
+      null == profileUserResponse
+          ? _value.profileUserResponse
+          : profileUserResponse // ignore: cast_nullable_to_non_nullable
+              as ProfileUserResponse,
     ));
   }
 }
 
 /// @nodoc
 
-class _$ProfileDataSuccessImpl implements ProfileDataSuccess {
-  const _$ProfileDataSuccessImpl(this.profileUserData);
+class _$ProfileUserSuccessImpl implements ProfileUserSuccess {
+  const _$ProfileUserSuccessImpl(this.profileUserResponse);
 
   @override
-  final ProfileUserData profileUserData;
+  final ProfileUserResponse profileUserResponse;
 
   @override
   String toString() {
-    return 'ProfileState.profileDataSuccess(profileUserData: $profileUserData)';
+    return 'ProfileState.profileDataSuccess(profileUserResponse: $profileUserResponse)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ProfileDataSuccessImpl &&
-            (identical(other.profileUserData, profileUserData) ||
-                other.profileUserData == profileUserData));
+            other is _$ProfileUserSuccessImpl &&
+            (identical(other.profileUserResponse, profileUserResponse) ||
+                other.profileUserResponse == profileUserResponse));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, profileUserData);
+  int get hashCode => Object.hash(runtimeType, profileUserResponse);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ProfileDataSuccessImplCopyWith<_$ProfileDataSuccessImpl> get copyWith =>
-      __$$ProfileDataSuccessImplCopyWithImpl<_$ProfileDataSuccessImpl>(
+  _$$ProfileUserSuccessImplCopyWith<_$ProfileUserSuccessImpl> get copyWith =>
+      __$$ProfileUserSuccessImplCopyWithImpl<_$ProfileUserSuccessImpl>(
           this, _$identity);
 
   @override
@@ -385,11 +391,11 @@ class _$ProfileDataSuccessImpl implements ProfileDataSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() profileDataLoading,
-    required TResult Function(ProfileUserData profileUserData)
+    required TResult Function(ProfileUserResponse profileUserResponse)
         profileDataSuccess,
     required TResult Function(String error) profileDataFailure,
   }) {
-    return profileDataSuccess(profileUserData);
+    return profileDataSuccess(profileUserResponse);
   }
 
   @override
@@ -397,10 +403,11 @@ class _$ProfileDataSuccessImpl implements ProfileDataSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? profileDataLoading,
-    TResult? Function(ProfileUserData profileUserData)? profileDataSuccess,
+    TResult? Function(ProfileUserResponse profileUserResponse)?
+        profileDataSuccess,
     TResult? Function(String error)? profileDataFailure,
   }) {
-    return profileDataSuccess?.call(profileUserData);
+    return profileDataSuccess?.call(profileUserResponse);
   }
 
   @override
@@ -408,12 +415,13 @@ class _$ProfileDataSuccessImpl implements ProfileDataSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? profileDataLoading,
-    TResult Function(ProfileUserData profileUserData)? profileDataSuccess,
+    TResult Function(ProfileUserResponse profileUserResponse)?
+        profileDataSuccess,
     TResult Function(String error)? profileDataFailure,
     required TResult orElse(),
   }) {
     if (profileDataSuccess != null) {
-      return profileDataSuccess(profileUserData);
+      return profileDataSuccess(profileUserResponse);
     }
     return orElse();
   }
@@ -422,8 +430,8 @@ class _$ProfileDataSuccessImpl implements ProfileDataSuccess {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(ProfileLoading value) profileDataLoading,
-    required TResult Function(ProfileDataSuccess value) profileDataSuccess,
+    required TResult Function(ProfileUserLoading value) profileDataLoading,
+    required TResult Function(ProfileUserSuccess value) profileDataSuccess,
     required TResult Function(ProfileDataFailure value) profileDataFailure,
   }) {
     return profileDataSuccess(this);
@@ -433,8 +441,8 @@ class _$ProfileDataSuccessImpl implements ProfileDataSuccess {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(ProfileLoading value)? profileDataLoading,
-    TResult? Function(ProfileDataSuccess value)? profileDataSuccess,
+    TResult? Function(ProfileUserLoading value)? profileDataLoading,
+    TResult? Function(ProfileUserSuccess value)? profileDataSuccess,
     TResult? Function(ProfileDataFailure value)? profileDataFailure,
   }) {
     return profileDataSuccess?.call(this);
@@ -444,8 +452,8 @@ class _$ProfileDataSuccessImpl implements ProfileDataSuccess {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(ProfileLoading value)? profileDataLoading,
-    TResult Function(ProfileDataSuccess value)? profileDataSuccess,
+    TResult Function(ProfileUserLoading value)? profileDataLoading,
+    TResult Function(ProfileUserSuccess value)? profileDataSuccess,
     TResult Function(ProfileDataFailure value)? profileDataFailure,
     required TResult orElse(),
   }) {
@@ -456,13 +464,13 @@ class _$ProfileDataSuccessImpl implements ProfileDataSuccess {
   }
 }
 
-abstract class ProfileDataSuccess implements ProfileState {
-  const factory ProfileDataSuccess(final ProfileUserData profileUserData) =
-      _$ProfileDataSuccessImpl;
+abstract class ProfileUserSuccess implements ProfileState {
+  const factory ProfileUserSuccess(
+      final ProfileUserResponse profileUserResponse) = _$ProfileUserSuccessImpl;
 
-  ProfileUserData get profileUserData;
+  ProfileUserResponse get profileUserResponse;
   @JsonKey(ignore: true)
-  _$$ProfileDataSuccessImplCopyWith<_$ProfileDataSuccessImpl> get copyWith =>
+  _$$ProfileUserSuccessImplCopyWith<_$ProfileUserSuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -533,7 +541,7 @@ class _$ProfileDataFailureImpl implements ProfileDataFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() profileDataLoading,
-    required TResult Function(ProfileUserData profileUserData)
+    required TResult Function(ProfileUserResponse profileUserResponse)
         profileDataSuccess,
     required TResult Function(String error) profileDataFailure,
   }) {
@@ -545,7 +553,8 @@ class _$ProfileDataFailureImpl implements ProfileDataFailure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? profileDataLoading,
-    TResult? Function(ProfileUserData profileUserData)? profileDataSuccess,
+    TResult? Function(ProfileUserResponse profileUserResponse)?
+        profileDataSuccess,
     TResult? Function(String error)? profileDataFailure,
   }) {
     return profileDataFailure?.call(error);
@@ -556,7 +565,8 @@ class _$ProfileDataFailureImpl implements ProfileDataFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? profileDataLoading,
-    TResult Function(ProfileUserData profileUserData)? profileDataSuccess,
+    TResult Function(ProfileUserResponse profileUserResponse)?
+        profileDataSuccess,
     TResult Function(String error)? profileDataFailure,
     required TResult orElse(),
   }) {
@@ -570,8 +580,8 @@ class _$ProfileDataFailureImpl implements ProfileDataFailure {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(ProfileLoading value) profileDataLoading,
-    required TResult Function(ProfileDataSuccess value) profileDataSuccess,
+    required TResult Function(ProfileUserLoading value) profileDataLoading,
+    required TResult Function(ProfileUserSuccess value) profileDataSuccess,
     required TResult Function(ProfileDataFailure value) profileDataFailure,
   }) {
     return profileDataFailure(this);
@@ -581,8 +591,8 @@ class _$ProfileDataFailureImpl implements ProfileDataFailure {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(ProfileLoading value)? profileDataLoading,
-    TResult? Function(ProfileDataSuccess value)? profileDataSuccess,
+    TResult? Function(ProfileUserLoading value)? profileDataLoading,
+    TResult? Function(ProfileUserSuccess value)? profileDataSuccess,
     TResult? Function(ProfileDataFailure value)? profileDataFailure,
   }) {
     return profileDataFailure?.call(this);
@@ -592,8 +602,8 @@ class _$ProfileDataFailureImpl implements ProfileDataFailure {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(ProfileLoading value)? profileDataLoading,
-    TResult Function(ProfileDataSuccess value)? profileDataSuccess,
+    TResult Function(ProfileUserLoading value)? profileDataLoading,
+    TResult Function(ProfileUserSuccess value)? profileDataSuccess,
     TResult Function(ProfileDataFailure value)? profileDataFailure,
     required TResult orElse(),
   }) {

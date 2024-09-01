@@ -6,7 +6,7 @@ class BannerCubit extends Cubit<BannerState> {
   BannerCubit(this._bannerRepo) : super(const BannerState.initial());
   final BannerRepo _bannerRepo;
 
-  void fetchBannerDate() async {
+ Future <void> fetchBannerDate() async {
     emit(const BannerState.bannerLoading());
     final response = await _bannerRepo.getBannerDate();
     response.when(success: (bannerResponse) {
