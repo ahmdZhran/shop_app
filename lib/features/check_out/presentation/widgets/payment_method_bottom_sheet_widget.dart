@@ -45,11 +45,11 @@ class _PaymentMethodsBottomSheetState extends State<PaymentMethodsBottomSheet> {
             listener: (context, state) {
               state.when(
                 initial: () {},
-                loading: () {},
-                success: () {
+                checkoutLoading: () {},
+                checkoutSuccess: () {
                   context.pushNamed(Routes.thankYou);
                 },
-                failure: (error) {
+                checkoutFailure: (error) {
                   ShowToast.showToastErrorBottom(message: error);
                 },
                 payPalPaymentPrepared: (amount) {
@@ -80,7 +80,7 @@ class _PaymentMethodsBottomSheetState extends State<PaymentMethodsBottomSheet> {
             child: BlocBuilder<CheckoutCubit, CheckoutState>(
               builder: (context, state) {
                 return state.maybeWhen(
-                  loading: () => const CircularProgressIndicator(),
+                  checkoutLoading: () => const CircularProgressIndicator(),
                   orElse: () => CustomButton(
                     onPressed: () {
                       if (selectedPaymentMethodIndex == 0) {

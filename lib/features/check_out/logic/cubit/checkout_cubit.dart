@@ -15,19 +15,20 @@ class CheckoutCubit extends Cubit<CheckoutState> {
   CheckoutCubit(this._checkoutRepo) : super(const CheckoutState.initial());
 
   Future<void> makePaymentWithStripe(PaymentIntentInputModel inputModel) async {
-    emit(const CheckoutState.loading());
+    emit(const CheckoutState.checkoutLoading());
 
     try {
       bool paymentSuccess =
           await _checkoutRepo.makePayment(paymentIntentInputModel: inputModel);
 
       if (paymentSuccess) {
-        emit(const CheckoutState.success());
+        emit(const CheckoutState.checkoutSuccess());
       } else {
-        emit(const CheckoutState.failure('Payment was not successful.'));
+        emit(
+            const CheckoutState.checkoutFailure('Payment was not successful.'));
       }
     } catch (e) {
-      emit(CheckoutState.failure('Payment failed: $e'));
+      emit(CheckoutState.checkoutFailure('Payment failed: $e'));
     }
   }
 
