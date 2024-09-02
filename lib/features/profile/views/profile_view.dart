@@ -7,7 +7,6 @@ import 'package:shop_app/features/profile/logic/cubit/profile_cubit.dart';
 import 'package:shop_app/features/profile/logic/cubit/profile_state.dart';
 import '../../../core/utils/text_styles.dart';
 import '../../../core/widgets/custom_buttons.dart';
-import '../widgets/edit_or_logout_button_widget.dart';
 import '../widgets/profile_info_widget.dart';
 
 class ProfileView extends StatefulWidget {
