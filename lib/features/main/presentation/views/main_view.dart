@@ -23,48 +23,49 @@ class MainView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        resizeToAvoidBottomInset: false,
         body: MultiBlocProvider(
-      providers: [
-        BlocProvider(
-          create: (_) => BannerCubit(getIt()),
-        ),
-        BlocProvider(
-          create: (_) => CategoriesCubit(getIt()),
-        ),
-        BlocProvider(
-          create: (_) => ProductsCubit(getIt()),
-        ),
-        BlocProvider(
-          create: (_) => FavoriteCubit(getIt())..fetchFavoriteItems(),
-        ),
-        BlocProvider(
-          create: (_) => ProfileCubit(getIt()),
-        ),
-        BlocProvider(
-          create: (_) => SearchCubit(getIt()),
-        ),
-        BlocProvider(
-          create: (_) => CartCubit(getIt()),
-        ),
-      ],
-      child: Column(
-        children: [
-          Expanded(child:
-              BlocBuilder<NavBarCubit, NavBarState>(builder: (context, state) {
-            final cubit = context.read<NavBarCubit>();
-            if (cubit.navBarEnum == NavBarEnum.search) {
-              return const SearchView();
-            } else if (cubit.navBarEnum == NavBarEnum.favorites) {
-              return const FavoritesView();
-            } else if (cubit.navBarEnum == NavBarEnum.profile) {
-              return const ProfileView();
-            } else {
-              return const HomeView();
-            }
-          })),
-          const MainBottonNavBar(),
-        ],
-      ),
-    ));
+          providers: [
+            BlocProvider(
+              create: (_) => BannerCubit(getIt()),
+            ),
+            BlocProvider(
+              create: (_) => CategoriesCubit(getIt()),
+            ),
+            BlocProvider(
+              create: (_) => ProductsCubit(getIt()),
+            ),
+            BlocProvider(
+              create: (_) => FavoriteCubit(getIt())..fetchFavoriteItems(),
+            ),
+            BlocProvider(
+              create: (_) => ProfileCubit(getIt()),
+            ),
+            BlocProvider(
+              create: (_) => SearchCubit(getIt()),
+            ),
+            BlocProvider(
+              create: (_) => CartCubit(getIt()),
+            ),
+          ],
+          child: Column(
+            children: [
+              Expanded(child: BlocBuilder<NavBarCubit, NavBarState>(
+                  builder: (context, state) {
+                final cubit = context.read<NavBarCubit>();
+                if (cubit.navBarEnum == NavBarEnum.search) {
+                  return const SearchView();
+                } else if (cubit.navBarEnum == NavBarEnum.favorites) {
+                  return const FavoritesView();
+                } else if (cubit.navBarEnum == NavBarEnum.profile) {
+                  return const ProfileView();
+                } else {
+                  return const HomeView();
+                }
+              })),
+              const MainBottonNavBar(),
+            ],
+          ),
+        ));
   }
 }
