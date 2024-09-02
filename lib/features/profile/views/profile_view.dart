@@ -5,7 +5,8 @@ import 'package:shop_app/core/helper/extensions.dart';
 import 'package:shop_app/core/utils/color_manager.dart';
 import 'package:shop_app/features/profile/logic/cubit/profile_cubit.dart';
 import 'package:shop_app/features/profile/logic/cubit/profile_state.dart';
-import '../widgets/edit_or_logout_button_widget.dart';
+import '../../../core/utils/text_styles.dart';
+import '../../../core/widgets/custom_buttons.dart';
 import '../widgets/profile_info_widget.dart';
 
 class ProfileView extends StatefulWidget {
@@ -74,7 +75,22 @@ class _ProfileViewState extends State<ProfileView> {
                       ),
                     ),
                     35.0.getVerticalSpacer(),
-                    const EditOrLogOutButtonsWidget(),
+                    Align(
+                      alignment: Alignment.topRight,
+                      child: SizedBox(
+                        height: 50.h,
+                        width: 150,
+                        child: CustomButton(
+                          onPressed: () {},
+                          text: Text(
+                            'Log out',
+                            style: CustomTextStyle.medium16.copyWith(
+                                color: Colors.redAccent, fontSize: 15),
+                          ),
+                          color: ColorManager.kBlackColor,
+                        ),
+                      ),
+                    ),
                   ],
                 );
               },
