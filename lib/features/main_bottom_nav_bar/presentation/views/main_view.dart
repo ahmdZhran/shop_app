@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shop_app/core/di/dependency_injection.dart';
-import 'package:shop_app/features/favorites/cubit/favorit_cubit.dart';
-import 'package:shop_app/features/search/logic/cubit/search_cubit.dart';
+import '../../../../core/di/dependency_injection.dart';
+import '../../../favorites/cubit/favorit_cubit.dart';
+import '../../../search/logic/cubit/search_cubit.dart';
 import '../../../favorites/presentations/views/favorites_view.dart';
 import '../../../home/presentation/views/home_view.dart';
 import '../../../profile/views/profile_view.dart';

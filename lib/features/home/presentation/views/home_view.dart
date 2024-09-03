@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shop_app/core/utils/color_manager.dart';
-import 'package:shop_app/features/home/cubits/banner/banner_cubit.dart';
-import 'package:shop_app/features/home/cubits/categories/categories_cubit.dart';
-import 'package:shop_app/features/home/cubits/products/products_cubit.dart';
+import '../../../../core/utils/color_manager.dart';
+import '../../cubits/banner/banner_cubit.dart';
+import '../../cubits/categories/categories_cubit.dart';
+import '../../cubits/products/products_cubit.dart';
 import '../../../../core/helper/extensions.dart';
 import '../widgets/banners_section/banner_bloc_builder.dart';
 import '../widgets/cart_head_icon.dart';

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
-import 'package:shop_app/core/di/dependency_injection.dart';
-import 'package:shop_app/core/widgets/custom_toast.dart';
+import '../../../../core/di/dependency_injection.dart';
+import '../../../../core/widgets/custom_toast.dart';
 import '../../cubits/cubit/cart_cubit.dart';
 import '../../cubits/cubit/cart_state.dart';
 import '../widgets/cart_app_bar_.dart';

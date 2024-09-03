@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shop_app/core/widgets/custom_toast.dart';
+import '../../../../core/widgets/custom_toast.dart';
 import '../../../../core/utils/color_manager.dart';
 import '../../../../core/helper/extensions.dart';
 import '../../../../core/utils/app_strings.dart';

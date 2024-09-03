@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shop_app/features/check_out/logic/cubit/checkout_cubit.dart';
-import 'package:shop_app/features/check_out/presentation/views/check_out.dart';
-import 'package:shop_app/features/check_out/presentation/views/thank_you_view.dart';
+import '../../features/check_out/logic/cubit/checkout_cubit.dart';
+import '../../features/check_out/presentation/views/check_out.dart';
+import '../../features/check_out/presentation/views/thank_you_view.dart';
 import '../../features/cart/presentation/views/cart_view.dart';
 import '../../features/check_out/presentation/views/order_not_confirmed_view.dart';
 import '../../features/main_bottom_nav_bar/presentation/views/main_view.dart';

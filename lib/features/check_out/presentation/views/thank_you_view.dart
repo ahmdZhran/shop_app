@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:shop_app/core/helper/extensions.dart';
-import 'package:shop_app/core/router/routes.dart';
-import 'package:shop_app/core/utils/app_assets.dart';
-import 'package:shop_app/core/utils/color_manager.dart';
-import 'package:shop_app/core/utils/text_styles.dart';
-import 'package:shop_app/core/widgets/custom_buttons.dart';
+import '../../../../core/helper/extensions.dart';
+import '../../../../core/router/routes.dart';
+import '../../../../core/utils/app_assets.dart';
+import '../../../../core/utils/color_manager.dart';
+import '../../../../core/utils/text_styles.dart';
+import '../../../../core/widgets/custom_buttons.dart';
 
 class ThankYouView extends StatelessWidget {
   const ThankYouView({super.key});

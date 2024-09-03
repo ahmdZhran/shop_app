@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shop_app/core/di/dependency_injection.dart';
+import '../../../../core/di/dependency_injection.dart';
 import '../../cubit/favorit_cubit.dart';
 import '../../cubit/favorit_state.dart';
 import 'package:flutter_animate/flutter_animate.dart';

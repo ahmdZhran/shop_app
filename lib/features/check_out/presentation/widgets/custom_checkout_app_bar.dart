@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/core/helper/extensions.dart';
+import '../../../../core/helper/extensions.dart';
 
 import '../../../../core/utils/text_styles.dart';
 import '../../../../core/widgets/back_arrow_button.dart';

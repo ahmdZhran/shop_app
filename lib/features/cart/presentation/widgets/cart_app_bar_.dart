@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shop_app/features/cart/cubits/cubit/cart_cubit.dart';
+import '../../cubits/cubit/cart_cubit.dart';
 
 import '../../../../core/utils/color_manager.dart';
 import '../../../../core/utils/text_styles.dart';

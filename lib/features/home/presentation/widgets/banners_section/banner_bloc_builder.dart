@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shop_app/core/utils/color_manager.dart';
-import 'package:shop_app/core/utils/text_styles.dart';
+import '../../../../../core/utils/color_manager.dart';
+import '../../../../../core/utils/text_styles.dart';
 import '../../../../../core/di/dependency_injection.dart';
 import 'banners_list.dart';
 import 'shimmer_banner_slider.dart';
