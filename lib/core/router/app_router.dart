@@ -4,7 +4,6 @@ import 'package:shop_app/features/check_out/logic/cubit/checkout_cubit.dart';
 import 'package:shop_app/features/check_out/presentation/views/check_out.dart';
 import 'package:shop_app/features/check_out/presentation/views/orderd_not_confirmed_view.dart';
 import 'package:shop_app/features/check_out/presentation/views/thank_you_view.dart';
-import '../../features/cart/cubits/cubit/cart_cubit.dart';
 import '../../features/cart/presentation/views/cart_view.dart';
 import '../../features/main_bottom_nav_bar/presentation/views/main_view.dart';
 import '../../features/product_details/presentation/views/product_details.dart';
