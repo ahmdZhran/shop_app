@@ -6,7 +6,7 @@ part of 'payment_intent_input_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-PaymentIntentInputModel _$PaymentIntentInputModelFromJson(
+PaymentIntentInputModel $PaymentIntentInputModelFromJson(
         Map<String, dynamic> json) =>
     PaymentIntentInputModel(
       amount: (json['amount'] as num).toInt(),

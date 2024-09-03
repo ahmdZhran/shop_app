@@ -18,14 +18,3 @@ ProfileUserData _$ProfileUserDataFromJson(Map<String, dynamic> json) =>
       token: json['token'] as String,
     );
 
-Map<String, dynamic> _$ProfileUserDataToJson(ProfileUserData instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'email': instance.email,
-      'phone': instance.phone,
-      'image': instance.image,
-      'points': instance.points,
-      'credit': instance.credit,
-      'token': instance.token,
-    };

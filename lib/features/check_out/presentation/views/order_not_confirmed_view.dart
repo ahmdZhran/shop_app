@@ -18,7 +18,7 @@ class OrderNotConfirmed extends StatelessWidget {
         child: Column(
           children: [
             SvgPicture.asset(
-              AppAssets.oroderNotConfirmed,
+              AppAssets.orderNotConfirmed,
               height: 200.h,
               width: 200.w,
             ),
@@ -36,7 +36,7 @@ class OrderNotConfirmed extends StatelessWidget {
             Align(
               alignment: Alignment.center,
               child: Text(
-                "something went wrong we coudn't process your payment. contact our support if you have lost money",
+                "something went wrong we couldn't process your payment. contact our support if you have lost money",
                 style: CustomTextStyle.medium25.copyWith(
                   color: ColorManager.kPrimaryColor,
                   fontWeight: FontWeight.bold,
@@ -51,7 +51,7 @@ class OrderNotConfirmed extends StatelessWidget {
                   context.pop();
                 },
                 text: Text(
-                  'Rety payment',
+                  'Retry payment',
                   style: CustomTextStyle.medium16.copyWith(
                       fontWeight: FontWeight.bold, color: Colors.white),
                 ))

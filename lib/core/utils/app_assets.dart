@@ -40,5 +40,5 @@ class AppAssets {
 
   // Thank you
   static const String oroderConfirmed = "assets/svg/order_confirmed.svg";
-  static const String oroderNotConfirmed = "assets/svg/order_not_onfirmed.svg";
+  static const String orderNotConfirmed = "assets/svg/order_not_onfirmed.svg";
 }

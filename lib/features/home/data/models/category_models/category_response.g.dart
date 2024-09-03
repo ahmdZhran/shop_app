@@ -15,13 +15,6 @@ CategoryResponse _$CategoryResponseFromJson(Map<String, dynamic> json) =>
           : CategoryDataWrapper.fromJson(json['data'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$CategoryResponseToJson(CategoryResponse instance) =>
-    <String, dynamic>{
-      'status': instance.status,
-      'message': instance.message,
-      'data': instance.categoryDataWrapper,
-    };
-
 CategoryDataWrapper _$CategoryDataWrapperFromJson(Map<String, dynamic> json) =>
     CategoryDataWrapper(
       currentPage: (json['current_page'] as num?)?.toInt(),
@@ -40,32 +33,8 @@ CategoryDataWrapper _$CategoryDataWrapperFromJson(Map<String, dynamic> json) =>
       total: (json['total'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$CategoryDataWrapperToJson(
-        CategoryDataWrapper instance) =>
-    <String, dynamic>{
-      'current_page': instance.currentPage,
-      'data': instance.categories,
-      'first_page_url': instance.firstPageUrl,
-      'from': instance.from,
-      'last_page': instance.lastPage,
-      'last_page_url': instance.lastPageUrl,
-      'next_page_url': instance.nextPageUrl,
-      'path': instance.path,
-      'per_page': instance.perPage,
-      'prev_page_url': instance.prevPageUrl,
-      'to': instance.to,
-      'total': instance.total,
-    };
-
 CategoryData _$CategoryDataFromJson(Map<String, dynamic> json) => CategoryData(
       id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
       image: json['image'] as String?,
     );
-
-Map<String, dynamic> _$CategoryDataToJson(CategoryData instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'image': instance.image,
-    };
