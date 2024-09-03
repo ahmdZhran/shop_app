@@ -7,8 +7,8 @@ import '../../../cubits/products/products_state.dart';
 import 'products_gride.dart';
 import 'shimmer_card_item.dart';
 
-class ProductsList extends StatelessWidget {
-  const ProductsList({super.key});
+class ProductsBlocBuilderList extends StatelessWidget {
+  const ProductsBlocBuilderList({super.key});
 
   @override
   Widget build(BuildContext context) {

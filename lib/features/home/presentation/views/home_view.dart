@@ -11,7 +11,7 @@ import '../../../../core/helper/extensions.dart';
 import '../widgets/banners_section/banner_bloc_builder.dart';
 import '../widgets/cart_head_icon.dart';
 import '../widgets/categories_section/categories_bloc_builder.dart';
-import '../widgets/products_section/products_bloc_builder.dart';
+import '../widgets/products_section/products_bloc_builder_list.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -51,7 +51,7 @@ class _HomeViewState extends State<HomeView> {
                       .copyWith(fontSize: 17.sp),
                 ),
                 20.0.getVerticalSpacer(),
-                const ProductsList(),
+                const ProductsBlocBuilderList(),
               ],
             ),
           ),
