@@ -19,7 +19,7 @@ class ThankYouView extends StatelessWidget {
       child: Column(
         children: [
           SvgPicture.asset(
-            AppAssets.oroderConfirmed,
+            AppAssets.orderConfirmed,
             height: 200.h,
             width: 200.w,
           ),

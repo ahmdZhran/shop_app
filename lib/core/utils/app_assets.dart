@@ -4,7 +4,7 @@ class AppAssets {
   static const String imageOnBoarding1 = "assets/svg/onboarding2.svg";
   static const String imageOnBoarding2 = "assets/svg/onboarding3.svg";
 
-  /// assets for navigatoin bar
+  /// assets for navigation bar
   static const String cart = "assets/images/cart.svg";
   static const String cartActive = "assets/images/cart_active.svg";
   static const String profileActive = "assets/images/user_active.svg";
@@ -39,6 +39,6 @@ class AppAssets {
       "assets/lottie/checkout_cart_shopping.json";
 
   // Thank you
-  static const String oroderConfirmed = "assets/svg/order_confirmed.svg";
+  static const String orderConfirmed = "assets/svg/order_confirmed.svg";
   static const String orderNotConfirmed = "assets/svg/order_not_onfirmed.svg";
 }
