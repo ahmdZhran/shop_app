@@ -19,7 +19,7 @@ void main() async {
   await Hive.openBox<FavoriteItemModel>('favorites');
   Hive.registerAdapter(CartItemModelAdapter());
   await Hive.openBox<CartItemModel>('cart_items');
-  setupGetIt();
+ await setupGetIt();
 
   // Stripe
   Stripe.publishableKey = ApiKeys.stripePublishableKey;

@@ -34,13 +34,19 @@ class _EmailAndPasswordFieldsState extends State<EmailAndPasswordFields> {
     return BlocListener<LoginCubit, LoginState>(
       listener: (context, state) {
         state.whenOrNull(
-          loading: () => Center(
-              child: CircularProgressIndicator(
-            color: ColorManager.kPrimaryColor,
-          )),
+          loading: () {
+            showDialog(
+              context: context,
+              builder: (context) => Center(
+                child: CircularProgressIndicator(
+                  color: ColorManager.kPrimaryColor,
+                ),
+              ),
+            );
+          },
           success: (loginResponse) {
             context.pop();
-            context.pushNamed(Routes.home);
+            context.pushNamed(Routes.mainScreen);
           },
           error: (error) {
             ShowToast.showToastErrorBottom(message: error);

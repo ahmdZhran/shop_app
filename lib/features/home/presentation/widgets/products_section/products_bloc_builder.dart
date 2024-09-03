@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shop_app/core/di/dependency_injection.dart';
 
 import '../../../cubits/products/products_cubit.dart';
 import '../../../cubits/products/products_state.dart';
@@ -11,13 +12,18 @@ class ProductsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ProductsCubit, ProductsState>(builder: (context, state) {
-      return state.maybeWhen(
-        productsLoading: () => const Center(child: ShimmerCardItem()),
-        productsSuccess: (productResponse) =>
-            ProductsGrid(products: productResponse.data!.products!),
-        orElse: () => const SizedBox.shrink(),
-      );
-    });
+    return BlocProvider(
+      create: (context) => ProductsCubit(getIt())..fetchHomeProducts(),
+      child: BlocBuilder<ProductsCubit, ProductsState>(
+        builder: (context, state) {
+          return state.maybeWhen(
+            productsLoading: () => const Center(child: ShimmerCardItem()),
+            productsSuccess: (productResponse) =>
+                ProductsGrid(products: productResponse.data!.products!),
+            orElse: () => const SizedBox.shrink(),
+          );
+        },
+      ),
+    );
   }
 }

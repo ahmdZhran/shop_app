@@ -9,15 +9,16 @@ class LoginView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        resizeToAvoidBottomInset: true,
         body: SingleChildScrollView(
-      child: Column(
-        children: [
-          100.0.getVerticalSpacer(),
-          const HeadOfLoginView(),
-          110.0.getVerticalSpacer(),
-          const LoginBodyWidget()
-        ],
-      ),
-    ));
+          child: Column(
+            children: [
+              100.0.getVerticalSpacer(),
+              const HeadOfLoginView(),
+              110.0.getVerticalSpacer(),
+              const LoginBodyWidget()
+            ],
+          ),
+        ));
   }
 }

@@ -6,12 +6,11 @@ import 'package:shop_app/features/check_out/presentation/views/orderd_not_confir
 import 'package:shop_app/features/check_out/presentation/views/thank_you_view.dart';
 import '../../features/cart/cubits/cubit/cart_cubit.dart';
 import '../../features/cart/presentation/views/cart_view.dart';
-import '../../features/main/logic/cubit/nav_bar_cubit.dart';
+import '../../features/main_bottom_nav_bar/presentation/views/main_view.dart';
 import '../../features/product_details/presentation/views/product_details.dart';
 import '../../features/home/presentation/views/home_view.dart';
 import '../../features/login/logic/cubit/login_cubit.dart';
 import '../../features/login/presentation/views/login_view.dart';
-import '../../features/main/presentation/views/main_view.dart';
 import '../../features/onboarding/presentation/views/onboarding_view.dart';
 import '../../features/sign_up/logic/cubit/signup_cubit.dart';
 import '../../features/sign_up/presentation/views/sign_up_view.dart';
@@ -42,24 +41,14 @@ class AppRouter {
 
       case Routes.mainScreen:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (context) => NavBarCubit(),
-            child: const MainView(),
-          ),
+          builder: (_) => const MainView(),
         );
-
-      // case Routes.allProducts:
-      //   return MaterialPageRoute(builder: (_) => const AllProducts());
 
       case Routes.home:
         return MaterialPageRoute(builder: (_) => const HomeView());
 
       case Routes.cart:
-        return MaterialPageRoute(
-            builder: (_) => BlocProvider(
-                  create: (context) => CartCubit(getIt())..fetchCartItems(),
-                  child: const CartView(),
-                ));
+        return MaterialPageRoute(builder: (_) => const CartView());
 
       case Routes.thankYou:
         return MaterialPageRoute(

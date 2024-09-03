@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
 import '../../../../core/utils/app_assets.dart';
-
 import '../../logic/cubit/search_cubit.dart';
 import '../../logic/cubit/search_state.dart';
 
@@ -20,7 +19,8 @@ class SearchBlocBuilder extends StatelessWidget {
         builder: (context, state) {
           return state.maybeWhen(
               searchLoading: () => Center(
-                    child: LottieBuilder.asset(AppAssets.lottieSearchOnResult),
+                    child:
+                        LottieBuilder.asset(AppAssets.lottieSearchOnResult),
                   ),
               searchSuccess: (products) => ListView.builder(
                     itemCount: products.length,
