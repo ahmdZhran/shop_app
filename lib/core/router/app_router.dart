@@ -5,6 +5,7 @@ import '../../features/check_out/presentation/views/check_out.dart';
 import '../../features/check_out/presentation/views/thank_you_view.dart';
 import '../../features/cart/presentation/views/cart_view.dart';
 import '../../features/check_out/presentation/views/order_not_confirmed_view.dart';
+import '../../features/favorites/cubit/favorit_cubit.dart';
 import '../../features/main_bottom_nav_bar/presentation/views/main_view.dart';
 import '../../features/product_details/presentation/views/product_details.dart';
 import '../../features/home/presentation/views/home_view.dart';
@@ -40,7 +41,12 @@ class AppRouter {
 
       case Routes.mainScreen:
         return MaterialPageRoute(
-          builder: (_) => const MainView(),
+          builder: (_) => MultiBlocProvider(
+            providers:  [
+               BlocProvider(create: (context) => FavoriteCubit(getIt())),
+            ],
+            child: const MainView(),
+          ),
         );
 
       case Routes.home:

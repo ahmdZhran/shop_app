@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/di/dependency_injection.dart';
-import '../../../favorites/cubit/favorit_cubit.dart';
 import '../../../search/logic/cubit/search_cubit.dart';
 import '../../../favorites/presentations/views/favorites_view.dart';
 import '../../../home/presentation/views/home_view.dart';
@@ -25,10 +24,7 @@ class MainViewState extends State<MainView> {
       create: (context) => SearchCubit(getIt()),
       child: const SearchView(),
     ),
-    BlocProvider(
-      create: (context) => FavoriteCubit(getIt()),
-      child: const FavoritesView(),
-    ),
+    const FavoritesView(),
     const ProfileView(),
   ];
 

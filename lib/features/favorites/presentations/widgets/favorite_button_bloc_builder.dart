@@ -32,35 +32,31 @@ class FavoritButtonBlocBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => FavoriteCubit(getIt()),
-      child: BlocBuilder<FavoriteCubit, FavoritState>(
-        builder: (context, state) {
-          final isFavorite =
-              context.read<FavoriteCubit>().isFavorite(productId);
-          return IconButton(
-            onPressed: () {
-              final favoriteItem = FavoriteItemModel(
-                id: productId,
-                name: titleOfItem,
-                image: imageUrl,
-                price: price,
-                images: images,
-                discount: discount,
-                oldPrice: oldPrice,
-                description: description,
-              );
-              if (isFavorite) {
-                context.read<FavoriteCubit>().removeFromFavorit(productId);
-              } else {
-                context.read<FavoriteCubit>().addToFavorit(favoriteItem);
-              }
-            },
-            icon: Icon(isFavorite ? Icons.favorite : Icons.favorite_border),
-            color: ColorManager.kPrimaryColor,
-          ).animate(target: isFavorite ? 1 : 0).scaleXY(end: 1.2);
-        },
-      ),
+    return BlocBuilder<FavoriteCubit, FavoritState>(
+      builder: (context, state) {
+        final isFavorite = context.read<FavoriteCubit>().isFavorite(productId);
+        return IconButton(
+          onPressed: () {
+            final favoriteItem = FavoriteItemModel(
+              id: productId,
+              name: titleOfItem,
+              image: imageUrl,
+              price: price,
+              images: images,
+              discount: discount,
+              oldPrice: oldPrice,
+              description: description,
+            );
+            if (isFavorite) {
+              context.read<FavoriteCubit>().removeFromFavorit(productId);
+            } else {
+              context.read<FavoriteCubit>().addToFavorit(favoriteItem);
+            }
+          },
+          icon: Icon(isFavorite ? Icons.favorite : Icons.favorite_border),
+          color: ColorManager.kPrimaryColor,
+        ).animate(target: isFavorite ? 1 : 0).scaleXY(end: 1.2);
+      },
     );
   }
 }
