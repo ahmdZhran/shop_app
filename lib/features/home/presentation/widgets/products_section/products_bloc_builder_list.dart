@@ -20,7 +20,45 @@ class ProductsBlocBuilderList extends StatelessWidget {
             productsLoading: () => const Center(child: ShimmerCardItem()),
             productsSuccess: (productResponse) =>
                 ProductsGrid(products: productResponse.data!.products!),
-            orElse: () => const SizedBox.shrink(),
+            orElse: () => RefreshIndicator(
+              onRefresh: () async {
+                context.read<ProductsCubit>().fetchHomeProducts();
+              },
+              child: Center(
+                child: ListView(
+                  shrinkWrap: true,
+                  children: [
+                    const Icon(
+                      Icons.warning_amber_rounded,
+                      size: 50,
+                      color: Colors.grey,
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.all(16.0),
+                      child: Text(
+                        'Oops, something went wrong.\nPress on below button to refresh!',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.grey,
+                        ),
+                      ),
+                    ),
+                    ElevatedButton.icon(
+                      onPressed: () {
+                        context.read<ProductsCubit>().fetchHomeProducts();
+                      },
+                      icon: const Icon(Icons.refresh),
+                      label: const Text('Refresh'),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.grey[800],
+                        foregroundColor: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           );
         },
       ),
