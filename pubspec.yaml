@@ -159,6 +159,6 @@ flutter:
 flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "assets/images/shop_logo.png.png"
+  image_path: "assets/images/ic_launcher.png"
   adaptive_ion_background: "#000000"
-  adaptive_ion_foreground: "assets/images/ic_launcher.png"
+  # adaptive_ion_foreground: "assets/images/ic_launcher.png"
