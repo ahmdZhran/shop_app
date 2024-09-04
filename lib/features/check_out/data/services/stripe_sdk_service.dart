@@ -14,17 +14,13 @@ class StripeSdkService {
    Future<bool> displayPaymentSheet() async {
     try {
       await Stripe.instance.presentPaymentSheet();
-      print("Payment completed successfully");
       return true;
     } on StripeException catch (e) {
       if (e.error.code == FailureCode.Canceled) {
-        print('Payment canceled by user');
       } else {
-        print('Payment failed: ${e.error.localizedMessage}');
       }
       return false;
     } catch (error) {
-      print('Error displaying payment sheet: $error');
       return false;
     }
   }

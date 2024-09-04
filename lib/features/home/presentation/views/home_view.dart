@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shop_app/core/utils/color_manager.dart';
-import 'package:shop_app/features/home/cubits/banner/banner_cubit.dart';
-import 'package:shop_app/features/home/cubits/categories/categories_cubit.dart';
-import 'package:shop_app/features/home/cubits/products/products_cubit.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/utils/app_strings.dart';
+import '../../../../core/utils/color_manager.dart';
+import '../../../../core/utils/text_styles.dart';
+import '../../cubits/banner/banner_cubit.dart';
+import '../../cubits/categories/categories_cubit.dart';
+import '../../cubits/products/products_cubit.dart';
 import '../../../../core/helper/extensions.dart';
 import '../widgets/banners_section/banner_bloc_builder.dart';
 import '../widgets/cart_head_icon.dart';
 import '../widgets/categories_section/categories_bloc_builder.dart';
-import '../widgets/products_section/products_bloc_builder.dart';
-import '../widgets/title_of_section.dart';
+import '../widgets/products_section/products_bloc_builder_list.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -19,12 +21,6 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  @override
-  void initState() {
-    super.initState();
-    _fetchData();
-  }
-
   Future<void> _fetchData() async {
     context.read<BannerCubit>().fetchBannerDate();
     context.read<CategoriesCubit>().fetchCategories();
@@ -49,8 +45,13 @@ class _HomeViewState extends State<HomeView> {
                 20.0.getVerticalSpacer(),
                 const CategoriesSection(),
                 20.0.getVerticalSpacer(),
-                ProductsSection(seeAllProducts: () {}),
-                const ProductsList(),
+                Text(
+                  AppStrings.products,
+                  style: CustomTextStyle.soraBoldstyleBold
+                      .copyWith(fontSize: 17.sp),
+                ),
+                20.0.getVerticalSpacer(),
+                const ProductsBlocBuilderList(),
               ],
             ),
           ),

@@ -11,7 +11,7 @@ class FavoritState with _$FavoritState {
   const factory FavoritState.loading() = FavoritLoading;
 
   const factory FavoritState.favoriteAdded(
-      List<FavoriteItemModel> fovoriteItems) = FavoriteAdded;
+      List<FavoriteItemModel> favoriteItems) = FavoriteAdded;
   const factory FavoritState.favoriteError({required String message}) =
       FavoriteError;
   const factory FavoritState.favoriteEmpty({required String message}) =

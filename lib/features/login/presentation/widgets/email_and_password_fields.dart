@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shop_app/core/widgets/custom_toast.dart';
+import '../../../../core/widgets/custom_toast.dart';
 import '../../../../core/utils/color_manager.dart';
 import '../../../../core/helper/extensions.dart';
 import '../../../../core/utils/app_strings.dart';
@@ -34,13 +34,19 @@ class _EmailAndPasswordFieldsState extends State<EmailAndPasswordFields> {
     return BlocListener<LoginCubit, LoginState>(
       listener: (context, state) {
         state.whenOrNull(
-          loading: () => Center(
-              child: CircularProgressIndicator(
-            color: ColorManager.kPrimaryColor,
-          )),
+          loading: () {
+            showDialog(
+              context: context,
+              builder: (context) => Center(
+                child: CircularProgressIndicator(
+                  color: ColorManager.kPrimaryColor,
+                ),
+              ),
+            );
+          },
           success: (loginResponse) {
             context.pop();
-            context.pushNamed(Routes.home);
+            context.pushNamed(Routes.mainScreen);
           },
           error: (error) {
             ShowToast.showToastErrorBottom(message: error);

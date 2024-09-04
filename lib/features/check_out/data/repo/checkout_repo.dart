@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../../core/networking/dio_factory.dart';
 import '../model/payment_intent_input_model/payment_intent_input_model.dart';
-import '../model/payment_intetnt_model/payment_intetn_model.dart';
+import '../model/payment_intent_model/payment_intent_model.dart';
 import '../services/api_keys.dart';
 import '../services/stripe_sdk_service.dart';
 import '../services/stripe_service.dart';
@@ -18,7 +18,6 @@ class CheckoutRepo {
       await DioFactory.setCustomToken(ApiKeys.stripeSecretKey);
       return await _stripeService.createPaymentIntent(inputModel);
     } catch (e) {
-      print('Error creating payment intent: $e');
       rethrow;
     }
   }
@@ -32,7 +31,6 @@ class CheckoutRepo {
       await _sdkService.initPaymentSheet(
           paymentIntentClientSecret: paymentIntentClientSecret);
     } catch (e) {
-      print('Error initializing payment sheet: $e');
       rethrow;
     }
   }
@@ -41,7 +39,6 @@ class CheckoutRepo {
     try {
       return await _sdkService.displayPaymentSheet();
     } catch (e) {
-      print('Error displaying payment sheet: $e');
       return false;
     }
   }

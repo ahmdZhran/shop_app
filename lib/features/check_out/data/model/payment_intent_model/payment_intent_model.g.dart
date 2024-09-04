@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'payment_intetn_model.dart';
+part of 'payment_intent_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator

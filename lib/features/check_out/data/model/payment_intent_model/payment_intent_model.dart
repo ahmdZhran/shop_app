@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'payment_intetn_model.g.dart';
+part 'payment_intent_model.g.dart';
 
 @JsonSerializable()
 class PaymentIntentModel {

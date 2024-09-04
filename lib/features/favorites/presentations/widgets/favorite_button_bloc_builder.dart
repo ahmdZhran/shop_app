@@ -4,7 +4,6 @@ import '../../cubit/favorit_cubit.dart';
 import '../../cubit/favorit_state.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import '../../data/models/favorite_item_model.dart';
-
 import '../../../../core/utils/color_manager.dart';
 
 class FavoritButtonBlocBuilder extends StatelessWidget {

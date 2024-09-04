@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:hive_flutter/adapters.dart';
-import 'package:shop_app/features/check_out/data/services/api_keys.dart';
+import 'features/check_out/data/services/api_keys.dart';
 import 'core/app/shop_app.dart';
 import 'core/di/dependency_injection.dart';
 import 'core/helper/extensions.dart';
@@ -19,7 +19,7 @@ void main() async {
   await Hive.openBox<FavoriteItemModel>('favorites');
   Hive.registerAdapter(CartItemModelAdapter());
   await Hive.openBox<CartItemModel>('cart_items');
-  setupGetIt();
+ await setupGetIt();
 
   // Stripe
   Stripe.publishableKey = ApiKeys.stripePublishableKey;

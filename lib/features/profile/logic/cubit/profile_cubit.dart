@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shop_app/features/profile/data/repos/profile_repo.dart';
+import '../../data/repos/profile_repo.dart';
 
 import 'profile_state.dart';
 

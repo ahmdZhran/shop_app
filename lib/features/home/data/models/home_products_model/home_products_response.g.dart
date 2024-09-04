@@ -16,13 +16,7 @@ HomeProductsResponse _$HomeProductsResponseFromJson(
           : HomeProductsData.fromJson(json['data'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$HomeProductsResponseToJson(
-        HomeProductsResponse instance) =>
-    <String, dynamic>{
-      'status': instance.status,
-      'message': instance.message,
-      'data': instance.data,
-    };
+
 
 HomeProductsData _$HomeProductsDataFromJson(Map<String, dynamic> json) =>
     HomeProductsData(
@@ -31,10 +25,7 @@ HomeProductsData _$HomeProductsDataFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$HomeProductsDataToJson(HomeProductsData instance) =>
-    <String, dynamic>{
-      'products': instance.products,
-    };
+
 
 ProductDetails _$ProductDetailsFromJson(Map<String, dynamic> json) =>
     ProductDetails(
@@ -51,16 +42,3 @@ ProductDetails _$ProductDetailsFromJson(Map<String, dynamic> json) =>
       inCart: json['in_cart'] as bool?,
     );
 
-Map<String, dynamic> _$ProductDetailsToJson(ProductDetails instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'price': instance.price,
-      'old_price': instance.oldPrice,
-      'discount': instance.discount,
-      'image': instance.image,
-      'name': instance.name,
-      'description': instance.description,
-      'images': instance.images,
-      'in_favorites': instance.inFavorites,
-      'in_cart': instance.inCart,
-    };

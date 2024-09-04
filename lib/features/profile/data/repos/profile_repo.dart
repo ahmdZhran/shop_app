@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
-import 'package:shop_app/core/networking/api_error_handler.dart';
-import 'package:shop_app/core/networking/api_result.dart';
-import 'package:shop_app/features/profile/data/api/profile_api_service.dart';
-import 'package:shop_app/features/profile/data/models/profile_user_response.dart';
+import '../../../../core/networking/api_error_handler.dart';
+import '../../../../core/networking/api_result.dart';
+import '../api/profile_api_service.dart';
+import '../models/profile_user_response.dart';
 
 import '../../../../core/helper/shared_prefrence.dart';
 import '../../../../core/helper/shared_prefrence_keys.dart';
