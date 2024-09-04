@@ -39,6 +39,7 @@ dependencies:
 
   # for splash screen
   flutter_native_splash: ^2.4.0
+  flutter_launcher_icons: ^0.13.1
   # for adapting screen and font size.
   flutter_screenutil: ^5.9.3
   # for dependency injection
@@ -61,6 +62,7 @@ dependencies:
   carousel_slider: ^4.2.1
   # Flutter Secure Storage provides API to store data in secure storage.
   flutter_secure_storage: ^9.2.2
+
 
   ## animation
   animate_do: ^3.3.4
@@ -143,7 +145,7 @@ flutter:
     - family: Sora
       fonts:
         - asset: assets/fonts/Sora-Bold.ttf
-    #       - asset: fonts/Schyler-Italic.ttf
+    #       
     #         style: italic
     - family: Inter
       fonts:
@@ -153,3 +155,10 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/ic_launcher.png"
+  adaptive_ion_background: "#000000"
+  # adaptive_ion_foreground: "assets/images/ic_launcher.png"
