@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shop_app/core/di/dependency_injection.dart';
-import 'package:shop_app/features/favorites/cubit/favorit_cubit.dart';
 import '../../../../favorites/presentations/widgets/favorite_button_bloc_builder.dart';
 
 class ProductCardHeader extends StatelessWidget {

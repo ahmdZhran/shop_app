@@ -42,8 +42,8 @@ class AppRouter {
       case Routes.mainScreen:
         return MaterialPageRoute(
           builder: (_) => MultiBlocProvider(
-            providers:  [
-               BlocProvider(create: (context) => FavoriteCubit(getIt())),
+            providers: [
+              BlocProvider(create: (context) => FavoriteCubit(getIt())),
             ],
             child: const MainView(),
           ),
