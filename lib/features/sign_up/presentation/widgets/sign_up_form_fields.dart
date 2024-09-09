@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shop_app/core/helper/extensions.dart';
-import 'package:shop_app/core/widgets/already_have_an_account.dart';
-import 'package:shop_app/features/sign_up/logic/cubit/signup_cubit.dart';
+import '../../../../core/helper/extensions.dart';
+import '../../../../core/widgets/already_have_an_account.dart';
+import '../../logic/cubit/signup_cubit.dart';
 import '../../../../core/router/routes.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/utils/color_manager.dart';

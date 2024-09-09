@@ -18,6 +18,19 @@ class AppAssets {
   static const String search = "assets/images/search.svg";
   static const String tag = "assets/images/Tag.svg";
   static const String arrow = "assets/images/arrow.svg";
-  static const String heart = "assets/images/heart.svg";
+  static const String favorite = "assets/images/heart.svg";
+  static const String favoriteActive = "assets/svg/active_favorite.svg";
   static const String laptop = "assets/images/Laptop.png";
+
+  // search
+  static const String searchIconSvg = "assets/svg/search.svg";
+  static const String searchActiveSvg = "assets/svg/search_active.svg";
+  static const String lottieSearchOnResult = "assets/lottie/search_result.json";
+  static const String lottieNotFound = "assets/lottie/not_found_result.json";
+
+  // Product Details
+  static const String arroBack = "assets/svg/arrow_back.svg";
+
+  // Favorites
+  static const String wishListLottie = "assets/lottie/wishlist.json";
 }

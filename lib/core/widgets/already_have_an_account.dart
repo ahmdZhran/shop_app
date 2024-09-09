@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/core/helper/extensions.dart';
-import 'package:shop_app/core/router/routes.dart';
+import '../helper/extensions.dart';
+import '../router/routes.dart';
 
 import '../utils/app_strings.dart';
 import '../utils/text_styles.dart';

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:shop_app/core/helper/extensions.dart';
-import 'package:shop_app/core/utils/app_strings.dart';
-import 'package:shop_app/core/utils/color_manager.dart';
+import '../../../../core/helper/extensions.dart';
+import '../../../../core/utils/app_strings.dart';
+import '../../../../core/utils/color_manager.dart';
 
 import '../../../../core/utils/app_assets.dart';
 import '../../../../core/utils/text_styles.dart';

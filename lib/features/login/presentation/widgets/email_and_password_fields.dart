@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shop_app/core/utils/color_manager.dart';
+import '../../../../core/utils/color_manager.dart';
 import '../../../../core/helper/extensions.dart';
-import 'package:shop_app/core/utils/app_strings.dart';
-import 'package:shop_app/core/widgets/custom_text_form_fields.dart';
-import 'package:shop_app/features/login/logic/cubit/login_cubit.dart';
+import '../../../../core/utils/app_strings.dart';
+import '../../../../core/widgets/custom_text_form_fields.dart';
+import '../../logic/cubit/login_cubit.dart';
 import '../../../../core/router/routes.dart';
 import '../../../../core/utils/text_styles.dart';
 import '../../../../core/widgets/custom_buttons.dart';

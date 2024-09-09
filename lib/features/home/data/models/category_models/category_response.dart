@@ -12,8 +12,6 @@ class CategoryResponse {
 
   factory CategoryResponse.fromJson(Map<String, dynamic> json) =>
       _$CategoryResponseFromJson(json);
-
-  Map<String, dynamic> toJson() => _$CategoryResponseToJson(this);
 }
 
 @JsonSerializable()
@@ -57,7 +55,6 @@ class CategoryDataWrapper {
   factory CategoryDataWrapper.fromJson(Map<String, dynamic> json) =>
       _$CategoryDataWrapperFromJson(json);
 
-  Map<String, dynamic> toJson() => _$CategoryDataWrapperToJson(this);
 }
 
 @JsonSerializable()
@@ -71,5 +68,4 @@ class CategoryData {
   factory CategoryData.fromJson(Map<String, dynamic> json) =>
       _$CategoryDataFromJson(json);
 
-  Map<String, dynamic> toJson() => _$CategoryDataToJson(this);
 }
