@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shop_app/features/cart/cubits/cubit/cart_cubit.dart';
 import '../../features/check_out/logic/cubit/checkout_cubit.dart';
 import '../../features/check_out/presentation/views/check_out.dart';
 import '../../features/check_out/presentation/views/thank_you_view.dart';
@@ -45,8 +44,6 @@ class AppRouter {
           builder: (_) => MultiBlocProvider(
             providers: [
               BlocProvider(create: (context) => FavoriteCubit(getIt())),
-              BlocProvider(
-                  create: (context) => CartCubit(getIt())..fetchCartItems())
             ],
             child: const MainView(),
           ),
