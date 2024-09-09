@@ -1,6 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
+import 'package:shop_app/features/check_out/data/repo/checkout_repo.dart';
 import '../../features/cart/data/repos/cart_repo.dart';
+import '../../features/check_out/data/services/stripe_sdk_service.dart';
+import '../../features/check_out/data/services/stripe_service.dart';
 import '../../features/favorits/data/repo/favorite_repo.dart';
 import '../../features/home/data/repos/banner/banner_repo.dart';
 import '../../features/home/data/repos/categories/categories_repo.dart';
@@ -42,4 +45,13 @@ Future<void> setupGetIt() async {
 
   // Cart
   getIt.registerLazySingleton<CartRepo>(() => CartRepo());
+  // StripeService
+  getIt.registerLazySingleton<StripeService>(() => StripeService(dio));
+
+  //StripeSdkService
+  getIt.registerLazySingleton<StripeSdkService>(() => StripeSdkService());
+  
+  // Stripe Repository
+  getIt.registerLazySingleton<CheckoutRepo>(() =>CheckoutRepo(getIt<StripeService>(), getIt<StripeSdkService>()));
+
 }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/core/helper/extensions.dart';
+import 'package:shop_app/core/router/routes.dart';
 import '../../../../core/utils/color_manager.dart';
 import '../../../../core/utils/text_styles.dart';
 import '../../../../core/widgets/custom_buttons.dart';
@@ -35,7 +37,9 @@ class CartTotolPriceAndCheckOut extends StatelessWidget {
           ),
           const SizedBox(height: 10.0),
           CustomButton(
-            onPressed: () {},
+            onPressed: () {
+              context.pushNamed(arguments: totalPrice, Routes.checkout);
+            },
             text: Text(
               'Check Out',
               style: CustomTextStyle.medium16,

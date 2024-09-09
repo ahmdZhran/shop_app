@@ -10,7 +10,7 @@ class DioFactory {
 
   static Dio? dio;
 
-  static Dio getDio() {
+  static Dio getDio({String? customToken, String? contentType}) {
     Duration timeOut = const Duration(seconds: 30);
 
     if (dio == null) {
@@ -18,28 +18,41 @@ class DioFactory {
       dio!
         ..options.connectTimeout = timeOut
         ..options.receiveTimeout = timeOut;
-      addDioHeaders();
+      addDioHeaders(customToken: customToken, contentType: contentType);
       addDioInterceptor();
 
       return dio!;
     } else {
+      // Update headers if dio is already created
+      addDioHeaders(customToken: customToken, contentType: contentType);
       return dio!;
     }
   }
 
-  static void addDioHeaders() async {
+  static void addDioHeaders({String? customToken, String? contentType}) async {
     dio?.options.headers = {
       'Accept': 'application/json',
       'Authorization':
-          'Bearer ${await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken)}',
+          'Bearer ${customToken ?? await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken)}',
+      if (contentType != null) 'Content-Type': contentType,
+      // Adding the custom token for specific use cases
+      'Custom-Token':
+          'sk_test_51PfL9UFyJmiXsTheSMHbJA6ynmuB6JXVBGXeLeBHmyjSgCSJBea3PY0HEedCRcwWyZPq9rCBo4zkPrGtUxXD1R3I008af9xqfO',
+    };
+  }
+
+  static Future<void> setCustomToken(String token,
+      {String? contentType}) async {
+    dio?.options.headers = {
+      'Authorization': 'Bearer $token',
+      'Content-Type': Headers.formUrlEncodedContentType,
+      'Custom-Token':
+          'sk_test_51PfL9UFyJmiXsTheSMHbJA6ynmuB6JXVBGXeLeBHmyjSgCSJBea3PY0HEedCRcwWyZPq9rCBo4zkPrGtUxXD1R3I008af9xqfO',
     };
   }
 
   static void setTokenIntoHeaderAfterLogin(String token) async {
-    dio?.options.headers = {
-      'Authorization':
-          'Bearer ${await SharedPrefHelper.getString(SharedPrefKeys.userToken)}',
-    };
+    dio?.options.headers['Authorization'] = 'Bearer $token';
   }
 
   static void addDioInterceptor() {
