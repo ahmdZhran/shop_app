@@ -42,7 +42,10 @@ class ThankYouView extends StatelessWidget {
           70.0.getVerticalSpacer(),
           CustomButton(
               onPressed: () {
-                context.pushReplacementNamed(Routes.mainScreen);
+                context.pushNamedAndRemoveUntil(
+                  Routes.mainScreen,
+                  predicate: (route) => false,
+                );
               },
               text: Text(
                 'Back to home',
