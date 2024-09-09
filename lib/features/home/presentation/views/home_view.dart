@@ -21,6 +21,12 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+  @override
+  void initState() {
+    super.initState();
+    _fetchData();
+  }
+
   Future<void> _fetchData() async {
     context.read<BannerCubit>().fetchBannerDate();
     context.read<CategoriesCubit>().fetchCategories();
