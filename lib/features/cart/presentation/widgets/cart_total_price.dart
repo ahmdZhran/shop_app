@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/core/helper/extensions.dart';
-import 'package:shop_app/core/router/routes.dart';
+import '../../../../core/helper/extensions.dart';
+import '../../../../core/router/routes.dart';
 import '../../../../core/utils/color_manager.dart';
 import '../../../../core/utils/text_styles.dart';
 import '../../../../core/widgets/custom_buttons.dart';
 
-class CartTotolPriceAndCheckOut extends StatelessWidget {
-  const CartTotolPriceAndCheckOut({
+class CartTotalPriceAndCheckOut extends StatelessWidget {
+  const CartTotalPriceAndCheckOut({
     super.key,
     required this.totalPrice,
   });

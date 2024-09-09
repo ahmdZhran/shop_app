@@ -1,10 +1,12 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
-import 'package:shop_app/features/check_out/data/repo/checkout_repo.dart';
+import '../../features/check_out/data/repo/checkout_repo.dart';
+import '../../features/profile/data/api/profile_api_service.dart';
+import '../../features/profile/data/repos/profile_repo.dart';
 import '../../features/cart/data/repos/cart_repo.dart';
 import '../../features/check_out/data/services/stripe_sdk_service.dart';
 import '../../features/check_out/data/services/stripe_service.dart';
-import '../../features/favorits/data/repo/favorite_repo.dart';
+import '../../features/favorites/data/repo/favorite_repo.dart';
 import '../../features/home/data/repos/banner/banner_repo.dart';
 import '../../features/home/data/repos/categories/categories_repo.dart';
 import '../../features/home/data/repos/products/products_repo.dart';
@@ -50,8 +52,14 @@ Future<void> setupGetIt() async {
 
   //StripeSdkService
   getIt.registerLazySingleton<StripeSdkService>(() => StripeSdkService());
-  
-  // Stripe Repository
-  getIt.registerLazySingleton<CheckoutRepo>(() =>CheckoutRepo(getIt<StripeService>(), getIt<StripeSdkService>()));
 
+  // Stripe Repository
+  getIt.registerLazySingleton<CheckoutRepo>(
+      () => CheckoutRepo(getIt<StripeService>(), getIt<StripeSdkService>()));
+
+  // profile api service
+  getIt.registerLazySingleton<ProfileApiService>(() => ProfileApiService(dio));
+
+  // profile repo
+  getIt.registerLazySingleton<ProfileRepo>(() => ProfileRepo(getIt()));
 }

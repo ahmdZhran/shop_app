@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../helper/shared_prefrence_keys.dart';
 import '../router/app_router.dart';
 import '../router/routes.dart';
@@ -23,7 +22,7 @@ class ShopApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Shop app',
         onGenerateRoute: appRouter.onGenerateRoute,
-        initialRoute: isLoggedInUser ? Routes.mainScreen : Routes.login,
+        initialRoute: isLoggedInUser ? Routes.mainScreen : Routes.onboarding,
       ),
     );
   }

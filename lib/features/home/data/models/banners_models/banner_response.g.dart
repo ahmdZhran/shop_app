@@ -15,24 +15,9 @@ BannerResponse _$BannerResponseFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$BannerResponseToJson(BannerResponse instance) =>
-    <String, dynamic>{
-      'status': instance.status,
-      'message': instance.message,
-      'data': instance.bannerData,
-    };
-
 BannerData _$BannerDataFromJson(Map<String, dynamic> json) => BannerData(
       id: (json['id'] as num?)?.toInt(),
       image: json['image'] as String?,
       category: json['category'],
       product: json['product'],
     );
-
-Map<String, dynamic> _$BannerDataToJson(BannerData instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'image': instance.image,
-      'category': instance.category,
-      'product': instance.product,
-    };

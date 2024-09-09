@@ -14,7 +14,7 @@ class OnboardingView extends StatefulWidget {
 
 class _OnboardingViewState extends State<OnboardingView> {
   final PageController _controller = PageController(initialPage: 0);
-  int currenIndex = 0;
+  int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,18 +22,18 @@ class _OnboardingViewState extends State<OnboardingView> {
         children: [
           Column(
             children: [
-              90.0.getVerticalSpacer(),
+              70.0.getVerticalSpacer(),
               OnBoardingControllerWidget(
                 onPageChanged: (index) {
                   setState(() {});
-                  currenIndex = index;
+                  currentIndex = index;
                 },
                 controller: _controller,
               ),
               20.0.getVerticalSpacer(),
               GetButtons(
                 controller: _controller,
-                currentIndex: currenIndex,
+                currentIndex: currentIndex,
                 onPressed: () {
                   _controller.nextPage(
                       duration: const Duration(milliseconds: 200),
@@ -42,7 +42,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                   context.pushNamed(Routes.signup);
                 },
               ),
-              30.0.getVerticalSpacer(),
+              16.0.getVerticalSpacer(),
               const AlreadyHaveAccountWidget()
             ],
           ),

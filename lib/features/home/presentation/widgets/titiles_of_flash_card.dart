@@ -31,7 +31,7 @@ class TextsOfFlashSalesWidget extends StatelessWidget {
         children: [
           const SizedBox(height: 10),
           Text(
-            AppStrings.flachSales,
+            AppStrings.flashSales,
             style: CustomTextStyle.semiBold16.copyWith(fontSize: 15),
           ),
           const SizedBox(height: 10),

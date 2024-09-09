@@ -1,6 +1,8 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shop_app/features/cart/cubits/cubit/cart_cubit.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../cubits/cubit/cart_cubit.dart';
 import '../../../../core/utils/color_manager.dart';
 
 class CartItemCard extends StatelessWidget {
@@ -39,14 +41,15 @@ class CartItemCard extends StatelessWidget {
       child: Row(
         children: [
           ClipRRect(
-            borderRadius: BorderRadius.circular(10.0),
-            child: Image.network(
-              imageUrl,
-              width: 80,
-              height: 80,
-              fit: BoxFit.cover,
-            ),
-          ),
+              borderRadius: BorderRadius.circular(10.0),
+              child: CachedNetworkImage(
+                  width: 70.w,
+                  height: 70.h,
+                  fit: BoxFit.cover,
+                  placeholder: (context, url) =>
+                      const CircularProgressIndicator(),
+                  errorWidget: (context, url, error) => const Icon(Icons.error),
+                  imageUrl: imageUrl)),
           const SizedBox(width: 20.0),
           Expanded(
             child: Column(

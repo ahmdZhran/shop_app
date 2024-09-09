@@ -11,7 +11,17 @@ class StripeSdkService {
     );
   }
 
-  Future displayPaymentSheet() async {
-    Stripe.instance.presentPaymentSheet();
+   Future<bool> displayPaymentSheet() async {
+    try {
+      await Stripe.instance.presentPaymentSheet();
+      return true;
+    } on StripeException catch (e) {
+      if (e.error.code == FailureCode.Canceled) {
+      } else {
+      }
+      return false;
+    } catch (error) {
+      return false;
+    }
   }
 }

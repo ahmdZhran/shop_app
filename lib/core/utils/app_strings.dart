@@ -6,20 +6,20 @@ abstract class AppStrings {
       login = 'LogIn',
       getStarted = 'Get Started',
 
-      // Strings for signin and regestration views
-      wecomeBack = 'Welcome Back!',
+      // Strings for signIn and registration views
+      welcomeBack = 'Welcome Back!',
       enterYourDetailsBelow = 'Enter your details below',
       fullName = 'Full Name',
       dontHaveAnAccount = "Don't have an account?",
       phone = 'Phone',
-      emailAdress = 'Email Adress',
+      emailAddress = 'Email Address',
       nationalId = 'National ID',
       password = 'Password',
       signUp = 'Sign Up',
       singIn = 'Sign In',
       // String for home
       searchProduct = "Search product or category...",
-      flachSales = "Flash Sales Every Day",
+      flashSales = "Flash Sales Every Day",
       timeLeft = "Time Lift : 23h :19m:27s",
       electronicDeals = "Electronic Deals",
       yourProducts = "Your Products",
