@@ -46,7 +46,10 @@ class _EmailAndPasswordFieldsState extends State<EmailAndPasswordFields> {
           },
           success: (loginResponse) {
             context.pop();
-            context.pushNamed(Routes.mainScreen);
+            context.pushNamedAndRemoveUntil(
+              Routes.mainScreen,
+              predicate: (route) => false,
+            );
           },
           error: (error) {
             ShowToast.showToastErrorBottom(message: error);

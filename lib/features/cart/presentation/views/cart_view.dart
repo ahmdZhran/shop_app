@@ -15,12 +15,12 @@ class CartView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          const CartAppBar(),
-          Expanded(
-            child: BlocProvider(
-              create: (context) => CartCubit(getIt())..fetchCartItems(),
+      body: BlocProvider(
+        create: (context) => CartCubit(getIt())..fetchCartItems(),
+        child: Column(
+          children: [
+            const CartAppBar(),
+            Expanded(
               child: BlocBuilder<CartCubit, CartState>(
                 builder: (context, state) {
                   return state.maybeWhen(
@@ -80,8 +80,8 @@ class CartView extends StatelessWidget {
                 },
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
