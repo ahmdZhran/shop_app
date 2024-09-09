@@ -5,8 +5,7 @@ class AppAssets {
   static const String imageOnBoarding2 = "assets/svg/onboarding3.svg";
 
   /// assets for navigation bar
-  static const String cart = "assets/images/cart.svg";
-  static const String cartActive = "assets/images/cart_active.svg";
+  static const String cart = "assets/svg/cart.svg";
   static const String profileActive = "assets/images/user_active.svg";
   static const String profile = "assets/images/user.svg";
   static const String home = "assets/images/home.svg";
