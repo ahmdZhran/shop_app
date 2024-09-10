@@ -74,7 +74,7 @@ Start your journey with a sleek splash screen and secure authentication. Explore
 <img src="https://github.com/user-attachments/assets/4ef10ff4-c6d5-4879-b310-434025b6bb2f"   width="28%" height="50%">
 </p>
 
-### |-------Details screen --------|-------Cart screen---------|------- Checkout screen--------|
+### |-------Details screen ------|-------Cart screen------|----- Checkout screen------|
 <p>
 <img src="https://github.com/user-attachments/assets/9a02a7e3-fb5c-44e4-bede-aab794fe0270"   width="28%" height="50%">
 <img src="https://github.com/user-attachments/assets/64e84a90-53e6-4539-b2c5-8ce650617efd"   width="28%" height="50%">
