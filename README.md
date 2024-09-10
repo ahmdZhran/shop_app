@@ -67,14 +67,14 @@ Start your journey with a sleek splash screen and secure authentication. Explore
 </p>
 
 
-### |------Home screen ------|------Search screen------|------- Favorite screen-----|
+### |------Home screen ------|------Search screen--------|------- Favorite screen-----|
 <p>
 <img src="https://github.com/user-attachments/assets/b04a3b7b-0a79-499e-ad80-0e3d4dd6e318"   width="28%" height="50%">
 <img src="https://github.com/user-attachments/assets/0cbec0b0-aa76-4c37-9ab8-5f5a848a4ffb"   width="28%" height="50%">
 <img src="https://github.com/user-attachments/assets/4ef10ff4-c6d5-4879-b310-434025b6bb2f"   width="28%" height="50%">
 </p>
 
-### |----------Details screen --------|----------Cart screen---------|---------- Checkout screen--------|
+### |-------Details screen --------|-------Cart screen---------|------- Checkout screen--------|
 <p>
 <img src="https://github.com/user-attachments/assets/9a02a7e3-fb5c-44e4-bede-aab794fe0270"   width="28%" height="50%">
 <img src="https://github.com/user-attachments/assets/64e84a90-53e6-4539-b2c5-8ce650617efd"   width="28%" height="50%">
