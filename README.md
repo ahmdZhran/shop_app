@@ -53,7 +53,7 @@ Start your journey with a sleek splash screen and secure authentication. Explore
 
 
 ## 📱 UI
-### |----- Sign up screen -----|-------- Sign in screen -----|
+### |----- Sign up screen -----|------ Sign in screen -----|
 <p>
 <img src="https://github.com/user-attachments/assets/a5f68ba4-d828-4fb1-88ae-31120b35e0c4"   width="28%" height="50%">
 <img src="https://github.com/user-attachments/assets/f050a012-4a72-440a-b6b6-82658c47b85a"   width="28%" height="50%">
