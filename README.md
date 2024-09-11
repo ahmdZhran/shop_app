@@ -54,11 +54,10 @@ Start your journey with a sleek splash screen and secure authentication. Explore
 
 ## 📱 UI
 
-### |--------- Sign page ----------|------- Welcome page --------|-------------- Stories ----------|
+### |--------- Sign page ----------|------- Welcome page --------|
 <p>
 <img src="https://user-images.githubusercontent.com/88978546/193092118-a6e5ecfb-6ee0-42d2-9a40-b9616bee692d.gif"   width="32%" height="50%">
 <img src="https://user-images.githubusercontent.com/88978546/193092126-9c23eb3b-b6e7-4789-ab1b-a0e9cb6ab5b4.gif"   width="32%" height="50%">
-<img src="https://user-images.githubusercontent.com/88978546/193092135-05d3f4d5-9246-40a2-98e4-0432a54be598.gif"   width="32%" height="50%">
 </p>
 
 ### |----- Sign up screen -----|---------- Sign in screen ---------|
