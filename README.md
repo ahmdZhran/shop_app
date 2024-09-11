@@ -70,7 +70,7 @@ Start your journey with a sleek splash screen and secure authentication. Explore
 </p>
 
 
-### |-------- Home screen ----------|------- Search screen ------|------- Favorite screen -------|
+### |-------- Home screen ----------|------- Search screen ------|--------- Favorite screen -------|
 <p>
 <img src="https://github.com/user-attachments/assets/b04a3b7b-0a79-499e-ad80-0e3d4dd6e318"   width="32%" height="50%">
 <img src="https://github.com/user-attachments/assets/0cbec0b0-aa76-4c37-9ab8-5f5a848a4ffb"   width="32%" height="50%">
@@ -84,7 +84,7 @@ Start your journey with a sleek splash screen and secure authentication. Explore
 <img src="https://github.com/user-attachments/assets/07f6297b-d344-4796-be9e-6d5a058749c0"   width="32%" height="50%">
 </p>
 
-### |------- Select Payment -------|----------- Stripe ------------|--------- Paypal --------------|
+### |------- Select Payment -------|----------- Stripe ------------|------------- Paypal --------------|
 <p>
 <img src="https://github.com/user-attachments/assets/d8fda2e2-9085-438f-a83d-465f2063ad2f"   width="32%" height="50%">
 <img src="https://github.com/user-attachments/assets/4bd3b184-8798-4299-aed1-a040d3f01e53"   width="32%" height="50%">
