@@ -54,11 +54,13 @@ Start your journey with a sleek splash screen and secure authentication. Explore
 
 ## 📱 UI
 
-### |----- Sign up screen -----|---------- Sign in scree --------|
+### |----- Sign up screen -----|---------- Sign in screen -------|
 <p>
-<img src="https://github.com/user-attachments/assets/a5f68ba4-d828-4fb1-88ae-31120b35e0c4"   width="28%" height="50%">
-<img src="https://github.com/user-attachments/assets/f050a012-4a72-440a-b6b6-82658c47b85a"   width="28%" height="50%">
+<img src="https://github.com/user-attachments/assets/e179ef1c-8d0b-4fc2-8b91-371a5929da5a"   width="28%" height="50%">
+<img src="https://github.com/user-attachments/assets/cf4bb478-7283-4cdd-95e6-1b34cdb3b92f"   width="28%" height="50%">
 </p>
+
+
 
 ### |---- Welcome screen -----|---- Welcome screen ----|---- Welcome screen ----|
 <p>
@@ -92,14 +94,16 @@ Start your journey with a sleek splash screen and secure authentication. Explore
 
 ### |----- Order Confirmed ----|---- Not confirmed -----|
 <p>
-<img src="https://github.com/user-attachments/assets/382eedb5-abc3-4cdf-b4a7-9abb7dd5d5ef"   width="28%" height="50%">
+<img src="https://github.com/user-attachments/assets/5ce7e8ad-d70b-4698-aad3-033e189a68a4"   width="28%" height="50%">
 <img src="https://github.com/user-attachments/assets/dd5344a6-a394-4b2d-b529-0d7a9b0b217f"   width="28%" height="50%">
 </p>
 
+
 ### |------ Profile screen ------|
 <p>
-<img src="https://github.com/user-attachments/assets/c86c76d9-d019-4cf0-a746-fd74b22e8eb5"   width="28%" height="50%">
+<img src="https://github.com/user-attachments/assets/d102fe65-1580-407b-9608-27ddce24455b"   width="28%" height="50%">
 </p>
+
 
 ## 🛠 Dependencies
 
