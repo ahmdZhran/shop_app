@@ -86,7 +86,9 @@ Start your journey with a sleek splash screen and secure authentication. Explore
 <p>
 <img src="https://github.com/user-attachments/assets/d8fda2e2-9085-438f-a83d-465f2063ad2f"   width="28%" height="50%">
 <img src="https://github.com/user-attachments/assets/4bd3b184-8798-4299-aed1-a040d3f01e53"   width="28%" height="50%">
+<img src="https://github.com/user-attachments/assets/58f121bc-2b16-4e51-9a4b-105a9b526cdf"   width="28%" height="50%">
 </p>
+
 
 ### |----- Order Confirmed ----|---- Not confirmed -----|
 <p>
