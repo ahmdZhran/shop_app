@@ -70,7 +70,7 @@ Start your journey with a sleek splash screen and secure authentication. Explore
 </p>
 
 
-### |-------- Home screen ---------|------- Search screen ---------|------- Favorite screen ----|
+### |-------- Home screen ---------|------- Search screen ------|------- Favorite screen ----|
 <p>
 <img src="https://github.com/user-attachments/assets/b04a3b7b-0a79-499e-ad80-0e3d4dd6e318"   width="32%" height="50%">
 <img src="https://github.com/user-attachments/assets/0cbec0b0-aa76-4c37-9ab8-5f5a848a4ffb"   width="32%" height="50%">
