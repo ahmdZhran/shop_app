@@ -85,6 +85,7 @@ Start your journey with a sleek splash screen and secure authentication. Explore
 ### |----- Select Payment -----|---------- Stripe ----------|--------- Paypal ----------|
 <p>
 <img src="https://github.com/user-attachments/assets/d8fda2e2-9085-438f-a83d-465f2063ad2f"   width="28%" height="50%">
+<img src="https://github.com/user-attachments/assets/4bd3b184-8798-4299-aed1-a040d3f01e53"   width="28%" height="50%">
 </p>
 
 ### |----- Order Confirmed ----|---- Not confirmed -----|
