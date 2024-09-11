@@ -56,8 +56,8 @@ Start your journey with a sleek splash screen and secure authentication. Explore
 
 ### |----- Sign up screen -----|---------- Sign in screen -------|
 <p>
-<img src="https://github.com/user-attachments/assets/e179ef1c-8d0b-4fc2-8b91-371a5929da5a"   width="28%" height="50%">
-<img src="https://github.com/user-attachments/assets/cf4bb478-7283-4cdd-95e6-1b34cdb3b92f"   width="28%" height="50%">
+<img src="https://github.com/user-attachments/assets/e179ef1c-8d0b-4fc2-8b91-371a5929da5a"   width="32%" height="50%">
+<img src="https://github.com/user-attachments/assets/cf4bb478-7283-4cdd-95e6-1b34cdb3b92f"   width="32%" height="50%">
 </p>
 
 
