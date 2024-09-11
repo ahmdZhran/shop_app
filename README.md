@@ -54,13 +54,13 @@ Start your journey with a sleek splash screen and secure authentication. Explore
 
 ## 📱 UI
 
-### |--------- Sign page ----------|------- Welcome page --------|
+### |--------- Sign page ----------|------- Welcome screen -----|
 <p>
-<img src="https://user-images.githubusercontent.com/88978546/193092118-a6e5ecfb-6ee0-42d2-9a40-b9616bee692d.gif"   width="32%" height="50%">
-<img src="https://user-images.githubusercontent.com/88978546/193092126-9c23eb3b-b6e7-4789-ab1b-a0e9cb6ab5b4.gif"   width="32%" height="50%">
+<img src="https://github.com/user-attachments/assets/a5f68ba4-d828-4fb1-88ae-31120b35e0c4"   width="32%" height="50%">
+<img src="https://github.com/user-attachments/assets/f050a012-4a72-440a-b6b6-82658c47b85a"   width="32%" height="50%">
 </p>
 
-### |----- Sign up screen -----|---------- Sign in screen ---------|
+### |----- Sign up screen -----|---------- Sign in scree --------|
 <p>
 <img src="https://github.com/user-attachments/assets/a5f68ba4-d828-4fb1-88ae-31120b35e0c4"   width="32%" height="50%">
 <img src="https://github.com/user-attachments/assets/f050a012-4a72-440a-b6b6-82658c47b85a"   width="32%" height="50%">
