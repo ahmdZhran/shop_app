@@ -40,7 +40,7 @@ Start your journey with a sleek splash screen and secure authentication. Explore
 </h3>
 <h3>
   <a href="https://drive.google.com/file/d/1zNSUdnY4zgP70IJJ_irOp_1w0CeCJxJi/view?usp=drive_link">
-    🎥Click here to Watch on a screen record for this app.
+    🎥Click here to watch on a screen record for this app.
   </a>
 </h3>
 
