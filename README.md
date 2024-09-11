@@ -62,7 +62,7 @@ Start your journey with a sleek splash screen and secure authentication. Explore
 
 
 
-### |---- Welcome screen -----|---- Welcome screen ----|---- Welcome screen ----|
+### |------- Welcome screen --------|------- Welcome screen -------|------ Welcome screen ------|
 <p>
 <img src="https://github.com/user-attachments/assets/429c9d39-fb14-4982-8c23-df0d4dbcc635"   width="32%" height="50%">
 <img src="https://github.com/user-attachments/assets/bd4cc99f-98b6-4d86-b557-d912d1d1bac7"   width="32%" height="50%">
