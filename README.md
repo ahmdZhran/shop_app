@@ -77,14 +77,14 @@ Start your journey with a sleek splash screen and secure authentication. Explore
 <img src="https://github.com/user-attachments/assets/4ef10ff4-c6d5-4879-b310-434025b6bb2f"   width="32%" height="50%">
 </p>
 
-### |------- Details screen -------|-------- Cart screen ----------|------ Checkout screen -----|
+### |------- Details screen -------|-------- Cart screen ----------|------ Checkout screen --------|
 <p>
 <img src="https://github.com/user-attachments/assets/9a02a7e3-fb5c-44e4-bede-aab794fe0270"   width="32%" height="50%">
 <img src="https://github.com/user-attachments/assets/64e84a90-53e6-4539-b2c5-8ce650617efd"   width="32%" height="50%">
 <img src="https://github.com/user-attachments/assets/07f6297b-d344-4796-be9e-6d5a058749c0"   width="32%" height="50%">
 </p>
 
-### |------- Select Payment -------|----------- Stripe ------------|--------- Paypal -----------|
+### |------- Select Payment -------|----------- Stripe ------------|--------- Paypal --------------|
 <p>
 <img src="https://github.com/user-attachments/assets/d8fda2e2-9085-438f-a83d-465f2063ad2f"   width="32%" height="50%">
 <img src="https://github.com/user-attachments/assets/4bd3b184-8798-4299-aed1-a040d3f01e53"   width="32%" height="50%">
@@ -92,7 +92,7 @@ Start your journey with a sleek splash screen and secure authentication. Explore
 </p>
 
 
-### |------- Order Confirmed -----|-------- Not confirmed ---------|------ Profile screen ------|
+### |------- Order Confirmed -----|-------- Not confirmed ---------|------ Profile screen ---------|
 <p>
 <img src="https://github.com/user-attachments/assets/5ce7e8ad-d70b-4698-aad3-033e189a68a4"   width="32%" height="50%">
 <img src="https://github.com/user-attachments/assets/dd5344a6-a394-4b2d-b529-0d7a9b0b217f"   width="32%" height="50%">
